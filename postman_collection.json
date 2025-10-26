@@ -1,0 +1,250 @@
+{
+  "info": {
+    "name": "Tender Eligibility Analyzer API",
+    "description": "Complete collection for testing Tender Eligibility Analysis API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "123456"
+  },
+  "item": [
+    {
+      "name": "Upload Tender 1 PDFs",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "pdfs",
+              "type": "file",
+              "src": []
+            },
+            {
+              "key": "pdfs",
+              "type": "file",
+              "src": []
+            },
+            {
+              "key": "pdfs",
+              "type": "file",
+              "src": []
+            },
+            {
+              "key": "pdfs",
+              "type": "file",
+              "src": []
+            },
+            {
+              "key": "pdfs",
+              "type": "file",
+              "src": []
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/upload-tender/tender1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "upload-tender", "tender1"]
+        },
+        "description": "Upload up to 5 PDFs for Tender 1. The system will extract text and generate AI summaries for each PDF."
+      },
+      "response": []
+    },
+    {
+      "name": "Upload Tender 2 PDFs",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "pdfs",
+              "type": "file",
+              "src": []
+            },
+            {
+              "key": "pdfs",
+              "type": "file",
+              "src": []
+            },
+            {
+              "key": "pdfs",
+              "type": "file",
+              "src": []
+            },
+            {
+              "key": "pdfs",
+              "type": "file",
+              "src": []
+            },
+            {
+              "key": "pdfs",
+              "type": "file",
+              "src": []
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/upload-tender/tender2",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "upload-tender", "tender2"]
+        },
+        "description": "Upload up to 5 PDFs for Tender 2. The system will extract text and generate AI summaries for each PDF."
+      },
+      "response": []
+    },
+    {
+      "name": "Upload Company Information",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "document",
+              "type": "file",
+              "src": []
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/upload-company",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "upload-company"]
+        },
+        "description": "Upload company information document (PDF or DOCX format). This will be used for eligibility analysis."
+      },
+      "response": []
+    },
+    {
+      "name": "Analyze Tender 1 Eligibility",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/analyze-tender/tender1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "analyze-tender", "tender1"]
+        },
+        "description": "Analyzes tender1 eligibility by concatenating all PDF summaries and comparing with company information. Generates eligibility analysis table."
+      },
+      "response": []
+    },
+    {
+      "name": "Analyze Tender 2 Eligibility",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/analyze-tender/tender2",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "analyze-tender", "tender2"]
+        },
+        "description": "Analyzes tender2 eligibility by concatenating all PDF summaries and comparing with company information. Generates eligibility analysis table."
+      },
+      "response": []
+    },
+    {
+      "name": "Check Tender 1 Eligibility",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/check-eligibility/tender1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "check-eligibility", "tender1"]
+        },
+        "description": "Checks final eligibility (YES/NO) for tender1. If NOT eligible, generates DOCX report and sends email notification."
+      },
+      "response": []
+    },
+    {
+      "name": "Check Tender 2 Eligibility",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/check-eligibility/tender2",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "check-eligibility", "tender2"]
+        },
+        "description": "Checks final eligibility (YES/NO) for tender2. If NOT eligible, generates DOCX report and sends email notification."
+      },
+      "response": []
+    },
+    {
+      "name": "Process All Tenders",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/process-all",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "process-all"]
+        },
+        "description": "Automates the entire workflow for both tenders sequentially. Processes each tender, checks eligibility, and sends emails if not eligible."
+      },
+      "response": []
+    },
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["health"]
+        },
+        "description": "Health check endpoint to verify API is running"
+      },
+      "response": []
+    }
+  ]
+}
+
