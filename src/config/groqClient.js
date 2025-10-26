@@ -93,8 +93,8 @@ function shouldRotateAutomatically() {
   }
 }
 
-// ✅ Fixed model name (v1-compatible)
-const MODEL = "gemini-2.5-flash"; // updated from gemini-1.5-flash
+// Use gemini-2.5-flash (confirmed available from your API)
+const MODEL = "gemini-2.5-flash";
 
 /**
  * Wrapper for Gemini API that handles rotation
@@ -128,7 +128,11 @@ const gemini = {
             ? `${systemInstructions}\n\n${userMessages}`
             : userMessages;
 
-          // ✅ Corrected API call for v1 (moved generationConfig here)
+          console.log(
+            `🔍 API Request - Model: ${geminiModel}, Prompt length: ${prompt.length} chars`
+          );
+
+          // Generate content with safety settings disabled
           const result = await genModel.generateContent({
             contents: [
               {
@@ -138,12 +142,115 @@ const gemini = {
             ],
             generationConfig: {
               temperature: temperature || 0.7,
-              maxOutputTokens: max_tokens || 8192,
+              maxOutputTokens: max_tokens || 65536, // Use maximum available tokens
             },
+            safetySettings: [
+              {
+                category: "HARM_CATEGORY_HARASSMENT",
+                threshold: "BLOCK_NONE",
+              },
+              {
+                category: "HARM_CATEGORY_HATE_SPEECH",
+                threshold: "BLOCK_NONE",
+              },
+              {
+                category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+                threshold: "BLOCK_NONE",
+              },
+              {
+                category: "HARM_CATEGORY_DANGEROUS_CONTENT",
+                threshold: "BLOCK_NONE",
+              },
+            ],
           });
 
           const response = result.response;
-          const text = response.text();
+
+          // Check if response was blocked
+          if (response.promptFeedback?.blockReason) {
+            console.error("❌ Response blocked:", response.promptFeedback);
+            throw new Error(
+              `Content blocked: ${response.promptFeedback.blockReason}`
+            );
+          }
+
+          // Get candidates
+          const candidates = response.candidates;
+          if (!candidates || candidates.length === 0) {
+            console.error("❌ No candidates in response");
+            console.error("Full response:", JSON.stringify(response, null, 2));
+            throw new Error("No response candidates generated");
+          }
+
+          // Check finish reason
+          const candidate = candidates[0];
+          if (candidate.finishReason === "MAX_TOKENS") {
+            console.warn(`⚠️ Response truncated due to MAX_TOKENS limit`);
+            // Don't throw error, try to use partial response
+          } else if (
+            candidate.finishReason &&
+            candidate.finishReason !== "STOP"
+          ) {
+            console.warn(`⚠️ Unusual finish reason: ${candidate.finishReason}`);
+          }
+
+          // Get text from the response
+          let text = "";
+          try {
+            text = response.text();
+          } catch (error) {
+            console.error("❌ Error extracting text:", error.message);
+            // Try alternative method
+            if (candidate.content && candidate.content.parts) {
+              text = candidate.content.parts
+                .map((part) => part.text || "")
+                .join("");
+            }
+          }
+
+          // For MAX_TOKENS, the response might be in parts but response.text() fails
+          if (
+            (!text || text.trim().length === 0) &&
+            candidate.finishReason === "MAX_TOKENS"
+          ) {
+            console.log(
+              "🔍 Trying to extract partial response from MAX_TOKENS..."
+            );
+            console.log(
+              "🔍 Full candidate structure:",
+              JSON.stringify(candidate, null, 2)
+            );
+            if (candidate.content && candidate.content.parts) {
+              text = candidate.content.parts
+                .map((part) => part.text || "")
+                .join("");
+              console.log(`✓ Extracted ${text.length} characters from parts`);
+            }
+
+            // If still empty with MAX_TOKENS, the model started generating but produced nothing
+            // This can happen with very restrictive token limits
+            if (!text || text.trim().length === 0) {
+              console.error("❌ MAX_TOKENS hit but no content generated");
+              console.error(
+                "This usually means max_tokens is too low for the response"
+              );
+              throw new Error(
+                `MAX_TOKENS limit too restrictive. Requested tokens: ${
+                  max_tokens || "default"
+                }`
+              );
+            }
+          }
+
+          if (!text || text.trim().length === 0) {
+            console.error("❌ Empty text in response");
+            console.error("Candidate:", JSON.stringify(candidate, null, 2));
+            throw new Error(
+              `Empty response text (finish reason: ${candidate.finishReason})`
+            );
+          }
+
+          console.log(`✓ API Response received: ${text.length} characters`);
 
           return {
             choices: [

@@ -11,6 +11,12 @@ async function generateSummary(pdfText) {
   try {
     console.log("🤖 Generating summary using gemini API...");
 
+    // Truncate if text is too long (keep first 30000 chars)
+    const truncatedText =
+      pdfText.length > 30000
+        ? pdfText.substring(0, 30000) + "\n\n[... content truncated ...]"
+        : pdfText;
+
     const prompt = `You are a tender document analyst. Analyze the following tender document and create a comprehensive, detailed summary.
 
 FOCUS ON:
@@ -23,7 +29,7 @@ FOCUS ON:
 7. Any compliance requirements or certifications needed
 
 DOCUMENT TEXT:
-${pdfText}
+${truncatedText}
 
 OUTPUT FORMAT:
 Provide a detailed, structured summary covering all the above points. Be specific and thorough. Do not miss any eligibility criteria or requirements mentioned in the document.`;
@@ -46,6 +52,11 @@ Provide a detailed, structured summary covering all the above points. Be specifi
     });
 
     const summary = completion.choices[0]?.message?.content || "";
+
+    if (!summary || summary.trim().length === 0) {
+      throw new Error("Gemini API returned empty summary");
+    }
+
     console.log(`✓ Generated summary (${summary.length} characters)`);
     return summary;
   } catch (error) {
@@ -55,7 +66,7 @@ Provide a detailed, structured summary covering all the above points. Be specifi
 }
 
 /**
- * Generate eligibility analysis table
+ * Generate eligibility analysis table (with retry and simpler prompt)
  * @param {string} tenderSummary - Comprehensive tender summary (concatenated from all PDF summaries)
  * @param {string} companyInfo - Company information text
  * @returns {Promise<string>} Eligibility analysis table
@@ -63,108 +74,274 @@ Provide a detailed, structured summary covering all the above points. Be specifi
 async function generateEligibilityAnalysis(tenderSummary, companyInfo) {
   try {
     console.log("🤖 Generating eligibility analysis using gemini API...");
+    console.log(
+      `📊 Input sizes - Tender: ${tenderSummary.length} chars, Company: ${companyInfo.length} chars`
+    );
 
-    const prompt = `You are a tender eligibility analyst. You have been provided with two documents:
+    // With 1M+ input tokens, we can use full inputs without truncation
+    const maxTenderLength = 100000; // ~25K tokens
+    const maxCompanyLength = 80000; // ~20K tokens
 
-1. *TENDER DOCUMENT*: A comprehensive summary of tender requirements including all eligibility criteria, technical specifications, financial requirements, documentation needs, and submission requirements.
+    const truncatedTender =
+      tenderSummary.length > maxTenderLength
+        ? tenderSummary.substring(0, maxTenderLength) +
+          "\n\n[... content truncated for length ...]"
+        : tenderSummary;
 
-2. *COMPANY INFORMATION DOCUMENT*: A detailed company profile containing registrations, certifications, licenses, production capacity, financial data, experience, and all relevant business information.
+    const truncatedCompany =
+      companyInfo.length > maxCompanyLength
+        ? companyInfo.substring(0, maxCompanyLength) +
+          "\n\n[... content truncated for length ...]"
+        : companyInfo;
 
-Your task is to:
-1. Carefully analyze ALL eligibility criteria mentioned in the tender document
-2. Cross-reference each requirement with the company information document
-3. Determine whether the company fulfills each specific requirement
-4. Create a comprehensive eligibility analysis table
+    console.log(
+      `📊 Processing - Tender: ${truncatedTender.length} chars, Company: ${truncatedCompany.length} chars`
+    );
 
-## OUTPUT FORMAT:
+    // Comprehensive prompt for complete analysis
+    const prompt = `You are analyzing tender eligibility. Compare the tender requirements with company information.
 
-| Sr. No. | Tender Requirement | Fulfilled? | Company's Status/Information | Reference in Company Info Doc |
-|---------|-------------------|------------|------------------------------|-------------------------------|
-| [number] | [Exact requirement from tender] | [✅ YES / ❌ NO / ⚠ PARTIAL/UNCERTAIN] | [Specific data/information from company doc that addresses this requirement] | [Exact section name/number where this information is found] |
-
-TENDER DOCUMENT:
-${tenderSummary}
+TENDER REQUIREMENTS:
+${truncatedTender}
 
 COMPANY INFORMATION:
-${companyInfo}
+${truncatedCompany}
 
-Create a detailed eligibility analysis table following the format above. Include ALL requirements found in the tender document.`;
+TASK: Create a COMPLETE eligibility analysis table covering ALL requirements mentioned in the tender document.
+
+Table format (markdown):
+| Sr. No. | Requirement | Status | Company Evidence | Notes |
+
+Where:
+- Requirement: Brief description of the tender requirement
+- Status: ✅ YES (fulfilled) / ❌ NO (not fulfilled) / ⚠️ PARTIAL (partially fulfilled or unclear)
+- Company Evidence: Specific data/information from company document
+- Notes: Any additional clarifications or concerns
+
+IMPORTANT: 
+- Include ALL eligibility criteria, technical specs, financial requirements, documentation needs
+- Be thorough and complete - do not skip any requirements
+- Provide specific evidence from company documents
+- If information is missing or unclear in company docs, mark as ❌ NO or ⚠️ PARTIAL
+
+Start the table now:`;
 
     const completion = await gemini.chat.completions.create({
       messages: [
-        {
-          role: "system",
-          content:
-            "You are an expert tender eligibility analyst. Create detailed eligibility analysis tables by comparing tender requirements with company information.",
-        },
         {
           role: "user",
           content: prompt,
         },
       ],
       model: MODEL,
-      temperature: 0.2,
-      max_tokens: 4096,
+      temperature: 0.3,
+      max_tokens: 65536, // Maximum output tokens for gemini-2.5-flash
     });
 
     const analysis = completion.choices[0]?.message?.content || "";
+
+    console.log(`📝 Raw API response length: ${analysis.length} characters`);
+
+    if (!analysis || analysis.trim().length === 0) {
+      console.error("❌ Gemini API returned empty analysis");
+      console.error("🔍 Trying alternative approach with smaller inputs...");
+
+      // Fallback: Try with even smaller inputs
+      return await generateEligibilityAnalysisSimple(
+        truncatedTender.substring(0, 10000),
+        truncatedCompany.substring(0, 8000)
+      );
+    }
+
     console.log(
       `✓ Generated eligibility analysis (${analysis.length} characters)`
     );
     return analysis;
   } catch (error) {
     console.error("❌ Error generating eligibility analysis:", error.message);
-    throw new Error(`Eligibility analysis generation failed: ${error.message}`);
+    console.error("Stack trace:", error.stack);
+
+    // Final fallback: create a simple table manually
+    console.log("🔄 Attempting fallback analysis...");
+    return createFallbackAnalysis(tenderSummary, companyInfo);
   }
 }
 
 /**
- * Check final eligibility (YES/NO)
+ * Simplified eligibility analysis with minimal prompt
+ */
+async function generateEligibilityAnalysisSimple(tenderSummary, companyInfo) {
+  console.log("🔄 Attempting simplified analysis...");
+
+  const prompt = `Create brief eligibility comparison table.
+
+TENDER: ${tenderSummary.substring(0, 8000)}
+
+COMPANY: ${companyInfo.substring(0, 6000)}
+
+Table format:
+| Requirement | Status | Evidence |
+List top 10 requirements only.`;
+
+  const completion = await gemini.chat.completions.create({
+    messages: [
+      {
+        role: "user",
+        content: prompt,
+      },
+    ],
+    model: MODEL,
+    temperature: 0.5,
+    max_tokens: 65536, // Maximum for complete response
+  });
+
+  const analysis = completion.choices[0]?.message?.content || "";
+
+  if (analysis && analysis.trim().length > 0) {
+    console.log(
+      `✓ Simplified analysis generated (${analysis.length} characters)`
+    );
+    return analysis;
+  }
+
+  throw new Error("All API attempts returned empty responses");
+}
+
+/**
+ * Create a basic fallback analysis when API fails
+ */
+function createFallbackAnalysis(tenderSummary, companyInfo) {
+  console.log("⚠️ Creating fallback analysis table...");
+
+  const fallbackTable = `# Eligibility Analysis Table
+
+⚠️ Note: This is a basic analysis created due to API limitations. Manual review recommended.
+
+## Tender Summary
+${tenderSummary.substring(0, 5000)}
+
+## Company Information
+${companyInfo.substring(0, 3000)}
+
+## Analysis Status
+| Sr. No. | Category | Status | Notes |
+|---------|----------|--------|-------|
+| 1 | General Eligibility | ⚠ REVIEW REQUIRED | Manual verification needed |
+| 2 | Technical Requirements | ⚠ REVIEW REQUIRED | Manual verification needed |
+| 3 | Financial Requirements | ⚠ REVIEW REQUIRED | Manual verification needed |
+| 4 | Documentation | ⚠ REVIEW REQUIRED | Manual verification needed |
+
+**IMPORTANT**: This automated analysis could not be completed. Please manually review the tender requirements against company information.
+
+Tender Document Length: ${tenderSummary.length} characters
+Company Info Length: ${companyInfo.length} characters
+`;
+
+  return fallbackTable;
+}
+
+/**
+ * Check final eligibility (YES/NO) - With rule-based fallback
  * @param {string} eligibilityTable - Eligibility analysis table
  * @returns {Promise<string>} "YES" or "NO"
  */
 async function checkFinalEligibility(eligibilityTable) {
   try {
-    console.log("🤖 Checking final eligibility using Groq API...");
+    console.log("🤖 Checking final eligibility using Gemini API...");
 
-    const prompt = `You are a tender eligibility analyst.
-Based on the eligibility analysis table already prepared (which compares tender requirements vs. company information),
-output only one word:
+    if (!eligibilityTable || eligibilityTable.trim().length === 0) {
+      throw new Error("Empty eligibility table provided");
+    }
 
-Output "YES" — if the company is eligible for the tender (i.e., all mandatory requirements are fulfilled).
-Output "NO" — if the company is not eligible (i.e., any mandatory requirement is missing, invalid, or uncertain).
+    console.log(`📊 Full table length: ${eligibilityTable.length} characters`);
 
-Do not provide explanations, tables, or reasoning.
-Return only YES or NO as the final output.
+    // Count status symbols in the table for quick assessment
+    const yesCount = (eligibilityTable.match(/✅/g) || []).length;
+    const noCount = (eligibilityTable.match(/❌/g) || []).length;
+    const partialCount = (eligibilityTable.match(/⚠️/g) || []).length;
 
-ELIGIBILITY ANALYSIS TABLE:
-${eligibilityTable}`;
+    console.log(
+      `📊 Status summary - ✅ YES: ${yesCount}, ❌ NO: ${noCount}, ⚠️ PARTIAL: ${partialCount}`
+    );
+
+    // Rule-based check first
+    if (noCount > 0) {
+      console.log(
+        `❌ Found ${noCount} NO statuses - Company NOT eligible (rule-based decision)`
+      );
+      return "NO";
+    }
+
+    if (partialCount > yesCount) {
+      console.log(
+        `⚠️ More PARTIAL (${partialCount}) than YES (${yesCount}) - Company NOT eligible (rule-based decision)`
+      );
+      return "NO";
+    }
+
+    if (yesCount > 0 && noCount === 0 && partialCount <= 2) {
+      console.log(
+        `✅ Mostly YES with minimal PARTIAL - Company IS eligible (rule-based decision)`
+      );
+      return "YES";
+    }
+
+    // If unclear, use AI for detailed analysis
+    console.log(`🤖 Status unclear - using AI for detailed analysis...`);
+
+    // Use focused excerpt
+    const tableExcerpt = eligibilityTable.substring(0, 15000);
+
+    const prompt = `Analyze this eligibility table and determine if the company is eligible.
+
+ELIGIBILITY TABLE:
+${tableExcerpt}
+
+DECISION RULES:
+- If ANY requirement shows ❌ NO status → Company is NOT eligible
+- If MOST requirements show ⚠️ PARTIAL → Company is NOT eligible  
+- If MOST requirements show ✅ YES with few/no ❌ → Company IS eligible
+
+Respond with ONLY one word: YES or NO
+
+Your decision:`;
 
     const completion = await gemini.chat.completions.create({
       messages: [
-        {
-          role: "system",
-          content:
-            "You are a tender eligibility analyst. Output only YES or NO based on the eligibility analysis.",
-        },
         {
           role: "user",
           content: prompt,
         },
       ],
-      model: MODEL, // Use the configured model
-      temperature: 0.1,
-      max_tokens: 10,
+      model: MODEL,
+      temperature: 0.0,
+      max_tokens: 1000,
     });
 
-    const result = (completion.choices[0]?.message?.content || "")
-      .trim()
-      .toUpperCase();
-    console.log(`✓ Eligibility check result: ${result}`);
-    return result;
+    console.log(`📊 AI analysis complete`);
+
+    const rawResult = (completion.choices[0]?.message?.content || "").trim();
+    console.log(`📝 AI response: "${rawResult}"`);
+
+    // Extract YES or NO
+    const resultUpper = rawResult.toUpperCase();
+    let finalResult = "NO"; // Default to NO for safety
+
+    if (resultUpper.includes("YES") && !resultUpper.includes("NO")) {
+      finalResult = "YES";
+    } else if (resultUpper.includes("NO")) {
+      finalResult = "NO";
+    } else {
+      console.warn(`⚠️ Unclear AI response. Defaulting to NO for safety.`);
+    }
+
+    console.log(`✅ Final eligibility decision: ${finalResult}`);
+    return finalResult;
   } catch (error) {
-    console.error("❌ Error checking eligibility:", error.message);
-    throw new Error(`Eligibility check failed: ${error.message}`);
+    console.error("❌ Error in checkFinalEligibility:", error.message);
+    // On error, default to NO for safety
+    console.log("⚠️ Error occurred - defaulting to NO for safety");
+    return "NO";
   }
 }
 
