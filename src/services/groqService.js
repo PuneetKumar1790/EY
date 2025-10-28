@@ -1,6 +1,4 @@
 const { gemini, MODEL } = require("../config/groqClient");
-const fs = require("fs-extra");
-const path = require("path");
 
 /**
  * Generate a detailed summary for a PDF document
@@ -9,7 +7,7 @@ const path = require("path");
  */
 async function generateSummary(pdfText) {
   try {
-    console.log("🤖 Generating summary using gemini API...");
+    console.log("🤖 Generating summary using Gemini API...");
 
     // Truncate if text is too long (keep first 30000 chars)
     const truncatedText =
@@ -66,6 +64,51 @@ Provide a detailed, structured summary covering all the above points. Be specifi
 }
 
 /**
+ * Create a basic fallback analysis when API fails
+ */
+function createFallbackAnalysis(tenderSummary, companyInfo) {
+  console.log("⚠️ Creating fallback analysis table...");
+
+  const fallbackTable = `# Eligibility Analysis Table
+
+⚠️ **Note**: This is a basic analysis created due to API limitations. Manual review recommended.
+
+## Tender Summary (First 5000 characters)
+${tenderSummary.substring(0, 5000)}
+
+## Company Information (First 3000 characters)
+${companyInfo.substring(0, 3000)}
+
+## Analysis Status
+
+| Sr. No. | Category | Fulfilled? | Company's Status/Information | Reference |
+|---------|----------|------------|------------------------------|-----------|
+| 1 | General Eligibility | ⚠️ REVIEW REQUIRED | Manual verification needed | N/A |
+| 2 | Technical Requirements | ⚠️ REVIEW REQUIRED | Manual verification needed | N/A |
+| 3 | Financial Requirements | ⚠️ REVIEW REQUIRED | Manual verification needed | N/A |
+| 4 | Documentation | ⚠️ REVIEW REQUIRED | Manual verification needed | N/A |
+
+---
+
+## OVERALL ELIGIBILITY
+❌ **NOT ELIGIBLE** - Automated analysis could not be completed
+
+## CRITICAL DISQUALIFYING FACTORS
+1. Automated analysis failed - API error or limitations
+2. Manual review required for all eligibility criteria
+3. Cannot verify compliance without complete analysis
+
+**IMPORTANT**: This automated analysis could not be completed. Please manually review the tender requirements against company information.
+
+**Document Statistics:**
+- Tender Document Length: ${tenderSummary.length} characters
+- Company Info Length: ${companyInfo.length} characters
+`;
+
+  return fallbackTable;
+}
+
+/**
  * Generate eligibility analysis table with improved prompt
  * @param {string} tenderSummary - Comprehensive tender summary (concatenated from all PDF summaries)
  * @param {string} companyInfo - Company information text
@@ -73,13 +116,13 @@ Provide a detailed, structured summary covering all the above points. Be specifi
  */
 async function generateEligibilityAnalysis(tenderSummary, companyInfo) {
   try {
-    console.log("🤖 Generating eligibility analysis using gemini API...");
+    console.log("🤖 Generating eligibility analysis using Gemini API...");
     console.log(
       `📊 Input sizes - Tender: ${tenderSummary.length} chars, Company: ${companyInfo.length} chars`
     );
 
-    const maxTenderLength = 100000;
-    const maxCompanyLength = 80000;
+    const maxTenderLength = 50000; // Reduced from 100000
+    const maxCompanyLength = 40000; // Reduced from 80000
 
     const truncatedTender =
       tenderSummary.length > maxTenderLength
@@ -207,51 +250,6 @@ Now, analyze the provided tender and company documents and create the eligibilit
 }
 
 /**
- * Create a basic fallback analysis when API fails
- */
-function createFallbackAnalysis(tenderSummary, companyInfo) {
-  console.log("⚠️ Creating fallback analysis table...");
-
-  const fallbackTable = `# Eligibility Analysis Table
-
-⚠️ **Note**: This is a basic analysis created due to API limitations. Manual review recommended.
-
-## Tender Summary (First 5000 characters)
-${tenderSummary.substring(0, 5000)}
-
-## Company Information (First 3000 characters)
-${companyInfo.substring(0, 3000)}
-
-## Analysis Status
-
-| Sr. No. | Category | Fulfilled? | Company's Status/Information | Reference |
-|---------|----------|------------|------------------------------|-----------|
-| 1 | General Eligibility | ⚠️ REVIEW REQUIRED | Manual verification needed | N/A |
-| 2 | Technical Requirements | ⚠️ REVIEW REQUIRED | Manual verification needed | N/A |
-| 3 | Financial Requirements | ⚠️ REVIEW REQUIRED | Manual verification needed | N/A |
-| 4 | Documentation | ⚠️ REVIEW REQUIRED | Manual verification needed | N/A |
-
----
-
-## OVERALL ELIGIBILITY
-❌ **NOT ELIGIBLE** - Automated analysis could not be completed
-
-## CRITICAL DISQUALIFYING FACTORS
-1. Automated analysis failed - API error or limitations
-2. Manual review required for all eligibility criteria
-3. Cannot verify compliance without complete analysis
-
-**IMPORTANT**: This automated analysis could not be completed. Please manually review the tender requirements against company information.
-
-**Document Statistics:**
-- Tender Document Length: ${tenderSummary.length} characters
-- Company Info Length: ${companyInfo.length} characters
-`;
-
-  return fallbackTable;
-}
-
-/**
  * Check final eligibility (YES/NO) with improved prompt
  * @param {string} eligibilityTable - Eligibility analysis table
  * @returns {Promise<string>} "YES" or "NO"
@@ -365,6 +363,7 @@ Your decision:`;
   }
 }
 
+// Export all functions
 module.exports = {
   generateSummary,
   generateEligibilityAnalysis,

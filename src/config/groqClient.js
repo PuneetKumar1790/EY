@@ -10,8 +10,14 @@ let currentKeyIndex = 0;
 let requestCount = 0;
 
 /**
+ * Sleep for specified milliseconds
+ */
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/**
  * Get the current API key
- * @returns {string} Current API key
  */
 function getCurrentApiKey() {
   if (API_KEYS.length === 0) {
@@ -26,85 +32,127 @@ function getCurrentApiKey() {
  * Rotate to the next API key
  */
 function rotateApiKey() {
+  const oldIndex = currentKeyIndex;
   currentKeyIndex = (currentKeyIndex + 1) % API_KEYS.length;
-  requestCount++;
   console.log(
-    `🔄 Rotating to Gemini API key ${currentKeyIndex + 1}/${
-      API_KEYS.length
-    } (Request #${requestCount})`
+    `🔄 Rotating API key ${oldIndex + 1} → ${
+      currentKeyIndex + 1
+    } (Total keys: ${API_KEYS.length})`
   );
 }
 
 /**
  * Create a new Gemini client with the current API key
- * @returns {GoogleGenerativeAI} Gemini client instance
  */
 function createGeminiClient() {
   return new GoogleGenerativeAI(getCurrentApiKey());
 }
 
 /**
- * Execute a function with automatic API key rotation on error
+ * Check if error requires API key rotation
+ */
+function shouldRotateKey(errorMsg) {
+  const rotationTriggers = [
+    "401", // Unauthorized
+    "403", // Forbidden
+    "429", // Rate limit
+    "quota",
+    "rate limit",
+    "authentication",
+    "api key",
+  ];
+
+  return rotationTriggers.some((trigger) =>
+    errorMsg.toLowerCase().includes(trigger)
+  );
+}
+
+/**
+ * Execute a function with automatic API key rotation on specific errors
  * @param {Function} fn - Function to execute
  * @param {number} maxRetries - Maximum number of retries
  * @returns {Promise<any>} Result of the function
  */
-async function executeWithRotation(fn, maxRetries = 2) {
+async function executeWithRotation(fn, maxRetries = 5) {
+  let lastError;
+  let attemptsSameKey = 0;
+
   for (let attempt = 0; attempt < maxRetries; attempt++) {
     try {
       const client = createGeminiClient();
-      return await fn(client);
+      const result = await fn(client);
+
+      // Success - reset counter for this key
+      attemptsSameKey = 0;
+      return result;
     } catch (error) {
+      lastError = error;
+      const errorMsg = error.message?.toLowerCase() || "";
+
       console.error(
-        `❌ Error with Gemini API key ${currentKeyIndex + 1}:`,
+        `❌ Error with API key ${currentKeyIndex + 1} (Attempt ${
+          attempt + 1
+        }/${maxRetries}):`,
         error.message
       );
 
-      // If it's a rate limit error or authentication error, rotate keys
-      const errorMsg = error.message?.toLowerCase() || "";
-      if (
-        errorMsg.includes("rate limit") ||
-        errorMsg.includes("quota") ||
-        errorMsg.includes("429") ||
-        errorMsg.includes("401") ||
-        errorMsg.includes("403") ||
-        errorMsg.includes("authentication") ||
-        attempt < maxRetries - 1
-      ) {
-        rotateApiKey();
-      } else {
+      // Check if it's a retryable error
+      const isRetryable =
+        errorMsg.includes("503") ||
+        errorMsg.includes("overloaded") ||
+        errorMsg.includes("timeout") ||
+        errorMsg.includes("network") ||
+        errorMsg.includes("fetch failed") ||
+        shouldRotateKey(errorMsg);
+
+      if (!isRetryable) {
+        console.error("❌ Non-retryable error - stopping");
         throw error;
       }
+
+      // Only rotate if error is API-key specific
+      if (shouldRotateKey(errorMsg) && API_KEYS.length > 1) {
+        console.log(`🔑 API key error detected - rotating key`);
+        rotateApiKey();
+        attemptsSameKey = 0; // Reset counter after rotation
+      } else {
+        attemptsSameKey++;
+        console.log(
+          `⚠️ Service error (not key-specific) - retrying with same key`
+        );
+      }
+
+      // If last attempt, throw error
+      if (attempt === maxRetries - 1) {
+        throw new Error(
+          `Max retries (${maxRetries}) reached. Last error: ${lastError.message}`
+        );
+      }
+
+      // Exponential backoff with jitter
+      const baseDelay = Math.min(1000 * Math.pow(2, attemptsSameKey), 30000); // Max 30 seconds
+      const jitter = Math.random() * 1000; // Add up to 1 second jitter
+      const delay = baseDelay + jitter;
+
+      console.log(`⏳ Waiting ${(delay / 1000).toFixed(1)}s before retry...`);
+      await sleep(delay);
     }
   }
-  throw new Error("Max retries reached for Gemini API key rotation");
+
+  throw new Error(
+    `Max retries (${maxRetries}) reached. Last error: ${lastError.message}`
+  );
 }
 
-// Automatic rotation every N requests (optional)
-const ROTATION_INTERVAL = 50;
-
-function shouldRotateAutomatically() {
-  if (
-    requestCount > 0 &&
-    requestCount % ROTATION_INTERVAL === 0 &&
-    API_KEYS.length > 1
-  ) {
-    rotateApiKey();
-  }
-}
-
-// Use gemini-2.5-flash - confirmed available from your list
 const MODEL = "gemini-2.5-flash";
 
 /**
  * Wrapper for Gemini API that handles rotation
- * Provides a chat interface compatible with the existing code
  */
 const gemini = {
   chat: {
     completions: {
       create: async (params) => {
-        shouldRotateAutomatically();
         requestCount++;
 
         return await executeWithRotation(async (client) => {
@@ -129,43 +177,62 @@ const gemini = {
             : userMessages;
 
           console.log(
-            `🔍 API Request - Model: ${geminiModel}, Prompt length: ${prompt.length} chars`
+            `🔍 API Request #${requestCount} - Model: ${geminiModel}, Key: ${
+              currentKeyIndex + 1
+            }/${API_KEYS.length}, Prompt: ${prompt.length} chars`
           );
 
-          // gemini-2.5-flash supports up to 65536 output tokens
           const maxOutputTokens = max_tokens || 65536;
 
-          // Generate content with safety settings disabled
-          const result = await genModel.generateContent({
-            contents: [
-              {
-                role: "user",
-                parts: [{ text: prompt }],
+          // Timeout based on prompt size (larger prompts need more time)
+          const timeoutMs = prompt.length > 50000 ? 180000 : 120000; // 3 min for large, 2 min for normal
+          console.log(`⏱️ Request timeout set to ${timeoutMs / 1000}s`);
+
+          // Generate content with safety settings disabled and adaptive timeout
+          const result = await Promise.race([
+            genModel.generateContent({
+              contents: [
+                {
+                  role: "user",
+                  parts: [{ text: prompt }],
+                },
+              ],
+              generationConfig: {
+                temperature: temperature || 0.7,
+                maxOutputTokens: maxOutputTokens,
               },
-            ],
-            generationConfig: {
-              temperature: temperature || 0.7,
-              maxOutputTokens: maxOutputTokens,
-            },
-            safetySettings: [
-              {
-                category: "HARM_CATEGORY_HARASSMENT",
-                threshold: "BLOCK_NONE",
-              },
-              {
-                category: "HARM_CATEGORY_HATE_SPEECH",
-                threshold: "BLOCK_NONE",
-              },
-              {
-                category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-                threshold: "BLOCK_NONE",
-              },
-              {
-                category: "HARM_CATEGORY_DANGEROUS_CONTENT",
-                threshold: "BLOCK_NONE",
-              },
-            ],
-          });
+              safetySettings: [
+                {
+                  category: "HARM_CATEGORY_HARASSMENT",
+                  threshold: "BLOCK_NONE",
+                },
+                {
+                  category: "HARM_CATEGORY_HATE_SPEECH",
+                  threshold: "BLOCK_NONE",
+                },
+                {
+                  category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+                  threshold: "BLOCK_NONE",
+                },
+                {
+                  category: "HARM_CATEGORY_DANGEROUS_CONTENT",
+                  threshold: "BLOCK_NONE",
+                },
+              ],
+            }),
+            // Adaptive timeout
+            new Promise((_, reject) =>
+              setTimeout(
+                () =>
+                  reject(
+                    new Error(
+                      `Request timeout after ${timeoutMs / 1000} seconds`
+                    )
+                  ),
+                timeoutMs
+              )
+            ),
+          ]);
 
           const response = result.response;
 
@@ -181,7 +248,6 @@ const gemini = {
           const candidates = response.candidates;
           if (!candidates || candidates.length === 0) {
             console.error("❌ No candidates in response");
-            console.error("Full response:", JSON.stringify(response, null, 2));
             throw new Error("No response candidates generated");
           }
 
@@ -189,7 +255,6 @@ const gemini = {
           const candidate = candidates[0];
           if (candidate.finishReason === "MAX_TOKENS") {
             console.warn(`⚠️ Response truncated due to MAX_TOKENS limit`);
-            // Don't throw error, try to use partial response
           } else if (
             candidate.finishReason &&
             candidate.finishReason !== "STOP"
@@ -203,7 +268,6 @@ const gemini = {
             text = response.text();
           } catch (error) {
             console.error("❌ Error extracting text:", error.message);
-            // Try alternative method
             if (candidate.content && candidate.content.parts) {
               text = candidate.content.parts
                 .map((part) => part.text || "")
@@ -211,7 +275,7 @@ const gemini = {
             }
           }
 
-          // For MAX_TOKENS, the response might be in parts but response.text() fails
+          // Handle MAX_TOKENS case
           if (
             (!text || text.trim().length === 0) &&
             candidate.finishReason === "MAX_TOKENS"
@@ -227,10 +291,6 @@ const gemini = {
             }
 
             if (!text || text.trim().length === 0) {
-              console.error("❌ MAX_TOKENS hit but no content generated");
-              console.error(
-                "This usually means max_tokens is too low for the response"
-              );
               throw new Error(
                 `MAX_TOKENS limit too restrictive. Requested tokens: ${maxOutputTokens}`
               );
@@ -239,7 +299,6 @@ const gemini = {
 
           if (!text || text.trim().length === 0) {
             console.error("❌ Empty text in response");
-            console.error("Candidate:", JSON.stringify(candidate, null, 2));
             throw new Error(
               `Empty response text (finish reason: ${candidate.finishReason})`
             );
@@ -256,7 +315,7 @@ const gemini = {
               },
             ],
           };
-        });
+        }, 5); // 5 retries with smart backoff
       },
     },
   },
@@ -265,8 +324,11 @@ const gemini = {
 console.log(
   `✅ Google Gemini client initialized with ${API_KEYS.length} API key(s)`
 );
-console.log(`🔄 API key rotation: Every ${ROTATION_INTERVAL} requests`);
 console.log(`🤖 Using model: ${MODEL}`);
 console.log(`📊 Max output tokens: 65,536`);
+console.log(
+  `🔄 Smart retry: Rotates keys only on API key errors (401/403/429)`
+);
+console.log(`⏱️ Adaptive timeout: 2min (normal) / 3min (large prompts)`);
 
 module.exports = { gemini, MODEL, getCurrentApiKey, rotateApiKey };
