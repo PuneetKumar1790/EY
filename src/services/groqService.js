@@ -66,7 +66,7 @@ Provide a detailed, structured summary covering all the above points. Be specifi
 }
 
 /**
- * Generate eligibility analysis table (with retry and simpler prompt)
+ * Generate eligibility analysis table with improved prompt
  * @param {string} tenderSummary - Comprehensive tender summary (concatenated from all PDF summaries)
  * @param {string} companyInfo - Company information text
  * @returns {Promise<string>} Eligibility analysis table
@@ -78,9 +78,8 @@ async function generateEligibilityAnalysis(tenderSummary, companyInfo) {
       `📊 Input sizes - Tender: ${tenderSummary.length} chars, Company: ${companyInfo.length} chars`
     );
 
-    // With 1M+ input tokens, we can use full inputs without truncation
-    const maxTenderLength = 100000; // ~25K tokens
-    const maxCompanyLength = 80000; // ~20K tokens
+    const maxTenderLength = 100000;
+    const maxCompanyLength = 80000;
 
     const truncatedTender =
       tenderSummary.length > maxTenderLength
@@ -98,33 +97,81 @@ async function generateEligibilityAnalysis(tenderSummary, companyInfo) {
       `📊 Processing - Tender: ${truncatedTender.length} chars, Company: ${truncatedCompany.length} chars`
     );
 
-    // Comprehensive prompt for complete analysis
-    const prompt = `You are analyzing tender eligibility. Compare the tender requirements with company information.
+    // IMPROVED PROMPT - More detailed and structured
+    const prompt = `You are a tender eligibility analyst. You have been provided with two documents:
 
-TENDER REQUIREMENTS:
+1. **TENDER DOCUMENT**: A comprehensive summary of tender requirements including all eligibility criteria, technical specifications, financial requirements, documentation needs, and submission requirements.
+
+2. **COMPANY INFORMATION DOCUMENT**: A detailed company profile containing registrations, certifications, licenses, production capacity, financial data, experience, and all relevant business information.
+
+## TENDER DOCUMENT:
 ${truncatedTender}
 
-COMPANY INFORMATION:
+## COMPANY INFORMATION DOCUMENT:
 ${truncatedCompany}
 
-TASK: Create a COMPLETE eligibility analysis table covering ALL requirements mentioned in the tender document.
+---
 
-Table format (markdown):
-| Sr. No. | Requirement | Status | Company Evidence | Notes |
+Your task is to:
+1. Carefully analyze ALL eligibility criteria mentioned in the tender document
+2. Cross-reference each requirement with the company information document
+3. Determine whether the company fulfills each specific requirement
+4. Create a comprehensive eligibility analysis table
 
-Where:
-- Requirement: Brief description of the tender requirement
-- Status: ✅ YES (fulfilled) / ❌ NO (not fulfilled) / ⚠️ PARTIAL (partially fulfilled or unclear)
-- Company Evidence: Specific data/information from company document
-- Notes: Any additional clarifications or concerns
+## OUTPUT FORMAT:
 
-IMPORTANT: 
-- Include ALL eligibility criteria, technical specs, financial requirements, documentation needs
-- Be thorough and complete - do not skip any requirements
-- Provide specific evidence from company documents
-- If information is missing or unclear in company docs, mark as ❌ NO or ⚠️ PARTIAL
+Create ONLY a table with the following structure (use proper markdown table formatting):
 
-Start the table now:`;
+| Sr. No. | Tender Requirement | Fulfilled? | Company's Status/Information | Reference in Company Info Doc |
+|---------|-------------------|------------|------------------------------|-------------------------------|
+| [number] | [Exact requirement from tender] | [✅ YES / ❌ NO / ⚠️ PARTIAL/UNCERTAIN] | [Specific data/information from company doc] | [Exact section/page reference] |
+
+## INSTRUCTIONS:
+
+1. **Completeness**: Include EVERY eligibility criterion mentioned in the tender - registration requirements, certifications, licenses, financial criteria, technical specifications, experience requirements, documentation requirements, declarations, etc.
+
+2. **Accuracy**: 
+   - Use ✅ YES only when the requirement is FULLY met
+   - Use ❌ NO when the requirement is NOT met or information is missing
+   - Use ⚠️ PARTIAL/UNCERTAIN when partially met or unclear
+
+3. **Specificity in "Company's Status/Information" column**:
+   - Quote exact numbers, dates, certificate numbers, registration numbers
+   - Be precise (e.g., "GSTIN: 24AABCA1234F1Z5" not just "Has GST")
+   - If requirement not met, state clearly what is missing
+
+4. **Exact References**:
+   - Cite the exact section name/number from the company info document
+   - If information spans multiple sections, list all relevant sections
+   - If information is NOT found anywhere, state "Not mentioned in company info doc"
+
+5. **Logical Grouping**: Organize requirements in logical groups with section headers:
+   - Registration & Certifications
+   - Technical Requirements (BIS, Type Tests, Product Specs)
+   - Financial Requirements (Fees, EMD, Turnover)
+   - Experience & Past Performance
+   - Production Capacity & Infrastructure
+   - Documentation & Declarations
+   - Delivery & Commercial Terms
+
+6. **For complex requirements** (like Minimum Tendering Quantity with multiple items):
+   - Create separate rows for each item/variant
+   - Show calculations where applicable
+
+7. **After the table, provide**:
+   - **OVERALL ELIGIBILITY**: State clearly ✅ ELIGIBLE or ❌ NOT ELIGIBLE
+   - **CRITICAL DISQUALIFYING FACTORS** (if not eligible): List 3-5 key reasons why company is not eligible
+   - **STRENGTHS** (if eligible): List 3-5 key factors that make the company a strong candidate
+
+## ANALYSIS APPROACH:
+- Read the entire tender document first to understand all requirements
+- Read the entire company information document to understand company capabilities
+- Match each tender requirement systematically against company information
+- Be objective - don't assume information that isn't explicitly stated
+- If a requirement is conditional (e.g., "if applicable"), note whether it applies to this company
+- Pay special attention to MANDATORY vs OPTIONAL requirements
+
+Now, analyze the provided tender and company documents and create the eligibility analysis table following the exact format specified above.`;
 
     const completion = await gemini.chat.completions.create({
       messages: [
@@ -134,8 +181,8 @@ Start the table now:`;
         },
       ],
       model: MODEL,
-      temperature: 0.3,
-      max_tokens: 65536, // Maximum output tokens for gemini-2.5-flash
+      temperature: 0.2,
+      max_tokens: 65536,
     });
 
     const analysis = completion.choices[0]?.message?.content || "";
@@ -144,13 +191,7 @@ Start the table now:`;
 
     if (!analysis || analysis.trim().length === 0) {
       console.error("❌ Gemini API returned empty analysis");
-      console.error("🔍 Trying alternative approach with smaller inputs...");
-
-      // Fallback: Try with even smaller inputs
-      return await generateEligibilityAnalysisSimple(
-        truncatedTender.substring(0, 10000),
-        truncatedCompany.substring(0, 8000)
-      );
+      return createFallbackAnalysis(truncatedTender, truncatedCompany);
     }
 
     console.log(
@@ -160,51 +201,9 @@ Start the table now:`;
   } catch (error) {
     console.error("❌ Error generating eligibility analysis:", error.message);
     console.error("Stack trace:", error.stack);
-
-    // Final fallback: create a simple table manually
     console.log("🔄 Attempting fallback analysis...");
     return createFallbackAnalysis(tenderSummary, companyInfo);
   }
-}
-
-/**
- * Simplified eligibility analysis with minimal prompt
- */
-async function generateEligibilityAnalysisSimple(tenderSummary, companyInfo) {
-  console.log("🔄 Attempting simplified analysis...");
-
-  const prompt = `Create brief eligibility comparison table.
-
-TENDER: ${tenderSummary.substring(0, 8000)}
-
-COMPANY: ${companyInfo.substring(0, 6000)}
-
-Table format:
-| Requirement | Status | Evidence |
-List top 10 requirements only.`;
-
-  const completion = await gemini.chat.completions.create({
-    messages: [
-      {
-        role: "user",
-        content: prompt,
-      },
-    ],
-    model: MODEL,
-    temperature: 0.5,
-    max_tokens: 65536, // Maximum for complete response
-  });
-
-  const analysis = completion.choices[0]?.message?.content || "";
-
-  if (analysis && analysis.trim().length > 0) {
-    console.log(
-      `✓ Simplified analysis generated (${analysis.length} characters)`
-    );
-    return analysis;
-  }
-
-  throw new Error("All API attempts returned empty responses");
 }
 
 /**
@@ -215,33 +214,45 @@ function createFallbackAnalysis(tenderSummary, companyInfo) {
 
   const fallbackTable = `# Eligibility Analysis Table
 
-⚠️ Note: This is a basic analysis created due to API limitations. Manual review recommended.
+⚠️ **Note**: This is a basic analysis created due to API limitations. Manual review recommended.
 
-## Tender Summary
+## Tender Summary (First 5000 characters)
 ${tenderSummary.substring(0, 5000)}
 
-## Company Information
+## Company Information (First 3000 characters)
 ${companyInfo.substring(0, 3000)}
 
 ## Analysis Status
-| Sr. No. | Category | Status | Notes |
-|---------|----------|--------|-------|
-| 1 | General Eligibility | ⚠ REVIEW REQUIRED | Manual verification needed |
-| 2 | Technical Requirements | ⚠ REVIEW REQUIRED | Manual verification needed |
-| 3 | Financial Requirements | ⚠ REVIEW REQUIRED | Manual verification needed |
-| 4 | Documentation | ⚠ REVIEW REQUIRED | Manual verification needed |
+
+| Sr. No. | Category | Fulfilled? | Company's Status/Information | Reference |
+|---------|----------|------------|------------------------------|-----------|
+| 1 | General Eligibility | ⚠️ REVIEW REQUIRED | Manual verification needed | N/A |
+| 2 | Technical Requirements | ⚠️ REVIEW REQUIRED | Manual verification needed | N/A |
+| 3 | Financial Requirements | ⚠️ REVIEW REQUIRED | Manual verification needed | N/A |
+| 4 | Documentation | ⚠️ REVIEW REQUIRED | Manual verification needed | N/A |
+
+---
+
+## OVERALL ELIGIBILITY
+❌ **NOT ELIGIBLE** - Automated analysis could not be completed
+
+## CRITICAL DISQUALIFYING FACTORS
+1. Automated analysis failed - API error or limitations
+2. Manual review required for all eligibility criteria
+3. Cannot verify compliance without complete analysis
 
 **IMPORTANT**: This automated analysis could not be completed. Please manually review the tender requirements against company information.
 
-Tender Document Length: ${tenderSummary.length} characters
-Company Info Length: ${companyInfo.length} characters
+**Document Statistics:**
+- Tender Document Length: ${tenderSummary.length} characters
+- Company Info Length: ${companyInfo.length} characters
 `;
 
   return fallbackTable;
 }
 
 /**
- * Check final eligibility (YES/NO) - With rule-based fallback
+ * Check final eligibility (YES/NO) with improved prompt
  * @param {string} eligibilityTable - Eligibility analysis table
  * @returns {Promise<string>} "YES" or "NO"
  */
@@ -289,20 +300,30 @@ async function checkFinalEligibility(eligibilityTable) {
     // If unclear, use AI for detailed analysis
     console.log(`🤖 Status unclear - using AI for detailed analysis...`);
 
-    // Use focused excerpt
-    const tableExcerpt = eligibilityTable.substring(0, 15000);
+    const tableExcerpt = eligibilityTable.substring(0, 20000);
 
-    const prompt = `Analyze this eligibility table and determine if the company is eligible.
+    // IMPROVED PROMPT - More precise and focused
+    const prompt = `You are a tender eligibility analyst.
 
-ELIGIBILITY TABLE:
+Based on the eligibility analysis table already prepared (which compares tender requirements vs. company information), output only one word:
+
+**Output "YES"** — if the company is eligible for the tender (i.e., all mandatory requirements are fulfilled).
+
+**Output "NO"** — if the company is not eligible (i.e., any mandatory requirement is missing, invalid, or uncertain).
+
+## ELIGIBILITY ANALYSIS TABLE:
 ${tableExcerpt}
 
-DECISION RULES:
-- If ANY requirement shows ❌ NO status → Company is NOT eligible
-- If MOST requirements show ⚠️ PARTIAL → Company is NOT eligible  
-- If MOST requirements show ✅ YES with few/no ❌ → Company IS eligible
+## DECISION RULES:
+1. If ANY requirement shows ❌ NO status → Company is **NOT eligible**
+2. If MOST requirements show ⚠️ PARTIAL/UNCERTAIN → Company is **NOT eligible**  
+3. If MOST requirements show ✅ YES with few/no ❌ or ⚠️ → Company **IS eligible**
+4. Focus on MANDATORY requirements - these are critical
+5. Minor missing documentation may be acceptable if core eligibility is met
 
-Respond with ONLY one word: YES or NO
+**Do not provide explanations, tables, or reasoning.**
+
+**Return only YES or NO as the final output.**
 
 Your decision:`;
 
@@ -315,7 +336,7 @@ Your decision:`;
       ],
       model: MODEL,
       temperature: 0.0,
-      max_tokens: 1000,
+      max_tokens: 10,
     });
 
     console.log(`📊 AI analysis complete`);
@@ -339,7 +360,6 @@ Your decision:`;
     return finalResult;
   } catch (error) {
     console.error("❌ Error in checkFinalEligibility:", error.message);
-    // On error, default to NO for safety
     console.log("⚠️ Error occurred - defaulting to NO for safety");
     return "NO";
   }

@@ -93,7 +93,7 @@ function shouldRotateAutomatically() {
   }
 }
 
-// Use gemini-2.5-flash (confirmed available from your API)
+// Use gemini-2.5-flash - confirmed available from your list
 const MODEL = "gemini-2.5-flash";
 
 /**
@@ -132,6 +132,9 @@ const gemini = {
             `🔍 API Request - Model: ${geminiModel}, Prompt length: ${prompt.length} chars`
           );
 
+          // gemini-2.5-flash supports up to 65536 output tokens
+          const maxOutputTokens = max_tokens || 65536;
+
           // Generate content with safety settings disabled
           const result = await genModel.generateContent({
             contents: [
@@ -142,7 +145,7 @@ const gemini = {
             ],
             generationConfig: {
               temperature: temperature || 0.7,
-              maxOutputTokens: max_tokens || 65536, // Use maximum available tokens
+              maxOutputTokens: maxOutputTokens,
             },
             safetySettings: [
               {
@@ -216,10 +219,6 @@ const gemini = {
             console.log(
               "🔍 Trying to extract partial response from MAX_TOKENS..."
             );
-            console.log(
-              "🔍 Full candidate structure:",
-              JSON.stringify(candidate, null, 2)
-            );
             if (candidate.content && candidate.content.parts) {
               text = candidate.content.parts
                 .map((part) => part.text || "")
@@ -227,17 +226,13 @@ const gemini = {
               console.log(`✓ Extracted ${text.length} characters from parts`);
             }
 
-            // If still empty with MAX_TOKENS, the model started generating but produced nothing
-            // This can happen with very restrictive token limits
             if (!text || text.trim().length === 0) {
               console.error("❌ MAX_TOKENS hit but no content generated");
               console.error(
                 "This usually means max_tokens is too low for the response"
               );
               throw new Error(
-                `MAX_TOKENS limit too restrictive. Requested tokens: ${
-                  max_tokens || "default"
-                }`
+                `MAX_TOKENS limit too restrictive. Requested tokens: ${maxOutputTokens}`
               );
             }
           }
@@ -272,5 +267,6 @@ console.log(
 );
 console.log(`🔄 API key rotation: Every ${ROTATION_INTERVAL} requests`);
 console.log(`🤖 Using model: ${MODEL}`);
+console.log(`📊 Max output tokens: 65,536`);
 
 module.exports = { gemini, MODEL, getCurrentApiKey, rotateApiKey };
