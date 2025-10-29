@@ -46,7 +46,7 @@ Provide a detailed, structured summary covering all the above points. Be specifi
       ],
       model: MODEL,
       temperature: 0.3,
-      max_tokens: 8192,
+      max_tokens: 16384, // INCREASED from 8192 to handle longer summaries
     });
 
     const summary = completion.choices[0]?.message?.content || "";
@@ -225,7 +225,7 @@ Now, analyze the provided tender and company documents and create the eligibilit
       ],
       model: MODEL,
       temperature: 0.2,
-      max_tokens: 65536,
+      max_tokens: 65536, // MAXIMUM tokens for comprehensive analysis
     });
 
     const analysis = completion.choices[0]?.message?.content || "";
