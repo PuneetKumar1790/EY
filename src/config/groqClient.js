@@ -51,35 +51,14 @@ function createGeminiClient() {
 }
 
 /**
- * Check if error requires API key rotation
- */
-function shouldRotateKey(errorMsg) {
-  const rotationTriggers = [
-    "401", // Unauthorized
-    "403", // Forbidden
-    "429", // Rate limit
-    "quota",
-    "rate limit",
-    "authentication",
-    "api key",
-    "invalid api key",
-    "api_key_invalid",
-  ];
-
-  return rotationTriggers.some((trigger) =>
-    errorMsg.toLowerCase().includes(trigger)
-  );
-}
-
-/**
- * Execute a function with automatic API key rotation ONLY on errors
+ * Execute a function with automatic API key rotation ON EVERY ERROR
  * @param {Function} fn - Function to execute
  * @param {number} maxRetries - Maximum number of retries
  * @returns {Promise<any>} Result of the function
  */
-async function executeWithRotation(fn, maxRetries = API_KEYS.length * 2) {
+async function executeWithRotation(fn, maxRetries = API_KEYS.length * 3) {
   let lastError;
-  let consecutiveFailures = 0;
+  const attemptedKeys = new Set();
 
   for (let attempt = 0; attempt < maxRetries; attempt++) {
     try {
@@ -94,13 +73,12 @@ async function executeWithRotation(fn, maxRetries = API_KEYS.length * 2) {
       // Execute the function and WAIT for completion
       const result = await fn(client);
 
-      // Success - reset failure counter and return immediately
-      consecutiveFailures = 0;
+      // Success - return immediately
       console.log(`✅ Request successful with API key ${currentKeyIndex + 1}`);
+      attemptedKeys.clear();
       return result;
     } catch (error) {
       lastError = error;
-      consecutiveFailures++;
       const errorMsg = error.message?.toLowerCase() || "";
 
       console.error(
@@ -110,36 +88,16 @@ async function executeWithRotation(fn, maxRetries = API_KEYS.length * 2) {
         error.message
       );
 
-      // Check if it's a retryable error
-      const isKeyError = shouldRotateKey(errorMsg);
-      const isServiceError =
-        errorMsg.includes("503") ||
-        errorMsg.includes("overloaded") ||
-        errorMsg.includes("timeout") ||
-        errorMsg.includes("network") ||
-        errorMsg.includes("fetch failed");
+      // Track which keys we've tried
+      attemptedKeys.add(currentKeyIndex);
 
-      // Non-retryable errors - stop immediately
-      if (!isKeyError && !isServiceError) {
-        console.error("❌ Non-retryable error - stopping immediately");
-        throw error;
-      }
-
-      // Rotate key ONLY if it's an API key specific error
-      if (isKeyError && API_KEYS.length > 1) {
-        console.log(`🔑 API key error detected - rotating to next key`);
-        rotateApiKey();
-        consecutiveFailures = 0; // Reset after rotation
-
-        // Short delay after key rotation
-        await sleep(500);
-        continue;
-      }
-
-      // For service errors, retry with same key after backoff
-      if (isServiceError) {
-        console.log(
-          `⚠️ Service/network error - retrying with same key after backoff`
+      // If we've tried all keys, throw error
+      if (attemptedKeys.size >= API_KEYS.length && API_KEYS.length > 1) {
+        console.error(
+          `❌ All ${API_KEYS.length} API keys have been tried and failed`
+        );
+        throw new Error(
+          `All API keys exhausted. Last error: ${lastError.message}`
         );
       }
 
@@ -150,15 +108,26 @@ async function executeWithRotation(fn, maxRetries = API_KEYS.length * 2) {
         );
       }
 
-      // Exponential backoff with jitter for service errors
-      const baseDelay = Math.min(
-        1000 * Math.pow(2, consecutiveFailures),
-        30000
-      );
-      const jitter = Math.random() * 1000;
-      const delay = baseDelay + jitter;
+      // ROTATE ON EVERY ERROR (this is the key change)
+      if (API_KEYS.length > 1) {
+        console.log(`🔄 Error detected - rotating to next API key`);
+        rotateApiKey();
 
-      console.log(`⏳ Waiting ${(delay / 1000).toFixed(1)}s before retry...`);
+        // Short delay after key rotation to avoid rate limits
+        await sleep(1000);
+        continue;
+      }
+
+      // If only one key, use exponential backoff
+      const backoffDelay = Math.min(2000 * Math.pow(2, attempt), 30000);
+      const jitter = Math.random() * 1000;
+      const delay = backoffDelay + jitter;
+
+      console.log(
+        `⏳ Only 1 API key available. Waiting ${(delay / 1000).toFixed(
+          1
+        )}s before retry...`
+      );
       await sleep(delay);
     }
   }
@@ -171,7 +140,7 @@ async function executeWithRotation(fn, maxRetries = API_KEYS.length * 2) {
 const MODEL = "gemini-2.5-flash";
 
 /**
- * Wrapper for Gemini API that handles rotation ONLY on errors
+ * Wrapper for Gemini API that handles rotation ON EVERY ERROR
  */
 const gemini = {
   chat: {
@@ -206,11 +175,9 @@ const gemini = {
             }/${API_KEYS.length}, Prompt: ${prompt.length} chars`
           );
 
-          // INCREASED: Default max output tokens to handle longer responses
           const maxOutputTokens = max_tokens || 65536;
+          const timeoutMs = prompt.length > 50000 ? 420000 : 420000; // 7 minutes
 
-          // Adaptive timeout based on prompt size
-          const timeoutMs = prompt.length > 50000 ? 420000 : 420000; // 7 minutes for all prompts
           console.log(`⏱️ Request timeout set to ${timeoutMs / 1000}s`);
           console.log(`📊 Max output tokens: ${maxOutputTokens}`);
 
@@ -246,7 +213,6 @@ const gemini = {
                 },
               ],
             }),
-            // Adaptive timeout
             new Promise((_, reject) =>
               setTimeout(
                 () =>
@@ -283,9 +249,6 @@ const gemini = {
             console.warn(
               `⚠️ Response truncated due to MAX_TOKENS limit (limit: ${maxOutputTokens})`
             );
-            console.warn(
-              `⚠️ Consider increasing max_tokens in the request or simplifying the prompt`
-            );
           } else if (
             candidate.finishReason &&
             candidate.finishReason !== "STOP"
@@ -306,7 +269,7 @@ const gemini = {
             }
           }
 
-          // Handle MAX_TOKENS case - still return partial response
+          // Handle MAX_TOKENS case
           if (
             (!text || text.trim().length === 0) &&
             candidate.finishReason === "MAX_TOKENS"
@@ -346,7 +309,7 @@ const gemini = {
               },
             ],
           };
-        }, API_KEYS.length * 2); // Max retries = 2x number of keys
+        }, API_KEYS.length * 3); // Max retries = 3x number of keys
       },
     },
   },
@@ -357,10 +320,8 @@ console.log(
 );
 console.log(`🤖 Using model: ${MODEL}`);
 console.log(`📊 Default max output tokens: 65,536`);
-console.log(
-  `🔄 Smart rotation: Rotates keys ONLY on API key errors (401/403/429)`
-);
-console.log(`⏱️ Sticky keys: Waits for completion on each key before rotating`);
-console.log(`⏱️ Adaptive timeout: 2min (normal) / 3min (large prompts)`);
+console.log(`🔄 AGGRESSIVE ROTATION: Switches to next key on EVERY error`);
+console.log(`⏱️ Adaptive timeout: 7 minutes for all prompts`);
+console.log(`🔑 Max retries: ${API_KEYS.length * 3} attempts`);
 
 module.exports = { gemini, MODEL, getCurrentApiKey, rotateApiKey };
