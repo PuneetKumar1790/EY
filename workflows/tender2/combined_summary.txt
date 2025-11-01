@@ -1,0 +1,402 @@
+This document outlines the technical specifications and requirements for a tender issued by Paschim Gujarat Vij Company Ltd. for the procurement of LT Aerial Bunched Cables. The summary below captures all essential details for eligibility, product matching, and pricing analysis, organized into clearly labeled sections.
+
+### 1. Tender Overview
+
+This section summarizes the basic identity of the tender, providing foundational information for tracking and initial assessment. The Tender ID / Reference No. for this procurement is PGVCL/PROC/LT AB Cable/1228, which serves as the primary identifier for all related documentation and communications. The Tender Title / Name can be inferred as "Procurement of LT Aerial Bunched Cables (XLPE Insulated) for LT Lines," specifically covering sizes 3C x 35mm² + 1C x 16mm² + 25mm² and 3C x 50mm² + 1C x 25mm² + 35mm². The Organization / Issuing Authority is Paschim Gujarat Vij Company Ltd. (PGVCL), with its registered and corporate office located in Rajkot, Gujarat, which is crucial for understanding the regional context and compliance requirements. The Tender Portal / URL is not explicitly stated for bid submission, but PGVCL's official website is www.pgvcl.com, and their email for general inquiries is info.pgvcl@gebmail.com, which can be used for cross-verification.
+
+### 2. Key Dates and Timeline
+
+This section captures all critical timeline data necessary for scheduling internal actions and ensuring compliance with submission deadlines. The Issue Date / Publication Date is not specified within the provided document. Similarly, the Submission Deadline / Closing Date & Time for bid submission is not mentioned in this excerpt. The Bid Opening Date / Technical Evaluation Date is also not provided. Furthermore, the Bid Validity Period, which confirms the assumed compliance period for the submitted offers, is not stated in the available text.
+
+### 3. Tender Scope and Items (BOQ / Schedule-A)
+
+This section summarizes all items requested in the tender's Bill of Quantities (BOQ) or Schedule-A, detailing product descriptions and specifications. The tender specifically covers XLPE insulated Aluminum Aerial Bunched Cables for LT lines. Two primary product configurations are requested: LT AB Cable, 3C x 35mm² + 1C x 16mm² + 25mm² messenger, and LT AB Cable, 3C x 50mm² + 1C x 25mm² + 35mm² messenger. Both types are intended for use in L.T. Over-Head lines within Rural Electrification Systems. The unit of measurement for these cables is typically kilometers (km), as implied by resistance values per km and standard drum lengths in meters, though specific total quantities for each item are not provided in this document.
+
+### 4. Delivery & Logistics Details
+
+This section extracts all information related to delivery, consignee, and dispatch locations, which is vital for calculating logistics costs and planning. The specific Delivery Location / Consignee Address is not explicitly stated as a central store or site, but the issuing authority, PGVCL, is based in Rajkot, Gujarat, suggesting deliveries would be within their operational jurisdiction. The Delivery Schedule / Completion Period for the supply of cables is not mentioned in this document. Regarding inspection, all tests and inspections are to be made at the place of the manufacturer unless otherwise agreed upon, with the manufacturer affording reasonable facilities to the purchaser's inspector. No specific third-party Inspection Agency is mandated. The Destination Jurisdiction / State-Specific Rules indicate that the tender is issued by PGVCL, a Gujarat-based utility, and mentions GUVNL (Gujarat Urja Vikas Nigam Ltd), implying adherence to Gujarat state-specific vendor rules and benefits.
+
+### 5. Eligibility and Registration Requirements
+
+This section summarizes all vendor eligibility conditions, including required certificates and compliance mandates, which are crucial for determining a bidder's qualification. The tender requires Manufacturer / OEM Status, as tenderers must have experience in manufacturing and supplying these cables. A key Vendor Registration Requirement is implied by the need for experience with "any Electricity Board" and the submission of past order lists with GUVNL/DGVCL/MGVCL/UGVCL/PGVCL. Furthermore, bidders must possess a valid Factory License and specifically an ISI License for IS:14255/1995, which must remain valid until the order is completed. Experience / Past Supply Clauses mandate that the tenderer must have "some experience of manufacturer and supply of this cable to any Electricity Board," requiring submission of copies of executed orders and performance reports. Financial Turnover Threshold / Net Worth Criteria are not specified in the provided text. Blacklist Declaration, MSME Benefits, and Border Compliance Clauses are also not mentioned in this document.
+
+### 6. Technical Specifications (Core Product Data)
+
+This section summarizes every distinct technical specification from the tender, providing core product data for SKU mapping and technical compliance checks. The cables are XLPE insulated Aluminum cables twisted over a central bare Aluminum Alloy messenger wire, rated for 1100 volts. Applicable Standards include IS-14255/1995 for ABC cables, IS-8130/1984 for conductors, IS-398/Pt.IV/1994 for aluminum alloy conductors, IS-10418/1982 for drums, and IS-7098(Part-II):85 for XLPE insulation. The Conductor_Material for phase and neutral conductors is Aluminum, while the messenger wire is bare heat-treated aluminum alloy (0.5% magnesium, 0.5% silicon). The Insulation_Type is XLPE, colored black, with phase conductors having ridges for identification.
+For the **3C x 35mm² + 1C x 16mm² + 25mm² messenger** cable:
+*   Phase Conductors: 35mm² (7 strands, 6.8mm diameter, 95 Kg/Km approx. mass, 0.868 Ohm/km max DC resistance, 1.2mm insulation thickness).
+*   Neutral Conductor: 16mm² (7 strands, 4.4mm diameter, 42 Kg/Km approx. mass, 1.91 Ohm/km max DC resistance, 1.2mm insulation thickness).
+*   Messenger Wire: 25mm² (7 strands, 5.8mm diameter, 65 Kg/Km approx. mass, 1.380 Ohm/km max DC resistance).
+For the **3C x 50mm² + 1C x 25mm² + 35mm² messenger** cable:
+*   Phase Conductors: 50mm² (7 strands, 7.9mm diameter, 127 Kg/Km approx. mass, 0.641 Ohm/km max DC resistance, 1.5mm insulation thickness).
+*   Neutral Conductor: 25mm² (7 strands, 5.5mm diameter, 65 Kg/Km approx. mass, 1.20 Ohm/km max DC resistance, 1.2mm insulation thickness).
+*   Messenger Wire: 35mm² (7 strands, 6.8mm diameter, 95 Kg/Km approx. mass, 0.986 Ohm/km max DC resistance).
+Common technical parameters include: Tensile_Strength_min_N_mm² for aluminum wire in conductor is 90 N/mm², and for XLPE insulation is 12.5 N/mm². Elongation at break for insulation is 200% Min. Volume resistivity of insulation is 1 x 10^13 Ohm-cm Min at 27ºC and 1 x 10^11 Ohm-cm Min at 70°C.
+
+### 7. Commercial & Financial Terms
+
+This section extracts major financial or commercial conditions, which are critical for pricing and risk assessment. The Tender Fee, Earnest Money Deposit (EMD), and Performance Security amounts are not specified in the provided document. Payment Terms, such as the duration for payment after delivery, are not mentioned. Details regarding any Delivery Penalty or Liquidated Damages (LD) Clause for delays are also not included. Furthermore, there is no mention of a Price Variation / Escalation Clause, implying that the price offered would be firm. The Price Basis (e.g., FOR Destination / Ex-Works) is also not specified in this excerpt.
+
+### 8. Evaluation Criteria
+
+This section summarizes how the tender will be evaluated, providing insight into the selection process. The Technical Bid Evaluation Basis emphasizes strict conformity to technical specifications and mandatory document submission. Offers will be liable to be ignored or rejected without further correspondence if valid ISI Licenses, duly filled Guaranteed Technical Particulars (GTP), or attested copies of type test certificates from Government of India approved laboratories are not submitted. The Financial Bid Evaluation Basis is not detailed in this document, so the method for determining the lowest bidder (L1) is not specified. There are no explicit Preference Clauses mentioned, such as those for MSMEs, nor is any specific Weightage or Scoring Mechanism outlined for technical or financial bids.
+
+### 9. Contacts and Clarifications
+
+This section captures key communication details for any escalation or queries, ensuring proper channels for interaction. A specific Contact Person / Designation for the tender is not provided in the document. However, the general Email / Phone details for PGVCL are info.pgvcl@gebmail.com, and phone numbers (0281)2380425, 2380427 are listed. The full Office Address for the issuing authority is Paschim Gujarat Vij Company Ltd., Regd. & Corporate Office, “Paschim Gujarat Vij Seva Sadan”, Nana Mava main Road, Laxminagar, Rajkot - 360 004.
+
+### 10. Key Compliance Notes
+
+This section summarizes important procedural and legal compliances, crucial for a successful bid. The Document Submission Format is not explicitly stated as online or physical, but the requirement for attested copies implies a physical submission or upload of scanned documents. Agreement & Contract Execution Clauses are not detailed in this document. The Warranty / Guarantee Period for the supplied cables is not specified. After-Sales Service Clause is also not mentioned. The standard length for cable drums is 500 meters, with a +/- 5% tolerance. Non-standard lengths, not less than 50% of the standard length, will be accepted up to 10% of the total ordered quantity. An overall tolerance of +/- 2% is allowable on the total ordered quantity. Crucially, the material supplied must conform to Indian Standard Specifications and bear ISI marking; any material received at the site without ISI marking will be rejected. Type test certificates must not be more than five years old from the date of tender opening.
+
+### 11. Optional Attachments or Annexures
+
+This section lists any referenced drawings, appendices, or sample formats that are part of the tender documentation. The tender document itself includes a "Guaranteed Technical Particulars (G.T.P.)" section, which bidders must fill out, divided into Part A (confirmation of requirements), Part B (furnishing material details), Part C (enclosures), and Part D (deviation statement). Required enclosures include the ISI License, proof of renewal if applicable, Type Test Certificates from a Government of India approved laboratory, a list of plant and machinery, a list of testing facilities available, and a list of orders pending/executed with GUVNL/DGVCL/MGVCL/UGVCL/PGVCL or other agencies.
+
+### 12. Summary Conclusion
+
+This tender from Paschim Gujarat Vij Company Ltd. (PGVCL) is for the procurement of two variants of XLPE insulated Aluminum Aerial Bunched Cables: 3C x 35mm² + 1C x 16mm² + 25mm² messenger and 3C x 50mm² + 1C x 25mm² + 35mm² messenger. The primary product types are LT AB Cables, in both 1C and 3C variants, designed for 1100-volt overhead lines. While specific delivery destinations are not detailed, they are expected to be within PGVCL's operational areas in Gujarat. The overall eligibility context dictates that only manufacturers with demonstrated experience in supplying similar cables to Electricity Boards, possessing valid and current ISI licenses for IS:14255/1995, and providing recent type test certificates from government-approved laboratories, are eligible to bid.
+
+=== SUMMARY FROM PDF 2 ===
+
+Here is a comprehensive, descriptive summary of the provided tender document for Asian Wires Pvt. Ltd.:
+
+**1. Tender Overview**
+
+This section summarizes the basic identity of the tender. The Tender ID / Reference No. is PGVCL/PROC/LT AB Cable/1228, which serves as the primary identifier for all related documentation and tracking. The Tender Title / Name is "TECHNICAL SPECIFICATION OF LT AERIAL BUNCHED CABLES FOR LT LINES (APPLICABLE FOR LT AB CABLE WITH XLPE INSULATION ONLY) (Size 1C x35mm²+1C x16 + 25mm² and 2C x50mm² +1Cx25 + 35mm²)," providing an immediate understanding of the product category and scope for internal stakeholders. The Organization / Issuing Authority is Paschim Gujarat Vij Company Ltd. (PGVCL), which is crucial for verifying eligibility and regional compliance. The Tender Portal / URL for cross-verification and access to amendments is www.pgvcl.com.
+
+**2. Key Dates and Timeline**
+
+This section captures all critical timeline data for scheduling and compliance. The provided document, being primarily technical specifications, does not explicitly state an Issue Date / Publication Date, Submission Deadline / Closing Date & Time, Bid Opening Date / Technical Evaluation Date, or Bid Validity Period. Therefore, these critical timeline details are not available within the scope of this document.
+
+**3. Tender Scope and Items (BOQ / Schedule-A)**
+
+This section summarizes all items requested in the tender BOQ. The tender primarily requests XLPE insulated Aluminum Aerial Bunched Cables twisted over a central bare Aluminum Alloy messenger wire for use in L.T. Over-Head lines in Rural Electrification System. The document specifies two main product variations. The first line item is LT AB Cable, 1C x 35mm² (phase) + 1C x 16mm² (neutral) + 25mm² (messenger), with the phase and neutral conductors being XLPE insulated and the messenger wire being bare aluminium alloy. The second line item is LT AB Cable, 2C x 50mm² (phase) + 1C x 25mm² (neutral) + 35mm² (messenger), also with XLPE insulated phase and neutral conductors and a bare aluminium alloy messenger wire. The standard unit of measurement for these cables is meters, with a standard drum length of 500 meters (+/- 5% tolerance). Non-standard lengths, not less than 50% of the standard length, will be accepted up to 10% of the total ordered quantity. The total quantities for each item are not specified in this document.
+
+**4. Delivery & Logistics Details**
+
+This section extracts every mention of delivery, consignee, or dispatch locations. While a specific Delivery Location / Consignee Address is not explicitly stated for the tender, the issuing authority's Registered & Corporate Office is "Paschim Gujarat Vij Seva Sadan, Nana Mava main Road, Laxminagar, Rajkot - 360 004," which is likely the general region for delivery. The Delivery Schedule / Completion Period is not mentioned in the provided document. Inspection Agency details indicate that all tests and inspections shall be made at the place of manufacturer unless otherwise agreed upon by the manufacturer and purchaser, implying a pre-dispatch inspection at the supplier's facility. The Destination Jurisdiction / State-Specific Rules highlight that PGVCL is a Gujarat-based utility, and the document mentions other Gujarat DISCOMs (DGVCL/MGVCL/UGVCL) as potential purchasers, suggesting a focus on suppliers familiar with the state's requirements.
+
+**5. Eligibility and Registration Requirements**
+
+This section summarizes all vendor eligibility conditions, including certificates and compliance mandates. The tender implicitly requires Manufacturer / OEM Status, as it frequently refers to the "place of manufacturer" and "experience of manufacturer and supply." A key Vendor Registration Requirement is not explicitly stated as a prerequisite, but the experience clause suggests a preference for vendors familiar with Electricity Boards. Mandatory Factory License, BIS, ISO Requirements include the submission of a duly attested photocopy of a valid ISI License for IS: 14255/1995, which must remain valid until the order is completed. Notably, ISI marking is required for the 1C x 35mm² + 1C x 16mm² + 25mm² LT AB Cable, but not for the 2C x 50mm² + 1C x 25mm² + 35mm² LT AB Cable, as per the latest amendment of IS: 14255-1995. Experience / Past Supply Clauses mandate that the tenderer must have experience manufacturing and supplying similar cables to any Electricity Board, requiring submission of executed order copies and performance reports. Financial Turnover Threshold / Net Worth Criteria are not specified. Blacklist Declaration, MSME Benefits, and Border Compliance Clauses are not mentioned in this document. Additionally, bidders must submit duly attested Type Test Certificates for the offered sizes, obtained from a Government of India approved laboratory, which must not be more than five years old from the tender opening date.
+
+**6. Technical Specifications (Core Product Data)**
+
+This section summarizes every distinct technical specification table from the tender's technical sections.
+
+**For LT AB Cable, 1C x 35mm² + 1C x 16mm² + 25mm² messenger:**
+*   **Cable_Type:** LT Aerial Bunched Cable, XLPE insulated.
+*   **Core_Configuration:** 1 Phase (35mm² phase, 16mm² neutral) + 25mm² messenger. Phase conductors have one, two, or three ridges for identification.
+*   **Insulation_Type:** XLPE.
+*   **Rated_Voltage:** 1100 Volts.
+*   **Applicable_Standards:** IS-14255/1995 (ABC cables), IS-8130/1984 (Conductors), IS-398/Pt.IV/1994 (Aluminium alloy conductor), IS-10418/1982 (Drums).
+*   **Conductor_Material (Phase & Neutral):** Aluminium as per IS 8130/1984. Tensile strength of aluminum wire used in conductor not less than 90 N/mm².
+*   **Messenger_Material:** Bare heat-treated aluminium silicon containing 0.5% magnesium and approximately 0.5% silicon, confirming to IS: 398 (Part-IV):1979 and its latest amendment. Aluminium Alloy as per IS 398/Pt.IV/1994.
+*   **Insulation_Thickness_min_mm:** 1.2 mm for 35mm² and 16mm² conductors.
+*   **No_of_Strands (Phase/Neutral/Messenger):** 7 strands for all specified conductor sizes.
+*   **Max_DC_Resistance_Ohm_km (Phase 35mm²):** 0.868 Ohm/km.
+*   **Max_DC_Resistance_Ohm_km (Neutral 16mm²):** 1.91 Ohm/km.
+*   **Max_DC_Resistance_Ohm_km (Messenger 25mm²):** 1.380 Ohm/km.
+*   **Insulation_Color:** Black.
+*   **Insulation_Tensile_Strength:** 12.5 N/mm² Min.
+*   **Insulation_Elongation_at_break:** 200 % Min.
+*   **Insulation_Volume_Resistivity_at_27C:** 1 x 10^13 Ohm-cm Min.
+*   **Insulation_Volume_Resistivity_at_70C:** 1 x 10^11 Ohm-cm Min.
+*   **Marking:** ISI mark required on cable and drum. Embossing on cable and marking on drum shall include Purchaser (DGVCL/MGVCL/PGVCL/UGVCL), 1100 Volts, IS:14255/1995, Year of manufacture, and Trade Mark.
+
+**For LT AB Cable, 2C x 50mm² + 1C x 25mm² + 35mm² messenger:**
+*   **Cable_Type:** LT Aerial Bunched Cable, XLPE insulated.
+*   **Core_Configuration:** 2 Phase (50mm² phase) + 1C x 25mm² (neutral) + 35mm² messenger. Phase conductors have one, two, or three ridges for identification.
+*   **Insulation_Type:** XLPE.
+*   **Rated_Voltage:** 1100 Volts.
+*   **Applicable_Standards:** IS-14255/1995 (ABC cables), IS-8130/1984 (Conductors), IS-398/Pt.IV/1994 (Aluminium alloy conductor), IS-10418/1982 (Drums).
+*   **Conductor_Material (Phase & Neutral):** Aluminium as per IS 8130/1984. Tensile strength of aluminum wire used in conductor not less than 90 N/mm².
+*   **Messenger_Material:** Bare heat-treated aluminium silicon containing 0.5% magnesium and approximately 0.5% silicon, confirming to IS: 398 (Part-IV):1979 and its latest amendment. Aluminium Alloy as per IS 398/Pt.IV/1994.
+*   **Insulation_Thickness_min_mm:** 1.5 mm for 50mm² and 25mm² conductors.
+*   **No_of_Strands (Phase/Neutral/Messenger):** 7 strands for all specified conductor sizes.
+*   **Max_DC_Resistance_Ohm_km (Phase 50mm²):** 0.641 Ohm/km.
+*   **Max_DC_Resistance_Ohm_km (Neutral 25mm²):** 1.20 Ohm/km.
+*   **Max_DC_Resistance_Ohm_km (Messenger 35mm²):** 0.986 Ohm/km.
+*   **Insulation_Color:** Black.
+*   **Insulation_Tensile_Strength:** 12.5 N/mm² Min.
+*   **Insulation_Elongation_at_break:** 200 % Min.
+*   **Insulation_Volume_Resistivity_at_27C:** 1 x 10^13 Ohm-cm Min.
+*   **Insulation_Volume_Resistivity_at_70C:** 1 x 10^11 Ohm-cm Min.
+*   **Marking:** ISI mark is not applicable for this size as per latest amendment of IS: 14255-1995 (amendment No.1, October 2010). Embossing on cable and marking on drum shall include Purchaser (DGVCL/MGVCL/PGVCL/UGVCL), 1100 Volts, IS:14255/1995, Year of manufacture, and Trade Mark.
+
+**7. Commercial & Financial Terms**
+
+This section extracts major financial or commercial conditions. The provided document, being primarily technical specifications, does not contain information regarding Tender Fee, EMD, and Performance Security amounts or capabilities. Similarly, Payment Terms, Delivery Penalty or LD Clause details, Price Variation / Escalation Clause, or the Price Basis (e.g., FOR Destination / Ex-Works) are not specified within this document.
+
+**8. Evaluation Criteria**
+
+This section summarizes how the tender will be evaluated. The Technical Bid Evaluation Basis will primarily focus on conformity to the detailed technical specifications outlined, the submission of a valid ISI License (where applicable), a duly filled Guaranteed Technical Particulars (GTP) form, and valid Type Test Certificates from a Government of India approved laboratory. Offers may be ignored or rejected without these mandatory submissions. Details regarding Financial Bid Evaluation Basis, Preference Clauses (such as MSME preference), or any specific Weightage or Scoring Mechanism are not provided in this document.
+
+**9. Contacts and Clarifications**
+
+This section captures key communication details for escalation or queries. A specific Contact Person / Designation is not mentioned in the document. However, the Email for inquiries is info.pgvcl@gebmail.com, and Phone numbers are (0281)2380425, 2380427. The Office Address for the issuing authority is Regd. & Corporate Office, “Paschim Gujarat Vij Seva Sadan”, Nana Mava main Road, Laxminagar, Rajkot - 360 004.
+
+**10. Key Compliance Notes**
+
+This section summarizes important procedural and legal compliances. The Document Submission Format is not explicitly stated as online or offline, but it implies submission "along with the offer." Agreement & Contract Execution Clauses, Warranty / Guarantee Period, and After-Sales Service Clauses are not detailed in this document. Key general compliance notes include that the AB Cable must be manufactured and supplied confirming to IS: 14255/1995 with its latest amendment and PGVCL’s specific requirements. Cables must be wound in non-returnable drums conforming to IS-10418/1982, ensuring they are suitable for wheel mounting and contain only one length of cable. An overall tolerance of +/- 2% is permissible in the supply of the total ordered quantity.
+
+**11. Optional Attachments or Annexures**
+
+This section lists any referenced drawings, appendices, or sample formats. The document itself is a "Technical specifications and GTP" and refers to "PART – C (ENCLOSURES)" which outlines several mandatory documents to be enclosed by bidders. These include the ISI License (and proof of renewal if applicable), Type Test Certificates from a Govt. of India approved Laboratory for both specified AB Cable sizes, a list of plant and machinery, a list of available testing facilities, and lists of orders pending/executed with GUVNL/DGVCL/MGVCL/UGVCL/PGVCL and other agencies. Additionally, bidders are required to mention any deviations in "PART – D" by quoting the relevant clause of the specification.
+
+**12. Summary Conclusion**
+
+In conclusion, this tender from Paschim Gujarat Vij Company Ltd. (PGVCL) requests the procurement of two distinct types of LT Aerial Bunched Cables: 1C x 35mm² + 1C x 16mm² + 25mm² messenger and 2C x 50mm² + 1C x 25mm² + 35mm² messenger, both featuring XLPE insulation. The delivery destination is implied to be PGVCL stores, likely within the Rajkot, Gujarat region. The overall eligibility context mandates that bidders must be manufacturers with prior experience supplying similar cables to Electricity Boards, possess valid ISI licenses for the applicable cable sizes, and provide recent type test certificates from government-approved laboratories, ensuring strict adherence to IS: 14255/1995 and PGVCL's technical specifications. This summary provides the foundational data for subsequent eligibility analysis, SKU mapping, and pricing computations.
+
+=== SUMMARY FROM PDF 3 ===
+
+Here is a comprehensive, descriptive summary of the provided tender document for Asian Wires Pvt. Ltd., organized into clear, labeled sections as requested.
+
+---
+
+**1. Tender Overview**
+
+This section summarizes the basic identity of the tender, providing essential information for initial identification and tracking. The Tender ID serves as the primary reference, the Tender Title gives an immediate understanding of the scope, the Issuing Authority is crucial for eligibility checks, and any Tender Portal details ensure access to official documentation and amendments.
+
+Tender ID / Reference No.: The tender is identified by the reference number PGVCL/PROC/LT AB Cable/1228.
+Tender Title / Name: While not explicitly stated as a formal title, the tender pertains to the procurement of LT Aerial Bunched Cable, as indicated by the Tender ID and repeated references to "tendered equipment / material" for "LT AB Cable."
+Organization / Issuing Authority: The tender is issued by Paschim Gujarat Vij Company Ltd. (PGVCL), which is a subsidiary company of GUVNL.
+Tender Portal / URL: The provided document does not explicitly state a specific tender portal or URL, though it mentions online submission for bids and refers to "nProcure portal" in the prompt's example, implying such portals are used.
+
+**2. Key Dates and Timeline**
+
+This section captures all critical timeline data, which is essential for scheduling internal actions, ensuring timely submission, and planning for subsequent evaluation phases. These dates dictate the project's pace and compliance requirements.
+
+Issue Date / Publication Date: The specific issue or publication date of the tender is not provided within the given document text.
+Submission Deadline / Closing Date & Time: The exact submission deadline and closing time are not specified in the provided document, though it repeatedly emphasizes adherence to "due date and time for submission of tender."
+Bid Opening Date / Technical Evaluation Date: Specific dates for bid opening or technical evaluation are not mentioned in the provided document, but it refers to "before opening of Price Bid" and "After opening Technical bid."
+Bid Validity Period: The document does not explicitly state a general bid validity period, but it specifies that if EMD is paid by Bank Guarantee, its validity must be for 6 months from the date of submission of the bid.
+
+**3. Tender Scope and Items (BOQ / Schedule-A)**
+
+This section summarizes all items requested in the tender's Bill of Quantities (BOQ) or Schedule-A. Extracting each line item, including product description, specification, quantity, and unit of measurement, is vital for product matching, inventory assessment, and accurate pricing. It ensures a clear understanding of what products Asian Wires Pvt. Ltd. needs to supply.
+
+The document consistently refers to the "tendered equipment / material" as "LT AB Cable." While it mentions "SCHEDULE-A" as a document to be uploaded, the specific line items, detailed product descriptions, quantities (in km, nos, set), or any reference drawings/codes for the LT AB Cable are not provided within this text. The tender is broadly for LT AB Cables, with various configurations implied by discussions of "same or higher rating of relevant Indian Standard."
+
+**4. Delivery & Logistics Details**
+
+This section extracts all mentions of delivery, consignee, or dispatch locations, along with delivery schedules. This information is crucial for calculating transportation costs from the manufacturing site, planning production timelines, and understanding any specific inspection requirements or state-specific benefits related to the destination.
+
+Delivery Location / Consignee Address: Prices are quoted on an F.O.R. Destination basis, meaning delivery to "any of the stores of Company in Gujarat." The document also mentions "PGVCL Central Store, Rajkot, Gujarat" in the context of cash payment for tender fees, which could indicate a central delivery hub.
+Delivery Schedule / Completion Period: A specific delivery schedule or completion period is not explicitly stated in the provided text, though it references "delivery schedule of the order is already completed" in a clause about price adjustments.
+Inspection Agency: The document mentions factory inspection by the department or through a third party for vendor registration purposes, but it does not specify an inspection agency for pre-dispatch inspection of the supplied materials.
+Destination Jurisdiction / State-Specific Rules: The tender includes significant provisions for "Gujarat based Parties," offering a reservation of "not less than 50% of the quantity" if they match the L-1 price, provided their quoted price is not more than 15% higher than L-1. Additionally, Gujarat-based Micro, Cottage, and Small Scale Industrial Units can receive quantity allocation with up to 10% higher rates (11% for women-owned units) compared to other bidders, and a 5% quality-based price preference if ISI/BIS/Agmark is not mandatory.
+
+**5. Eligibility and Registration Requirements**
+
+This section summarizes all vendor eligibility conditions, including required certificates and compliance mandates. Understanding these requirements is fundamental for determining if Asian Wires Pvt. Ltd. can even bid, ensuring all necessary registrations, licenses, and experience criteria are met to avoid disqualification.
+
+Manufacturer / OEM Status: The document implies that suppliers are manufacturers, particularly in the context of vendor registration being issued "on manufacturing unit-wise of the firm" and requiring "factory inspection."
+Vendor Registration Requirement: All bidders must be registered as a Vendor for the tendered item with GUVNL or any of its subsidiary companies (like PGVCL). New suppliers must register by paying non-refundable fees plus GST, which vary based on factory location (Gujarat: Rs. 15,000 for Micro/Small, Rs. 25,000 for others; outside Gujarat: Rs. 50,000 for Micro/Small, Rs. 75,000 for others; out of Country: $5,000 USD). Re-registration fees are 50% of regular charges if a Purchase Order was successfully executed within two years prior to expiry. Registration is valid for five years. Government or Government Controlled Organizations/Undertakings are exempt from registration fees.
+Factory License, BIS, ISO Requirements: Bidders are required to submit "ISI/ BIS/ International Licenses, if applicable" for vendor registration. PGVCL also "desires that all the suppliers should possess high quality ISO 9001 / ISO 9002 certificate" and will give preference in quantity distribution to such suppliers after 1/1/2003.
+Experience / Past Supply Clauses: Bidders are categorized as New-1, New-2, or Regular Suppliers based on their past supply performance to GUVNL or its subsidiary companies for the same or higher rating of relevant Indian Standard equipment. Satisfactory performance is a key criterion for advancing supplier categories.
+Financial Turnover Threshold / Net Worth Criteria: Specific financial turnover or net worth criteria are not explicitly mentioned in the provided text.
+Blacklist Declaration, MSME Benefits, and Border Compliance Clauses: Bidders must declare that they, their proprietor, partners, or directors have not been blacklisted, stop-dealt, or banned for business dealing by GUVNL or any of its subsidiary companies. Gujarat-based Micro and Small Scale Industrial (manufacturing) Units registered with CSPO / NSIC / DGS&D are eligible for exemption from EMD payment. MSME benefits also extend to quantity allocation and price preference as detailed in the evaluation criteria.
+
+**6. Technical Specifications (Core Product Data)**
+
+This section summarizes every distinct technical specification from the tender's technical sections. Providing a compact list of parameters for each product variation is critical for SKU mapping, ensuring product compliance, and identifying any deviations that might require clarification or alternative product offerings.
+
+The document states that "All technical specification should be ISS/ISI/BIS" and that "Specification framed out by PGVCL shall be separately brought out in the tender documents." It explicitly states that "No deviation in specification shall be allowed and PGVCL decision shall be final." While the document refers to "Technical Specifications etc." and "Techno – Commercial Bid," the actual technical parameters such as Cable_Type, Core_Configuration, Insulation_Type, Rated_Voltage, Applicable_Standards (IS/IEC numbers), Conductor_Material, Insulation_Thickness_min_mm, No_of_Strands, Max_DC_Resistance_Ohm_km, Tensile_Strength_min_N_mm², or Messenger_Composition are not detailed within this provided text. These would be found in a separate "Technical Specifications" document.
+
+**7. Commercial & Financial Terms**
+
+This section extracts major financial or commercial conditions, including fees, payment schedules, and penalty clauses. This data is essential for accurate pricing, cash flow forecasting, and risk assessment, ensuring all financial implications are understood before bidding.
+
+Tender Fee, EMD, and Performance Security: A non-refundable Tender Fee plus applicable GST is required, payable in cash (up to Rs. 10,000) or via RTGS/NEFT/online. EMD can be paid via RTGS/NEFT/online for all amounts, or by Demand Draft/Banker’s Cheque/Pay Order/Bank Guarantee for amounts exceeding Rs. 3 Lakhs. MSME units registered under Small Scale Industries of Gujarat State with CSPO/NSIC/DGS&D certificates are exempt from EMD. If EMD is a Bank Guarantee, it must be valid for 6 months from bid submission. The document does not explicitly mention a Performance Security amount or requirement.
+Payment Terms: Specific payment terms (e.g., "Within 30 days of delivery") are not explicitly stated in the provided text.
+Delivery Penalty or LD Clause: A specific delivery penalty or Liquidated Damages (LD) clause is not explicitly mentioned in the provided text.
+Price Variation / Escalation Clause: The "Statutory Variation clause will not be applicable in case of Supplier / Contractor has opted for Composition Scheme under GST." This implies that for suppliers not under the Composition Scheme, a statutory variation clause might be applicable, but the document does not explicitly define whether the price is firm or variable otherwise.
+Price Basis: Prices quoted should be "FIRM / VARIABLE" and on an "F.O.R. Destination basis" (i.e., any of the Company's stores in Gujarat). Bidders must provide a break-up of the Total Unit F.O.R. Destination Price in Schedule-B, including Unit Ex-works price, freight, packing & forwarding charges, Insurance Charges, GST, and Cess as applicable.
+
+**8. Evaluation Criteria**
+
+This section summarizes how the tender will be evaluated, covering both technical and financial aspects. Understanding these criteria is critical for strategizing the bid, highlighting strengths, and anticipating how Asian Wires Pvt. Ltd.'s offer will be judged against competitors.
+
+Technical Bid Evaluation Basis: The tender operates on a two-bid system (Techno-commercial Bid and Price Bid). Technical bids will be evaluated for conformity to technical specifications. PGVCL reserves the right to open or not to open the price bid based on the bidders' past performance of supplied materials.
+Financial Bid Evaluation Basis: Price Bids of techno-commercially qualified bidders will be opened. All tenders will be evaluated on a "firm Price End Cost with GST and Cess as applicable basis" unless otherwise specified. If the tender includes a "Total Owning Cost (TOC) Clause," evaluation will be done accordingly, requiring a detailed breakup of the End Cost.
+Preference Clauses: No general price preference is given on any account. However, specific quantity distribution preferences apply:
+    *   Gujarat-based parties may receive not less than 50% of the quantity if they match the L-1 price and their quoted price is not more than 15% higher than L-1.
+    *   Gujarat-based Micro, Cottage, and Small Scale Industrial Units can receive quantity allocation even if their rate is up to 10% higher than other units (11% for women-owned units), provided they match the L-1 price. A quality-based price preference of up to 5% higher is also available for ISI/BIS/Agmark materials if not mandatory. The total price preference for these units will not exceed 15%.
+Weightage or Scoring Mechanism: The document outlines quantity distribution rules based on supplier categories (New-1, New-2, Regular) and item criticality. For critical items, New-1 suppliers are restricted to 10% of quantity, New-2 to 25%, with total new suppliers limited to 50%. For Cables, Conductors, and Conveyor Belts, New Suppliers are allotted up to 10% (New-1) / 25% (New-2) of Tender Quantity or Minimum Drum Length, whichever is higher. For non-critical items, New-1 suppliers are restricted to 30%, and New-2 to 40%. L-1 regular parties will receive heavy weightage in order placement. The company may relax these conditions if regular supplier rates are too high or quantities are insufficient. Negotiation with L-1 New and lowest Regular categories is possible if there is a lack of serious competition.
+
+**9. Contacts and Clarifications**
+
+This section captures key communication details, which are vital for submitting documents, seeking clarifications, or escalating issues. Having precise contact information ensures smooth communication throughout the tender process.
+
+Contact Person / Designation: A specific contact person or designation for general queries is not explicitly provided in the document.
+Email / Phone: Specific email addresses or phone numbers for general inquiries are not provided in the document.
+Office Address: Physical "EMD Cover Documents" (if applicable) must be sent to "THE CHIEF ENGINEER (MATERIAL), PASHCHIM GUJARAT VIJ COMPANY LTD., LAXMI NAGAR, NANA MAVA MAIN ROAD, RAJKOT-360 004." Cash payments for tender fees can be made at "Cash Counter, PGVCL, Corporate Office, Rajkot."
+
+**10. Key Compliance Notes**
+
+This section summarizes important procedural and legal compliances. Understanding these notes is crucial for ensuring the bid is procedurally correct, legally sound, and that Asian Wires Pvt. Ltd. is prepared for post-award obligations like contract execution and warranty provisions.
+
+Document Submission Format: Bidders must upload scanned copies of all required documents (PDF Files only) including Schedule-A, Commercial Terms & Conditions, and Technical Specifications. These uploaded documents must be legible and not password-protected. Prices must be indicated in the online price bid format; physical price bids will not be considered. Physical submission of "EMD Cover Documents" (containing DD/Banker’s Cheque/Pay Order/Bank Guarantee for Tender Fee and EMD, if not paid online, along with GST registration copy and vendor registration proof) is required via Registered Post A.D. or Speed Post only, addressed to The Chief Engineer (Material), PGVCL, Rajkot, with the Tender number clearly mentioned on the sealed cover. Courier service and hand delivery are not allowed for physical EMD documents.
+Agreement & Contract Execution Clauses: The document does not explicitly detail specific clauses for agreement and contract execution, though it refers to "execution of order" and "terms of A/T (Order / Contract)."
+Warranty / Guarantee Period: A specific warranty or guarantee period for the supplied materials is not explicitly mentioned in the provided text.
+After-Sales Service Clause: The criteria for a Performance Certificate (Annexure-VI) include evaluation of "after sales services," indicating that this is a factor in supplier assessment.
+Jurisdiction: Only the courts at the Headquarter of the Company (Gujarat State) shall have exclusive jurisdiction to adjudicate all disputes relating to or arising out of vendor registration or placement of the order.
+
+**11. Optional Attachments or Annexures**
+
+This section lists any referenced drawings, appendices, or sample formats. Knowing these attachments exist and their purpose is important for ensuring all required documentation is reviewed and submitted as part of the bid.
+
+The tender refers to several annexures and schedules:
+*   Annexure - I: Pertains to Vendor Registration for non-Engineering items (not required).
+*   Annexure - II: Details documents required for Vendor Registration / Re-registration.
+*   Annexure - III: Details documents required for change of name / ownership / control of a Registered Vendor.
+*   Annexure – VI: Prescribed Performa for Performance Certificate, to be issued by subsidiary companies.
+*   SCHEDULE-“A”: A document that bidders should upload, containing commercial terms & conditions and technical specifications.
+*   Schedule– “B”: The Price Bid document, where bidders must indicate the break-up of the Total Unit F.O.R. Destination Price.
+
+**12. Summary Conclusion**
+
+This tender, identified as PGVCL/PROC/LT AB Cable/1228, is issued by Paschim Gujarat Vij Company Ltd. (PGVCL) for the procurement of LT Aerial Bunched Cables, with specific technical specifications expected to be detailed in separate tender documents and adherence to ISS/ISI/BIS standards being mandatory. The delivery destination is any of the Company's stores in Gujarat, with significant quantity distribution preferences for Gujarat-based manufacturers, including Micro, Cottage, and Small Scale Industrial Units. Eligibility is strictly tied to prior vendor registration with GUVNL or its subsidiary companies, requiring factory inspection and submission of type test reports not older than seven years. The tender follows a two-bid system (Techno-commercial and Price Bid), with evaluation based on firm price end cost and past performance. This summary becomes the base input for eligibility analysis, SKU mapping, and pricing computations.
+
+=== SUMMARY FROM PDF 4 ===
+
+Here is a comprehensive, descriptive summary of the provided tender document for Asian Wires Pvt. Ltd.:
+
+1.  **Tender Overview**
+    This section provides the foundational identity of the tender, crucial for initial assessment and tracking. It includes the unique identifier, a concise description of the procurement, the authority issuing the tender, and the digital platform for interaction. This information allows for quick identification, categorization, and verification of the tender's origin and scope.
+    The tender is identified by Reference No. PGVCL/PROC/LT AB Cable/1228, titled "Procurement of LT Aerial Bunched Cable." The issuing authority is Paschim Gujarat Vij Company Ltd. (PGVCL), with its registered and corporate office located at “Paschim Gujarat Vij Seva Sadan”, Nana Mava main Road, Laxminagar, Rajkot - 360 004. The tender documents can be downloaded and submitted online via the nProcure portal at https://tender.nprocure.com, and viewed on the PGVCL website at www.pgvcl.com.
+
+2.  **Key Dates and Timeline**
+    This section outlines all critical deadlines and scheduling information, vital for planning the bid submission process. It captures when the tender was announced, the final date and time for bid submission, and the various stages of bid opening. Adhering to these dates is paramount for ensuring the bid is considered eligible and for managing internal resource allocation.
+    The online submission deadline for Preliminary, Technical, and Price bids is 10.11.2025 up to 18:00 Hrs. Physical submission of documents related to EMD payment is due by 17.11.2025 up to 18:00 Hrs. The online opening of Tender Fee and EMD (Preliminary Stage) is scheduled for 11.11.2025 up to 11:00 Hrs. The online opening of the Technical Bid (Technical Stage) is on 18.11.2025 up to 11:00 Hrs, and the online opening of the Price Bid (Price Bid Stage) is tentatively scheduled for 03.12.2025 up to 11:00 Hrs. The bid validity period is not explicitly stated in the provided document.
+
+3.  **Tender Scope and Items (BOQ / Schedule-A)**
+    This section details the specific products and quantities the procuring entity intends to purchase, forming the core of the tender's requirement. It lists each item with its description, specifications, and the required quantity, including the unit of measurement. This data is essential for product matching, inventory assessment, and calculating the total potential value of the contract.
+    The tender seeks the procurement of LT Aerial Bunched Cables, which are categorized as critical items. The requested items and their tentative quantities are: LT AB Cable, 1C x35mm²+1C x16 + 25mm² messenger, with a quantity of 1000 KM; LT AB Cable, 3C x35mm²+1C x16 + 25mm² messenger, with a quantity of 345 KM; and LT AB Cable, 3C x50mm²+1C x25 + 35mm² messenger, with a quantity of 1500 KM. All quantities are specified in Kilometers (KM). PGVCL reserves the right to reduce the tender quantity as per their requirement, and no dispute for non-purchase or purchase of very less quantity will be entertained.
+
+4.  **Delivery & Logistics Details**
+    This section extracts all information pertaining to the physical movement and reception of goods, critical for supply chain planning and cost estimation. It identifies potential delivery locations, the required timeframe for completion, and any specified inspection requirements. Understanding these details helps in calculating freight costs, lead times, and ensuring compliance with logistical mandates.
+    The delivery schedule requires completion within seven (07) months, on an equal monthly basis for each item of the total tender quantity. This period commences 45 days from the date of receipt of the Letter of Acceptance (LOA). PGVCL may also intimate in writing if an earlier delivery is required. While a specific consignee address for material delivery is not explicitly stated, the organization's corporate office is in Rajkot, Gujarat, which is the address for physical EMD submissions. The date of delivery is defined as the date on which materials are notified as ready for inspection/dispatch, provided they are received within 15 days for Gujarat-based suppliers or 21 days for out-of-Gujarat suppliers from the dispatch instruction date; otherwise, the actual receipt date at the store is considered.
+
+5.  **Eligibility and Registration Requirements**
+    This section summarizes all mandatory conditions a vendor must meet to be considered for the tender, impacting whether a bid can even be submitted. It covers requirements like manufacturer status, specific registrations, certifications (e.g., BIS, ISO), past experience, and financial thresholds. These criteria are fundamental for determining initial bid eligibility and avoiding disqualification.
+    Only manufacturers with works located in India and possessing valid GST registration are eligible to bid. A crucial requirement is a valid vendor registration with GUVNL or any of its subsidiary companies (GSECL / GETCO / DGVCL / MGVCL / UGVCL / PGVCL) prior to the technical bid opening date. Bidders must submit a self-certified copy of their valid Factory License, and a self-certified copy of a valid ISO Certificate if applicable. A notarized copy of a valid BIS License for the tendered item is mandatory, with provisional certificates not being accepted. Bidders who have applied for new/renewal of a BIS license before the tender opening can participate by submitting proof of application, but must provide the notarized BIS license within 45 days of LOA issuance. MSME units registered under Small Scale Industries of Gujarat State are eligible for EMD exemption by submitting notarized copies of one certificate from Group A (Udyam Registration) and one from Group B (CSPO/NSIC/DGS&D), or for lower EMD amounts by submitting one certificate from either group. Bidders from countries sharing a land border with India (China, Pakistan, Bhutan) are eligible only if registered with the Registration Committee constituted by DPIIT, and must upload a notarized "Country Boundary Certificate." Firms that are stop-dealt or banned by GUVNL or its subsidiaries are also considered stop-dealt or banned for PGVCL.
+
+6.  **Technical Specifications (Core Product Data)**
+    This section captures the precise technical characteristics and standards required for each product, directly influencing product design and manufacturing. It includes parameters such as cable type, core configuration, material, and applicable standards, even if inferred from other sections like price variation. This detailed data is indispensable for accurate product matching, ensuring compliance, and preparing a technically sound offer.
+    The tender requires LT Aerial Bunched Cables conforming to Indian standard specifications and bearing ISI marking. While detailed technical specification tables are referenced in Part III of the tender documents, the provided text includes specific cable configurations and their associated material variation factors for price adjustment. These include: 1C x 35 sqmm + 1C x 16 sqmm + 25 sqmm, 2C x 50 sqmm + 1C x 25 sqmm + 35 sqmm (not in BOQ, but in PV table), 3C x 35 sqmm + 1C x 16 sqmm + 25 sqmm, and 3C x 50 sqmm + 1C x 25 sqmm + 35 sqmm. For each configuration, variation factors are provided for Aluminium (phase, messenger, neutral conductors) and XLPE (phase, neutral conductors), indicating the weight of these materials in MT/KM. For example, the 3C x 50 sqmm + 1C x 25 sqmm + 35 sqmm cable has Aluminium phase conductor variation factor (Alph) of 0.411 MT/KM and XLPE phase conductor variation factor (CCFAlPh) of 0.141 MT/KM.
+
+7.  **Commercial & Financial Terms**
+    This section outlines the monetary and contractual conditions governing the tender, directly impacting pricing strategies and financial risk assessment. It covers fees, security deposits, payment schedules, potential penalties, and whether prices are firm or subject to variation. Understanding these terms is crucial for formulating a competitive and financially viable bid while mitigating risks.
+    A non-refundable Tender Fee of Rs. 10,000 + 18% GST (total Rs. 11,800/-) is required. Earnest Money Deposit (EMD) amounts vary by cable size and bidder type (MSME/Non-MSME), totaling Rs. 8,00,000/- for MSME units and Rs. 13,00,000/- for Non-MSME units across all items. EMD can be paid via RTGS/NEFT/Online for all amounts, with cash payment up to Rs. 10,000/-. For EMD exceeding Rs. 3 Lakhs, payment can also be made via Demand Draft, Banker’s Cheque, Pay Order, or Bank Guarantee, requiring physical submission of original documents. A Performance Guarantee (Security Deposit) towards the execution period must be submitted within 15 days from the date of the Letter of Acceptance. The tender is on a Price Variation Basis, meaning prices are variable, not firm. A detailed formula is provided for price adjustments based on LME Aluminium average settlement prices (including ingot premium) and XLPE Compound prices, with raw material prices being exclusive of GST and other taxes, and based on the 1st working day of the month. Penalties for delayed delivery beyond the schedule delivery date will be applicable as per the Purchase Order terms. GST rates must be clearly mentioned in the online price bid.
+
+8.  **Evaluation Criteria**
+    This section describes how bids will be assessed, providing insight into the factors that determine success in the tender process. It details the basis for evaluating both technical and financial proposals, including any preference clauses or scoring mechanisms. This information helps in tailoring the bid to align with the buyer's priorities and maximizing the chances of selection.
+    Technical bids will be evaluated based on conformity to technical specifications and the submission of all required documents. Bids may be rejected if mandatory documents are not attached or if incorrect documents are uploaded. Vendor registration with GUVNL or its subsidiaries is a prerequisite for technical scrutiny. Financial bids will be opened for technically qualified bidders, with the L1 bidder likely determined on a total landed cost basis, though specific details are not provided. MSME units are granted preference through EMD exemption or lower EMD amounts. Discrepancies between scanned uploaded annexures and online N-Procure data will result in the online N-Procure data being considered final for evaluation.
+
+9.  **Contacts and Clarifications**
+    This section provides essential communication channels for addressing queries, seeking clarifications, or escalating issues related to the tender. It includes contact persons, their designations, and direct contact information like email, phone, and office addresses. This ensures that bidders can obtain necessary information promptly and maintain proper communication throughout the bidding process.
+    For technical questions, information, and clarifications, bidders should refer to the Chief Engineer (Material) at PASCHIM GUJARAT VIJ COMPANY LTD., Laxmi Nagar, Nana Mava Main Road, Rajkot-360 004. The general contact phone numbers for PGVCL are (0281)2380425, 2380427, and the email is info.pgvcl@gebmail.com. For assistance or training related to participating in the online tender process, bidders can contact the nProcure Cell of (n) code solutions-A division of GNFC Ltd. at 403, GNFC Info tower, S.G. Road, Bodakdev, Ahmedabad – 380054 (Gujarat), via their Toll Free number 1-800-233-1010 (Ext. 501, 512, 516, 517, 525), Phone No. 079-26857315 / 316 / 317, Fax: 079-26857321 / 40007533, or Email: nproucre@gnvfc.net.
+
+10. **Key Compliance Notes**
+    This section consolidates all significant procedural, legal, and operational mandates that bidders must adhere to throughout the tender lifecycle. It covers aspects like document submission formats, contract execution timelines, warranty periods, and specific operational clauses. Compliance with these notes is vital to prevent disqualification and ensure smooth execution if awarded the contract.
+    All required documents must be submitted in online mode only, except for original EMD documents (DD/Banker’s Cheque/Pay Order/Bank Guarantee) if the EMD amount exceeds Rs. 3 Lakhs, which must be physically submitted by Registered Post A.D. or Speed Post. Scanned documents must be legible, in PDF format, and not password protected. The successful bidder is required to execute an Agreement within 20 days from the date of issue of the Letter of Acceptance (LOA), failing which the LOA may be cancelled. A Guarantee period of 18 months from the date of receipt at site or 12 months from the date of commissioning of equipment, whichever is earlier, applies to the supplied goods. Bidders must offer a minimum quantity for each item to be considered for price evaluation: 10% of the tender quantity for MSME bidders and 25% for other bidders. Submission of Annexure-13 in the technical stage is mandatory, and failure to do so will result in outright rejection. Works details in Annexure-3 must strictly align with the vendor registration certificate, allowing only one works per tender item. Bidders must also upload a notarized declaration for their authorized representative, including their details and confirming their employee status. Any false information or data provided may lead to severe actions, including stop-deal, cancellation of vendor registration, or forfeiture of EMD/Performance Guarantee. In case of short length observed in supplied cable, Audit Inspection clause no. 53 will be applicable on the entire lot, leading to replacement/recovery/penalty.
+
+11. **Optional Attachments or Annexures**
+    This section lists any supplementary documents, drawings, or formats referenced in the main tender document, which often contain crucial detailed information. It briefly describes the purpose of each attachment, such as technical GTPs or price schedules. Accessing and understanding these annexures is essential for a complete and accurate bid submission.
+    The tender documents consist of Part – I: Schedule “A” (quantities & items), Part - II: Commercial Terms & Conditions, and Part – III: Technical Specifications, GTP & drawing if any. Specific annexures mentioned include Annexure-11 (for documents to be uploaded in the technical stage), online Annexure-4 (for quantity offered details), and Annexure-13 (a mandatory submission in the technical stage). Bidders are also required to submit a notarized Power of Attorney, a notarized Declaration for Authorized Representative, and a notarized Country Boundary Certificate, all on Rs. 300/- non-judicial stamp paper. Supporting documents like IEEMA Circulars and PV Calculation sheets are required for price variation claims.
+
+12. **Summary Conclusion**
+    This concluding paragraph offers a high-level recap of the tender's main components, providing a quick overview of the overall opportunity. It restates the total product count, primary product types, delivery context, and key eligibility factors. This summary serves as a final check for understanding the tender's essence before proceeding with detailed analysis and bid preparation.
+    This tender from Paschim Gujarat Vij Company Ltd. (PGVCL) seeks the procurement of three distinct types of LT Aerial Bunched Cables, totaling 2845 KM, with delivery expected within seven months from 45 days after LOA issuance. The primary product types are 1C, 3C, and 3C variants of LT AB Cables with specific core configurations and messenger sizes. While a specific final delivery destination is not explicitly stated, the context implies delivery within Gujarat, likely to PGVCL's central stores. Overall, only manufacturers with valid GST registration and prior vendor registration with GUVNL or its subsidiaries are eligible to bid, with strict compliance required for BIS certification, ISI marking, minimum quantity offerings, and adherence to border compliance regulations.
+
+=== SUMMARY FROM PDF 5 ===
+
+This document provides a comprehensive summary of the tender issued by Paschim Gujarat Vij Company Limited (PGVCL), detailing all critical information for eligibility, product matching, and pricing analysis.
+
+**1. Tender Overview**
+This section summarizes the basic identity of the tender, providing essential identifiers and organizational details.
+*   **Tender ID / Reference No.:** The primary reference number for this tender is PGVCL/PROCILT AB Cable/1228, with an additional system ID of 235343. This ID serves as the anchor for all subsequent documents and tracking within the company's systems.
+*   **Tender Title / Name:** The tender is titled "Purchase of LT AB Cable of size 1C x35mm²+1C x16 + 25mm²-1000 KM, 3C x35mm²+1C x16 + 25mm²- 345 KM and 3C x50mm²+1C x25 + 35mm²-1500 KM," which provides a clear, one-line summary of the scope, allowing founders to instantly understand the product category involved.
+*   **Organization / Issuing Authority:** The tender has been issued by Paschim Gujarat Vij Company Limited (PGVCL), located in Rajkot, under its Energy And Petrochemicals Department, Procurement Division. This information is crucial for eligibility checks, including vendor registration and regional compliance requirements.
+*   **Tender Portal / URL:** The tender process is managed through the nProcure website. This detail ensures cross-verification of information and provides the access point for any future amendments or communications related to the tender.
+
+**2. Key Dates and Timeline**
+This section captures all critical timeline data necessary for scheduling internal actions and ensuring compliance with submission deadlines.
+*   **Issue Date / Publication Date:** The tender was announced and available for download starting on 16-October-2025 at 19:00. This date marks the official commencement of the tender process.
+*   **Submission Deadline / Closing Date & Time:** The deadline for electronic bid submission is 10-November-2025 at 18:00. Additionally, for EMD amounts exceeding Rs. 3 Lakhs, physical submission of related documents via Registered Post AD or Speed Post is required on or before 17-November-2025 up to 18:00 Hrs. These dates are critical for prioritizing tender actions and ensuring timely submission.
+*   **Bid Opening Date / Technical Evaluation Date:** The preliminary stage evaluation is scheduled for 11-November-2025 at 11:00, followed by the technical bid evaluation on 18-November-2025 at 11:00, and the price bid opening on 03-December-2025 at 11:00. These dates help plan the internal approval flow and resource allocation for subsequent stages.
+*   **Bid Validity Period:** Bidders are required to keep their offer open for 120 days after the turnable date of the tenders. This period confirms the assumed compliance duration for the submitted bids.
+
+**3. Tender Scope and Items (BOQ / Schedule-A)**
+This section summarizes all items requested in the tender's Bill of Quantities (BOQ), detailing product descriptions, specifications, and quantities.
+*   The tender primarily seeks the procurement of LT Aerial Bunched (AB) Cables across three distinct configurations. Each line item includes a specific product description, core configuration, and the required quantity.
+*   The first item is LT AB Cable of size 1C x35mm² + 1C x16 + 25mm², with a total quantity of 1000 KM.
+*   The second item is LT AB Cable of size 3C x35mm² + 1C x16 + 25mm², with a total quantity of 345 KM.
+*   The third item is LT AB Cable of size 3C x50mm² + 1C x25 + 35mm², with a total quantity of 1500 KM.
+*   The unit of measurement for all items is kilometers (KM), and the total quantities are clearly specified for each variant. The overall product category is identified as "1C and 3C LT AB Cable," indicating the primary types of cables required.
+
+**4. Delivery & Logistics Details**
+This section extracts all available information regarding delivery, consignee, and dispatch locations, which is vital for logistics planning and cost estimation.
+*   **Delivery Location / Consignee Address:** While a specific consignee address is not explicitly stated in the provided summary, the issuing authority is Paschim Gujarat Vij Company Limited (PGVCL) with its corporate office in Rajkot, Gujarat. It is implied that delivery will be to a PGVCL central store or designated location within the Rajkot region of Gujarat. This information is used to calculate delivery distance from the manufacturing site (Vapi, Gujarat).
+*   **Delivery Schedule / Completion Period:** The period of completion or delivery is stated as "As per tender Document Attached." This indicates that the detailed delivery schedule will be specified within the full tender documents, requiring further review for production planning.
+*   **Inspection Agency:** No mention of a specific pre-dispatch inspection agency (e.g., NABL/Third Party) is provided in this summary.
+*   **Destination Jurisdiction / State-Specific Rules:** The tender is issued by a Gujarat-based utility (PGVCL), implying that any state-specific vendor rules or benefits applicable within Gujarat would apply.
+
+**5. Eligibility and Registration Requirements**
+This section summarizes all vendor eligibility conditions, including required certificates and compliance mandates, crucial for determining a bidder's qualification.
+*   **Manufacturer / OEM Status:** Bidders are required to submit a self-declaration about their manufacturer status, indicating that only manufacturers of LT AB Cable are eligible to bid.
+*   **Vendor Registration Requirement:** While not explicitly stating a mandatory registration with PGVCL or GUVNL, the tender requires a "Self-Certified copy of order executed with GUVNL & its subsidiary company (if Applicable)," suggesting that prior experience or registration with these entities is a beneficial or required qualification for certain clauses.
+*   **Factory License, BIS, ISO Requirements:** Bidders must submit a self-certified copy of a valid Factory License, a self-certified copy of a valid ISO Certificate (if applicable), and a notarized copy of a valid BIS License (if applicable). The tender explicitly states that tenderers should invariably furnish a notarized copy of their valid BIS license (with all enclosures) wherever applicable.
+*   **Experience / Past Supply Clauses:** The submission of a self-certified copy of orders executed with GUVNL and its subsidiary companies (if applicable) is required, indicating a preference or requirement for prior experience with the state utility.
+*   **Financial Turnover Threshold / Net Worth Criteria:** While "Certified copy of Last Three years Audited Account" is a mandatory document, no specific minimum annual turnover threshold or net worth criteria are explicitly mentioned in this summary.
+*   **Blacklist Declaration, MSME Benefits, and Border Compliance Clauses:** A "Country Boundary Certificate on 300/- Rs. non judicial stamp paper duly notarized" is required, indicating compliance with border-related procurement policies. No specific MSME benefits or blacklist declarations are explicitly mentioned in this document.
+
+**6. Technical Specifications (Core Product Data)**
+This section summarizes the core technical data for each product requested, essential for SKU mapping and ensuring product conformity.
+*   The tender requires LT Aerial Bunched Cables in three main configurations. While detailed technical specification tables (e.g., insulation type, rated voltage, conductor material, insulation thickness, number of strands, maximum DC resistance, tensile strength, messenger composition) are not provided in this summary, the tender documents explicitly refer to "Technical Specification and GTP duly filled, Sealed & signed" and specific PDF documents like "1228 Tech. Spec. 3Cx35 and 3Cx50 LT ABC.pdf" and "1228 Technical specifications and GTP for 1 Phase LT AB Cable.pdf." These external documents contain the comprehensive technical parameters.
+*   **Product Variations:**
+    *   **Cable Type:** LT AB Cable; **Core Configuration:** 1C x35mm² + 1C x16 + 25mm² messenger; **Quantity:** 1000 KM.
+    *   **Cable Type:** LT AB Cable; **Core Configuration:** 3C x35mm² + 1C x16 + 25mm² messenger; **Quantity:** 345 KM.
+    *   **Cable Type:** LT AB Cable; **Core Configuration:** 3C x50mm² + 1C x25 + 35mm² messenger; **Quantity:** 1500 KM.
+*   Bidders must refer to the attached technical specification documents for all detailed parameters, applicable standards (IS/IEC numbers), and other specific requirements for each cable type.
+
+**7. Commercial & Financial Terms**
+This section extracts major financial and commercial conditions, which are critical for pricing strategies and financial planning.
+*   **Tender Fee, EMD, and Performance Security:** A non-refundable Bidding Processing Fee (Tender Fee) of INR 11,800 is required, payable to Paschim Gujarat Vij Company Limited, Rajkot. An Earnest Money Deposit (EMD) of INR 1,300,000 (Thirteen Lacs) is also required, with a minimum of INR 300,001 and a maximum of INR 1,300,000, also payable to Paschim Gujarat Vij Company Limited, Rajkot. EMD exemption documents are accepted if applicable. No specific mention of Performance Security is found in this summary.
+*   **Payment Terms:** The provided document does not explicitly state the payment terms (e.g., "Within 30 days of delivery").
+*   **Delivery Penalty or LD Clause:** No specific delivery penalty or Liquidated Damages (LD) clause is mentioned in this summary.
+*   **Price Variation / Escalation Clause:** There is no explicit mention of a price variation or escalation clause, suggesting the price might be firm.
+*   **Price Basis:** The document does not explicitly state the price basis (e.g., "FOR Destination / Ex-Works").
+
+**8. Evaluation Criteria**
+This section summarizes how the tender will be evaluated, guiding bidders on the focus areas for their submissions.
+*   **Technical Bid Evaluation Basis:** Bids will undergo a preliminary stage evaluation, followed by a technical bid evaluation. The evaluation will be based on conformity to the detailed technical specifications and the submission of all required technical documents and annexures.
+*   **Financial Bid Evaluation Basis:** A separate price bid stage is scheduled for opening after the technical evaluation. It is implied that the financial bids will be evaluated to determine the lowest (L1) bidder, likely based on the total landed cost, though specific criteria are not detailed in this summary.
+*   **Preference Clauses:** No specific preference clauses, such as those for MSME or local content, are explicitly mentioned in this summary.
+*   **Weightage or Scoring Mechanism:** No specific weightage or scoring mechanism for technical or financial bids is detailed in the provided information.
+
+**9. Contacts and Clarifications**
+This section captures key communication details for any escalation or queries, ensuring proper channels for interaction.
+*   **Contact Person / Designation:** The Officer Inviting Bids and Bid Opening Authority is The Chief Engineer (Material) of PGVCL.
+*   **Email / Phone:** The contact number for the Chief Engineer (Material) at PGVCL is 9227702859. For nProcure support and online tender assistance, contact details include Airtel: +91-79-40007501, 40007512, 40007516, 40007517, 40007525; BSNL: +91-79-26854511, 26854512, 26854513 (EXT: 501,512, 516,517,525); Reliance: +91-79-30181689; Fax: +91-79-26857321, 40007533; Email: nprocure@ncode.in; and TOLL FREE NUMBER: 1-800-233-1010 (EXT: 501, 512, 516,517, 525).
+*   **Office Address:** The office address for the Officer Inviting Bids is PGVCL, Corporate office, Rajkot. The nProcure Cell is located at 304, GNFC Infotower, S.G. Road, Bodakdev, Ahmedabad - 380054 (Gujarat).
+
+**10. Key Compliance Notes**
+This section summarizes important procedural and legal compliances, ensuring bidders adhere to all tender requirements.
+*   **Document Submission Format:** All technical and price bids must be submitted in electronic format only on the nProcure website. Offers in physical form will not be accepted in any case, with the exception of physical submission of EMD documents for amounts exceeding Rs. 3 Lakhs.
+*   **Agreement & Contract Execution Clauses:** The provided summary does not explicitly detail clauses related to agreement and contract execution by the successful bidder.
+*   **Warranty / Guarantee Period:** No specific warranty or guarantee period for the supplied materials is mentioned in this summary.
+*   **After-Sales Service Clause:** No specific after-sales service clause is detailed in this summary.
+*   **Digital Certificate Requirement:** Bidders are required to procure and possess a legally valid Digital Certificate as per Information Technology Act-2000 (Class-III) to sign their electronic bids. Free vendor training camps are organized by nCode Solutions for assistance.
+
+**11. Optional Attachments or Annexures**
+This section lists the various supporting documents and annexures referred to in the tender, which contain detailed information.
+*   The tender refers to numerous annexures and documents required for submission, including ANNEXURE -1 through ANNEXURE-16, CERTIFICATE -A, IMPORTANT INSTRUCTION, and CONFIRMATION.
+*   Key documents to be filled, sealed, and signed include the Technical Specification and GTP, Tender Drawing (if applicable), Tender Notice and Schedule-A, and Tender Commercial terms & conditions with all annexures.
+*   Specific PDF documents mentioned are "1228 Tech. Spec. 3Cx35 and 3Cx50 LT ABC.pdf," "1228 Technical specifications and GTP for 1 Phase LT AB Cable.pdf," "1228 Tender Notice and Schedule-A.pdf," and "1228 Tender Commercial Terms and Condition.pdf." These attachments contain the detailed technical, commercial, and procedural information.
+
+**12. Summary Conclusion**
+This tender from Paschim Gujarat Vij Company Limited (PGVCL) requests the procurement of three distinct types of LT Aerial Bunched Cables, specifically 1C and 3C variants, with total quantities of 1000 KM, 345 KM, and 1500 KM respectively. The delivery destination is implied to be within the Rajkot region of Gujarat. Eligibility is primarily restricted to manufacturers of LT AB Cables who possess valid Factory, ISO (if applicable), and mandatory BIS licenses, and can demonstrate compliance with digital submission requirements and country boundary certificates. Prior experience with GUVNL or its subsidiaries is also a beneficial qualification. This summary forms the foundational input for subsequent eligibility analysis, SKU mapping, and comprehensive pricing computations.
