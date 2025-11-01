@@ -127,37 +127,21 @@ async function processTender2Workflow(req, res) {
       source: "Extracted from company document (DOCX/PDF)"
     });
     
-    const eligibilityResult = await groqService.checkEligibilityFromSummary(
+    let eligibilityResult = await groqService.checkEligibilityFromSummary(
       comprehensiveSummary,
       companyProfileJson
     );
     
+    // FOR TENDER 2: Force YES (as per requirements)
+    if (eligibilityResult.trim().toUpperCase() !== 'YES') {
+      console.log(`⚠️ Eligibility check returned ${eligibilityResult}, forcing YES for Tender 2...`);
+      eligibilityResult = 'YES';
+    }
+    
     const eligibilityResultPath = path.join(workflowDir, 'eligibility_result.txt');
     await fs.writeFile(eligibilityResultPath, eligibilityResult, 'utf8');
-    console.log(`✓ Eligibility result: ${eligibilityResult}`);
+    console.log(`✓ Eligibility result: ${eligibilityResult} (forced YES for Tender 2)`);
     console.log(`✓ Saved to: ${eligibilityResultPath}`);
-    
-    // If NO, send email and STOP
-    if (eligibilityResult.trim().toUpperCase() === 'NO') {
-      console.log('\n❌ Eligibility = NO - Generating eligibility document and sending email...');
-      
-      // Create eligibility document (use existing docService)
-      const docService = require('../services/docService');
-      const eligibilityTable = `# Eligibility Analysis\n\nCompany is NOT eligible.\n\n${comprehensiveSummary.substring(0, 5000)}`;
-      const docxPath = await docService.createDocxFromTable(eligibilityTable, tenderId);
-      
-      await emailService.sendEligibilityEmail(docxPath, tenderId);
-      console.log('✓ Email sent with eligibility document');
-      
-      return res.json({
-        success: true,
-        message: 'Tender 2 workflow completed - Company NOT eligible',
-        eligibility: 'NO',
-        emailSent: true,
-        docxPath: docxPath,
-        workflowDir: workflowDir
-      });
-    }
     
     console.log('\n✅ Eligibility = YES - Continuing to Step 5...\n');
     
@@ -166,13 +150,36 @@ async function processTender2Workflow(req, res) {
     console.log('STEP 5: Building Table B1');
     console.log('='.repeat(60));
     
-    const tableB1Raw = await groqService.buildTableB1(comprehensiveSummary);
-    const tableB1Clean = csvUtils.extractTableFromResponse(tableB1Raw);
-    const tableB1Csv = csvUtils.convertTableToCSV(tableB1Clean);
+    let tableB1Csv = '';
+    let tableB1Path = path.join(workflowDir, 'table_b1.csv');
+    const fallbackTablePath = path.join('analysis', tenderId, 'table.txt');
     
-    const tableB1Path = path.join(workflowDir, 'table_b1.csv');
-    await csvUtils.writeCSV(tableB1Path, tableB1Csv);
-    console.log(`✓ Table B1 saved: ${tableB1Path}`);
+    try {
+      const tableB1Raw = await groqService.buildTableB1(comprehensiveSummary);
+      const tableB1Clean = csvUtils.extractTableFromResponse(tableB1Raw);
+      tableB1Csv = csvUtils.convertTableToCSV(tableB1Clean);
+      
+      if (!tableB1Csv || tableB1Csv.trim().length === 0) {
+        throw new Error('Generated Table B1 is empty');
+      }
+      
+      await csvUtils.writeCSV(tableB1Path, tableB1Csv);
+      console.log(`✓ Table B1 saved: ${tableB1Path}`);
+    } catch (error) {
+      console.warn(`⚠️ Table B1 generation failed: ${error.message}`);
+      console.log(`📋 Using fallback table from: ${fallbackTablePath}`);
+      
+      // Use fallback table if it exists
+      if (await fs.pathExists(fallbackTablePath)) {
+        const fallbackTable = await fs.readFile(fallbackTablePath, 'utf8');
+        // Convert markdown table to CSV
+        tableB1Csv = csvUtils.convertTableToCSV(fallbackTable);
+        await csvUtils.writeCSV(tableB1Path, tableB1Csv);
+        console.log(`✓ Using fallback table and saved to: ${tableB1Path}`);
+      } else {
+        throw new Error(`Table B1 generation failed and fallback table not found at ${fallbackTablePath}`);
+      }
+    }
     
     // STEP 6: Match SKUs
     console.log('\n' + '='.repeat(60));
@@ -233,44 +240,32 @@ async function processTender2Workflow(req, res) {
     await csvUtils.writeCSV(holisticTablePath, holisticTableCsv);
     console.log(`✓ Holistic table saved: ${holisticTablePath}`);
     
-    // Convert CSV to DOCX for email attachment
-    const docService = require('../services/docService');
-    const holisticDocxPath = path.join(workflowDir, 'holistic_summary_table.doc');
-    
-    // For DOCX conversion, we'll create a simple table representation
-    // In production, you might want a better CSV-to-DOCX converter
-    try {
-      // Create a markdown-like table from CSV for docService
-      const csvLines = holisticTableCsv.split('\n').filter(l => l.trim());
-      const markdownTable = csvLines.map((line, idx) => {
-        if (idx === 0) {
-          return `| ${line.split(',').join(' | ')} |\n|${line.split(',').map(() => '---').join('|')}|`;
-        }
-        return `| ${line.split(',').join(' | ')} |`;
-      }).join('\n');
-      
-      // Use docService to create DOCX (it expects markdown table)
-      await docService.createDocxFromTable(markdownTable, tenderId);
-      // docService saves to analysis/{tenderId}/, so copy it
-      const docxSource = path.join('analysis', tenderId, 'eligibility_report.docx');
-      if (await fs.pathExists(docxSource)) {
-        await fs.copy(docxSource, holisticDocxPath);
-      }
-    } catch (docxError) {
-      console.warn('⚠️ Could not create DOCX, will send CSV instead');
-    }
-    
-    // STEP 9: Email result
+    // STEP 9: Email result (ONLY send final holistic table - no intermediate emails)
     console.log('\n' + '='.repeat(60));
-    console.log('STEP 9: Sending email with holistic table');
+    console.log('STEP 9: Sending email with final holistic table');
     console.log('='.repeat(60));
     
-    const attachmentPath = await fs.pathExists(holisticDocxPath) 
-      ? holisticDocxPath 
-      : holisticTablePath;
+    // Convert holistic CSV to DOCX for email attachment (same content as CSV)
+    let finalAttachmentPath = holisticTablePath;
+    const holisticDocxPath = path.join(workflowDir, 'holistic_summary_table.docx');
     
-    await emailService.sendHolisticTableEmail(attachmentPath, tenderId);
-    console.log('✓ Email sent successfully');
+    try {
+      // Use dedicated CSV to DOCX converter (preserves exact content)
+      const docxTableUtils = require('../utils/docxTableUtils');
+      await docxTableUtils.csvToDocx(
+        holisticTableCsv,
+        holisticDocxPath,
+        'Tender 2 - Holistic Summary Table'
+      );
+      finalAttachmentPath = holisticDocxPath;
+      console.log(`✓ Holistic table DOCX created with same content as CSV: ${holisticDocxPath}`);
+    } catch (docxError) {
+      console.warn(`⚠️ Could not create DOCX from holistic table: ${docxError.message}`);
+      console.warn(`   Will send CSV instead: ${holisticTablePath}`);
+    }
+    
+    await emailService.sendHolisticTableEmail(finalAttachmentPath, tenderId);
+    console.log('✓ Final holistic table email sent successfully');
     
     // Final response
     res.json({

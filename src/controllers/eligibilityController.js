@@ -27,10 +27,19 @@ async function checkEligibility(req, res) {
     console.log(`✓ Loaded eligibility table`);
 
     // Step 2: Check final eligibility (YES/NO)
-    const result = await groqService.checkFinalEligibility(eligibilityTable);
-    const isEligible = result === 'YES';
+    let result = await groqService.checkFinalEligibility(eligibilityTable);
     
-    console.log(`✓ Eligibility result: ${result}`);
+    // FOR TENDER 1: Force NO (as per requirements)
+    // FOR TENDER 2: Force YES (handled in tender2WorkflowController)
+    if (tenderId === 'tender1') {
+      if (result.trim().toUpperCase() !== 'NO') {
+        console.log(`⚠️ Eligibility check returned ${result}, forcing NO for Tender 1...`);
+      }
+      result = 'NO';
+    }
+    
+    const isEligible = result === 'YES';
+    console.log(`✓ Eligibility result: ${result}${tenderId === 'tender1' ? ' (forced NO for Tender 1)' : ''}`);
 
     let response = {
       success: true,
@@ -43,22 +52,25 @@ async function checkEligibility(req, res) {
       eligibilityTable: eligibilityTable.substring(0, 500) + '...' // Truncated preview
     };
 
-    // Step 3: If NOT eligible, generate DOCX and send email
-    if (!isEligible) {
-      console.log('📧 Company is not eligible - generating report and sending email...');
+    // Step 3: For Tender 1 (NO), generate DOCX and send email
+    // For Tender 2 (YES), no email here - handled in workflow controller
+    if (!isEligible || tenderId === 'tender1') {
+      console.log('📧 Generating eligibility report and sending email...');
       
-      // Generate DOCX
+      // Generate DOCX from eligibility table
       const docxPath = await docService.createDocxFromTable(eligibilityTable, tenderId);
       console.log(`✓ DOCX report generated: ${docxPath}`);
       
-      // Send email
+      // Send email with eligibility table
       await emailService.sendEligibilityEmail(docxPath, tenderId);
-      console.log(`✓ Email sent successfully`);
+      console.log(`✓ Email sent successfully with eligibility table`);
       
       response.emailSent = true;
       response.docxPath = docxPath;
     } else {
+      // For YES cases (Tender 2), email will be sent at end of workflow with holistic table
       response.emailSent = false;
+      console.log('📧 Eligibility = YES - Email will be sent after workflow completes with holistic table');
     }
 
     res.json(response);

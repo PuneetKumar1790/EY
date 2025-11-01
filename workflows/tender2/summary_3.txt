@@ -1,108 +1,94 @@
-Here is a comprehensive, descriptive summary of the provided tender document for Asian Wires Pvt. Ltd., organized into clear, labeled sections as requested.
+This comprehensive summary outlines the key details of the tender, extracted from the provided "Tender Commercial Terms & condition" document. It is structured into labeled sections to facilitate downstream analysis for eligibility, product matching, and pricing.
 
 ---
 
 **1. Tender Overview**
+This section identifies the fundamental details of the tender, providing a quick reference for its identity and the issuing body. This information is crucial for initial screening and ensuring all subsequent documentation aligns with the correct tender. For example, knowing the issuing authority helps verify vendor registration and regional compliance requirements.
 
-This section summarizes the basic identity of the tender, providing essential information for initial identification and tracking. The Tender ID serves as the primary reference, the Tender Title gives an immediate understanding of the scope, the Issuing Authority is crucial for eligibility checks, and any Tender Portal details ensure access to official documentation and amendments.
-
-Tender ID / Reference No.: The tender is identified by the reference number PGVCL/PROC/LT AB Cable/1228.
-Tender Title / Name: While not explicitly stated as a formal title, the tender pertains to the procurement of LT Aerial Bunched Cable, as indicated by the Tender ID and repeated references to "tendered equipment / material" for "LT AB Cable."
-Organization / Issuing Authority: The tender is issued by Paschim Gujarat Vij Company Ltd. (PGVCL), which is a subsidiary company of GUVNL.
-Tender Portal / URL: The provided document does not explicitly state a specific tender portal or URL, though it mentions online submission for bids and refers to "nProcure portal" in the prompt's example, implying such portals are used.
+Tender ID / Reference No.: PGVCL/PROC/LT AB Cable/1228
+Tender Title / Name: Procurement of LT Aerial Bunched Cable (inferred from Tender ID)
+Organization / Issuing Authority: Paschim Gujarat Vij Company Ltd. (PGVCL), a subsidiary of GUVNL.
+Tender Portal / URL: The document refers to an "online mode of tender" and uploading documents, but a specific portal name or URL is not provided in the given text.
 
 **2. Key Dates and Timeline**
+This section captures all critical dates associated with the tender process, which are essential for scheduling internal actions, meeting deadlines, and planning for bid opening and validity. Missing a deadline can lead to disqualification, making these dates paramount for compliance.
 
-This section captures all critical timeline data, which is essential for scheduling internal actions, ensuring timely submission, and planning for subsequent evaluation phases. These dates dictate the project's pace and compliance requirements.
-
-Issue Date / Publication Date: The specific issue or publication date of the tender is not provided within the given document text.
-Submission Deadline / Closing Date & Time: The exact submission deadline and closing time are not specified in the provided document, though it repeatedly emphasizes adherence to "due date and time for submission of tender."
-Bid Opening Date / Technical Evaluation Date: Specific dates for bid opening or technical evaluation are not mentioned in the provided document, but it refers to "before opening of Price Bid" and "After opening Technical bid."
-Bid Validity Period: The document does not explicitly state a general bid validity period, but it specifies that if EMD is paid by Bank Guarantee, its validity must be for 6 months from the date of submission of the bid.
+Issue Date / Publication Date: Not specified in the provided document.
+Submission Deadline / Closing Date & Time: Not explicitly stated, but the document refers to "due date and time for submission of tender" for physical submission of EMD documents.
+Bid Opening Date / Technical Evaluation Date: Not specified, but the process mentions "Before opening Technical bids," "After opening Technical bid but before opening the price bid," and "After opening of price bid."
+Bid Validity Period: The validity of the Bank Guarantee for EMD must be for 6 Months from the date of submission of the bid. A general bid validity period is not explicitly stated.
 
 **3. Tender Scope and Items (BOQ / Schedule-A)**
+This section details the specific products or services requested, including their descriptions, specifications, and quantities. This data is fundamental for product matching against Asian Wires Pvt. Ltd.'s offerings and for preparing accurate cost estimates. Without this, it's impossible to determine if the company can fulfill the tender requirements.
 
-This section summarizes all items requested in the tender's Bill of Quantities (BOQ) or Schedule-A. Extracting each line item, including product description, specification, quantity, and unit of measurement, is vital for product matching, inventory assessment, and accurate pricing. It ensures a clear understanding of what products Asian Wires Pvt. Ltd. needs to supply.
-
-The document consistently refers to the "tendered equipment / material" as "LT AB Cable." While it mentions "SCHEDULE-A" as a document to be uploaded, the specific line items, detailed product descriptions, quantities (in km, nos, set), or any reference drawings/codes for the LT AB Cable are not provided within this text. The tender is broadly for LT AB Cables, with various configurations implied by discussions of "same or higher rating of relevant Indian Standard."
+The provided document, "Tender Commercial Terms & condition," does not contain the Bill of Quantity (BOQ) or Schedule-A with specific line items, product descriptions, specifications, quantities, or units of measurement. It generally refers to "tendered equipment / material" and "tender item," with the Tender ID indicating "LT AB Cable" as the primary product category. The actual specifications are expected to be in separate technical documents.
 
 **4. Delivery & Logistics Details**
+This section outlines all requirements related to the delivery of goods, including locations, timelines, and any special conditions. This information is vital for calculating logistics costs, planning production schedules, and ensuring compliance with regional regulations. Delivery location directly impacts freight charges and lead times.
 
-This section extracts all mentions of delivery, consignee, or dispatch locations, along with delivery schedules. This information is crucial for calculating transportation costs from the manufacturing site, planning production timelines, and understanding any specific inspection requirements or state-specific benefits related to the destination.
-
-Delivery Location / Consignee Address: Prices are quoted on an F.O.R. Destination basis, meaning delivery to "any of the stores of Company in Gujarat." The document also mentions "PGVCL Central Store, Rajkot, Gujarat" in the context of cash payment for tender fees, which could indicate a central delivery hub.
-Delivery Schedule / Completion Period: A specific delivery schedule or completion period is not explicitly stated in the provided text, though it references "delivery schedule of the order is already completed" in a clause about price adjustments.
-Inspection Agency: The document mentions factory inspection by the department or through a third party for vendor registration purposes, but it does not specify an inspection agency for pre-dispatch inspection of the supplied materials.
-Destination Jurisdiction / State-Specific Rules: The tender includes significant provisions for "Gujarat based Parties," offering a reservation of "not less than 50% of the quantity" if they match the L-1 price, provided their quoted price is not more than 15% higher than L-1. Additionally, Gujarat-based Micro, Cottage, and Small Scale Industrial Units can receive quantity allocation with up to 10% higher rates (11% for women-owned units) compared to other bidders, and a 5% quality-based price preference if ISI/BIS/Agmark is not mandatory.
+Delivery Location / Consignee Address: Prices are quoted on an "F.O.R. Destination basis," meaning delivery to "any of the stores of Company in Gujarat." The physical address for EMD submission, which is likely the corporate office, is "PASHCHIM GUJARAT VIJ COMPANY LTD., LAXMI NAGAR, NANA MAVA MAIN ROAD, RAJKOT-360 004."
+Delivery Schedule / Completion Period: Not explicitly stated in the provided document, though a clause mentions "delivery schedule of the order is already completed" in the context of price negotiation.
+Inspection Agency: For vendor registration, factory inspection may be conducted departmentally or "through third party inspection." Type test reports must be from "NABL accredited Laboratory or Govt. approved lab."
+Destination Jurisdiction / State-Specific Rules: Significant preference is given to "Gujarat based Parties," including a reservation of "not less than 50% of the quantity" if they match the L-1 price. Specific quantity allocation benefits are also available for "Micro, Cottage and Small Scale Industrial units of Gujarat state."
 
 **5. Eligibility and Registration Requirements**
+This section summarizes all conditions a vendor must meet to be considered eligible, including required certifications, past experience, and financial thresholds. This is a critical filter for determining if Asian Wires Pvt. Ltd. can even bid, preventing wasted effort on ineligible tenders. It also highlights any specific compliance mandates.
 
-This section summarizes all vendor eligibility conditions, including required certificates and compliance mandates. Understanding these requirements is fundamental for determining if Asian Wires Pvt. Ltd. can even bid, ensuring all necessary registrations, licenses, and experience criteria are met to avoid disqualification.
-
-Manufacturer / OEM Status: The document implies that suppliers are manufacturers, particularly in the context of vendor registration being issued "on manufacturing unit-wise of the firm" and requiring "factory inspection."
-Vendor Registration Requirement: All bidders must be registered as a Vendor for the tendered item with GUVNL or any of its subsidiary companies (like PGVCL). New suppliers must register by paying non-refundable fees plus GST, which vary based on factory location (Gujarat: Rs. 15,000 for Micro/Small, Rs. 25,000 for others; outside Gujarat: Rs. 50,000 for Micro/Small, Rs. 75,000 for others; out of Country: $5,000 USD). Re-registration fees are 50% of regular charges if a Purchase Order was successfully executed within two years prior to expiry. Registration is valid for five years. Government or Government Controlled Organizations/Undertakings are exempt from registration fees.
-Factory License, BIS, ISO Requirements: Bidders are required to submit "ISI/ BIS/ International Licenses, if applicable" for vendor registration. PGVCL also "desires that all the suppliers should possess high quality ISO 9001 / ISO 9002 certificate" and will give preference in quantity distribution to such suppliers after 1/1/2003.
-Experience / Past Supply Clauses: Bidders are categorized as New-1, New-2, or Regular Suppliers based on their past supply performance to GUVNL or its subsidiary companies for the same or higher rating of relevant Indian Standard equipment. Satisfactory performance is a key criterion for advancing supplier categories.
-Financial Turnover Threshold / Net Worth Criteria: Specific financial turnover or net worth criteria are not explicitly mentioned in the provided text.
-Blacklist Declaration, MSME Benefits, and Border Compliance Clauses: Bidders must declare that they, their proprietor, partners, or directors have not been blacklisted, stop-dealt, or banned for business dealing by GUVNL or any of its subsidiary companies. Gujarat-based Micro and Small Scale Industrial (manufacturing) Units registered with CSPO / NSIC / DGS&D are eligible for exemption from EMD payment. MSME benefits also extend to quantity allocation and price preference as detailed in the evaluation criteria.
+Manufacturer / OEM Status: The tender implies a preference for manufacturers, with vendor registration issued "on manufacturing unit-wise of the firm" and factory inspections being mandatory for new vendors.
+Vendor Registration Requirement: "Vendor Registration is compulsory for the Bidders to participate in the Tender" for items other than non-engineering items. Registration fees vary: Rs. 15,000/- (Micro/Small) or Rs. 25,000/- (Other) for factories within Gujarat; Rs. 50,000/- (Micro/Small) or Rs. 75,000/- (Other) for factories outside Gujarat but within India; $5,000 USD for out-of-country factories. Re-registration is 50% of fees under certain conditions. Registration is valid for five years. Firms must be registered with GUVNL or any of its subsidiary companies for the tender item. Government/PSU entities are exempt from registration fees.
+Factory License, BIS, ISO Requirements: "All technical specification should be ISS/ISI/BIS." "ISI/ BIS/ International Licenses, if applicable" are required for vendor registration. Possession of "ISO 9001 / ISO 9002 certificate" is preferred for quantity distribution after 1/1/2003.
+Experience / Past Supply Clauses: Bidders are categorized as "New-1 Supplier" (no prior supply or unsatisfactory performance), "New-2 Supplier" (successfully executed first order as New-1), or "Regular Supplier" (existing regular supplier or New-2 with 12 months satisfactory performance). Performance certificates are required.
+Financial Turnover Threshold / Net Worth Criteria: Not explicitly specified in the provided document.
+Blacklist Declaration, MSME Benefits, and Border Compliance Clauses: Bidders must declare that they are not "Stop deal / Banned for business dealing / blacklisting" by GUVNL or its subsidiaries. Blacklisting by one subsidiary applies to all. Micro and Small Scale Industrial (manufacturing) Units registered under Small Scale Industries of Gujarat State with CSPO / NSIC / DGS&D are eligible for EMD exemption. Gujarat-based Micro, Cottage, and Small Scale Industrial units receive quantity allocation preference if their quoted rate is up to 10% higher than L-1 (11% for women-owned, 5% for ISI/BIS/Agmark if not mandatory, with a total cap of 15%).
 
 **6. Technical Specifications (Core Product Data)**
+This section details the precise technical requirements for each product, including material, dimensions, performance standards, and other critical parameters. This data is essential for Asian Wires Pvt. Ltd. to confirm its products meet the tender's exact requirements and for accurate SKU mapping. Deviations from these specifications are generally not allowed.
 
-This section summarizes every distinct technical specification from the tender's technical sections. Providing a compact list of parameters for each product variation is critical for SKU mapping, ensuring product compliance, and identifying any deviations that might require clarification or alternative product offerings.
-
-The document states that "All technical specification should be ISS/ISI/BIS" and that "Specification framed out by PGVCL shall be separately brought out in the tender documents." It explicitly states that "No deviation in specification shall be allowed and PGVCL decision shall be final." While the document refers to "Technical Specifications etc." and "Techno – Commercial Bid," the actual technical parameters such as Cable_Type, Core_Configuration, Insulation_Type, Rated_Voltage, Applicable_Standards (IS/IEC numbers), Conductor_Material, Insulation_Thickness_min_mm, No_of_Strands, Max_DC_Resistance_Ohm_km, Tensile_Strength_min_N_mm², or Messenger_Composition are not detailed within this provided text. These would be found in a separate "Technical Specifications" document.
+The provided document, "Tender Commercial Terms & condition," explicitly states that "All technical specification should be ISS/ISI/BIS. Specification framed out by PGVCL shall be separately brought out in the tender documents. No deviation in specification shall be allowed and PGVCL decision shall be final." Therefore, specific technical parameters such as Cable_Type, Core_Configuration, Insulation_Type, Rated_Voltage, Applicable_Standards, Conductor_Material, Insulation_Thickness_min_mm, No_of_Strands, Max_DC_Resistance_Ohm_km, Tensile_Strength_min_N_mm², or Messenger_Composition are not available in this document.
 
 **7. Commercial & Financial Terms**
+This section outlines the financial obligations and commercial conditions, including fees, payment schedules, and any penalties. Understanding these terms is crucial for pricing strategies, cash flow management, and assessing the overall financial risk and profitability of the tender.
 
-This section extracts major financial or commercial conditions, including fees, payment schedules, and penalty clauses. This data is essential for accurate pricing, cash flow forecasting, and risk assessment, ensuring all financial implications are understood before bidding.
-
-Tender Fee, EMD, and Performance Security: A non-refundable Tender Fee plus applicable GST is required, payable in cash (up to Rs. 10,000) or via RTGS/NEFT/online. EMD can be paid via RTGS/NEFT/online for all amounts, or by Demand Draft/Banker’s Cheque/Pay Order/Bank Guarantee for amounts exceeding Rs. 3 Lakhs. MSME units registered under Small Scale Industries of Gujarat State with CSPO/NSIC/DGS&D certificates are exempt from EMD. If EMD is a Bank Guarantee, it must be valid for 6 months from bid submission. The document does not explicitly mention a Performance Security amount or requirement.
-Payment Terms: Specific payment terms (e.g., "Within 30 days of delivery") are not explicitly stated in the provided text.
-Delivery Penalty or LD Clause: A specific delivery penalty or Liquidated Damages (LD) clause is not explicitly mentioned in the provided text.
-Price Variation / Escalation Clause: The "Statutory Variation clause will not be applicable in case of Supplier / Contractor has opted for Composition Scheme under GST." This implies that for suppliers not under the Composition Scheme, a statutory variation clause might be applicable, but the document does not explicitly define whether the price is firm or variable otherwise.
-Price Basis: Prices quoted should be "FIRM / VARIABLE" and on an "F.O.R. Destination basis" (i.e., any of the Company's stores in Gujarat). Bidders must provide a break-up of the Total Unit F.O.R. Destination Price in Schedule-B, including Unit Ex-works price, freight, packing & forwarding charges, Insurance Charges, GST, and Cess as applicable.
+Tender Fee, EMD, and Performance Security: A non-refundable Tender Fee plus applicable GST is required. EMD can be paid via RTGS/NEFT/online (mandatory for amounts up to Rs. 3 Lakhs, or cash up to Rs. 10,000). For EMD over Rs. 3 Lakhs, Demand Draft, Banker’s Cheque, Pay Order, or Bank Guarantee are also accepted. Gujarat-based Micro and Small Scale Industrial units registered with CSPO / NSIC / DGS&D are exempt from EMD. EMD Bank Guarantees must be valid for 6 months from the bid submission date. The document mentions "SD" (Security Deposit) in the context of appropriation against dues, but no specific performance security amount or clause is detailed.
+Payment Terms: Not explicitly specified in the provided document.
+Delivery Penalty or LD Clause: A specific delivery penalty or Liquidated Damages (LD) clause is not detailed in the provided document.
+Price Variation / Escalation Clause: Prices quoted should be "FIRM / VARIABLE." If the supplier opts for the Composition Scheme of GST, the price mentioned in the bid is final, and any additional GST will be borne by the bidder; Statutory Variation clause will not be applicable. This implies that for non-composition scheme bidders, statutory variations might be applicable, though details are not provided.
+Price Basis: Prices are to be quoted on an "F.O.R. Destination basis" (i.e., any of the company's stores in Gujarat). Bidders must provide a break-up of the Total Unit F.O.R. Destination Price, including Unit Ex-works price, freight, packing & forwarding charges, Insurance Charges, GST, and Cess as applicable. Evaluation will be on "firm Price End Cost with GST and Cess as applicable basis."
 
 **8. Evaluation Criteria**
+This section describes how bids will be assessed, covering both technical and financial aspects, and any preference clauses. This information guides Asian Wires Pvt. Ltd. in structuring its bid to maximize its chances of success and understand the competitive landscape.
 
-This section summarizes how the tender will be evaluated, covering both technical and financial aspects. Understanding these criteria is critical for strategizing the bid, highlighting strengths, and anticipating how Asian Wires Pvt. Ltd.'s offer will be judged against competitors.
-
-Technical Bid Evaluation Basis: The tender operates on a two-bid system (Techno-commercial Bid and Price Bid). Technical bids will be evaluated for conformity to technical specifications. PGVCL reserves the right to open or not to open the price bid based on the bidders' past performance of supplied materials.
-Financial Bid Evaluation Basis: Price Bids of techno-commercially qualified bidders will be opened. All tenders will be evaluated on a "firm Price End Cost with GST and Cess as applicable basis" unless otherwise specified. If the tender includes a "Total Owning Cost (TOC) Clause," evaluation will be done accordingly, requiring a detailed breakup of the End Cost.
-Preference Clauses: No general price preference is given on any account. However, specific quantity distribution preferences apply:
-    *   Gujarat-based parties may receive not less than 50% of the quantity if they match the L-1 price and their quoted price is not more than 15% higher than L-1.
-    *   Gujarat-based Micro, Cottage, and Small Scale Industrial Units can receive quantity allocation even if their rate is up to 10% higher than other units (11% for women-owned units), provided they match the L-1 price. A quality-based price preference of up to 5% higher is also available for ISI/BIS/Agmark materials if not mandatory. The total price preference for these units will not exceed 15%.
-Weightage or Scoring Mechanism: The document outlines quantity distribution rules based on supplier categories (New-1, New-2, Regular) and item criticality. For critical items, New-1 suppliers are restricted to 10% of quantity, New-2 to 25%, with total new suppliers limited to 50%. For Cables, Conductors, and Conveyor Belts, New Suppliers are allotted up to 10% (New-1) / 25% (New-2) of Tender Quantity or Minimum Drum Length, whichever is higher. For non-critical items, New-1 suppliers are restricted to 30%, and New-2 to 40%. L-1 regular parties will receive heavy weightage in order placement. The company may relax these conditions if regular supplier rates are too high or quantities are insufficient. Negotiation with L-1 New and lowest Regular categories is possible if there is a lack of serious competition.
+Technical Bid Evaluation Basis: The tender follows a two-bid system (Techno-commercial Bid and Price Bid). The price bid of only "Techno-commercially qualified Bidders" will be opened. PGVCL reserves the right to open or not to open the price bid based on past performance of supplied materials.
+Financial Bid Evaluation Basis: Tenders will be evaluated on "firm Price End Cost with GST and Cess as applicable basis," unless a Total Owning Cost (TOC) Clause is invited. Negotiation may occur with L-1 New and lowest Regular Categories. Other firms may be asked to match the L-1 price of their respective categories (New or Regular).
+Preference Clauses: "Not less than 50% of the quantity" may be reserved for Gujarat-based parties if they match the L-1 price and their quoted unit end cost is not more than 15% higher than L-1. Gujarat-based Micro, Cottage, and Small Scale Industrial units may receive quantity allocation if their rate is up to 10% higher than L-1 (11% for women-owned, 5% for ISI/BIS/Agmark if not mandatory), with a total cap of 15% higher.
+Weightage or Scoring Mechanism: "L-1 regular party however will get heavy weightage in order placement." Quantity distribution is restricted for New-1 Suppliers (up to 10% for critical items, 30% for non-critical) and New-2 Suppliers (up to 25% for critical items, 40% for non-critical). Total quantity for New Suppliers (New-1 & 2) for critical items is limited to 50%.
 
 **9. Contacts and Clarifications**
+This section provides essential contact information for official communication, queries, or escalations. Having direct contact details ensures that any ambiguities in the tender documents can be clarified promptly, preventing misinterpretations that could lead to disqualification.
 
-This section captures key communication details, which are vital for submitting documents, seeking clarifications, or escalating issues. Having precise contact information ensures smooth communication throughout the tender process.
-
-Contact Person / Designation: A specific contact person or designation for general queries is not explicitly provided in the document.
-Email / Phone: Specific email addresses or phone numbers for general inquiries are not provided in the document.
-Office Address: Physical "EMD Cover Documents" (if applicable) must be sent to "THE CHIEF ENGINEER (MATERIAL), PASHCHIM GUJARAT VIJ COMPANY LTD., LAXMI NAGAR, NANA MAVA MAIN ROAD, RAJKOT-360 004." Cash payments for tender fees can be made at "Cash Counter, PGVCL, Corporate Office, Rajkot."
+Contact Person / Designation: The Chief Engineer (Material)
+Email / Phone: Not specified in the provided document.
+Office Address: PASHCHIM GUJARAT VIJ COMPANY LTD., LAXMI NAGAR, NANA MAVA MAIN ROAD, RAJKOT-360 004. (Also mentioned: PGVCL, Corporate Office, Rajkot).
 
 **10. Key Compliance Notes**
+This section summarizes important procedural, legal, and contractual obligations. Adhering to these notes is crucial for a compliant bid submission and successful contract execution, covering aspects like document formats, warranty, and after-sales support.
 
-This section summarizes important procedural and legal compliances. Understanding these notes is crucial for ensuring the bid is procedurally correct, legally sound, and that Asian Wires Pvt. Ltd. is prepared for post-award obligations like contract execution and warranty provisions.
-
-Document Submission Format: Bidders must upload scanned copies of all required documents (PDF Files only) including Schedule-A, Commercial Terms & Conditions, and Technical Specifications. These uploaded documents must be legible and not password-protected. Prices must be indicated in the online price bid format; physical price bids will not be considered. Physical submission of "EMD Cover Documents" (containing DD/Banker’s Cheque/Pay Order/Bank Guarantee for Tender Fee and EMD, if not paid online, along with GST registration copy and vendor registration proof) is required via Registered Post A.D. or Speed Post only, addressed to The Chief Engineer (Material), PGVCL, Rajkot, with the Tender number clearly mentioned on the sealed cover. Courier service and hand delivery are not allowed for physical EMD documents.
-Agreement & Contract Execution Clauses: The document does not explicitly detail specific clauses for agreement and contract execution, though it refers to "execution of order" and "terms of A/T (Order / Contract)."
-Warranty / Guarantee Period: A specific warranty or guarantee period for the supplied materials is not explicitly mentioned in the provided text.
-After-Sales Service Clause: The criteria for a Performance Certificate (Annexure-VI) include evaluation of "after sales services," indicating that this is a factor in supplier assessment.
-Jurisdiction: Only the courts at the Headquarter of the Company (Gujarat State) shall have exclusive jurisdiction to adjudicate all disputes relating to or arising out of vendor registration or placement of the order.
+Document Submission Format: Bidders must "upload scan copy of all the required documents as per TENDER NOTICE including SCHEDULE-“A”, Commercial Terms & conditions and Technical Specifications etc." These scanned documents must be "PDF Files only," legible, and not password protected. The price bid must be submitted in "online mode of tender" and physical price bids will not be considered. However, certain "EMD Cover Documents" (DD/Banker’s Cheque/Pay Order/Bank Guarantee for EMD > Rs. 3 Lakhs, or self-certified photocopy of cash receipt for Tender Fee if paid in cash) must be submitted in physical form by "Registered Post A.D. or Speed Post" to the Chief Engineer (Material) in Rajkot.
+Agreement & Contract Execution Clauses: The document mentions "Letter of Acceptance/ purchase order awarded" and "execution of order," but specific clauses regarding contract signing timelines are not detailed.
+Warranty / Guarantee Period: Not explicitly specified in the provided document.
+After-Sales Service Clause: "after sales services" are mentioned as a component of the performance certificate, indicating it is a factor in supplier evaluation, but a specific clause detailing requirements is not provided.
 
 **11. Optional Attachments or Annexures**
+This section lists any supplementary documents referenced in the tender, such as drawings, technical specifications, or specific forms. These attachments often contain critical details necessary for a complete and compliant bid.
 
-This section lists any referenced drawings, appendices, or sample formats. Knowing these attachments exist and their purpose is important for ensuring all required documentation is reviewed and submitted as part of the bid.
-
-The tender refers to several annexures and schedules:
-*   Annexure - I: Pertains to Vendor Registration for non-Engineering items (not required).
-*   Annexure - II: Details documents required for Vendor Registration / Re-registration.
-*   Annexure - III: Details documents required for change of name / ownership / control of a Registered Vendor.
-*   Annexure – VI: Prescribed Performa for Performance Certificate, to be issued by subsidiary companies.
-*   SCHEDULE-“A”: A document that bidders should upload, containing commercial terms & conditions and technical specifications.
-*   Schedule– “B”: The Price Bid document, where bidders must indicate the break-up of the Total Unit F.O.R. Destination Price.
+The document refers to the following annexures and schedules:
+*   Annexure - I: For non-Engineering items (vendor registration not required).
+*   Annexure – II: For documents required for vendor registration.
+*   Annexure III: For documents required for change of name / ownership / control of the firm.
+*   Annexure–VI: Prescribed Performa for Performance Certificate.
+*   SCHEDULE-“A”: Mentioned as a required upload.
+*   Schedule– “B”: Refers to the Price Bid.
+*   Attached Map: For out-of-Gujarat vendor registration jurisdiction.
 
 **12. Summary Conclusion**
-
-This tender, identified as PGVCL/PROC/LT AB Cable/1228, is issued by Paschim Gujarat Vij Company Ltd. (PGVCL) for the procurement of LT Aerial Bunched Cables, with specific technical specifications expected to be detailed in separate tender documents and adherence to ISS/ISI/BIS standards being mandatory. The delivery destination is any of the Company's stores in Gujarat, with significant quantity distribution preferences for Gujarat-based manufacturers, including Micro, Cottage, and Small Scale Industrial Units. Eligibility is strictly tied to prior vendor registration with GUVNL or its subsidiary companies, requiring factory inspection and submission of type test reports not older than seven years. The tender follows a two-bid system (Techno-commercial and Price Bid), with evaluation based on firm price end cost and past performance. This summary becomes the base input for eligibility analysis, SKU mapping, and pricing computations.
+This tender, identified as PGVCL/PROC/LT AB Cable/1228, is for the procurement of LT Aerial Bunched Cables by Paschim Gujarat Vij Company Ltd. The total number of products requested and their specific quantities are not detailed in this commercial terms document. Delivery is required to any of the company's stores in Gujarat, with Rajkot being the corporate hub. The overall eligibility context mandates that only vendors registered with GUVNL or its subsidiary companies for the tender item can bid, with specific registration fees and categories (New-1, New-2, Regular) influencing quantity allocation and price matching. Significant preferences are extended to Gujarat-based manufacturers and MSME units.
