@@ -46,7 +46,7 @@ Provide a detailed, structured summary covering all the above points. Be specifi
       ],
       model: MODEL,
       temperature: 0.3,
-      max_tokens: 16384, // INCREASED from 8192 to handle longer summaries
+      max_tokens: 16384,
     });
 
     const summary = completion.choices[0]?.message?.content || "";
@@ -109,7 +109,7 @@ ${companyInfo.substring(0, 3000)}
 }
 
 /**
- * Generate eligibility analysis table with improved prompt
+ * Generate eligibility analysis table with UPDATED prompt
  * @param {string} tenderSummary - Comprehensive tender summary (concatenated from all PDF summaries)
  * @param {string} companyInfo - Company information text
  * @returns {Promise<string>} Eligibility analysis table
@@ -121,8 +121,8 @@ async function generateEligibilityAnalysis(tenderSummary, companyInfo) {
       `📊 Input sizes - Tender: ${tenderSummary.length} chars, Company: ${companyInfo.length} chars`
     );
 
-    const maxTenderLength = 50000; // Reduced from 100000
-    const maxCompanyLength = 40000; // Reduced from 80000
+    const maxTenderLength = 50000;
+    const maxCompanyLength = 40000;
 
     const truncatedTender =
       tenderSummary.length > maxTenderLength
@@ -140,12 +140,11 @@ async function generateEligibilityAnalysis(tenderSummary, companyInfo) {
       `📊 Processing - Tender: ${truncatedTender.length} chars, Company: ${truncatedCompany.length} chars`
     );
 
-    // IMPROVED PROMPT - More detailed and structured
-    const prompt = `You are a tender eligibility analyst. You have been provided with two documents:
+    // UPDATED PROMPT 2
+    const prompt = `You are a tender eligibility analyst. You have been provided with two things:
 
-1. **TENDER DOCUMENT**: A comprehensive summary of tender requirements including all eligibility criteria, technical specifications, financial requirements, documentation needs, and submission requirements.
-
-2. **COMPANY INFORMATION DOCUMENT**: A detailed company profile containing registrations, certifications, licenses, production capacity, financial data, experience, and all relevant business information.
+1. **TENDER DOCUMENT long summary**: A comprehensive summary of tender requirements
+2. **COMPANY INFORMATION DOCUMENT**: A detailed company profile
 
 ## TENDER DOCUMENT:
 ${truncatedTender}
@@ -155,66 +154,88 @@ ${truncatedCompany}
 
 ---
 
-Your task is to:
-1. Carefully analyze ALL eligibility criteria mentioned in the tender document
-2. Cross-reference each requirement with the company information document
-3. Determine whether the company fulfills each specific requirement
-4. Create a comprehensive eligibility analysis table
+## CRITICAL INSTRUCTION - EXCLUDE THESE FROM ANALYSIS:
+
+**DO NOT include the following in your eligibility table as they are procedural/submission items:**
+
+1. **Payment Confirmations**: Tender fee paid, EMD paid, Bank Guarantee submitted, etc. → Only verify CAPABILITY to pay
+
+2. **Document Submission Items**: Forms filled, documents sealed & signed, scanned copies uploaded, physical submission, etc.
+
+3. **Standard Acceptance Items**: Acceptance of price variation clause, payment terms, delivery terms, penalty terms, performance guarantee terms, etc. → These are automatically accepted by bidding
+
+4. **Procedural Documents**: Notarized declarations, stamp papers, power of attorney, authorized representative declaration, etc. → Standard compliance items
+
+5. **Application Process Items**: Online submission, preliminary stage uploads, technical stage uploads, format compliance, etc.
+
+6. **Standard Technical Specs for Manufactured Products**: If company already manufactures the product type, don't verify granular specs like insulation thickness, conductor resistance, etc. → Only verify PRODUCT TYPE match
+
+7. **Bid Validity**: 120 days validity → Assumed compliance
+
+8. **Agreement Execution**: Willingness to sign agreement → Assumed if bidding
+
+**IMPORTANT**: Treat operational, commercial and procedural issues as advisory ONLY and NOT as mandatory disqualifiers. Specifically exclude delivery schedule / capacity ramping / subcontracting, bank/BG exposure limits, procedural submission items (EMD/tender-fee proof, notarized declarations, signed forms), acceptance of standard commercial clauses, and granular manufacturing spec details from the mandatory YES/NO decision. Only evaluate the defined MANDATORY CHECKLIST (Registration & Core Certifications; Product & Technical Capability — product family match + required BIS/type-tests; Financial Capability; Experience & Compliance).
+
+---
+
+## FOCUS ONLY ON THESE CRITICAL ELIGIBILITY FACTORS:
+
+### A. Registration & Core Certifications
+- Manufacturer status with GST
+- **Vendor Registration with SPECIFIC required entity** (e.g., PGVCL vs DGVCL)
+- Factory License
+- ISO Certification (if mandatory)
+
+### B. Product & Technical Capability
+- **Does company manufacture the EXACT product type required?** (e.g., XLPE vs PVC insulation)
+- **BIS License for the SPECIFIC product** (not just category)
+- **Type Test Reports for the SPECIFIC product variant**
+- Conformance to required IS standards
+
+### C. Production Capacity
+- **Minimum Tendering Quantity**: Can company fulfill MTQ for each item?
+- **Delivery Schedule**: Can company meet the timeline?
+- **Current capacity utilization**: Can accommodate new order?
+
+### D. Financial Capability (Capability, not actual payment)
+- **Tender Fee**: Can afford? (Just verify financial capability)
+- **EMD Amount**: Can arrange? (Check bank guarantee limits/working capital)
+- **Financial Turnover**: Meets any minimum threshold?
+
+### E. Experience
+- Experience in manufacturing the product
+- **Past orders with required entity** (if mandated)
+- Performance track record
+
+### F. Critical Compliance
+- Not blacklisted/stop-deal
+- MSME status (if benefits claimed)
+- Country border restrictions compliance
+- Conflict of interest declaration
+
+---
 
 ## OUTPUT FORMAT:
 
 Create ONLY a table with the following structure (use proper markdown table formatting):
 
-| Sr. No. | Tender Requirement | Fulfilled? | Company's Status/Information | Reference in Company Info Doc |
-|---------|-------------------|------------|------------------------------|-------------------------------|
-| [number] | [Exact requirement from tender] | [✅ YES / ❌ NO / ⚠️ PARTIAL/UNCERTAIN] | [Specific data/information from company doc] | [Exact section/page reference] |
+| Sr. No. | Critical Tender Requirement | Fulfilled? | Company's Status/Information | Reference in Company Info Doc |
+|---------|---------------------------|------------|------------------------------|-------------------------------|
+| [number] | [Exact requirement from tender] | [✅ YES / ❌ NO / ⚠️ PARTIAL] | [Specific data/information from company doc] | [Exact section/page reference] |
 
-## INSTRUCTIONS:
+**Guidelines:**
+- ✅ YES = Fully met with evidence
+- ❌ NO = Not met or missing
+- ⚠️ PARTIAL = Partially met or needs verification
 
-1. **Completeness**: Include EVERY eligibility criterion mentioned in the tender - registration requirements, certifications, licenses, financial criteria, technical specifications, experience requirements, documentation requirements, declarations, etc.
+**ONLY include items from the MANDATORY CHECKLIST above. DO NOT include procedural/submission items.**
 
-2. **Accuracy**: 
-   - Use ✅ YES only when the requirement is FULLY met
-   - Use ❌ NO when the requirement is NOT met or information is missing
-   - Use ⚠️ PARTIAL/UNCERTAIN when partially met or unclear
+After the table, provide:
+- **OVERALL ELIGIBILITY**: State clearly ✅ ELIGIBLE or ❌ NOT ELIGIBLE
+- **CRITICAL DISQUALIFYING FACTORS** (if not eligible): List 3-5 key reasons
+- **STRENGTHS** (if eligible): List 3-5 key factors
 
-3. **Specificity in "Company's Status/Information" column**:
-   - Quote exact numbers, dates, certificate numbers, registration numbers
-   - Be precise (e.g., "GSTIN: 24AABCA1234F1Z5" not just "Has GST")
-   - If requirement not met, state clearly what is missing
-
-4. **Exact References**:
-   - Cite the exact section name/number from the company info document
-   - If information spans multiple sections, list all relevant sections
-   - If information is NOT found anywhere, state "Not mentioned in company info doc"
-
-5. **Logical Grouping**: Organize requirements in logical groups with section headers:
-   - Registration & Certifications
-   - Technical Requirements (BIS, Type Tests, Product Specs)
-   - Financial Requirements (Fees, EMD, Turnover)
-   - Experience & Past Performance
-   - Production Capacity & Infrastructure
-   - Documentation & Declarations
-   - Delivery & Commercial Terms
-
-6. **For complex requirements** (like Minimum Tendering Quantity with multiple items):
-   - Create separate rows for each item/variant
-   - Show calculations where applicable
-
-7. **After the table, provide**:
-   - **OVERALL ELIGIBILITY**: State clearly ✅ ELIGIBLE or ❌ NOT ELIGIBLE
-   - **CRITICAL DISQUALIFYING FACTORS** (if not eligible): List 3-5 key reasons why company is not eligible
-   - **STRENGTHS** (if eligible): List 3-5 key factors that make the company a strong candidate
-
-## ANALYSIS APPROACH:
-- Read the entire tender document first to understand all requirements
-- Read the entire company information document to understand company capabilities
-- Match each tender requirement systematically against company information
-- Be objective - don't assume information that isn't explicitly stated
-- If a requirement is conditional (e.g., "if applicable"), note whether it applies to this company
-- Pay special attention to MANDATORY vs OPTIONAL requirements
-
-Now, analyze the provided tender and company documents and create the eligibility analysis table following the exact format specified above.`;
+Output will be only table and decision sections - nothing else.`;
 
     const completion = await gemini.chat.completions.create({
       messages: [
@@ -225,7 +246,7 @@ Now, analyze the provided tender and company documents and create the eligibilit
       ],
       model: MODEL,
       temperature: 0.2,
-      max_tokens: 65536, // MAXIMUM tokens for comprehensive analysis
+      max_tokens: 65536,
     });
 
     const analysis = completion.choices[0]?.message?.content || "";
@@ -250,7 +271,7 @@ Now, analyze the provided tender and company documents and create the eligibilit
 }
 
 /**
- * Check final eligibility (YES/NO) with improved prompt
+ * Check final eligibility (YES/NO) with UPDATED prompt
  * @param {string} eligibilityTable - Eligibility analysis table
  * @returns {Promise<string>} "YES" or "NO"
  */
@@ -300,7 +321,7 @@ async function checkFinalEligibility(eligibilityTable) {
 
     const tableExcerpt = eligibilityTable.substring(0, 20000);
 
-    // IMPROVED PROMPT - More precise and focused
+    // UPDATED PROMPT 3
     const prompt = `You are a tender eligibility analyst.
 
 Based on the eligibility analysis table already prepared (which compares tender requirements vs. company information), output only one word:
@@ -312,16 +333,9 @@ Based on the eligibility analysis table already prepared (which compares tender 
 ## ELIGIBILITY ANALYSIS TABLE:
 ${tableExcerpt}
 
-## DECISION RULES:
-1. If ANY requirement shows ❌ NO status → Company is **NOT eligible**
-2. If MOST requirements show ⚠️ PARTIAL/UNCERTAIN → Company is **NOT eligible**  
-3. If MOST requirements show ✅ YES with few/no ❌ or ⚠️ → Company **IS eligible**
-4. Focus on MANDATORY requirements - these are critical
-5. Minor missing documentation may be acceptable if core eligibility is met
+Do not provide explanations, tables, or reasoning.
 
-**Do not provide explanations, tables, or reasoning.**
-
-**Return only YES or NO as the final output.**
+Return only YES or NO as the final output.
 
 Your decision:`;
 

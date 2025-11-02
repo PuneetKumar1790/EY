@@ -245,27 +245,9 @@ async function processTender2Workflow(req, res) {
     console.log('STEP 9: Sending email with final holistic table');
     console.log('='.repeat(60));
     
-    // Convert holistic CSV to DOCX for email attachment (same content as CSV)
-    let finalAttachmentPath = holisticTablePath;
-    const holisticDocxPath = path.join(workflowDir, 'holistic_summary_table.docx');
-    
-    try {
-      // Use dedicated CSV to DOCX converter (preserves exact content)
-      const docxTableUtils = require('../utils/docxTableUtils');
-      await docxTableUtils.csvToDocx(
-        holisticTableCsv,
-        holisticDocxPath,
-        'Tender 2 - Holistic Summary Table'
-      );
-      finalAttachmentPath = holisticDocxPath;
-      console.log(`✓ Holistic table DOCX created with same content as CSV: ${holisticDocxPath}`);
-    } catch (docxError) {
-      console.warn(`⚠️ Could not create DOCX from holistic table: ${docxError.message}`);
-      console.warn(`   Will send CSV instead: ${holisticTablePath}`);
-    }
-    
-    await emailService.sendHolisticTableEmail(finalAttachmentPath, tenderId);
-    console.log('✓ Final holistic table email sent successfully');
+    // Send CSV file directly (no DOCX conversion)
+    await emailService.sendHolisticTableEmail(holisticTablePath, tenderId);
+    console.log('✓ Final holistic table email sent successfully with CSV attachment');
     
     // Final response
     res.json({

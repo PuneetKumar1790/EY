@@ -14,6 +14,127 @@ async function checkEligibility(req, res) {
     
     console.log(`\n🎯 Checking final eligibility for ${tenderId}...`);
 
+    // FOR TENDER 1: Handle errors and fallback DOCX
+    if (tenderId === 'tender1') {
+      // Step 1: Try to read eligibility table
+      const tablePath = `analysis/${tenderId}/table.txt`;
+      let eligibilityTable = null;
+      let docxPath = null;
+      let useFallback = false;
+      const fallbackDocxPath = path.join('analysis', tenderId, 'Eligibility_Analysis_tender1_1761485618543.docx');
+
+      try {
+        // Check if table exists
+        if (await fs.pathExists(tablePath)) {
+          eligibilityTable = await fs.readFile(tablePath, 'utf8');
+          console.log(`✓ Loaded eligibility table (${eligibilityTable.length} chars)`);
+          
+          // Check if table is a fallback/error table
+          // Fallback tables typically contain these indicators:
+          const hasFallbackKeywords = eligibilityTable.toLowerCase().includes('api limitations') ||
+                                      eligibilityTable.toLowerCase().includes('manual review recommended') ||
+                                      eligibilityTable.toLowerCase().includes('⚠️') && eligibilityTable.toLowerCase().includes('basic analysis') ||
+                                      eligibilityTable.toLowerCase().includes('⚠️') && eligibilityTable.toLowerCase().includes('api limitations') ||
+                                      eligibilityTable.toLowerCase().includes('⚠️ creating fallback') ||
+                                      (eligibilityTable.toLowerCase().includes('⚠️') && eligibilityTable.toLowerCase().includes('note') && 
+                                       eligibilityTable.toLowerCase().includes('due to api'));
+          
+          // Check if it's the specific fallback pattern from groqService.createFallbackAnalysis
+          const isGroqServiceFallback = eligibilityTable.includes('⚠️ **Note**: This is a basic analysis created due to API limitations');
+          
+          // If table is very short, it's likely a placeholder
+          const isShortPlaceholder = eligibilityTable.length < 500 && 
+                                     (eligibilityTable.toLowerCase().includes('error') || 
+                                      eligibilityTable.toLowerCase().includes('fallback'));
+          
+          const isFallbackTable = hasFallbackKeywords || isGroqServiceFallback || isShortPlaceholder;
+          
+          if (isFallbackTable) {
+            console.log(`⚠️ Detected fallback/error table - using fallback DOCX`);
+            console.log(`   Table length: ${eligibilityTable.length} chars`);
+            console.log(`   Contains fallback keywords: ${hasFallbackKeywords}`);
+            console.log(`   Is Groq service fallback: ${isGroqServiceFallback}`);
+            useFallback = true;
+          } else {
+            // Try to check eligibility (may fail if Gemini API error)
+            try {
+              await groqService.checkFinalEligibility(eligibilityTable);
+            } catch (apiError) {
+              console.warn(`⚠️ Gemini API error during eligibility check: ${apiError.message}`);
+              useFallback = true;
+            }
+          }
+        } else {
+          console.warn(`⚠️ Eligibility table not found at ${tablePath}`);
+          useFallback = true;
+        }
+      } catch (error) {
+        console.warn(`⚠️ Error reading eligibility table: ${error.message}`);
+        useFallback = true;
+      }
+
+      // FOR TENDER 1: Always force NO
+      const result = 'NO';
+      const isEligible = false;
+      console.log(`✓ Eligibility result: ${result} (forced NO for Tender 1)`);
+
+      // Step 2: Use fallback DOCX if needed, otherwise generate from table
+      if (useFallback) {
+        // Use fallback DOCX file
+        if (await fs.pathExists(fallbackDocxPath)) {
+          docxPath = fallbackDocxPath;
+          console.log(`✓ Using fallback DOCX file: ${docxPath}`);
+        } else {
+          // Try to find any Eligibility_Analysis_tender1_*.docx file
+          const analysisDir = `analysis/${tenderId}`;
+          const files = await fs.readdir(analysisDir).catch(() => []);
+          const fallbackFiles = files.filter(f => 
+            f.startsWith('Eligibility_Analysis_tender1_') && f.endsWith('.docx')
+          );
+          
+          if (fallbackFiles.length > 0) {
+            docxPath = path.join(analysisDir, fallbackFiles[0]);
+            console.log(`✓ Using fallback DOCX file (found: ${fallbackFiles[0]}): ${docxPath}`);
+          } else {
+            throw new Error(`Fallback DOCX not found. Expected: ${fallbackDocxPath}`);
+          }
+        }
+      } else {
+        // Generate DOCX from eligibility table (normal case)
+        try {
+          docxPath = await docService.createDocxFromTable(eligibilityTable, tenderId);
+          console.log(`✓ DOCX report generated from table: ${docxPath}`);
+        } catch (docxError) {
+          console.error(`❌ Error generating DOCX from table: ${docxError.message}`);
+          // Fallback to pre-existing DOCX
+          if (await fs.pathExists(fallbackDocxPath)) {
+            docxPath = fallbackDocxPath;
+            console.log(`✓ Using fallback DOCX file after DOCX generation error: ${docxPath}`);
+            useFallback = true;
+          } else {
+            throw new Error(`Could not generate DOCX and fallback not found: ${docxError.message}`);
+          }
+        }
+      }
+
+      // Step 3: Send email with DOCX
+      console.log('📧 Sending email with eligibility table (NO)...');
+      await emailService.sendEligibilityEmail(docxPath, tenderId);
+      console.log(`✓ Email sent successfully with eligibility table`);
+
+      return res.json({
+        success: true,
+        message: `Company is NOT eligible for ${tenderId}`,
+        tenderId,
+        eligible: false,
+        decision: result,
+        emailSent: true,
+        docxPath: docxPath,
+        usedFallback: useFallback
+      });
+    }
+
+    // FOR TENDER 2 (or other tenders): Original logic
     // Step 1: Read eligibility table
     const tablePath = `analysis/${tenderId}/table.txt`;
     if (!await fs.pathExists(tablePath)) {
@@ -29,17 +150,9 @@ async function checkEligibility(req, res) {
     // Step 2: Check final eligibility (YES/NO)
     let result = await groqService.checkFinalEligibility(eligibilityTable);
     
-    // FOR TENDER 1: Force NO (as per requirements)
-    // FOR TENDER 2: Force YES (handled in tender2WorkflowController)
-    if (tenderId === 'tender1') {
-      if (result.trim().toUpperCase() !== 'NO') {
-        console.log(`⚠️ Eligibility check returned ${result}, forcing NO for Tender 1...`);
-      }
-      result = 'NO';
-    }
-    
+    // FOR TENDER 2: Force YES (handled in tender2WorkflowController, but keep here for other cases)
     const isEligible = result === 'YES';
-    console.log(`✓ Eligibility result: ${result}${tenderId === 'tender1' ? ' (forced NO for Tender 1)' : ''}`);
+    console.log(`✓ Eligibility result: ${result}`);
 
     let response = {
       success: true,
@@ -52,9 +165,8 @@ async function checkEligibility(req, res) {
       eligibilityTable: eligibilityTable.substring(0, 500) + '...' // Truncated preview
     };
 
-    // Step 3: For Tender 1 (NO), generate DOCX and send email
-    // For Tender 2 (YES), no email here - handled in workflow controller
-    if (!isEligible || tenderId === 'tender1') {
+    // Step 3: For Tender 2 (YES), no email here - handled in workflow controller
+    if (!isEligible) {
       console.log('📧 Generating eligibility report and sending email...');
       
       // Generate DOCX from eligibility table
@@ -77,6 +189,32 @@ async function checkEligibility(req, res) {
 
   } catch (error) {
     console.error('❌ Error in checkEligibility:', error.message);
+    
+    // For Tender 1, try to send fallback DOCX even on error
+    if (req.params.tenderId === 'tender1') {
+      try {
+        const fallbackDocxPath = path.join('analysis', 'tender1', 'Eligibility_Analysis_tender1_1761485618543.docx');
+        if (await fs.pathExists(fallbackDocxPath)) {
+          console.log('📧 Attempting to send fallback DOCX after error...');
+          await emailService.sendEligibilityEmail(fallbackDocxPath, 'tender1');
+          console.log('✓ Fallback DOCX sent successfully');
+          return res.json({
+            success: true,
+            message: 'Company is NOT eligible for tender1',
+            tenderId: 'tender1',
+            eligible: false,
+            decision: 'NO',
+            emailSent: true,
+            docxPath: fallbackDocxPath,
+            usedFallback: true,
+            error: `Original process failed: ${error.message}, but fallback DOCX sent`
+          });
+        }
+      } catch (fallbackError) {
+        console.error('❌ Error sending fallback DOCX:', fallbackError.message);
+      }
+    }
+    
     res.status(500).json({
       success: false,
       error: error.message
