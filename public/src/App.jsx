@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getTenders, startWorkflow, getWorkflowStatus, uploadCompanyInfo } from './api';
+import { getTenders, startWorkflow, getWorkflowStatus, uploadCompanyInfo, getEligibilityReport } from './api';
 import './App.css';
 
 // Mapping from frontend tender IDs to backend tender IDs
@@ -101,6 +101,13 @@ function App() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [deadlineFilter, setDeadlineFilter] = useState('all');
+  const [reportModal, setReportModal] = useState({
+    isOpen: false,
+    tenderId: null,
+    report: null,
+    loading: false
+  });
+  const [shownReports, setShownReports] = useState(new Set());
 
   useEffect(() => {
     loadTenders();
@@ -116,13 +123,31 @@ function App() {
         const backendId = mapToBackendId(processingTender);
         const response = await getWorkflowStatus(backendId);
         if (response.success) {
+          const status = response.status;
           setWorkflowStatus(prev => ({
             ...prev,
-            [processingTender]: response.status // Store status using frontend ID
+            [processingTender]: status // Store status using frontend ID
           }));
 
+          // Check if report is available and show modal
+          if (status.reportGenerated && status.eligibilityTable) {
+            // Only show modal if we haven't shown it for this tender yet
+            setShownReports(prev => {
+              if (!prev.has(processingTender)) {
+                setReportModal({
+                  isOpen: true,
+                  tenderId: processingTender,
+                  report: status.eligibilityTable,
+                  loading: false
+                });
+                return new Set([...prev, processingTender]);
+              }
+              return prev;
+            });
+          }
+
           // Stop polling if completed or error
-          if (response.status.completed) {
+          if (status.completed) {
             setProcessingTender(null);
             clearInterval(interval);
           }
@@ -339,16 +364,22 @@ function App() {
     const status = workflowStatus[tenderId];
     if (!status) return null;
 
+    // Use the actual message from backend, or provide a fallback
+    if (status.message) {
+      return status.message;
+    }
+
+    // Fallback messages if backend doesn't provide one
     const stepMessages = {
-      'analyzing': status.message || 'Analyzing PDFs and generating summaries...',
-      'checking_eligibility': status.message || 'Checking eligibility status...',
-      'generating_report': status.message || 'Generating report...',
-      'sending_email': status.message || 'Sending email notification...',
-      'completed': status.message || 'Workflow completed',
-      'error': status.message || 'Error occurred'
+      'analyzing': 'Analyzing PDFs and generating summaries...',
+      'checking_eligibility': 'Checking eligibility status...',
+      'generating_report': 'Generating report...',
+      'sending_email': 'Sending email notification...',
+      'completed': 'Workflow completed',
+      'error': 'Error occurred'
     };
 
-    return stepMessages[status.currentStep] || status.message || 'Processing...';
+    return stepMessages[status.currentStep] || 'Processing...';
   };
 
   const getStatusColor = (status) => {
@@ -357,6 +388,232 @@ function App() {
     if (status.status === 'error') return 'error';
     if (status.status === 'processing') return 'processing';
     return 'default';
+  };
+
+  const handleOpenReport = async (tenderId) => {
+    try {
+      setReportModal({
+        isOpen: true,
+        tenderId: tenderId,
+        report: null,
+        loading: true
+      });
+
+      // Map frontend ID to backend ID
+      const backendId = mapToBackendId(tenderId);
+      const response = await getEligibilityReport(backendId);
+      
+      if (response.success) {
+        setReportModal(prev => ({
+          ...prev,
+          report: response.report,
+          loading: false
+        }));
+      } else {
+        setReportModal(prev => ({
+          ...prev,
+          report: 'Error loading report: ' + (response.error || 'Unknown error'),
+          loading: false
+        }));
+      }
+    } catch (error) {
+      console.error('Error fetching report:', error);
+      setReportModal(prev => ({
+        ...prev,
+        report: 'Error loading report: ' + error.message,
+        loading: false
+      }));
+    }
+  };
+
+  const handleCloseReportModal = () => {
+    setReportModal({
+      isOpen: false,
+      tenderId: null,
+      report: null,
+      loading: false
+    });
+  };
+
+  // Helper function to convert markdown to HTML
+  const markdownToHtml = (text) => {
+    if (!text) return '';
+    
+    // First convert **bold** to <strong> (process double asterisks first)
+    let html = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    
+    // Then convert *italic* to <em> (single asterisks that aren't part of bold)
+    // Use a simpler approach: replace *text* that doesn't have adjacent *
+    html = html.replace(/(?<!\*)\*([^*\n]+?)\*(?!\*)/g, '<em>$1</em>');
+    
+    // Convert ✅ to styled span
+    html = html.replace(/✅/g, '<span class="status-yes">✅</span>');
+    
+    // Convert ❌ to styled span
+    html = html.replace(/❌/g, '<span class="status-no">❌</span>');
+    
+    // Convert ⚠️ to styled span
+    html = html.replace(/⚠️/g, '<span class="status-partial">⚠️</span>');
+    
+    return html;
+  };
+
+  // Helper function to render markdown table as HTML
+  const renderReportContent = (reportText) => {
+    if (!reportText) return null;
+
+    // Split by lines
+    const lines = reportText.split('\n');
+    const elements = [];
+    let inTable = false;
+    let tableRows = [];
+    let currentParagraph = [];
+
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i].trim();
+      
+      // Detect markdown table
+      if (line.includes('|') && line.split('|').length > 2) {
+        if (!inTable) {
+          // Close any pending paragraph
+          if (currentParagraph.length > 0) {
+            const paragraphText = markdownToHtml(currentParagraph.join(' '));
+            elements.push(
+              <p key={`p-${i}`} className="report-paragraph" dangerouslySetInnerHTML={{ __html: paragraphText }} />
+            );
+            currentParagraph = [];
+          }
+          inTable = true;
+          tableRows = [];
+        }
+        tableRows.push(line);
+      } else {
+        if (inTable && tableRows.length > 0) {
+          // Render table
+          const tableHtml = renderMarkdownTable(tableRows);
+          if (tableHtml) {
+            elements.push(
+              <div key={`table-${i}`} className="report-table-wrapper" dangerouslySetInnerHTML={{ __html: tableHtml }} />
+            );
+          }
+          tableRows = [];
+          inTable = false;
+        }
+        
+        if (line.length > 0) {
+          // Check for headers
+          if (line.startsWith('# ')) {
+            const headingText = markdownToHtml(line.substring(2));
+            elements.push(<h2 key={`h-${i}`} className="report-heading" dangerouslySetInnerHTML={{ __html: headingText }} />);
+          } else if (line.startsWith('## ')) {
+            const headingText = markdownToHtml(line.substring(3));
+            elements.push(<h3 key={`h-${i}`} className="report-subheading" dangerouslySetInnerHTML={{ __html: headingText }} />);
+          } else if (line.startsWith('### ')) {
+            const headingText = markdownToHtml(line.substring(4));
+            elements.push(<h3 key={`h-${i}`} className="report-subheading" dangerouslySetInnerHTML={{ __html: headingText }} />);
+          } else if (line.match(/^\*\*.*\*\*$/)) {
+            // Line that's entirely bold
+            const boldText = markdownToHtml(line);
+            elements.push(<p key={`p-${i}`} className="report-bold" dangerouslySetInnerHTML={{ __html: boldText }} />);
+          } else {
+            currentParagraph.push(line);
+            // If next line is empty or different type, push paragraph
+            if (i === lines.length - 1 || (lines[i + 1] && lines[i + 1].trim().length === 0)) {
+              if (currentParagraph.length > 0) {
+                const paragraphText = markdownToHtml(currentParagraph.join(' '));
+                elements.push(
+                  <p key={`p-${i}`} className="report-paragraph" dangerouslySetInnerHTML={{ __html: paragraphText }} />
+                );
+                currentParagraph = [];
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Handle remaining table
+    if (inTable && tableRows.length > 0) {
+      const tableHtml = renderMarkdownTable(tableRows);
+      if (tableHtml) {
+        elements.push(
+          <div key="table-final" className="report-table-wrapper" dangerouslySetInnerHTML={{ __html: tableHtml }} />
+        );
+      }
+    }
+
+    // Handle remaining paragraph
+    if (currentParagraph.length > 0) {
+      const paragraphText = markdownToHtml(currentParagraph.join(' '));
+      elements.push(
+        <p key="p-final" className="report-paragraph" dangerouslySetInnerHTML={{ __html: paragraphText }} />
+      );
+    }
+
+    return elements.length > 0 ? elements : <pre className="report-pre">{reportText}</pre>;
+  };
+
+  const renderMarkdownTable = (rows) => {
+    if (rows.length < 2) return null;
+
+    let html = '<table class="report-table"><thead><tr>';
+    
+    // Parse header
+    const headerRow = rows[0].split('|').map(cell => cell.trim()).filter(cell => cell.length > 0);
+    headerRow.forEach(cell => {
+      html += `<th>${escapeHtml(cell)}</th>`;
+    });
+    html += '</tr></thead><tbody>';
+
+    // Skip separator row (second row) and parse data rows
+    let hasDataRows = false;
+    for (let i = 2; i < rows.length; i++) {
+      const row = rows[i].trim();
+      // Skip empty rows
+      if (!row || row.length === 0) continue;
+      
+      const cells = row.split('|').map(cell => cell.trim()).filter(cell => cell.length > 0);
+      // Only process rows that have the same number of cells as headers (or at least 1 cell)
+      if (cells.length > 0) {
+        hasDataRows = true;
+        html += '<tr>';
+        // Ensure we have the right number of cells
+        for (let j = 0; j < headerRow.length; j++) {
+          const cellContent = cells[j] || '';
+          // First escape HTML to prevent XSS
+          const escaped = escapeHtml(cellContent);
+          // Convert markdown bold (**text**) to HTML
+          let formattedCell = escaped.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+          // Then add emoji formatting (emojis are safe)
+          formattedCell = formattedCell
+            .replace(/✅/g, '<span class="status-yes">✅</span>')
+            .replace(/❌/g, '<span class="status-no">❌</span>')
+            .replace(/⚠️/g, '<span class="status-partial">⚠️</span>');
+          html += `<td>${formattedCell}</td>`;
+        }
+        html += '</tr>';
+      }
+    }
+
+    // If no data rows, add a placeholder
+    if (!hasDataRows) {
+      html += `<tr><td colspan="${headerRow.length}" style="text-align: center; color: #8b949e; padding: 2rem;">No data available</td></tr>`;
+    }
+
+    html += '</tbody></table>';
+    return html;
+  };
+
+  const escapeHtml = (text) => {
+    if (!text) return '';
+    const map = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;'
+    };
+    return text.replace(/[&<>"']/g, m => map[m]);
   };
 
   if (loading) {
@@ -540,15 +797,32 @@ function App() {
                         )}
                       </td>
                       <td>
-                        {status?.progress !== undefined && status.status !== 'error' ? (
+                        {isProcessing && status?.progress !== undefined && status.status !== 'error' ? (
+                          <div className="table-progress-wrapper">
+                            <div className="table-progress">
+                              <div className="table-progress-bar">
+                                <div 
+                                  className="table-progress-fill" 
+                                  style={{ width: `${status.progress}%` }}
+                                ></div>
+                              </div>
+                              <span className="table-progress-text">{status.progress}%</span>
+                            </div>
+                            {status?.message && (
+                              <div className="progress-status-message">
+                                {status.message}
+                              </div>
+                            )}
+                          </div>
+                        ) : status?.progress !== undefined && status.status === 'completed' ? (
                           <div className="table-progress">
                             <div className="table-progress-bar">
                               <div 
                                 className="table-progress-fill" 
-                                style={{ width: `${status.progress}%` }}
+                                style={{ width: '100%' }}
                               ></div>
                             </div>
-                            <span className="table-progress-text">{status.progress}%</span>
+                            <span className="table-progress-text">100%</span>
                           </div>
                         ) : status?.status === 'error' ? (
                           <span className="error-indicator">—</span>
@@ -566,24 +840,36 @@ function App() {
                         )}
                       </td>
                       <td>
-                        {tender.hasOperations ? (
-                          <button
-                            className={`table-action-button ${isProcessing ? 'processing' : ''} ${status?.status === 'error' ? 'error' : ''} ${!companyInfo.uploaded ? 'disabled-missing-company' : ''}`}
-                            onClick={() => handleStartOperations(tender.id)}
-                            disabled={isProcessing || (status && status.completed && status.status !== 'error') || !companyInfo.uploaded}
-                            title={!companyInfo.uploaded ? 'Please upload company information first' : ''}
-                          >
-                            {isProcessing 
-                              ? 'Processing...' 
-                              : status?.status === 'error' 
-                                ? 'Retry' 
-                                : status?.completed && status.status !== 'error'
-                                  ? 'Completed' 
-                                  : 'Run Operations'}
-                          </button>
-                        ) : (
-                          <span className="no-actions">—</span>
-                        )}
+                        <div className="action-buttons">
+                          {status?.reportGenerated && (
+                            <button
+                              className="table-action-button open-report-button"
+                              onClick={() => handleOpenReport(tender.id)}
+                              title="View eligibility report"
+                            >
+                              Open Report
+                            </button>
+                          )}
+                          {tender.hasOperations && (
+                            <button
+                              className={`table-action-button ${isProcessing ? 'processing' : ''} ${status?.status === 'error' ? 'error' : ''} ${!companyInfo.uploaded ? 'disabled-missing-company' : ''}`}
+                              onClick={() => handleStartOperations(tender.id)}
+                              disabled={isProcessing || (status && status.completed && status.status !== 'error') || !companyInfo.uploaded}
+                              title={!companyInfo.uploaded ? 'Please upload company information first' : ''}
+                            >
+                              {isProcessing 
+                                ? 'Processing...' 
+                                : status?.status === 'error' 
+                                  ? 'Retry' 
+                                  : status?.completed && status.status !== 'error'
+                                    ? 'Completed' 
+                                    : 'Run Operations'}
+                            </button>
+                          )}
+                          {!tender.hasOperations && !status?.reportGenerated && (
+                            <span className="no-actions">—</span>
+                          )}
+                        </div>
                       </td>
                     </tr>
             );
@@ -593,6 +879,31 @@ function App() {
           </table>
         </div>
       </main>
+
+      {/* Report Modal */}
+      {reportModal.isOpen && (
+        <div className="modal-overlay" onClick={handleCloseReportModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h2>Eligibility Report</h2>
+              <button className="modal-close-button" onClick={handleCloseReportModal}>
+                ×
+              </button>
+            </div>
+            <div className="modal-body">
+              {reportModal.loading ? (
+                <div className="modal-loading">Loading report...</div>
+              ) : reportModal.report ? (
+                <div className="report-content">
+                  {renderReportContent(reportModal.report)}
+                </div>
+              ) : (
+                <div className="modal-error">No report available</div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

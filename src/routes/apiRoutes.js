@@ -405,4 +405,26 @@ router.post("/process-workflow/:tenderId", workflowController.processWorkflow);
  */
 router.get("/workflow-status/:tenderId", workflowController.getWorkflowStatus);
 
+/**
+ * @swagger
+ * /api/eligibility-report/{tenderId}:
+ *   get:
+ *     summary: Get eligibility report
+ *     description: Returns the eligibility analysis table/report for a tender
+ *     tags: [Workflow]
+ *     parameters:
+ *       - in: path
+ *         name: tenderId
+ *         required: true
+ *         schema:
+ *           type: string
+ *           enum: [tender1, tender2]
+ *     responses:
+ *       200:
+ *         description: Eligibility report retrieved successfully
+ *       404:
+ *         description: Report not found
+ */
+router.get("/eligibility-report/:tenderId", workflowController.getEligibilityReport);
+
 module.exports = router;

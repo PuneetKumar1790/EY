@@ -230,17 +230,12 @@ async function processWorkflowAsync(tenderId) {
       message: 'Checking final eligibility status...'
     });
 
-    // Step 2: Check eligibility
+    // Step 2: Check eligibility based on actual table analysis
     const eligibilityTable = await fs.readFile(tablePath, 'utf8');
     let result = await groqService.checkFinalEligibility(eligibilityTable);
     
-    // Force NO for tender1, YES for tender2
-    if (tenderId === 'tender1') {
-      result = 'NO';
-    } else if (tenderId === 'tender2') {
-      result = 'YES';
-    }
-
+    // Use the actual analysis result (don't force NO/YES anymore)
+    // The eligibility should be determined by the actual table content
     const isEligible = result === 'YES';
 
     statusService.updateStatus(tenderId, {
@@ -249,17 +244,46 @@ async function processWorkflowAsync(tenderId) {
       message: isEligible ? 'Eligible - Generating reports...' : 'Not eligible - Generating eligibility report...'
     });
 
-    // Step 3: Generate report and send email
+    // Step 3: Generate report and send email (if not eligible)
+    let docxPath = null;
     if (!isEligible) {
-      const docxPath = await docService.createDocxFromTable(eligibilityTable, tenderId);
+      docxPath = await docService.createDocxFromTable(eligibilityTable, tenderId);
       
+      // Send eligibility table to frontend before email service
+      statusService.updateStatus(tenderId, {
+        currentStep: 'generating_report',
+        progress: 85,
+        message: 'Report generated. Preparing to send...',
+        eligibilityTable: eligibilityTable,
+        reportGenerated: true
+      });
+
       statusService.updateStatus(tenderId, {
         currentStep: 'sending_email',
         progress: 90,
-        message: 'Sending email notification...'
+        message: 'Sending email notification...',
+        eligibilityTable: eligibilityTable,
+        reportGenerated: true
       });
 
-      await emailService.sendEligibilityEmail(docxPath, tenderId);
+      // Try to send email, but don't fail if it errors
+      try {
+        await emailService.sendEligibilityEmail(docxPath, tenderId);
+        console.log(`✓ Email sent successfully for ${tenderId}`);
+      } catch (emailError) {
+        console.error(`⚠️ Email service failed for ${tenderId}:`, emailError.message);
+        // Don't throw error, just log it - report is already sent to frontend
+        // Continue with completion
+      }
+    } else {
+      // For eligible tenders, also send the table if it exists
+      statusService.updateStatus(tenderId, {
+        currentStep: 'generating_report',
+        progress: 85,
+        message: 'Eligibility analysis completed',
+        eligibilityTable: eligibilityTable,
+        reportGenerated: true
+      });
     }
 
     statusService.updateStatus(tenderId, {
@@ -268,8 +292,10 @@ async function processWorkflowAsync(tenderId) {
       progress: 100,
       message: isEligible 
         ? 'Workflow completed - Company is eligible' 
-        : 'Workflow completed - Email sent with eligibility report',
+        : 'Workflow completed - Report generated',
       eligible: isEligible,
+      eligibilityTable: eligibilityTable,
+      reportGenerated: true,
       completed: true
     });
 
@@ -308,8 +334,42 @@ async function getWorkflowStatus(req, res) {
   }
 }
 
+/**
+ * Get eligibility table/report
+ * GET /api/eligibility-report/:tenderId
+ */
+async function getEligibilityReport(req, res) {
+  try {
+    const tenderId = req.params.tenderId;
+    const tablePath = `analysis/${tenderId}/table.txt`;
+    
+    // Check if table exists
+    if (!(await fs.pathExists(tablePath))) {
+      return res.status(404).json({
+        success: false,
+        error: 'Eligibility report not found. Please run the analysis first.'
+      });
+    }
+    
+    // Read and return the table
+    const eligibilityTable = await fs.readFile(tablePath, 'utf8');
+    
+    res.json({
+      success: true,
+      report: eligibilityTable,
+      tenderId
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message
+    });
+  }
+}
+
 module.exports = {
   processWorkflow,
-  getWorkflowStatus
+  getWorkflowStatus,
+  getEligibilityReport
 };
 

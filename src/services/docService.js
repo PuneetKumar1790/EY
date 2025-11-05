@@ -20,12 +20,25 @@ const path = require("path");
  * @returns {Array} Array of row arrays
  */
 function parseMarkdownTable(tableText) {
+  if (!tableText || tableText.trim().length === 0) {
+    console.warn("⚠️ Empty table text provided to parseMarkdownTable");
+    return [];
+  }
+
   const lines = tableText.split("\n").filter((line) => line.trim());
   const tableRows = [];
+  let headerRowFound = false;
 
-  for (const line of lines) {
+  console.log(`📊 Parsing ${lines.length} lines for table...`);
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    
     // Skip separator lines (|---|---|) or lines with only = or -
-    if (line.includes("---") || /^[=\-\s|]+$/.test(line)) continue;
+    if (line.includes("---") || /^[=\-\s|:]+$/.test(line)) {
+      console.log(`   Line ${i + 1}: Skipping separator line`);
+      continue;
+    }
 
     // Extract cells from markdown table row
     if (line.includes("|")) {
@@ -35,9 +48,22 @@ function parseMarkdownTable(tableText) {
         .filter((cell) => cell.length > 0);
 
       if (cells.length > 0) {
+        // First row with cells is the header
+        if (!headerRowFound && cells.length >= 2) {
+          headerRowFound = true;
+          console.log(`   Line ${i + 1}: Header row found with ${cells.length} columns`);
+        }
         tableRows.push(cells);
+        console.log(`   Line ${i + 1}: Added row with ${cells.length} cells`);
       }
     }
+  }
+
+  console.log(`✓ Parsed ${tableRows.length} table rows (including header)`);
+  
+  if (tableRows.length === 0) {
+    console.warn("⚠️ No table rows parsed from text!");
+    console.warn("   First 500 chars of table text:", tableText.substring(0, 500));
   }
 
   return tableRows;
@@ -130,31 +156,49 @@ function extractSections(text) {
   };
 
   // Try to find table portion - look for markdown table structure
-  const tableRegex = /\|[\s\S]*?\|(?=\n\n|$)/;
-  const tableMatch = text.match(tableRegex);
+  // Match table from first | to the line before OVERALL ELIGIBILITY or end of text
+  // This regex captures the entire table including all rows
+  const tableStartPattern = /(\|[^\n]*\|[\s\S]*?)(?=\n\s*(?:###?\s*)?OVERALL ELIGIBILITY|$)/i;
+  const tableMatch = text.match(tableStartPattern);
 
-  if (tableMatch) {
-    sections.tableText = tableMatch[0];
+  if (tableMatch && tableMatch[1]) {
+    sections.tableText = tableMatch[1].trim();
+    console.log(`✓ Extracted table text (${sections.tableText.length} chars)`);
   } else {
     // Fallback: try to extract everything between first | and last section header
     const startIndex = text.indexOf("|");
     const endMarkers = [
       "### OVERALL ELIGIBILITY",
       "## OVERALL ELIGIBILITY",
+      "**OVERALL ELIGIBILITY**",
       "OVERALL ELIGIBILITY",
     ];
     let endIndex = -1;
 
     for (const marker of endMarkers) {
-      const idx = text.indexOf(marker);
+      const idx = text.indexOf(marker, startIndex);
       if (idx > startIndex && idx !== -1) {
         endIndex = idx;
         break;
       }
     }
 
-    if (startIndex !== -1 && endIndex !== -1) {
-      sections.tableText = text.substring(startIndex, endIndex);
+    if (startIndex !== -1) {
+      if (endIndex !== -1) {
+        sections.tableText = text.substring(startIndex, endIndex).trim();
+      } else {
+        // If no end marker found, take everything from first | to end
+        sections.tableText = text.substring(startIndex).trim();
+        // But stop at any obvious section break
+        const stopPattern = /\n\s*\n\s*\n/;
+        const stopMatch = sections.tableText.match(stopPattern);
+        if (stopMatch) {
+          sections.tableText = sections.tableText.substring(0, stopMatch.index).trim();
+        }
+      }
+      console.log(`✓ Extracted table text via fallback (${sections.tableText.length} chars)`);
+    } else {
+      console.warn(`⚠️ No table found in text (no '|' character found)`);
     }
   }
 
@@ -218,6 +262,13 @@ async function createDocxFromTable(tableText, tenderId) {
     const tableRows = parseMarkdownTable(sections.tableText || tableText);
 
     console.log(`📊 Parsed ${tableRows.length} table rows`);
+    
+    if (tableRows.length === 0) {
+      console.error("❌ No table rows parsed! Table text was:");
+      console.error("   First 1000 chars:", (sections.tableText || tableText).substring(0, 1000));
+      console.error("   Full sections.tableText length:", sections.tableText?.length || 0);
+      console.error("   Full tableText length:", tableText?.length || 0);
+    }
 
     // Create document children
     const docChildren = [];
@@ -291,6 +342,8 @@ async function createDocxFromTable(tableText, tenderId) {
     if (tableRows.length > 1) {
       const headerRow = tableRows[0];
       const dataRows = tableRows.slice(1);
+      
+      console.log(`📊 Creating table with ${dataRows.length} data rows`);
 
       docChildren.push(
         new Paragraph({
@@ -424,6 +477,62 @@ async function createDocxFromTable(tableText, tenderId) {
           spacing: { after: 400 },
         })
       );
+    } else {
+      // No table rows found - add error message
+      console.error("❌ No table rows to display in DOCX!");
+      docChildren.push(
+        new Paragraph({
+          children: [
+            new TextRun({
+              text: "⚠️ ERROR: Eligibility table could not be generated or parsed.",
+              bold: true,
+              size: 20,
+              color: "FF0000",
+            }),
+          ],
+          spacing: { after: 200 },
+        })
+      );
+      docChildren.push(
+        new Paragraph({
+          children: [
+            new TextRun({
+              text: "Please check the eligibility analysis response from the AI service.",
+              size: 18,
+              color: "666666",
+            }),
+          ],
+          spacing: { after: 400 },
+        })
+      );
+      
+      // Try to show raw table text as fallback
+      if (sections.tableText && sections.tableText.length > 0) {
+        docChildren.push(
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "Raw table text (for debugging):",
+                bold: true,
+                size: 18,
+              }),
+            ],
+            spacing: { after: 200 },
+          })
+        );
+        docChildren.push(
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: sections.tableText.substring(0, 2000),
+                size: 14,
+                font: "Courier New",
+              }),
+            ],
+            spacing: { after: 400 },
+          })
+        );
+      }
     }
 
     // Overall Eligibility Section

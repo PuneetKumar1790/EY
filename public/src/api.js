@@ -44,3 +44,12 @@ export async function uploadCompanyInfo(file) {
   return data;
 }
 
+/**
+ * Get eligibility report
+ */
+export async function getEligibilityReport(tenderId) {
+  const response = await fetch(`${API_BASE_URL}/eligibility-report/${tenderId}`);
+  const data = await response.json();
+  return data;
+}
+
