@@ -1,12 +1,42 @@
+// Ensure dotenv is loaded before reading environment variables
+require("dotenv").config();
+
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 // API key rotation configuration for Google Gemini - SUPPORTS 4 KEYS
+// Filter out empty keys and placeholder values
 const API_KEYS = [
   process.env.GEMINI_API_KEY_1 || process.env.GEMINI_API_KEY,
   process.env.GEMINI_API_KEY_2,
   process.env.GEMINI_API_KEY_3,
   process.env.GEMINI_API_KEY_4,
-].filter((key) => key && key.trim() !== "");
+].filter((key) => {
+  if (!key || key.trim() === "") return false;
+  // Filter out placeholder values
+  const lowerKey = key.toLowerCase().trim();
+  const placeholders = [
+    'your_first_gemini_api_key_here',
+    'your_second_gemini_api_key_here',
+    'your_api_key_here',
+    'your_gemini_api_key',
+    'placeholder',
+    'example'
+  ];
+  return !placeholders.some(placeholder => lowerKey.includes(placeholder));
+});
+
+// Debug logging to help diagnose issues
+if (API_KEYS.length === 0) {
+  console.error("⚠️ WARNING: No valid Gemini API keys found in environment variables!");
+  console.error("   Checked for: GEMINI_API_KEY_1, GEMINI_API_KEY, GEMINI_API_KEY_2, GEMINI_API_KEY_3, GEMINI_API_KEY_4");
+  console.error("   GEMINI_API_KEY_1:", process.env.GEMINI_API_KEY_1 ? 
+    (process.env.GEMINI_API_KEY_1.toLowerCase().includes('your_') ? "PLACEHOLDER (needs real key)" : "***SET***") : "NOT SET");
+  console.error("   GEMINI_API_KEY:", process.env.GEMINI_API_KEY ? "***SET***" : "NOT SET");
+  console.error("   GEMINI_API_KEY_2:", process.env.GEMINI_API_KEY_2 ? 
+    (process.env.GEMINI_API_KEY_2.toLowerCase().includes('your_') ? "PLACEHOLDER (needs real key)" : "***SET***") : "NOT SET");
+  console.error("   Make sure your .env file exists in the root directory and contains actual API keys (not placeholders)");
+  console.error("   Get your API keys from: https://ai.google.dev/");
+}
 
 let currentKeyIndex = 0;
 let requestCount = 0;
@@ -57,6 +87,18 @@ function createGeminiClient() {
  * @returns {Promise<any>} Result of the function
  */
 async function executeWithRotation(fn, maxRetries = API_KEYS.length * 3) {
+  // Handle case when no API keys are configured
+  if (API_KEYS.length === 0) {
+    throw new Error(
+      "No Gemini API keys configured. Please set GEMINI_API_KEY_1 in your .env file. Get your API key from: https://ai.google.dev/"
+    );
+  }
+
+  // Ensure at least 1 retry
+  if (maxRetries < 1) {
+    maxRetries = 1;
+  }
+
   let lastError;
   const attemptedKeys = new Set();
 
@@ -79,13 +121,14 @@ async function executeWithRotation(fn, maxRetries = API_KEYS.length * 3) {
       return result;
     } catch (error) {
       lastError = error;
-      const errorMsg = error.message?.toLowerCase() || "";
+      const errorMsg = error?.message?.toLowerCase() || "";
+      const errorMessage = error?.message || error?.toString() || 'Unknown error';
 
       console.error(
         `❌ Error with API key ${currentKeyIndex + 1} (Attempt ${
           attempt + 1
         }/${maxRetries}):`,
-        error.message
+        errorMessage
       );
 
       // Track which keys we've tried
@@ -97,14 +140,14 @@ async function executeWithRotation(fn, maxRetries = API_KEYS.length * 3) {
           `❌ All ${API_KEYS.length} API keys have been tried and failed`
         );
         throw new Error(
-          `All API keys exhausted. Last error: ${lastError.message}`
+          `All API keys exhausted. Last error: ${errorMessage}`
         );
       }
 
       // If last attempt, throw error
       if (attempt === maxRetries - 1) {
         throw new Error(
-          `Max retries (${maxRetries}) reached. Last error: ${lastError.message}`
+          `Max retries (${maxRetries}) reached. Last error: ${errorMessage}`
         );
       }
 
@@ -132,8 +175,9 @@ async function executeWithRotation(fn, maxRetries = API_KEYS.length * 3) {
     }
   }
 
+  const lastErrorMessage = lastError?.message || lastError?.toString() || 'Unknown error';
   throw new Error(
-    `Max retries (${maxRetries}) reached. Last error: ${lastError.message}`
+    `Max retries (${maxRetries}) reached. Last error: ${lastErrorMessage}`
   );
 }
 
