@@ -300,7 +300,8 @@ body {
 }
 
 .no-progress,
-.error-indicator {
+.error-indicator,
+.no-actions {
   color: #6e7681;
   font-size: 0.9rem;
 }
