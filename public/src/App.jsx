@@ -2,6 +2,89 @@ import { useState, useEffect } from 'react';
 import { getTenders, startWorkflow, getWorkflowStatus, uploadCompanyInfo } from './api';
 import './App.css';
 
+// Mapping from frontend tender IDs to backend tender IDs
+const TENDER_ID_MAP = {
+  'TEN-001': 'tender1',
+  '102130137': 'tender2'
+};
+
+// Helper function to map frontend ID to backend ID
+const mapToBackendId = (frontendId) => {
+  return TENDER_ID_MAP[frontendId] || frontendId;
+};
+
+// Static tender data
+const STATIC_TENDERS = [
+  {
+    id: 'TEN-001',
+    name: 'Supply of 3C LT AB Cable',
+    deadline: '20-11-2025 18:00:00',
+    category: 'Cabbles/wires',
+    hasOperations: true
+  },
+  {
+    id: '102130137',
+    name: 'Purchase of 1C and 3C LT AB Cable',
+    deadline: '10-11-2025 18:00:00',
+    category: 'Cabbles/wires',
+    organisation: 'ongc',
+    tenderProductDesc: '3mm copper',
+    hamraProductSku: 'hvhvhv',
+    quantity: 'ihihih',
+    price: '75757',
+    hasOperations: true
+  },
+  {
+    id: 'TEN-003',
+    name: 'Supply of 4C LT PVC Cable',
+    deadline: '12-10-2025 18:00:00',
+    category: 'Cabbles/wires',
+    hasOperations: false
+  },
+  {
+    id: 'TEN-004',
+    name: 'Supply of of 2C & 4C LT PVC Cable',
+    deadline: '13-10-2025 18:00:00',
+    category: 'Cabbles/wires',
+    hasOperations: false
+  },
+  {
+    id: 'TEN-005',
+    name: 'Purchase of 3.5C LT PVC Cable of various sizes confirming to IS: 1554: (Part-I) 1988 and latest amendments if any under CPP for the year 2026-27 on behalf of DISCOMs of GUVNL (i.e. MGVCL, PGVCL, DGVCL and UGVCL) as per specification, terms and condition of tender',
+    deadline: '10-10-2025 18:00:00',
+    category: 'Cabbles/wires',
+    hasOperations: false
+  },
+  {
+    id: 'TEN-006',
+    name: 'Purchase of 4Cx10mm2-650 KM and 4Cx16mm2 LT PVC Cable-600 KM',
+    deadline: '10-10-2025 18:00:00',
+    category: 'Cabbles/wires',
+    hasOperations: false
+  },
+  {
+    id: 'TEN-007',
+    name: 'Supply of 1C LT AB Cable',
+    deadline: '21-10-2025 18:00:00',
+    category: 'Cabbles/wires',
+    hasOperations: false
+  },
+  {
+    id: 'TEN-008',
+    name: 'Purchase of 2C x 4 sqmm, 4C x 4 sqmm, 4C x 6 sqmm LT PVC Cable',
+    deadline: '10-10-2025 18:00:00',
+    category: 'Cabbles/wires',
+    hasOperations: false
+  },
+  {
+    id: 'TEN-009',
+    name: 'Supply of 6.6 KV EPR Insulated Flexible trailing Power copper Cable for ELECON Make Stacker Cum ReClaimer Machine of Coal Handling Plant at WTPS',
+    deadline: '06-10-2025 18:00:00',
+    category: 'Cabbles/wires',
+    hasOperations: false
+  }
+];
+
 function App() {
   const [tenders, setTenders] = useState([]);
   const [filteredTenders, setFilteredTenders] = useState([]);
@@ -29,11 +112,13 @@ function App() {
 
     const interval = setInterval(async () => {
       try {
-        const response = await getWorkflowStatus(processingTender);
+        // Map frontend ID to backend ID for API call
+        const backendId = mapToBackendId(processingTender);
+        const response = await getWorkflowStatus(backendId);
         if (response.success) {
           setWorkflowStatus(prev => ({
             ...prev,
-            [processingTender]: response.status
+            [processingTender]: response.status // Store status using frontend ID
           }));
 
           // Stop polling if completed or error
@@ -66,13 +151,14 @@ function App() {
   const loadTenders = async () => {
     try {
       setLoading(true);
-      const response = await getTenders();
-      if (response.success) {
-        setTenders(response.tenders);
-        setFilteredTenders(response.tenders);
-      }
+      // Use static tender data
+      setTenders(STATIC_TENDERS);
+      setFilteredTenders(STATIC_TENDERS);
     } catch (error) {
       console.error('Error loading tenders:', error);
+      // Fallback to static data on error
+      setTenders(STATIC_TENDERS);
+      setFilteredTenders(STATIC_TENDERS);
     } finally {
       setLoading(false);
     }
@@ -231,7 +317,9 @@ function App() {
         }
       }));
 
-      await startWorkflow(tenderId);
+      // Map frontend ID to backend ID for API call
+      const backendId = mapToBackendId(tenderId);
+      await startWorkflow(backendId);
     } catch (error) {
       console.error('Error starting workflow:', error);
       setWorkflowStatus(prev => ({
@@ -478,20 +566,24 @@ function App() {
                         )}
                       </td>
                       <td>
-                        <button
-                          className={`table-action-button ${isProcessing ? 'processing' : ''} ${status?.status === 'error' ? 'error' : ''} ${!companyInfo.uploaded ? 'disabled-missing-company' : ''}`}
-                          onClick={() => handleStartOperations(tender.id)}
-                          disabled={isProcessing || (status && status.completed && status.status !== 'error') || !companyInfo.uploaded}
-                          title={!companyInfo.uploaded ? 'Please upload company information first' : ''}
-                >
-                  {isProcessing 
-                    ? 'Processing...' 
-                    : status?.status === 'error' 
-                      ? 'Retry' 
-                      : status?.completed && status.status !== 'error'
-                        ? 'Completed' 
-                                : 'Start'}
-                </button>
+                        {tender.hasOperations ? (
+                          <button
+                            className={`table-action-button ${isProcessing ? 'processing' : ''} ${status?.status === 'error' ? 'error' : ''} ${!companyInfo.uploaded ? 'disabled-missing-company' : ''}`}
+                            onClick={() => handleStartOperations(tender.id)}
+                            disabled={isProcessing || (status && status.completed && status.status !== 'error') || !companyInfo.uploaded}
+                            title={!companyInfo.uploaded ? 'Please upload company information first' : ''}
+                          >
+                            {isProcessing 
+                              ? 'Processing...' 
+                              : status?.status === 'error' 
+                                ? 'Retry' 
+                                : status?.completed && status.status !== 'error'
+                                  ? 'Completed' 
+                                  : 'Run Operations'}
+                          </button>
+                        ) : (
+                          <span className="no-actions">—</span>
+                        )}
                       </td>
                     </tr>
             );
