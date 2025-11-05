@@ -58,8 +58,15 @@ Provide a detailed, structured summary covering all the above points. Be specifi
     console.log(`✓ Generated summary (${summary.length} characters)`);
     return summary;
   } catch (error) {
-    console.error("❌ Error generating summary:", error.message);
-    throw new Error(`Summary generation failed: ${error.message}`);
+    const errorMessage = error?.message || error?.toString() || 'Unknown error occurred';
+    console.error("❌ Error generating summary:", errorMessage);
+    
+    // Check if it's an API key issue
+    if (errorMessage.includes('API key') || errorMessage.includes('No Gemini API keys')) {
+      throw new Error(`Summary generation failed: No Gemini API keys configured. Please set GEMINI_API_KEY_1 in your .env file`);
+    }
+    
+    throw new Error(`Summary generation failed: ${errorMessage}`);
   }
 }
 
