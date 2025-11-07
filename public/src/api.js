@@ -53,3 +53,71 @@ export async function getEligibilityReport(tenderId) {
   return data;
 }
 
+/**
+ * Upload SKU list file
+ */
+export async function uploadSKUList(file) {
+  const formData = new FormData();
+  formData.append('skuFile', file);
+  
+  const response = await fetch(`${API_BASE_URL}/upload-sku-list`, {
+    method: 'POST',
+    body: formData
+  });
+  const data = await response.json();
+  return data;
+}
+
+/**
+ * Build Table B1 (Matching Operations Table)
+ */
+export async function buildTableB1(tenderId) {
+  const response = await fetch(`${API_BASE_URL}/build-table-b1/${tenderId}`, {
+    method: 'POST'
+  });
+  const data = await response.json();
+  return data;
+}
+
+/**
+ * Match SKUs
+ */
+export async function matchSKUs(tenderId) {
+  const response = await fetch(`${API_BASE_URL}/match-skus/${tenderId}`, {
+    method: 'POST'
+  });
+  const data = await response.json();
+  return data;
+}
+
+/**
+ * Calculate pricing
+ */
+export async function calculatePricing(tenderId) {
+  const response = await fetch(`${API_BASE_URL}/calculate-pricing/${tenderId}`, {
+    method: 'POST'
+  });
+  const data = await response.json();
+  return data;
+}
+
+/**
+ * Generate holistic summary table
+ */
+export async function generateHolisticSummary(tenderId) {
+  const response = await fetch(`${API_BASE_URL}/generate-holistic-summary/${tenderId}`, {
+    method: 'POST'
+  });
+  const data = await response.json();
+  return data;
+}
+
+/**
+ * Get workflow result file (Table B1, matched SKUs, pricing, holistic summary)
+ */
+export async function getWorkflowResult(tenderId, resultType) {
+  const response = await fetch(`${API_BASE_URL}/workflow-result/${tenderId}/${resultType}`);
+  const data = await response.json();
+  return data;
+}
+

@@ -224,25 +224,38 @@ ${truncatedCompany}
 
 ## OUTPUT FORMAT:
 
-Create ONLY a table with the following structure (use proper markdown table formatting):
+**CRITICAL: You MUST create a COMPLETE table FIRST with multiple data rows. The table is the MOST IMPORTANT part of your response. Start with the table immediately.**
+
+**OUTPUT ORDER:**
+1. TABLE (required - must be complete with multiple rows)
+2. OVERALL ELIGIBILITY
+3. CRITICAL DISQUALIFYING FACTORS / STRENGTHS
+
+Create a table with the following structure (use proper markdown table formatting - keep cell content concise):
 
 | Sr. No. | Critical Tender Requirement | Fulfilled? | Company's Status/Information | Reference in Company Info Doc |
-|---------|---------------------------|------------|------------------------------|-------------------------------|
-| [number] | [Exact requirement from tender] | [✅ YES / ❌ NO / ⚠️ PARTIAL] | [Specific data/information from company doc] | [Exact section/page reference] |
+|---------|----------------------------|------------|------------------------------|-------------------------------|
+| 1 | [Brief requirement] | [✅ YES / ❌ NO / ⚠️ PARTIAL] | [Brief status] | [Reference] |
+| 2 | [Brief requirement] | [✅ YES / ❌ NO / ⚠️ PARTIAL] | [Brief status] | [Reference] |
+| 3 | [Brief requirement] | [✅ YES / ❌ NO / ⚠️ PARTIAL] | [Brief status] | [Reference] |
+[Continue with 5-10 more rows for different requirements from sections A-F]
 
 **Guidelines:**
 - ✅ YES = Fully met with evidence
 - ❌ NO = Not met or missing
 - ⚠️ PARTIAL = Partially met or needs verification
-
-**ONLY include items from the MANDATORY CHECKLIST above. DO NOT include procedural/submission items.**
+- **MUST include at least 5-10 rows analyzing different requirements from sections A-F**
+- **ONLY include items from the MANDATORY CHECKLIST above. DO NOT include procedural/submission items.**
+- Each row must have all 5 columns filled with actual data
+- **Keep cell content concise** - avoid extremely long text in cells
+- **START YOUR RESPONSE WITH THE TABLE** - do not add introduction text before the table
 
 After the table, provide:
 - **OVERALL ELIGIBILITY**: State clearly ✅ ELIGIBLE or ❌ NOT ELIGIBLE
 - **CRITICAL DISQUALIFYING FACTORS** (if not eligible): List 3-5 key reasons
 - **STRENGTHS** (if eligible): List 3-5 key factors
 
-Output will be only table and decision sections - nothing else.`;
+**IMPORTANT: Your output MUST start with a complete table. The table must have the header row, separator row, and at least 5-10 data rows. Do not return just the header row.**`;
 
     const completion = await gemini.chat.completions.create({
       messages: [
@@ -259,6 +272,19 @@ Output will be only table and decision sections - nothing else.`;
     const analysis = completion.choices[0]?.message?.content || "";
 
     console.log(`📝 Raw API response length: ${analysis.length} characters`);
+    
+    // Log first and last 1000 chars for debugging
+    if (analysis.length > 0) {
+      console.log(`📝 First 1000 chars: ${analysis.substring(0, 1000)}`);
+      if (analysis.length > 1000) {
+        console.log(`📝 Last 1000 chars: ${analysis.substring(analysis.length - 1000)}`);
+      }
+      
+      // Check if table is present
+      const hasTable = analysis.includes('|') && analysis.includes('Sr. No.');
+      const tableRowCount = (analysis.match(/\|/g) || []).length;
+      console.log(`📊 Table detection: hasTable=${hasTable}, pipeCount=${tableRowCount}`);
+    }
 
     if (!analysis || analysis.trim().length === 0) {
       console.error("❌ Gemini API returned empty analysis");

@@ -1,0 +1,41 @@
+Category,Tender Requirement/Specification,Asian Wires Status/Specification,Compliance/Match
+**Tender Overview**
+Tender ID,236894,-,-
+Client,Dakshin Gujarat Vij Company Ltd. (DGVCL),-,-
+Product,Supply of 3C LT AB Cable,-,-
+Quantity,200 KM (Tentative),-,-
+Tender Fee,"INR 8,850",Will Pay,✅
+EMD,"INR 250,000 (Non-MSME)",Will Pay (Non-MSME),✅
+Bid Submission Deadline,"20-11-2025, 18:00",-,-
+Price Bid Opening,"08-12-2025, 11:00",-,-
+Bid Validity,120 days,-,-
+Delivery Period,7 months (after 45 days LOA),-,-
+**Eligibility**
+Manufacturer Status,Registered Manufacturer,Asian Wires Pvt. Ltd.,✅
+Vendor Registration,Valid with GUVNL/Subsidiary (prior to Tech Bid),PGVCL (Valid till Mar 2027),✅
+GSTN Registration,Valid GSTN,24AABCA1234F1Z5 (Valid),✅
+BIS License,Valid for IS 14255:1995,CM/L-9876544-E (Valid till Oct 2026),✅
+Type Test Reports,Valid (not > 7 yrs) from Govt. Approved Lab,"CPRI/TC/2023/6789 (June 2023, CPRI)",✅
+ISO Certification,ISO 9001:2015 (High Quality),ISO 9001:2015 (Valid till June 2027),✅
+Factory License,Valid Factory License,GL/FAC/2012/0891 (Valid),✅
+PAN Card,Valid PAN,AABCA1234F (Active),✅
+Turnover (FY23-24),Audited Accounts required (no threshold),Rs. 58.90+ Crores,✅
+MSME Status,Gujarat MSME for EMD benefits,Not Registered (Non-MSME),N/A (No Exemption)
+Other Mandatory Docs,"Digital Cert, POA, Declarations, Country Boundary Cert, Annexures",Assumed Compliant,✅
+**Product Requirements**
+Cable Type,3C LT AB Cable,AW-ABC-3C-XLPE-50-25-35,✅
+Configuration,3C x 50mm² + 1C x 25mm² + 35mm²,3C x 50mm² + 1C x 25mm² + 35mm²,✅
+Insulation Type,XLPE Insulation only,XLPE,✅
+Rated Voltage,1100 Volts,1100 Volts (IS 14255:1995),✅
+Standards,"IS 14255:1995, IS 398 (Part-IV), IS 8130, IS 7098","IS 14255:1995, IS 8130:1984",✅
+Conductor Material,"XLPE Insulated Aluminum (Phase/Neutral), Heat-treated Al Alloy (Messenger)","XLPE Insulated Aluminum (Phase/Neutral), Heat-treated Al Alloy (Messenger)",✅
+Insulation Thickness,1.5 mm (for 50mm² conductors),Compliant with IS 14255:1995,✅
+Max DC Resistance,50mm²: 0.641 Ohm/km; 25mm²: 1.20 Ohm/km; 35mm²: 0.986 Ohm/km,Compliant with IS 14255:1995,✅
+Messenger Composition,"Bare, heat-treated aluminum alloy, 7 strands, compacted","Bare, heat-treated aluminum alloy, 7 strands, compacted",✅
+Guarantee,18 months receipt / 12 months commissioning,Standard Company Guarantee,✅
+**Company Capacity & Pricing**
+Relevant SKU,-,AW-ABC-3C-XLPE-50-25-35,-
+Annual Production Capacity (≥50mm² 3C XLPE AB),-,"1,800 KM/year",Sufficient for 200 KM
+Total Cost (per km),-,"Rs. 78,182",-
+Final Price (per km),-,"Rs. 85,374",-
+Total Project Price (200 KM),-,"Rs. 1,70,74,800",-

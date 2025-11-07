@@ -19,6 +19,80 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  position: relative;
+}
+
+/* Floating Start Operations Button */
+.floating-start-button {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 100;
+  background: #238636;
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px rgba(35, 134, 54, 0.4);
+  transition: all 0.3s ease;
+}
+
+.floating-start-button:hover:not(:disabled) {
+  background: #2ea043;
+  box-shadow: 0 6px 16px rgba(35, 134, 54, 0.5);
+  transform: translateY(-2px);
+}
+
+.floating-start-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.floating-start-button.processing {
+  background: #f79000;
+}
+
+.floating-start-button.processing:hover {
+  background: #f79000;
+  transform: none;
+}
+
+.floating-start-button .spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.floating-start-button span:not(.spinner) {
+  font-size: 1.2rem;
+}
+
+.floating-start-button.stop-button {
+  background: #da3633;
+}
+
+.floating-start-button.stop-button:hover:not(:disabled) {
+  background: #f85149;
+  box-shadow: 0 6px 16px rgba(218, 54, 51, 0.5);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .app-header {
@@ -317,9 +391,15 @@ body {
 
 .no-progress,
 .error-indicator,
-.no-actions {
+.no-actions,
+.pending-operation {
   color: #6e7681;
   font-size: 0.9rem;
+}
+
+.pending-operation {
+  color: #8b949e;
+  font-style: italic;
 }
 
 .action-buttons {

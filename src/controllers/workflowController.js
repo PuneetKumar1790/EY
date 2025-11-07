@@ -212,10 +212,24 @@ async function processWorkflowAsync(tenderId) {
         companyInfo
       );
 
+      // Validate that the table has content
+      if (!eligibilityTable || eligibilityTable.trim().length < 100) {
+        throw new Error(`Generated eligibility table is too short (${eligibilityTable?.length || 0} chars). The AI may not have generated a proper table.`);
+      }
+
+      // Check if table has data rows (more than just header)
+      const tableLines = eligibilityTable.split('\n').filter(line => line.trim().includes('|'));
+      if (tableLines.length < 3) {
+        console.warn(`⚠️ Warning: Table appears to have only ${tableLines.length} rows. Expected at least 3 (header + separator + data).`);
+        console.warn(`   First 1000 chars of response: ${eligibilityTable.substring(0, 1000)}`);
+      }
+
       // Save eligibility table
       const analysisDir = `analysis/${tenderId}`;
       await fs.ensureDir(analysisDir);
       await fs.writeFile(tablePath, eligibilityTable, "utf8");
+      
+      console.log(`✓ Eligibility table saved to ${tablePath} (${eligibilityTable.length} chars, ${tableLines.length} table lines)`);
       
       statusService.updateStatus(tenderId, {
         currentStep: 'analyzing',

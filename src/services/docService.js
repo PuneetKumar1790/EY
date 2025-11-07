@@ -25,45 +25,73 @@ function parseMarkdownTable(tableText) {
     return [];
   }
 
-  const lines = tableText.split("\n").filter((line) => line.trim());
+  const lines = tableText.split("\n");
   const tableRows = [];
   let headerRowFound = false;
+  let seenSeparator = false;
 
   console.log(`📊 Parsing ${lines.length} lines for table...`);
+  console.log(`📊 Table text preview: ${tableText.substring(0, 500)}`);
 
   for (let i = 0; i < lines.length; i++) {
-    const line = lines[i].trim();
+    const line = lines[i];
+    const trimmedLine = line.trim();
     
-    // Skip separator lines (|---|---|) or lines with only = or -
-    if (line.includes("---") || /^[=\-\s|:]+$/.test(line)) {
+    // Skip completely empty lines
+    if (trimmedLine.length === 0) {
+      continue;
+    }
+    
+    // Check for separator line (|---|---|) - this separates header from data
+    if (trimmedLine.includes("---") || /^[=\-\s|:]+$/.test(trimmedLine)) {
+      seenSeparator = true;
       console.log(`   Line ${i + 1}: Skipping separator line`);
       continue;
     }
 
     // Extract cells from markdown table row
-    if (line.includes("|")) {
-      const cells = line
-        .split("|")
+    if (trimmedLine.includes("|")) {
+      // Split by | and clean up
+      const rawCells = trimmedLine.split("|");
+      const cells = rawCells
         .map((cell) => cell.trim())
         .filter((cell) => cell.length > 0);
 
-      if (cells.length > 0) {
-        // First row with cells is the header
-        if (!headerRowFound && cells.length >= 2) {
+      // Need at least 2 columns to be a valid row
+      if (cells.length >= 2) {
+        // First row with cells is the header (if we haven't seen separator yet)
+        if (!headerRowFound && !seenSeparator) {
           headerRowFound = true;
-          console.log(`   Line ${i + 1}: Header row found with ${cells.length} columns`);
+          console.log(`   Line ${i + 1}: Header row found with ${cells.length} columns: ${cells.join(', ')}`);
+        } else if (headerRowFound && seenSeparator) {
+          console.log(`   Line ${i + 1}: Data row found with ${cells.length} columns`);
         }
+        
         tableRows.push(cells);
         console.log(`   Line ${i + 1}: Added row with ${cells.length} cells`);
+      } else {
+        console.log(`   Line ${i + 1}: Skipping row with only ${cells.length} cells (too few)`);
+      }
+    } else {
+      // If we've seen a table row and now see a non-table line, we might have reached the end
+      // But continue in case there are more rows
+      if (tableRows.length > 0 && trimmedLine.length > 0) {
+        console.log(`   Line ${i + 1}: Non-table line encountered: "${trimmedLine.substring(0, 50)}"`);
       }
     }
   }
 
   console.log(`✓ Parsed ${tableRows.length} table rows (including header)`);
+  console.log(`✓ Header found: ${headerRowFound}, Separator found: ${seenSeparator}`);
   
   if (tableRows.length === 0) {
-    console.warn("⚠️ No table rows parsed from text!");
-    console.warn("   First 500 chars of table text:", tableText.substring(0, 500));
+    console.error("❌ No table rows parsed from text!");
+    console.error("   Full table text:", tableText);
+  } else if (tableRows.length === 1) {
+    console.warn("⚠️ Only header row found, no data rows!");
+    console.warn("   Full table text:", tableText);
+  } else {
+    console.log(`✓ Successfully parsed ${tableRows.length - 1} data rows after header`);
   }
 
   return tableRows;
@@ -155,50 +183,134 @@ function extractSections(text) {
     strengths: "",
   };
 
-  // Try to find table portion - look for markdown table structure
-  // Match table from first | to the line before OVERALL ELIGIBILITY or end of text
-  // This regex captures the entire table including all rows
-  const tableStartPattern = /(\|[^\n]*\|[\s\S]*?)(?=\n\s*(?:###?\s*)?OVERALL ELIGIBILITY|$)/i;
-  const tableMatch = text.match(tableStartPattern);
+  console.log(`📝 Extracting sections from text (${text.length} chars)`);
+  console.log(`📝 First 500 chars: ${text.substring(0, 500)}`);
 
-  if (tableMatch && tableMatch[1]) {
-    sections.tableText = tableMatch[1].trim();
-    console.log(`✓ Extracted table text (${sections.tableText.length} chars)`);
-  } else {
-    // Fallback: try to extract everything between first | and last section header
-    const startIndex = text.indexOf("|");
-    const endMarkers = [
-      "### OVERALL ELIGIBILITY",
-      "## OVERALL ELIGIBILITY",
-      "**OVERALL ELIGIBILITY**",
-      "OVERALL ELIGIBILITY",
-    ];
-    let endIndex = -1;
-
-    for (const marker of endMarkers) {
-      const idx = text.indexOf(marker, startIndex);
-      if (idx > startIndex && idx !== -1) {
-        endIndex = idx;
+  // Improved table extraction - look for markdown table structure
+  // First, try to find a complete table with multiple rows
+  // Look for pattern: | header | header | ... followed by |---| and then data rows
+  
+  // Find all lines that contain table markers
+  const lines = text.split('\n');
+  let tableStartIndex = -1;
+  let tableEndIndex = -1;
+  
+  // Find the start of the table (first line with |)
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (line.includes('|') && line.split('|').length > 3) {
+      // Check if it looks like a header row (has multiple columns)
+      const cells = line.split('|').filter(c => c.trim().length > 0);
+      if (cells.length >= 3) {
+        tableStartIndex = i;
         break;
       }
     }
+  }
 
-    if (startIndex !== -1) {
-      if (endIndex !== -1) {
-        sections.tableText = text.substring(startIndex, endIndex).trim();
-      } else {
-        // If no end marker found, take everything from first | to end
-        sections.tableText = text.substring(startIndex).trim();
-        // But stop at any obvious section break
-        const stopPattern = /\n\s*\n\s*\n/;
-        const stopMatch = sections.tableText.match(stopPattern);
-        if (stopMatch) {
-          sections.tableText = sections.tableText.substring(0, stopMatch.index).trim();
+  if (tableStartIndex !== -1) {
+    // Find the end of the table - look for OVERALL ELIGIBILITY or empty line followed by section
+    for (let i = tableStartIndex + 1; i < lines.length; i++) {
+      const line = lines[i].trim().toUpperCase();
+      
+      // Stop if we hit OVERALL ELIGIBILITY section
+      if (line.includes('OVERALL ELIGIBILITY') && 
+          (line.includes('##') || line.includes('###') || line.includes('**'))) {
+        tableEndIndex = i;
+        break;
+      }
+      
+      // Stop if we hit CRITICAL DISQUALIFYING FACTORS
+      if (line.includes('CRITICAL DISQUALIFYING FACTORS')) {
+        tableEndIndex = i;
+        break;
+      }
+      
+      // Stop if we hit STRENGTHS
+      if (line.includes('STRENGTHS') && 
+          (line.includes('##') || line.includes('###') || line.includes('**'))) {
+        tableEndIndex = i;
+        break;
+      }
+      
+      // Stop if we have 2+ consecutive empty lines (section break)
+      if (i > tableStartIndex + 2 && 
+          lines[i].trim() === '' && 
+          lines[i-1].trim() === '' && 
+          lines[i-2].trim() !== '') {
+        // Check if next non-empty line is a section header
+        for (let j = i + 1; j < lines.length; j++) {
+          const nextLine = lines[j].trim();
+          if (nextLine.length > 0) {
+            if (nextLine.startsWith('#') || nextLine.toUpperCase().includes('OVERALL ELIGIBILITY')) {
+              tableEndIndex = i;
+              break;
+            }
+            break;
+          }
+        }
+        if (tableEndIndex !== -1) break;
+      }
+    }
+
+    // Extract table lines
+    if (tableEndIndex === -1) {
+      tableEndIndex = lines.length;
+    }
+    
+    const tableLines = lines.slice(tableStartIndex, tableEndIndex);
+    sections.tableText = tableLines.join('\n').trim();
+    
+    console.log(`✓ Extracted table text (${sections.tableText.length} chars, ${tableLines.length} lines)`);
+    console.log(`📊 Table preview (first 1000 chars): ${sections.tableText.substring(0, 1000)}`);
+  } else {
+    // Fallback: try regex approach
+    const tableStartPattern = /(\|[^\n]*\|[\s\S]*?)(?=\n\s*(?:###?\s*)?OVERALL ELIGIBILITY|$)/i;
+    const tableMatch = text.match(tableStartPattern);
+
+    if (tableMatch && tableMatch[1]) {
+      sections.tableText = tableMatch[1].trim();
+      console.log(`✓ Extracted table text via regex (${sections.tableText.length} chars)`);
+    } else {
+      // Last resort: try to extract everything between first | and last section header
+      const startIndex = text.indexOf("|");
+      const endMarkers = [
+        "### OVERALL ELIGIBILITY",
+        "## OVERALL ELIGIBILITY",
+        "**OVERALL ELIGIBILITY**",
+        "OVERALL ELIGIBILITY",
+        "CRITICAL DISQUALIFYING FACTORS",
+        "STRENGTHS"
+      ];
+      let endIndex = -1;
+
+      for (const marker of endMarkers) {
+        const idx = text.indexOf(marker, startIndex);
+        if (idx > startIndex && idx !== -1) {
+          if (endIndex === -1 || idx < endIndex) {
+            endIndex = idx;
+          }
         }
       }
-      console.log(`✓ Extracted table text via fallback (${sections.tableText.length} chars)`);
-    } else {
-      console.warn(`⚠️ No table found in text (no '|' character found)`);
+
+      if (startIndex !== -1) {
+        if (endIndex !== -1) {
+          sections.tableText = text.substring(startIndex, endIndex).trim();
+        } else {
+          // If no end marker found, take everything from first | to end
+          sections.tableText = text.substring(startIndex).trim();
+          // But stop at any obvious section break (3+ consecutive newlines)
+          const stopPattern = /\n\s*\n\s*\n/;
+          const stopMatch = sections.tableText.match(stopPattern);
+          if (stopMatch) {
+            sections.tableText = sections.tableText.substring(0, stopMatch.index).trim();
+          }
+        }
+        console.log(`✓ Extracted table text via fallback (${sections.tableText.length} chars)`);
+      } else {
+        console.warn(`⚠️ No table found in text (no '|' character found)`);
+        console.warn(`   Full text preview: ${text.substring(0, 1000)}`);
+      }
     }
   }
 

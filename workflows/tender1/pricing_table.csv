@@ -1,0 +1,2 @@
+SKU_Code,Order_Qty_km,Distance_km,Conductor_Mass_kg_per_km,XLPE_Mass_kg_per_km,Unit_Material_Cost_Rs_per_km,Conversion_Cost_Rs_per_km,Logistics_Cost_Rs_per_km,Overhead_Rs_per_km,Total_Cost_Rs_per_km,Economy_Factor,Adjusted_Cost_Rs_per_km,Final_Price_Rs_per_km,Total_Price_Rs
+AW-ABC-3C-XLPE-50-25-35,200,90,256.5,51.3,66177,6060,166,5779,78182,0.975,76227,85374,17074800

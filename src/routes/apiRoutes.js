@@ -7,6 +7,7 @@ const eligibilityController = require("../controllers/eligibilityController");
 const tender2WorkflowController = require("../controllers/tender2WorkflowController");
 const tenderInfoController = require("../controllers/tenderInfoController");
 const workflowController = require("../controllers/workflowController");
+const advancedWorkflowController = require("../controllers/advancedWorkflowController");
 
 /**
  * @swagger
@@ -426,5 +427,132 @@ router.get("/workflow-status/:tenderId", workflowController.getWorkflowStatus);
  *         description: Report not found
  */
 router.get("/eligibility-report/:tenderId", workflowController.getEligibilityReport);
+
+/**
+ * @swagger
+ * /api/upload-sku-list:
+ *   post:
+ *     summary: Upload SKU list file
+ *     description: Upload a TXT file containing SKU descriptions for matching
+ *     tags: [Advanced Workflow]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         multipart/form-data:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - skuFile
+ *             properties:
+ *               skuFile:
+ *                 type: string
+ *                 format: binary
+ *                 description: SKU list TXT file
+ *     responses:
+ *       200:
+ *         description: SKU list uploaded successfully
+ */
+router.post("/upload-sku-list", advancedWorkflowController.uploadSKUList);
+
+/**
+ * @swagger
+ * /api/build-table-b1/{tenderId}:
+ *   post:
+ *     summary: Build Table B1 (Matching Operations Table)
+ *     description: Generates Table B1 with technical specifications from comprehensive summary
+ *     tags: [Advanced Workflow]
+ *     parameters:
+ *       - in: path
+ *         name: tenderId
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Table B1 built successfully
+ */
+router.post("/build-table-b1/:tenderId", advancedWorkflowController.buildTableB1);
+
+/**
+ * @swagger
+ * /api/match-skus/{tenderId}:
+ *   post:
+ *     summary: Match SKUs to tender requirements
+ *     description: Matches company SKUs to tender line items using weighted scoring
+ *     tags: [Advanced Workflow]
+ *     parameters:
+ *       - in: path
+ *         name: tenderId
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: SKUs matched successfully
+ */
+router.post("/match-skus/:tenderId", advancedWorkflowController.matchSKUs);
+
+/**
+ * @swagger
+ * /api/calculate-pricing/{tenderId}:
+ *   post:
+ *     summary: Calculate pricing for matched SKUs
+ *     description: Calculates pricing using formulas and constants
+ *     tags: [Advanced Workflow]
+ *     parameters:
+ *       - in: path
+ *         name: tenderId
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Pricing calculated successfully
+ */
+router.post("/calculate-pricing/:tenderId", advancedWorkflowController.calculatePricing);
+
+/**
+ * @swagger
+ * /api/generate-holistic-summary/{tenderId}:
+ *   post:
+ *     summary: Generate holistic summary table
+ *     description: Generates final comprehensive table combining all analysis sections
+ *     tags: [Advanced Workflow]
+ *     parameters:
+ *       - in: path
+ *         name: tenderId
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Holistic summary generated successfully
+ */
+router.post("/generate-holistic-summary/:tenderId", advancedWorkflowController.generateHolisticSummary);
+
+/**
+ * @swagger
+ * /api/workflow-result/{tenderId}/{resultType}:
+ *   get:
+ *     summary: Get workflow result file
+ *     description: Retrieves a specific workflow result file (table_b1, matched_skus, pricing_table, holistic_summary)
+ *     tags: [Advanced Workflow]
+ *     parameters:
+ *       - in: path
+ *         name: tenderId
+ *         required: true
+ *         schema:
+ *           type: string
+ *       - in: path
+ *         name: resultType
+ *         required: true
+ *         schema:
+ *           type: string
+ *           enum: [table_b1, matched_skus, pricing_table, holistic_summary]
+ *     responses:
+ *       200:
+ *         description: Result file retrieved successfully
+ */
+router.get("/workflow-result/:tenderId/:resultType", advancedWorkflowController.getWorkflowResult);
 
 module.exports = router;
