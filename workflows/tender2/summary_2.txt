@@ -1,0 +1,127 @@
+This document summarizes the key details of the tender for Asian Wires Pvt. Ltd., capturing essential information for eligibility, product matching, and pricing analysis.
+
+**1. Tender Overview**
+This section identifies the fundamental details of the tender, providing a quick reference for its identity and origin. The Tender ID serves as the primary identifier for all communications and internal tracking, while the title offers an immediate understanding of the product category. The issuing authority is crucial for verifying vendor registration and regional compliance, and the portal URL allows for cross-verification and access to any amendments.
+
+*   **Tender ID / Reference No.:** PGVCL/PROC/LT AB Cable/1228
+*   **Tender Title / Name:** Technical Specification of LT Aerial Bunched Cables for LT Lines (Applicable for LT AB Cable with XLPE Insulation Only)
+*   **Organization / Issuing Authority:** Paschim Gujarat Vij Company Ltd. (PGVCL), Regd. & Corporate Office, “Paschim Gujarat Vij Seva Sadan”, Nana Mava main Road, Laxminagar, Rajkot - 360 004.
+*   **Tender Portal / URL:** www.pgvcl.com
+
+**2. Key Dates and Timeline**
+This section captures all critical timeline data, which is essential for scheduling internal processes, prioritizing actions, and ensuring compliance with submission deadlines. The issue date marks the tender's announcement, while the submission deadline dictates the final cutoff for bid submission. Bid opening dates help plan for subsequent evaluation stages, and the bid validity period confirms the required commitment duration from the bidder.
+
+*   **Issue Date / Publication Date:** Not explicitly mentioned in the provided document.
+*   **Submission Deadline / Closing Date & Time:** Not explicitly mentioned in the provided document.
+*   **Bid Opening Date / Technical Evaluation Date:** Not explicitly mentioned in the provided document.
+*   **Bid Validity Period:** Not explicitly mentioned in the provided document.
+
+**3. Tender Scope and Items (BOQ / Schedule-A)**
+This section details all the products and services requested, forming the core of the tender. Extracting each line item with its description, specification, and quantity is vital for product matching against Asian Wires' catalog and for calculating the total project value. Including the unit of measurement ensures accurate quantity interpretation, and grouping by product category helps in organizing the response.
+
+The tender covers the procurement of XLPE insulated Aluminum Aerial Bunched Cables for LT Lines, specifically designed for use in Rural Electrification Systems. The scope includes two main configurations of cables:
+*   LT AB Cable, XLPE insulated, 1 Core x 35mm² (Phase) + 1 Core x 16mm² (Neutral) + 25mm² (Messenger)
+*   LT AB Cable, XLPE insulated, 2 Core x 50mm² (Phase) + 1 Core x 25mm² (Neutral) + 35mm² (Messenger)
+The standard length per drum for these cables is 500 meters, with a permissible tolerance of +5%. Non-standard lengths, not less than 50% of the standard length, will be accepted up to 10% of the ordered quantity. Total quantities for each cable type are not specified in this document.
+
+**4. Delivery & Logistics Details**
+This section outlines all logistical requirements, which are crucial for calculating landed costs and planning production and dispatch. The delivery location directly impacts freight costs and transit times from the manufacturing site. The delivery schedule dictates production timelines, and details about inspection agencies inform quality control processes. State-specific rules can highlight regional advantages or compliance hurdles.
+
+*   **Delivery Location / Consignee Address:** The document does not explicitly state a specific delivery or consignee address, but the issuing authority, PGVCL, is located in Rajkot, Gujarat.
+*   **Delivery Schedule / Completion Period:** Not explicitly mentioned in the provided document.
+*   **Inspection Agency:** All tests and inspections are to be made at the place of manufacture unless otherwise agreed upon by the manufacturer and purchaser. The manufacturer must provide all reasonable facilities to the inspector representing the purchaser.
+*   **Destination Jurisdiction / State-Specific Rules:** The tender is issued by Paschim Gujarat Vij Company Ltd. (PGVCL), a Gujarat-based utility. The document also refers to other Gujarat DISCOMs (DGVCL, MGVCL, UGVCL) in the context of purchaser identification and past experience, indicating a focus on the Gujarat region.
+
+**5. Eligibility and Registration Requirements**
+This section summarizes all mandatory conditions a vendor must meet to be considered for the tender, which is critical for determining bid eligibility. Manufacturer/OEM status confirms if Asian Wires can bid directly. Vendor registration, factory licenses, and certifications ensure compliance with regulatory and quality standards. Experience and financial thresholds verify the bidder's capability, while other clauses address specific legal or policy requirements.
+
+*   **Manufacturer / OEM Status:** The tender implies that the bidder should be a manufacturer, as it requires "experience of manufacturer and supply of this cable" and submission of "List of plant and machinery" and "List of testing facility available."
+*   **Vendor Registration Requirement:** The tender requires the submission of a "List of orders pending/executed with GUVNL (Formerly GEB)/DGVCL/MGVCL/UGVCL/PGVCL" and "with agencies other than Sr. no. 6(a)", suggesting a preference or requirement for prior engagement with electricity boards, particularly those in Gujarat.
+*   **Factory License, BIS, ISO Requirements:** Bidders must submit a duly attested photocopy of a valid ISI License for IS:14255/1995, which must remain valid until the order is completed. For the 1Cx35mm²+1Cx16mm²+25mm² LT AB Cable, ISI marking is mandatory on the cable, while for the 2Cx50mm²+1Cx25mm²+35mm² LT AB Cable, ISI marking is not applicable as per the latest amendment of IS: 14255-1995 (Amendment No.1, October 2010).
+*   **Experience / Past Supply Clauses:** Tenderers must have experience in manufacturing and supplying this type of cable to any Electricity Board. Copies of executed orders and performance reports are required to be submitted with the offer.
+*   **Financial Turnover Threshold / Net Worth Criteria:** Not explicitly mentioned in the provided document.
+*   **Blacklist Declaration, MSME Benefits, and Border Compliance Clauses:** Not explicitly mentioned in the provided document.
+
+**6. Technical Specifications (Core Product Data)**
+This section provides a detailed breakdown of the technical requirements for each product, which is paramount for accurate product matching and compliance checks. Listing all parameters for each product variation allows for precise SKU mapping and ensures that Asian Wires can meet the exact specifications. This data forms the basis for technical evaluation and quality assurance.
+
+The tender specifies XLPE insulated Aluminum Aerial Bunched Cables with a rated voltage of 1100 volts, confirming to IS-14255/1995 for ABC cables, IS-8130/1984 for conductors, IS-398/Pt.IV/1994 for aluminum alloy conductors, and IS-10418/1982 for cable drums. The XLPE insulation must conform to IS-7098(Part-II):85 and be black in color. Phase conductors are identified by one, two, or three ridges. The conductors are required to be compacted.
+
+**Technical Specifications for LT AB Cable, 1C x 35mm² + 1C x 16mm² + 25mm² messenger:**
+*   **Cable Type:** LT Aerial Bunched Cable, XLPE insulated Aluminum.
+*   **Core Configuration:** 1 Phase Conductor, 1 Neutral Conductor, 1 Messenger Wire.
+*   **Phase Conductor:** 35 mm², Aluminum, 7 strands, 6.8 mm compacted diameter, approx. 95 Kg/KMs mass, Max. DC Resistance at 20ºC of 0.868 Ohm/km. Tensile strength of aluminum wire not less than 90 N/mm².
+*   **Neutral Conductor:** 16 mm², XLPE insulated Aluminum, 7 strands, 4.4 mm compacted diameter, approx. 42 Kg/KMs mass, Max. DC Resistance at 20ºC of 1.91 Ohm/km.
+*   **Messenger Wire:** 25 mm², Bare Aluminum Alloy (heat treated aluminum silicon containing 0.5% magnesium and approx. 0.5% silicon), 7 strands, 5.8 mm compacted diameter, approx. 65 Kgs/KMs mass, Max. DC Resistance at 20ºC of 1.380 Ohm/KM.
+*   **Insulation Thickness:** 1.2 mm for 35mm² and 16mm² conductors.
+
+**Technical Specifications for LT AB Cable, 2C x 50mm² + 1C x 25mm² + 35mm² messenger:**
+*   **Cable Type:** LT Aerial Bunched Cable, XLPE insulated Aluminum.
+*   **Core Configuration:** 2 Phase Conductors, 1 Neutral Conductor, 1 Messenger Wire.
+*   **Phase Conductor:** 50 mm², Aluminum, 7 strands, 7.9 mm compacted diameter, approx. 127 Kg/KMs mass, Max. DC Resistance at 20ºC of 0.641 Ohm/km. Tensile strength of aluminum wire not less than 90 N/mm².
+*   **Neutral Conductor:** 25 mm², XLPE insulated Aluminum, 7 strands, 5.5 mm compacted diameter, approx. 65 Kg/KMs mass, Max. DC Resistance at 20ºC of 1.20 Ohm/km.
+*   **Messenger Wire:** 35 mm², Bare Aluminum Alloy (heat treated aluminum silicon containing 0.5% magnesium and approx. 0.5% silicon), 7 strands, 6.8 mm compacted diameter, approx. 95 Kgs/KMs mass, Max. DC Resistance at 20ºC of 0.986 Ohm/KM.
+*   **Insulation Thickness:** 1.5 mm for 50mm² conductors, 1.2 mm for 25mm² conductors.
+
+**General XLPE Insulation Properties:**
+*   **Tensile Strength:** 12.5 N/mm² Min.
+*   **Elongation at Break:** 200 % Min.
+*   **Ageing in air oven:** Treatment at 135 ± 3ºC for 7 days, with max ± 25% variation in tensile strength and elongation.
+*   **Hot Set:** Treatment at 200 ± 3ºC for 15 minutes under 20 N/cm² mechanical stress, with max 175% elongation under load and max 15% permanent elongation (set) after cooling.
+*   **Shrinkage:** Treatment at 130 ± 3ºC for 1 hour, with max 4% shrinkage.
+*   **Water absorption (Gravimetric):** Treatment at 85 ± 2ºC for 14 days, with max 1 mg/cm² water absorbed.
+*   **Volume Resistivity of Insulation:** At 27ºC – 1 x 10^13 Ohm-cm Min; At 70°C – 1 x 10^11 Ohm-cm Min.
+
+**7. Commercial & Financial Terms**
+This section details the financial obligations and payment structures, which are critical for pricing strategy and cash flow management. Tender fees, EMD, and performance security represent upfront and contingent financial commitments. Payment terms directly impact working capital, while penalty clauses highlight risks associated with delays. Price variation clauses determine the stability of the quoted price, and the price basis defines the scope of cost inclusion.
+
+*   **Tender Fee, EMD, and Performance Security:** Not explicitly mentioned in the provided document.
+*   **Payment Terms:** Not explicitly mentioned in the provided document.
+*   **Delivery Penalty or LD Clause:** Not explicitly mentioned in the provided document.
+*   **Price Variation / Escalation Clause:** Not explicitly mentioned in the provided document.
+*   **Price Basis:** Not explicitly mentioned in the provided document.
+
+**8. Evaluation Criteria**
+This section explains how bids will be assessed, guiding Asian Wires in structuring a competitive and compliant offer. Understanding the technical evaluation basis ensures that all specifications are met, while the financial evaluation basis informs pricing strategies. Preference clauses highlight opportunities for competitive advantage, and any scoring mechanism provides transparency on how different aspects of the bid are weighted.
+
+*   **Technical Bid Evaluation Basis:** Bids will be evaluated based on conformity to the detailed technical specifications and the submission of mandatory documents. Offers will be liable to be ignored/rejected without further correspondence if type test certificates (from Govt. of India approved Laboratory, not more than five years old from tender opening date) or valid ISI License/GTP duly filled in are absent.
+*   **Financial Bid Evaluation Basis:** Not explicitly mentioned in the provided document.
+*   **Preference Clauses:** Not explicitly mentioned in the provided document.
+*   **Weightage or Scoring Mechanism:** Not explicitly mentioned in the provided document.
+
+**9. Contacts and Clarifications**
+This section provides essential contact information for any queries or escalations, ensuring clear communication channels. The contact person and their details facilitate direct communication for clarifications, while the office address is useful for formal correspondence.
+
+*   **Contact Person / Designation:** Not explicitly mentioned in the provided document.
+*   **Email / Phone:** Email: info.pgvcl@gebmail.com; Phone: (0281)2380425, 2380427.
+*   **Office Address:** Regd. & Corporate Office, “Paschim Gujarat Vij Seva Sadan”, Nana Mava main Road, Laxminagar, Rajkot - 360 004.
+
+**10. Key Compliance Notes**
+This section consolidates important procedural, legal, and quality compliance requirements, which are crucial for ensuring a valid and successful bid. The document submission format dictates how the bid must be presented. Agreement and warranty clauses define post-award obligations, and after-sales service requirements impact long-term commitments.
+
+*   **Document Submission Format:** The document indicates that the tenderer's signature, company's round seal, date, and place should be affixed on each page, suggesting a physical or scanned submission process. Required documents include attested copies of valid ISI License, proof of renewal if applied, type test certificates, list of plant and machinery, list of testing facilities, and list of orders pending/executed.
+*   **Agreement & Contract Execution Clauses:** Not explicitly mentioned in the provided document.
+*   **Warranty / Guarantee Period:** Not explicitly mentioned in the provided document.
+*   **After-Sales Service Clause:** Not explicitly mentioned in the provided document.
+*   **Type Test Certificates:** Must be from a Government of India approved Laboratory and not be more than five years old from the date of tender opening.
+*   **ISI License:** Must be valid up to the date of delivery for the supply of AB cables/wires.
+*   **Packing and Marking:** Cables must be wound in non-returnable wooden drums conforming to IS-10418/1982, suitable for wheel mounting, and painted. Each drum should contain only one length of cable. Drums and cables must be marked with the manufacturer's name, trade mark, drum number, conductor size, messenger size, voltage grade, number of lengths, gross mass, net mass, ISI mark (where applicable), purchaser (DGVCL/MGVCL/PGVCL/UGVCL), 1100 Volts, IS:14255/1995, and year of manufacture.
+*   **Overall Tolerance:** An overall tolerance of ±2% is allowable on the supply of the total ordered quantity.
+
+**11. Optional Attachments or Annexures**
+This section lists any supplementary documents or formats referenced in the tender, which are often necessary for a complete bid. Listing these attachments helps ensure that all required forms and information are included, preventing disqualification due to incomplete submissions.
+
+The tender refers to the following enclosures and parts within the Guaranteed Technical Particulars (G.T.P.) section:
+*   **Part A:** Bidders' confirmation of important requirements (e.g., conformity to IS: 14255/1995, ISI Mark, XLPE insulation color, standard/non-standard lengths, packing material, cable/drum marking, conductor materials, maximum conductor resistance, XLPE insulation thickness, volume resistivity, tensile strength, elongation at break, overall tolerance).
+*   **Part B:** Bidders to furnish details about material for information (e.g., ISI License number and expiry date, approximate weight of 1000 meters length for each cable size, confirmation of circular compacted conductor).
+*   **Part C (ENCLOSURES):** Bidders must enclose the following documents:
+    *   ISI License.
+    *   Proof if applied for renewal of ISI License.
+    *   Type Test Certificate from Govt. of India approved Laboratory for both cable sizes, including Name of Lab, T.R. No., and Date.
+    *   List of plant and machinery.
+    *   List of testing facility available.
+    *   List of orders pending/executed with GUVNL/DGVCL/MGVCL/UGVCL/PGVCL and with other agencies.
+*   **Part D:** Bidders to mention any deviations from the specification, quoting the relevant clause.
+
+**12. Summary Conclusion**
+This tender from Paschim Gujarat Vij Company Ltd. (PGVCL) is for the procurement of two distinct types of LT Aerial Bunched Cables: 1 Core x 35mm² + 1 Core x 16mm² + 25mm² messenger and 2 Core x 50mm² + 1 Core x 25mm² + 35mm² messenger, both XLPE insulated and rated for 1100 volts. While specific quantities are not provided in this document, the cables are required in standard 500-meter drum lengths. The delivery destination is implied to be within Gujarat, given the issuing authority's location in Rajkot. Overall eligibility is strictly tied to manufacturers with proven experience in supplying similar cables to Electricity Boards, holding valid ISI licenses for IS:14255/1995 (where applicable), and possessing up-to-date type test certificates from government-approved laboratories.

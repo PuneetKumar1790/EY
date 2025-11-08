@@ -1,0 +1,110 @@
+Here is a comprehensive, descriptive summary of the tender document for Asian Wires Pvt. Ltd.:
+
+1.  **Tender Overview**
+    This section summarizes the basic identity of the tender, providing essential identifiers and the issuing authority. This information is crucial for initial identification, internal tracking, and verifying the source of the tender. For instance, knowing the issuing authority helps in checking existing vendor relationships and regional compliance requirements.
+
+    Tender ID / Reference No.: The tender is identified by the reference number PGVCL/PROC/LT AB Cable/1228.
+    Tender Title / Name: The tender is for the Procurement of LT Aerial Bunched Cable.
+    Organization / Issuing Authority: The tender is issued by Paschim Gujarat Vij Company Ltd. (PGVCL), with its Registered & Corporate Office at “Paschim Gujarat Vij Seva Sadan”, Nana Mava main Road, Laxminagar, Rajkot - 360 004.
+    Tender Portal / URL: Tender papers and specifications can be downloaded from https://tender.nprocure.com (for view, download, and online submission) and www.pgvcl.com (for view & download only).
+
+2.  **Key Dates and Timeline**
+    This section captures all critical timeline data, which is vital for scheduling internal processes, ensuring timely submission, and planning for subsequent evaluation stages. Missing a deadline can lead to outright rejection of the bid.
+
+    Issue Date / Publication Date: The specific issue or publication date is not explicitly mentioned in the provided document.
+    Submission Deadline / Closing Date & Time: The online submission for Preliminary, Technical, and Price bids closes on 10.11.2025 up to 18:00 Hrs. Physical submission of documents related to EMD payment is due by 17.11.2025 up to 18:00 Hrs.
+    Bid Opening Date / Technical Evaluation Date: The online opening of Tender Fee & EMD (Preliminary Stage) is scheduled for 11.11.2025 up to 11:00 Hrs. The online opening of Technical Bid (Technical Stage) is scheduled for 18.11.2025 up to 11:00 Hrs.
+    Bid Validity Period: The bid validity period is not explicitly stated in the provided document.
+
+3.  **Tender Scope and Items (BOQ / Schedule-A)**
+    This section summarizes all items requested in the tender's Bill of Quantities (BOQ) or Schedule-A. This detail is fundamental for product matching, understanding the scale of the tender, and preparing accurate pricing proposals. It ensures that Asian Wires Pvt. Ltd. bids for the correct products and quantities.
+
+    The tender seeks the procurement of various configurations of LT Aerial Bunched Cable. The quantities mentioned are tentative, and PGVCL reserves the right to reduce them. The items and their respective quantities are:
+    *   LT AB Cable, 1C x 35mm² + 1C x 16mm² + 25mm² messenger — Quantity: 1000 km.
+    *   LT AB Cable, 3C x 35mm² + 1C x 16mm² + 25mm² messenger — Quantity: 345 km.
+    *   LT AB Cable, 3C x 50mm² + 1C x 25mm² + 35mm² messenger — Quantity: 1500 km.
+    All quantities are specified in kilometers (KM).
+
+4.  **Delivery & Logistics Details**
+    This section extracts all information related to delivery, consignee, and dispatch locations, along with delivery timelines. This data is critical for calculating logistics costs, planning production schedules, and understanding any regional specificities that might impact delivery or compliance.
+
+    Delivery Location / Consignee Address: While a specific consignee address is not explicitly provided, the material will be supplied to PGVCL stores. The corporate office is located in Rajkot, Gujarat, suggesting deliveries within PGVCL's operational area in Gujarat.
+    Delivery Schedule / Completion Period: Delivery is required within seven (07) months on an equal monthly basis for each item of the total tender quantity, commencing 45 days from the date of receipt of the Letter of Acceptance (LOA). PGVCL may request early delivery if required.
+    Inspection Agency: The document does not explicitly mention a specific third-party or NABL accredited inspection agency for pre-dispatch inspection.
+    Destination Jurisdiction / State-Specific Rules: The issuing authority is based in Gujarat, implying that Gujarat state-specific vendor rules and benefits, such as those for MSME units registered in Gujarat, would apply.
+
+5.  **Eligibility and Registration Requirements**
+    This section summarizes all vendor eligibility conditions, including required certificates and compliance mandates. Meeting these criteria is a prerequisite for a bid to be considered technically eligible, directly impacting Asian Wires Pvt. Ltd.'s ability to participate.
+
+    Manufacturer / OEM Status: Only manufacturers whose works are located in India and have GST registration are eligible to bid.
+    Vendor Registration Requirement: Bidders must possess a valid vendor registration with GUVNL or any of its subsidiary companies (GSECL, GETCO, DGVCL, MGVCL, UGVCL, PGVCL) prior to the technical bid opening date.
+    Factory License, BIS, ISO Requirements: Bidders must submit a self-certified copy of a valid Factory License, a self-certified copy of a valid ISO Certificate (if applicable), and a notarized copy of a valid BIS License for the tendered item. Provisional BIS certificates are not allowed, though bidders who have applied for new/renewal of license before tender opening can participate if they submit proof of application and commit to submitting the BIS license within 45 days of LOA.
+    Experience / Past Supply Clauses: A self-certified copy of orders executed with GUVNL and its subsidiary companies is required (if applicable).
+    Financial Turnover Threshold / Net Worth Criteria: Specific financial turnover or net worth criteria are not explicitly detailed in the provided document.
+    Blacklist Declaration, MSME Benefits, and Border Compliance Clauses: Bidders must provide a notarized declaration on Rs. 300/- Non-judicial stamp paper regarding their authorized representative. MSME units registered under Small Scale Industries of Gujarat State are eligible for EMD exemption or lower EMD amounts upon submission of specific certificates (Udyam Registration Certificate, CSPO, NSIC, or DGS&D Registration Certificates). There are strict restrictions on procurement from bidders of countries sharing a land border with India (China, Pakistan, Bhutan), requiring registration with the DPIIT. A Country Boundary Certificate on Rs. 300/- non-judicial stamp paper, duly notarized, is mandatory. Firms that are stop-dealt or banned by GUVNL or its subsidiaries are also considered stop-dealt/banned for PGVCL.
+
+6.  **Technical Specifications (Core Product Data)**
+    This section summarizes the core technical specifications for each product, which is essential for product matching with Asian Wires Pvt. Ltd.'s manufacturing capabilities and for ensuring compliance with the tender's requirements. This data forms the basis for SKU mapping and technical evaluation.
+
+    The tender is for LT Aerial Bunched Cables, and while specific detailed technical parameters like insulation type, rated voltage, applicable standards (IS/IEC numbers), conductor material, insulation thickness, number of strands, maximum DC resistance, and tensile strength are referred to as being in "Part – III : Technical Specifications, GTP & drawing if any," they are not explicitly provided in the current document. However, the price variation clause indicates that the cables utilize XLPE insulation for both phase and neutral conductors and Aluminium for phase, messenger, and neutral conductors. The document lists the following cable configurations:
+    *   1C x 35mm² + 1C x 16mm² + 25mm² messenger
+    *   3C x 35mm² + 1C x 16mm² + 25mm² messenger
+    *   3C x 50mm² + 1C x 25mm² + 35mm² messenger
+    The price variation factors for Aluminium (Alph, Alm, Aln) and XLPE (CCFAlPh, CCFAln) are provided for each of these cable sizes, indicating the material composition.
+
+7.  **Commercial & Financial Terms**
+    This section extracts major financial and commercial conditions, which are crucial for preparing the financial bid, understanding cash flow implications, and assessing potential risks. This directly impacts the profitability and financial viability of participating in the tender.
+
+    Tender Fee, EMD, and Performance Security: A non-refundable Tender Fee of Rs. 10,000 + 18% GST = Rs. 11,800/- is required. Earnest Money Deposit (EMD) amounts vary by cable size and bidder type (MSME/Non-MSME):
+    *   1C x 35mm² + 1C x 16 + 25mm²: Rs. 2,00,000/- (MSME), Rs. 3,00,000/- (Non-MSME)
+    *   3C x 35mm² + 1C x 16 + 25mm²: Rs. 2,00,000/- (MSME), Rs. 3,00,000/- (Non-MSME)
+    *   3C x 50mm² + 1C x 25 + 35mm²: Rs. 4,00,000/- (MSME), Rs. 7,00,000/- (Non-MSME)
+    The total EMD for all items is Rs. 8,00,000/- for MSME units and Rs. 13,00,000/- for Non-MSME units. A Performance Guarantee (PG) towards the execution period (Security Deposit) must be submitted within 15 days from the date of the Letter of Acceptance.
+    Payment Terms: Specific payment terms (e.g., "Within 30 days of delivery") are not explicitly detailed in the provided document.
+    Delivery Penalty or LD Clause: For delayed deliveries beyond the scheduled date, a penalty shall be applicable as per the Purchase Order terms.
+    Price Variation / Escalation Clause: The tender is invited on a Price Variation Basis. The price is variable, not firm, and will be adjusted using a detailed formula based on the LME Average Settlement price for Aluminium (including ingot premium) and the ex-works price of XLPE Compound. The prices of raw materials are exclusive of GST and other taxes, and are considered as on the 1st working day of the month.
+    Price Basis: The price basis (e.g., FOR Destination / Ex-Works) is not explicitly mentioned in the provided document.
+
+8.  **Evaluation Criteria**
+    This section summarizes how the tender will be evaluated, which helps Asian Wires Pvt. Ltd. understand the competitive landscape and strategize its bid. Knowing the evaluation basis allows for optimizing technical and financial proposals.
+
+    Technical Bid Evaluation Basis: Bids will be evaluated based on conformity to technical specifications and the submission of all required documents in the correct format. Any deviation or non-attachment of mandatory documents, or attachment of wrong documents, may lead to rejection. Discrepancies between online and uploaded scanned documents will result in rejection.
+    Financial Bid Evaluation Basis: The financial bids will be opened after technical evaluation. The determination of L1 (lowest bidder) is implied to be based on the total quoted price, subject to the price variation clause.
+    Preference Clauses: MSME bidders are eligible for EMD exemptions or lower EMD amounts. They also have different minimum quantity requirements for bidding (10% of tender quantity) compared to other bidders (25% of tender quantity) for each item.
+    Weightage or Scoring Mechanism: No specific weightage or scoring mechanism is detailed in the provided document.
+
+9.  **Contacts and Clarifications**
+    This section captures key communication details for escalation or queries, ensuring that Asian Wires Pvt. Ltd. can seek necessary clarifications during the bidding process. This is vital for resolving ambiguities and ensuring compliance.
+
+    Contact Person / Designation: Technical questions, information, and clarifications should be referred to the Chief Engineer (Material), PGVCL.
+    Email / Phone: PGVCL's general email is info.pgvcl@gebmail.com, and phone numbers are (0281)2380425, 2380427. For online tender participation clarification or training, the nProcure Cell can be contacted at Toll Free: 1-800-233-1010 (Ext. 501, 512, 516, 517, 525), Phone No. 079-26857315 / 316 / 317, Fax: 079-26857321 / 40007533, Email: nproucre@gnvfc.net.
+    Office Address: The Chief Engineer (Material), Paschim Gujarat Vij Company Ltd., Laxmi Nagar, Nana Mava Main Road, Rajkot-360 004.
+
+10. **Key Compliance Notes**
+    This section summarizes important procedural and legal compliances, which are essential for ensuring the bid is not rejected on procedural grounds and for understanding post-award obligations. Adherence to these notes is critical for a successful tender submission and contract execution.
+
+    Document Submission Format: All required documents must be submitted in online mode only, except for documents related to Tender Fee and Earnest Money Deposit (EMD) payments, which may require physical submission (original copies of DD/Banker’s Cheque/Pay Order/Bank Guarantee for EMD amounts exceeding Rs. 3.00 Lakhs via Registered Post A.D. or Speed Post). Scanned copies of all documents must be uploaded in PDF format, legible, and not password-protected.
+    Agreement & Contract Execution Clauses: The successful bidder must execute an Agreement within 20 days from the date of issue of the Letter of Acceptance (LOA). Failure to do so may lead to cancellation of the LOA at the bidder's risk and cost, and potential actions like stop dealing.
+    Warranty / Guarantee Period: The goods, stores, and equipment are guaranteed for 18 months from their receipt at the site or 12 months from the date of commissioning, whichever is earlier. Defective items due to bad design or workmanship must be repaired or replaced free of charge within this period.
+    After-Sales Service Clause: Specific after-sales service clauses are not explicitly detailed in the provided document.
+
+11. **Optional Attachments or Annexures**
+    This section lists any referenced attachments or annexures, which are integral parts of the tender document and contain specific formats or additional details. Understanding these ensures all required forms are completed and submitted correctly.
+
+    The tender refers to several attachments and annexures:
+    *   Part – I: Schedule “A” indicating quantities & items.
+    *   Part - II: Commercial Terms & Conditions.
+    *   Part – III: Technical Specifications, GTP & drawing (if any).
+    *   Annexure-11: Online tender documents to be uploaded in the technical stage.
+    *   Annexure-4 of N-Procure: For quantity offered details.
+    *   Annexure-13: Mandatory submission in the online technical stage.
+    *   Annexure-3: For details of works and authorized representative.
+    *   Certificate-A: To be signed & sealed on the company’s letterhead.
+    *   Declaration: Notarized on Rs. 300/- Non-judicial stamp paper for authorized representative.
+    *   Country Boundary Certificate: Notarized on Rs. 300/- Non-judicial stamp paper.
+    *   Formats for EMD Exemption Documents.
+    *   Formats for Type Test Report.
+    *   Formats for Last Three years Audited Account.
+
+12. **Summary Conclusion**
+    This tender, PGVCL/PROC/LT AB Cable/1228, requests a total of 2845 km of LT Aerial Bunched Cables, comprising three primary product types: 1C x 35mm² + 1C x 16 + 25mm² messenger, 3C x 35mm² + 1C x 16 + 25mm² messenger, and 3C x 50mm² + 1C x 25 + 35mm² messenger variants. The delivery destination is PGVCL stores within Gujarat, with a delivery schedule of seven months after a 45-day commencement period from LOA. The overall eligibility context mandates that only manufacturers with valid vendor registration with GUVNL or its subsidiaries, holding a valid BIS license, and complying with specific border country restrictions, can bid. The tender operates on a price variation basis, and strict adherence to online submission procedures and timeline is crucial for consideration.

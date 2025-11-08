@@ -1,0 +1,105 @@
+This comprehensive summary outlines the key details of Tender No. PGVCL/PROC/LT AB Cable/1228, providing essential information for Asian Wires Pvt. Ltd. to assess eligibility, match products, and conduct pricing analysis.
+
+### 1. Tender Overview
+
+This section summarizes the fundamental identity of the tender. The Tender ID / Reference No. serves as the unique identifier for all documentation and tracking. The Tender Title / Name provides an immediate understanding of the product category and scope. The Organization / Issuing Authority is crucial for verifying vendor registration and regional compliance. Any Tender Portal / URL ensures access for cross-verification and future amendments.
+
+**Tender ID / Reference No.:** PGVCL/PROC/LT AB Cable/1228
+**Tender Title / Name:** Procurement of LT AB Cable (as inferred from the document title and content)
+**Organization / Issuing Authority:** Paschim Gujarat Vij Company Ltd. (PGVCL)
+**Tender Portal / URL:** The document refers to an "online mode of tender" and "nProcure portal" for online submissions, but a specific URL is not provided in the text.
+
+### 2. Key Dates and Timeline
+
+This section captures all critical timeline data necessary for scheduling internal actions and ensuring compliance. The Issue Date / Publication Date marks the tender's announcement. The Submission Deadline / Closing Date & Time is paramount for prioritizing bid preparation. Bid Opening Date / Technical Evaluation Date helps in planning subsequent internal approval flows. The Bid Validity Period confirms the duration for which the submitted offer must remain compliant.
+
+**Issue Date / Publication Date:** Not specified in the provided document.
+**Submission Deadline / Closing Date & Time:** Not specified in the provided document, but it mentions "before the due date and time for submission of tender."
+**Bid Opening Date / Technical Evaluation Date:** Not specified in the provided document, but it mentions "Before opening Technical bids" and "After opening Technical bid but before opening the price bid."
+**Bid Validity Period:** Not specified in the provided document, but for Bank Guarantees for EMD, validity must be for 6 months from the date of bid submission.
+
+### 3. Tender Scope and Items (BOQ / Schedule-A)
+
+This section summarizes all items requested in the tender's Bill of Quantities (BOQ). Extracting each line item, including product description, specification, quantity, and unit of measurement, is vital for accurate product matching and inventory assessment. Listing multiple product categories helps in understanding the full breadth of the tender's requirements.
+
+The primary product category for this tender is **LT AB Cable**. The document refers to "SCHEDULE-“A”" for detailed item descriptions, specifications, and quantities, but these specific details are not provided in the current text. It generally refers to "tendered equipment / material for same or higher rating of relevant Indian Standard."
+
+### 4. Delivery & Logistics Details
+
+This section extracts all information related to delivery, consignee, and dispatch locations. The Delivery Location / Consignee Address is essential for calculating freight costs from the manufacturing site. The Delivery Schedule / Completion Period is crucial for production planning and resource allocation. Mention of an Inspection Agency indicates requirements for quality checks, and Destination Jurisdiction highlights any state-specific vendor rules or benefits.
+
+**Delivery Location / Consignee Address:** F.O.R. Destination basis, meaning any of the stores of PGVCL in Gujarat. The Corporate Office in Rajkot (Laxmi Nagar, Nana Mava Main Road, Rajkot-360 004) is mentioned for cash payments, implying a central administrative location.
+**Delivery Schedule / Completion Period:** Not explicitly mentioned in the provided document.
+**Inspection Agency:** Factory inspection is mandatory for new vendors and may be conducted every two years for existing vendors, either departmentally or through a third party for factories outside the country.
+**Destination Jurisdiction / State-Specific Rules:** Gujarat State jurisdiction is specified for legal disputes. There are specific benefits and quantity reservations for Gujarat-based manufacturing units and MSME units within Gujarat.
+
+### 5. Eligibility and Registration Requirements
+
+This section summarizes all vendor eligibility conditions, including required certificates and compliance mandates. Manufacturer / OEM Status determines if Asian Wires can bid directly. Vendor Registration Requirement is a fundamental prerequisite. Factory License, BIS, ISO Requirements ensure quality and legal compliance. Experience / Past Supply Clauses and Financial Turnover Threshold / Net Worth Criteria assess the bidder's capability. Blacklist Declaration, MSME Benefits, and Border Compliance Clauses address legal and preferential treatment aspects.
+
+**Manufacturer / OEM Status:** The tender implies that manufacturing units are the primary focus for registration and supply, with vendor registration being issued "on manufacturing unit-wise of the firm."
+**Vendor Registration Requirement:** Mandatory for bidders to participate in the tender for non-engineering items. New suppliers must register with GUVNL or its subsidiary companies (like PGVCL) by paying non-refundable fees. Existing registered vendors must re-register upon expiry. Government or Government Controlled Organizations are exempt from fees.
+**Factory License, BIS, ISO Requirements:** All technical specifications should be ISS/ISI/BIS. PGVCL desires suppliers to possess ISO 9001 / ISO 9002 certificates, with preference given in quantity distribution after 1/1/2003 for those possessing them. Type test reports from NABL accredited or Govt. approved labs, not older than seven years, are required for registration.
+**Experience / Past Supply Clauses:** Bidders are categorized as New-1, New-2, or Regular Suppliers based on their past supply performance to GUVNL or its subsidiary companies for similar or higher rating items. Performance certificates are required.
+**Financial Turnover Threshold / Net Worth Criteria:** Not explicitly mentioned in the provided document.
+**Blacklist Declaration, MSME Benefits, and Border Compliance Clauses:** Bidders must declare that they, their proprietor, partners, or directors have not been blacklisted by GUVNL or any of its subsidiary companies. Gujarat-based Micro and Small Scale Industrial (manufacturing) Units registered with CSPO / NSIC / DGS&D are eligible for EMD exemption. MSME units of Gujarat state also receive price preference benefits for quantity allocation.
+
+### 6. Technical Specifications (Core Product Data)
+
+This section summarizes every distinct technical specification from the tender's technical sections. Including all technical parameters and applicable standards for each product variation is crucial for SKU mapping and ensuring product conformity. A compact list for each product variation allows for easy comparison and selection.
+
+The document states that "All technical specification should be ISS/ISI/BIS. Specification framed out by PGVCL shall be separately brought out in the tender documents. No deviation in specification shall be allowed and PGVCL decision shall be final." It refers to "Technical Specifications etc." as documents to be uploaded. Specific technical parameters like Cable_Type, Core_Configuration, Insulation_Type, etc., are not detailed in this provided text.
+
+### 7. Commercial & Financial Terms
+
+This section extracts major financial or commercial conditions. Tender Fee, EMD, and Performance Security amounts are critical cost components. Payment Terms dictate cash flow. Delivery Penalty or LD Clause highlights risks associated with delays. Price Variation / Escalation Clause determines pricing stability, and Price Basis clarifies how the final price is calculated (e.g., FOR Destination).
+
+**Tender Fee, EMD, and Performance Security:** Tender Fees are non-refundable (unless the tender is scrapped by the purchaser) and must be paid with applicable GST. Up to Rs. 10,000 can be paid in cash, otherwise via RTGS/NEFT/online. EMD can be paid via RTGS/NEFT/online. For amounts up to Rs. 10,000, cash is accepted; up to Rs. 3 Lakhs, RTGS/NEFT/online only; over Rs. 3 Lakhs, RTGS/NEFT/online or DD/Banker’s Cheque/Pay Order/Bank Guarantee. MSME units from Gujarat with valid registration are exempt from EMD. Bank Guarantees for EMD must be valid for 6 months from bid submission. Performance Security is not mentioned in this document snippet.
+**Payment Terms:** Not explicitly mentioned in the provided document.
+**Delivery Penalty or LD Clause:** Not explicitly mentioned in the provided document.
+**Price Variation / Escalation Clause:** Prices quoted should be "FIRM / VARIABLE." If a supplier opts for the Composition scheme of GST, the price bid rate is final, and any additional GST must be borne by the bidder; statutory variation clause will not apply.
+**Price Basis:** F.O.R. Destination basis (any of the Company's stores in Gujarat). Bidders must provide a break-up of the Total Unit F.O.R. Destination Price and Total Unit End Cost, including Unit Ex-works price, freight, packing & forwarding charges, Insurance Charges, GST, and Cess.
+
+### 8. Evaluation Criteria
+
+This section summarizes how the tender will be evaluated. The Technical Bid Evaluation Basis clarifies the criteria for technical acceptance. The Financial Bid Evaluation Basis explains how the lowest bidder (L1) will be determined. Preference Clauses highlight any special considerations (e.g., for MSMEs or local suppliers), and Weightage or Scoring Mechanism details any quantitative evaluation methods.
+
+**Technical Bid Evaluation Basis:** Bids are submitted in a two-bid system: Techno-commercial Bid and Price Bid. The technical scrutiny committee of PGVCL evaluates the techno-commercial view. PGVCL reserves the right to open or not to open the price bid based on past performance of supplied materials. Price bids of only techno-commercially qualified bidders will be opened.
+**Financial Bid Evaluation Basis:** Tenders will be evaluated on a "firm Price End Cost with GST and Cess as applicable basis," unless Total Owning Cost (TOC) is specified. L-1 will be determined based on this end cost. Negotiation and price matching may occur with L-1 New and lowest Regular Categories if there is a lack of serious competition.
+**Preference Clauses:**
+*   **Gujarat-based Parties:** Not less than 50% of the quantity may be reserved for Gujarat-based manufacturing units if they match the L-1 price and their quoted price is not more than 15% higher than L-1.
+*   **MSME Preference (Gujarat):** Micro, Cottage, and Small Scale Industrial Units of Gujarat state may receive quantity allocation if they quote up to 10% higher than other units. Women-owned units within this category may be considered if they quote up to 11% higher. A quality-based price preference of up to 5% higher is applicable for ISI/BIS/Agmark certified materials if not mandatory by law. The total price preference cannot exceed 15%.
+**Weightage or Scoring Mechanism:** L-1 regular parties will receive heavy weightage in order placement. Quantity distribution to New-1 Suppliers is restricted to 10% (30% for non-critical items), and New-2 Suppliers to 25% (40% for non-critical items), provided they match the L-1 price of the New Supplier category. For Cables, New Suppliers (New-1/New-2) are allotted up to 10%/25% of the tender quantity or minimum drum length, whichever is higher.
+
+### 9. Contacts and Clarifications
+
+This section captures key communication details for escalation or queries. The Contact Person / Designation provides a direct point of contact. Email / Phone details are essential for prompt communication, and the Office Address facilitates official correspondence.
+
+**Contact Person / Designation:** The Chief Engineer (Material)
+**Email / Phone:** Not explicitly mentioned in the provided document.
+**Office Address:** Paschim Gujarat Vij Company Ltd., Regd. & Corporate Office, Laxmi Nagar, Nana Mava Main Road, Rajkot-360 004.
+
+### 10. Key Compliance Notes
+
+This section summarizes important procedural and legal compliances. Document Submission Format dictates how bids must be submitted. Agreement & Contract Execution Clauses outline post-award formalities. Warranty / Guarantee Period specifies product assurance, and After-Sales Service Clause indicates ongoing support requirements.
+
+**Document Submission Format:** Bidders must upload scanned copies of all required documents (PDF files only, legible, not password protected). The online price bid must be submitted in online mode; physical price bids will not be considered. "EMD Cover Documents" (DD/Banker’s Cheque/Pay Order/Bank Guarantee for EMD and Tender Fee receipt if paid in cash) must be submitted in a sealed cover by Registered Post A.D. or Speed Post only to the Chief Engineer (Material), PGVCL, Rajkot. Courier service and hand delivery of physical "EMD Cover Documents" are not allowed.
+**Agreement & Contract Execution Clauses:** Not explicitly mentioned in the provided document.
+**Warranty / Guarantee Period:** Not explicitly mentioned in the provided document.
+**After-Sales Service Clause:** Performance certificates (Annexure-VI) include evaluation of "after sales services."
+**Jurisdiction:** Only the courts at the Headquarter of the Company (Gujarat State) shall have exclusive jurisdiction for all disputes related to vendor registration or order placement.
+
+### 11. Optional Attachments or Annexures
+
+This section lists any referenced drawings, appendices, or sample formats. Listing their titles and purposes helps in identifying additional required documentation or understanding specific tender components.
+
+*   **Annexure - I:** Vendor Registration for non-Engineering items (not required for this tender).
+*   **Annexure - II:** Documents required for Vendor Registration / Re-registration.
+*   **Annexure - III:** Documents required for change of name / ownership / control of a registered vendor.
+*   **Annexure - VI:** Prescribed Performa for Performance Certificate.
+*   **Schedule-“A”:** Referred to for detailed product descriptions and quantities.
+*   **Schedule– “B”:** Referred to as the Price Bid.
+
+### 12. Summary Conclusion
+
+This tender, identified as PGVCL/PROC/LT AB Cable/1228, is for the procurement of LT AB Cables, with specific variants expected to be detailed in Schedule-A. The delivery destination is F.O.R. any of PGVCL's stores in Gujarat. Eligibility is strictly tied to mandatory vendor registration with GUVNL or its subsidiary companies, requiring type test reports and adherence to ISS/ISI/BIS standards, with preference for ISO 9001/9002 certified manufacturers. The bidding process is a two-bid system (Techno-commercial and Price), evaluated on a firm Price End Cost basis, with significant quantity reservations and price preferences for Gujarat-based and MSME units. Bidders must declare non-blacklisting status and submit documents online, with physical submission required for EMD/Tender Fee instruments via registered post only. This summary forms the foundational input for Asian Wires Pvt. Ltd.'s eligibility analysis, SKU mapping, and pricing computations.
