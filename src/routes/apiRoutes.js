@@ -4,6 +4,7 @@ const tenderController = require("../controllers/tenderController");
 const companyController = require("../controllers/companyController");
 const analysisController = require("../controllers/analysisController");
 const eligibilityController = require("../controllers/eligibilityController");
+const tender1WorkflowController = require("../controllers/tender1WorkflowController");
 const tender2WorkflowController = require("../controllers/tender2WorkflowController");
 
 // Test endpoint to verify Gemini API is working
@@ -78,6 +79,11 @@ router.post(
 // POST /api/process-all
 // Automates the entire workflow for both tenders
 router.post("/process-all", eligibilityController.processAllTenders);
+
+// Process Tender 1 workflow with real-time progress updates (SSE)
+// GET /api/process-tender1-workflow-stream
+// Complete workflow: Summaries → Eligibility → Check (NO) → DOCX → Email
+router.get("/process-tender1-workflow-stream", tender1WorkflowController.processTender1WorkflowStream);
 
 // Process Tender 2 workflow (9-step pipeline)
 // POST /api/process-tender2-workflow

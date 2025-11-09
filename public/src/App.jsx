@@ -143,6 +143,17 @@ function App() {
   });
   const [expandedWorkflows, setExpandedWorkflows] = useState(new Set()); // Track which workflows are expanded
   
+  // Tender 1 specific workflow state
+  const [tender1Workflow, setTender1Workflow] = useState({
+    isProcessing: false,
+    progress: 0,
+    currentStep: '',
+    currentMessage: '',
+    error: null,
+    completed: false,
+    results: null
+  });
+  
   // Tender 2 specific workflow state
   const [tender2Workflow, setTender2Workflow] = useState({
     isProcessing: false,
@@ -430,6 +441,208 @@ function App() {
   };
 
   const handleStartAllOperations = async () => {
+    if (!companyInfo.uploaded) {
+      alert('Please upload company information first');
+      return;
+    }
+
+    if (!skuList.uploaded) {
+      alert('Please upload SKU list first');
+      return;
+    }
+
+    // Reset stop flag
+    setShouldStopOperations(false);
+    setIsProcessingAll(true);
+    
+    console.log('Starting all operations: Tender 1 and Tender 2 workflows...');
+
+    try {
+      // Step 1: Run Tender 1 Workflow
+      console.log('Step 1: Starting Tender 1 workflow...');
+      await runTender1WorkflowForAll();
+      
+      // Check if stop was requested
+      if (shouldStopOperations) {
+        console.log('Operations stopped by user after Tender 1');
+        setIsProcessingAll(false);
+        return;
+      }
+      
+      // Step 2: Run Tender 2 Workflow
+      console.log('Step 2: Starting Tender 2 workflow...');
+      await runTender2WorkflowForAll();
+      
+      console.log('All operations completed successfully!');
+    } catch (error) {
+      console.error('Error in Start All Operations:', error);
+      alert(`Error: ${error.message}`);
+    } finally {
+      setIsProcessingAll(false);
+      setShouldStopOperations(false);
+    }
+  };
+
+  // Helper function to run Tender 1 workflow and wait for completion
+  const runTender1WorkflowForAll = () => {
+    return new Promise((resolve, reject) => {
+      setTender1Workflow({
+        isProcessing: true,
+        progress: 0,
+        currentStep: 'init',
+        currentMessage: 'Initializing Tender 1 workflow...',
+        error: null,
+        completed: false,
+        results: null
+      });
+
+      try {
+        const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api';
+        const baseUrl = apiBaseUrl.replace('/api', '');
+        const eventSource = new EventSource(`${baseUrl}/api/process-tender1-workflow-stream`);
+        
+        eventSource.onmessage = (event) => {
+          if (event.data === '[DONE]') {
+            eventSource.close();
+            return;
+          }
+          
+          try {
+            const data = JSON.parse(event.data);
+            
+            setTender1Workflow(prev => ({
+              ...prev,
+              progress: data.progress,
+              currentStep: data.step,
+              currentMessage: data.message,
+              error: data.error ? data.message : null,
+              completed: data.step === 'completed',
+              results: data.outputs || prev.results,
+              isProcessing: data.step !== 'completed' && !data.error
+            }));
+            
+            // Resolve when completed
+            if (data.step === 'completed') {
+              console.log('Tender 1 workflow completed');
+              resolve();
+            }
+            
+            // Reject on error
+            if (data.error) {
+              console.error('Tender 1 workflow error:', data.message);
+              reject(new Error(data.message));
+            }
+          } catch (e) {
+            console.error('Error parsing SSE data:', e);
+          }
+        };
+        
+        eventSource.onerror = (error) => {
+          console.error('SSE Error for Tender 1:', error);
+          eventSource.close();
+          setTender1Workflow(prev => ({
+            ...prev,
+            isProcessing: false,
+            error: 'Connection error. Please try again.',
+            completed: false
+          }));
+          reject(new Error('Connection error'));
+        };
+        
+      } catch (error) {
+        console.error('Error starting Tender 1 workflow:', error);
+        setTender1Workflow(prev => ({
+          ...prev,
+          isProcessing: false,
+          error: error.message,
+          completed: false
+        }));
+        reject(error);
+      }
+    });
+  };
+
+  // Helper function to run Tender 2 workflow and wait for completion
+  const runTender2WorkflowForAll = () => {
+    return new Promise((resolve, reject) => {
+      setTender2Workflow({
+        isProcessing: true,
+        progress: 0,
+        currentStep: 'init',
+        currentMessage: 'Initializing Tender 2 workflow...',
+        error: null,
+        completed: false,
+        results: null
+      });
+
+      try {
+        const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api';
+        const baseUrl = apiBaseUrl.replace('/api', '');
+        const eventSource = new EventSource(`${baseUrl}/api/process-tender2-workflow-stream`);
+        
+        eventSource.onmessage = (event) => {
+          if (event.data === '[DONE]') {
+            eventSource.close();
+            return;
+          }
+          
+          try {
+            const data = JSON.parse(event.data);
+            
+            setTender2Workflow(prev => ({
+              ...prev,
+              progress: data.progress,
+              currentStep: data.step,
+              currentMessage: data.message,
+              error: data.error ? data.message : null,
+              completed: data.step === 'completed',
+              results: data.outputs || prev.results,
+              isProcessing: data.step !== 'completed' && !data.error
+            }));
+            
+            // Resolve when completed
+            if (data.step === 'completed') {
+              console.log('Tender 2 workflow completed');
+              resolve();
+            }
+            
+            // Reject on error
+            if (data.error) {
+              console.error('Tender 2 workflow error:', data.message);
+              reject(new Error(data.message));
+            }
+          } catch (e) {
+            console.error('Error parsing SSE data:', e);
+          }
+        };
+        
+        eventSource.onerror = (error) => {
+          console.error('SSE Error for Tender 2:', error);
+          eventSource.close();
+          setTender2Workflow(prev => ({
+            ...prev,
+            isProcessing: false,
+            error: 'Connection error. Please try again.',
+            completed: false
+          }));
+          reject(new Error('Connection error'));
+        };
+        
+      } catch (error) {
+        console.error('Error starting Tender 2 workflow:', error);
+        setTender2Workflow(prev => ({
+          ...prev,
+          isProcessing: false,
+          error: error.message,
+          completed: false
+        }));
+        reject(error);
+      }
+    });
+  };
+
+  // Keep the old workflow code for reference but it won't be used
+  const handleStartAllOperationsOld = async () => {
     // Get all tenders that have operations enabled
     const tendersToProcess = STATIC_TENDERS.filter(tender => tender.hasOperations);
     
@@ -1170,6 +1383,69 @@ function App() {
     });
   };
 
+  // Handler for Tender 1 workflow with real-time progress
+  const handleStartTender1Workflow = async () => {
+    setTender1Workflow({
+      isProcessing: true,
+      progress: 0,
+      currentStep: 'init',
+      currentMessage: 'Initializing workflow...',
+      error: null,
+      completed: false,
+      results: null
+    });
+
+    try {
+      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api';
+      const baseUrl = apiBaseUrl.replace('/api', ''); // Remove /api suffix if present
+      const eventSource = new EventSource(`${baseUrl}/api/process-tender1-workflow-stream`);
+      
+      eventSource.onmessage = (event) => {
+        if (event.data === '[DONE]') {
+          eventSource.close();
+          return;
+        }
+        
+        try {
+          const data = JSON.parse(event.data);
+          
+          setTender1Workflow(prev => ({
+            ...prev,
+            progress: data.progress,
+            currentStep: data.step,
+            currentMessage: data.message,
+            error: data.error ? data.message : null,
+            completed: data.step === 'completed',
+            results: data.outputs || prev.results,
+            isProcessing: data.step !== 'completed' && !data.error
+          }));
+        } catch (e) {
+          console.error('Error parsing SSE data:', e);
+        }
+      };
+      
+      eventSource.onerror = (error) => {
+        console.error('SSE Error:', error);
+        eventSource.close();
+        setTender1Workflow(prev => ({
+          ...prev,
+          isProcessing: false,
+          error: 'Connection error. Please try again.',
+          completed: false
+        }));
+      };
+      
+    } catch (error) {
+      console.error('Error starting Tender 1 workflow:', error);
+      setTender1Workflow(prev => ({
+        ...prev,
+        isProcessing: false,
+        error: error.message,
+        completed: false
+      }));
+    }
+  };
+
   // Handler for Tender 2 workflow with real-time progress
   const handleStartTender2Workflow = async () => {
     setTender2Workflow({
@@ -1695,8 +1971,39 @@ function App() {
                 </tr>
               ) : (
                 filteredTenders.map((tender) => {
-                  const status = workflowStatus[tender.id];
-                  const isProcessing = processingTender === tender.id;
+                  // Check if this is Tender 1 or Tender 2 and use their workflow states
+                  const isTender1 = tender.id === 'TEN-001';
+                  const isTender2 = tender.id === '102130137';
+                  
+                  let status = workflowStatus[tender.id];
+                  let isProcessing = processingTender === tender.id;
+                  
+                  // Override with Tender 1 workflow state if applicable
+                  if (isTender1 && (tender1Workflow.isProcessing || tender1Workflow.completed || tender1Workflow.error)) {
+                    status = {
+                      status: tender1Workflow.error ? 'error' : tender1Workflow.completed ? 'completed' : 'processing',
+                      progress: tender1Workflow.progress,
+                      message: tender1Workflow.currentMessage,
+                      error: tender1Workflow.error,
+                      completed: tender1Workflow.completed,
+                      eligible: tender1Workflow.completed ? false : undefined // Tender 1 is always NOT eligible
+                    };
+                    isProcessing = tender1Workflow.isProcessing;
+                  }
+                  
+                  // Override with Tender 2 workflow state if applicable
+                  if (isTender2 && (tender2Workflow.isProcessing || tender2Workflow.completed || tender2Workflow.error)) {
+                    status = {
+                      status: tender2Workflow.error ? 'error' : tender2Workflow.completed ? 'completed' : 'processing',
+                      progress: tender2Workflow.progress,
+                      message: tender2Workflow.currentMessage,
+                      error: tender2Workflow.error,
+                      completed: tender2Workflow.completed,
+                      eligible: tender2Workflow.completed ? true : undefined // Tender 2 is always eligible
+                    };
+                    isProcessing = tender2Workflow.isProcessing;
+                  }
+                  
                   const statusColor = getStatusColor(status);
                   const statusText = status ? getStatusMessage(tender.id) : 'Not Started';
 
@@ -1776,6 +2083,22 @@ function App() {
                       </td>
                       <td>
                         <div className="action-buttons">
+                          {/* Special button for Tender 1 */}
+                          {tender.id === 'TEN-001' && companyInfo.uploaded && (
+                            <button
+                              className="table-action-button"
+                              onClick={handleStartTender1Workflow}
+                              disabled={tender1Workflow.isProcessing}
+                              style={{ 
+                                background: tender1Workflow.isProcessing ? '#6e7681' : '#238636',
+                                marginBottom: '0.5rem'
+                              }}
+                              title="Start complete Tender 1 workflow with real-time progress"
+                            >
+                              {tender1Workflow.isProcessing ? 'Processing...' : 'Start Tender 1 Workflow'}
+                            </button>
+                          )}
+                          
                           {/* Special button for Tender 2 */}
                           {tender.id === '102130137' && companyInfo.uploaded && skuList.uploaded && (
                             <button
@@ -1823,7 +2146,7 @@ function App() {
                             </>
                           )}
                           {!status?.reportGenerated && tender.hasOperations && tender.id !== '102130137' && (
-                            <span className="pending-operation">Pending</span>
+                            <span className="pending-operation"></span>
                           )}
                           {!tender.hasOperations && !status?.reportGenerated && (
                             <span className="no-actions">—</span>
