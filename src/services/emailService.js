@@ -2,14 +2,16 @@ const nodemailer = require("nodemailer");
 const fs = require("fs-extra");
 
 /**
- * Create Nodemailer transporter
+ * Create Nodemailer transporter using SendGrid
  */
 function createTransporter() {
   return nodemailer.createTransport({
-    service: "gmail",
+    host: "smtp.sendgrid.net",
+    port: 587,
+    secure: false, // Use TLS
     auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
+      user: "apikey", // This is literally the string 'apikey'
+      pass: process.env.SENDGRID_API_KEY,
     },
   });
 }
@@ -32,7 +34,7 @@ async function sendEligibilityEmail(docxFilePath, tenderId) {
     }
 
     const mailOptions = {
-      from: process.env.EMAIL_USER,
+      from: process.env.SENDGRID_FROM_EMAIL,
       to: process.env.EMAIL_TO,
       subject: `Tender Eligibility Analysis Result - NOT ELIGIBLE - ${tenderId.toUpperCase()}`,
       text: "Please find attached the detailed eligibility analysis report.",
@@ -76,7 +78,7 @@ async function sendHolisticTableEmail(holisticTablePath, tenderId) {
     const timestamp = Date.now();
 
     const mailOptions = {
-      from: process.env.EMAIL_USER,
+      from: process.env.SENDGRID_FROM_EMAIL,
       to: process.env.EMAIL_TO,
       subject: `Tender Analysis - ${tenderId.toUpperCase()} - Eligibility: YES - Complete`,
       text: `The tender analysis for ${tenderId.toUpperCase()} has been completed successfully.\n\nEligibility Status: YES\n\nPlease find the comprehensive holistic summary table attached as CSV file.`,

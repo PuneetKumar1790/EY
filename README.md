@@ -20,7 +20,7 @@ A Node.js backend API that automates tender eligibility analysis using Google Ge
 - Node.js (v14 or higher)
 - npm or yarn
 - Google Gemini API keys (1-4 keys recommended for better rate limit handling)
-- Gmail account with App Password enabled
+- SendGrid account with API key (free tier: 100 emails/day)
 
 ## Installation
 
@@ -33,16 +33,16 @@ A Node.js backend API that automates tender eligibility analysis using Google Ge
 
 3. **Set up environment variables**
    
-   Create a `.env` file in the root directory (or copy from `env.template`):
+   Create a `.env` file in the root directory (or copy from `.env.example`):
    ```
    PORT=3000
    GEMINI_API_KEY_1=your_first_gemini_api_key
    GEMINI_API_KEY_2=your_second_gemini_api_key
    GEMINI_API_KEY_3=your_third_gemini_api_key
    GEMINI_API_KEY_4=your_fourth_gemini_api_key
-   EMAIL_USER=your_email@gmail.com
-   EMAIL_PASS=your_app_password
-   EMAIL_TO=recipient@gmail.com
+   SENDGRID_API_KEY=your_sendgrid_api_key
+   SENDGRID_FROM_EMAIL=your_verified_sender@example.com
+   EMAIL_TO=recipient@example.com
    ```
    
    **API Key Rotation (Aggressive Strategy):**
@@ -55,9 +55,11 @@ A Node.js backend API that automates tender eligibility analysis using Google Ge
    **Important:**
    - Get your Gemini API keys from [Google AI Studio](https://ai.google.dev/)
    - Configure 2-4 API keys for optimal performance and rate limit handling
-   - For Gmail, enable "App Password" in your Google Account settings:
-     - Go to Google Account → Security → 2-Step Verification → App passwords
-     - Generate an app password and use it for `EMAIL_PASS`
+   - For SendGrid:
+     - Sign up at [SendGrid](https://sendgrid.com/) (free tier: 100 emails/day)
+     - Create an API key from Settings → API Keys
+     - Verify a sender email address from Settings → Sender Authentication
+     - Use the API key for `SENDGRID_API_KEY` and verified email for `SENDGRID_FROM_EMAIL`
 
 4. **Start the server**
    ```bash
@@ -489,9 +491,10 @@ For more detailed information, refer to these guides:
 - Verify file formats (PDF, DOCX supported)
 
 **Email Not Sending:**
-- Verify Gmail App Password is correct
-- Check 2-Step Verification is enabled
-- Ensure EMAIL_USER and EMAIL_PASS are set correctly
+- Verify SendGrid API key is correct and active
+- Check sender email is verified in SendGrid dashboard
+- Ensure SENDGRID_API_KEY and SENDGRID_FROM_EMAIL are set correctly
+- Check SendGrid dashboard for delivery logs and errors
 
 **Workflow Failures:**
 - Check all required input files exist
@@ -529,9 +532,9 @@ GEMINI_API_KEY_1=your_first_gemini_api_key
 GEMINI_API_KEY_2=your_second_gemini_api_key
 GEMINI_API_KEY_3=your_third_gemini_api_key
 GEMINI_API_KEY_4=your_fourth_gemini_api_key
-EMAIL_USER=your_email@gmail.com
-EMAIL_PASS=your_gmail_app_password
-EMAIL_TO=recipient@gmail.com
+SENDGRID_API_KEY=your_sendgrid_api_key
+SENDGRID_FROM_EMAIL=your_verified_sender@example.com
+EMAIL_TO=recipient@example.com
 ```
 
 ### Quick Start Commands
