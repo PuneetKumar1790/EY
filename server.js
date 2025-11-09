@@ -3,8 +3,21 @@ const express = require("express");
 const path = require("path");
 const fs = require("fs-extra");
 const apiRoutes = require("./src/routes/apiRoutes");
+const cors = require("cors");
 
 const app = express();
+
+// CORS configuration
+const corsOptions = {
+  origin: [
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "https://ey-mu.vercel.app",
+  ],
+  credentials: true,
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 
 // Middleware
 app.use(express.json());

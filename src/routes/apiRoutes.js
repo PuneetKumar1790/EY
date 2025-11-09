@@ -53,6 +53,11 @@ router.post("/upload-tender/:tenderId", tenderController.uploadTenderPDFs);
 // Body: multipart/form-data with 'document' field (PDF or DOCX)
 router.post("/upload-company", companyController.uploadCompanyInfo);
 
+// Upload SKU list file
+// POST /api/upload-sku-list
+// Body: multipart/form-data with 'skuFile' field (TXT file)
+router.post("/upload-sku-list", companyController.uploadSKUList);
+
 // Analyze tender eligibility
 // POST /api/analyze-tender/:tenderId
 // Reads summaries, company info, and generates eligibility table
@@ -78,5 +83,10 @@ router.post("/process-all", eligibilityController.processAllTenders);
 // POST /api/process-tender2-workflow
 // Complete workflow: PDFs → Summaries → Eligibility → Table B1 → SKU Matching → Pricing → Holistic Table → Email
 router.post("/process-tender2-workflow", tender2WorkflowController.processTender2Workflow);
+
+// Process Tender 2 workflow with real-time progress updates (SSE)
+// GET /api/process-tender2-workflow-stream
+// Same as above but streams progress updates in real-time
+router.get("/process-tender2-workflow-stream", tender2WorkflowController.processTender2WorkflowStream);
 
 module.exports = router;

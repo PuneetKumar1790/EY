@@ -29,6 +29,30 @@ const upload = multer({
   }
 });
 
+// Configure multer for SKU file uploads
+const skuStorage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    const uploadDir = 'uploads';
+    fs.ensureDirSync(uploadDir);
+    cb(null, uploadDir);
+  },
+  filename: (req, file, cb) => {
+    cb(null, 'sku-list.txt');
+  }
+});
+
+const skuUpload = multer({ 
+  storage: skuStorage,
+  limits: { fileSize: 10 * 1024 * 1024 }, // 10MB limit
+  fileFilter: (req, file, cb) => {
+    if (file.mimetype === 'text/plain' || file.originalname.endsWith('.txt')) {
+      cb(null, true);
+    } else {
+      cb(new Error('Only TXT files are allowed'));
+    }
+  }
+});
+
 /**
  * Upload company information document
  * POST /api/upload-company
@@ -89,7 +113,59 @@ const uploadCompanyInfo = [
   }
 ];
 
+/**
+ * Upload SKU list file
+ * POST /api/upload-sku-list
+ */
+const uploadSKUList = [
+  skuUpload.single('skuFile'),
+  async (req, res) => {
+    try {
+      if (!req.file) {
+        return res.status(400).json({ 
+          success: false, 
+          error: 'No SKU file uploaded' 
+        });
+      }
+
+      console.log(`\n📋 Processing SKU list: ${req.file.originalname}`);
+
+      // Read the file content to validate it
+      const content = await fs.readFile(req.file.path, 'utf8');
+      
+      if (!content || content.trim().length === 0) {
+        return res.status(400).json({
+          success: false,
+          error: 'SKU file is empty'
+        });
+      }
+
+      // Count lines
+      const lines = content.split('\n').filter(line => line.trim().length > 0);
+      
+      console.log(`✓ SKU list uploaded: ${req.file.path}`);
+      console.log(`  Total entries: ${lines.length}`);
+
+      res.json({
+        success: true,
+        message: 'SKU list uploaded successfully',
+        file: req.file.originalname,
+        filePath: req.file.path,
+        entries: lines.length
+      });
+
+    } catch (error) {
+      console.error('❌ Error in uploadSKUList:', error.message);
+      res.status(500).json({
+        success: false,
+        error: error.message
+      });
+    }
+  }
+];
+
 module.exports = {
-  uploadCompanyInfo
+  uploadCompanyInfo,
+  uploadSKUList
 };
 
