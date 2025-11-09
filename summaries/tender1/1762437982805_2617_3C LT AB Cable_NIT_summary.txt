@@ -1,0 +1,64 @@
+Here is a comprehensive and detailed summary of the tender requirements based on the provided document:
+
+---
+
+**Tender Document Analysis: Supply of 3 Core LT AB Cable**
+
+**1. Tender Eligibility Criteria (Mandatory and Desirable)**
+
+*   **Mandatory:**
+    *   The bidder must be a **registered manufacturer**.
+    *   The bidder must possess a valid **GST registration**.
+    *   The bidder must have **valid vendor registration** with GUVNL or any of its subsidiary companies (DGVCL, MGVCL, UGVCL, PGVCL, GETCO, GSECL) *prior to the date of opening of the technical bid* of the tender.
+*   **Conditional Eligibility (with mandatory follow-up):**
+    *   If a bidder does not have valid vendor registration but has **applied for new vendor registration or renewal** of an existing one *prior to the date of publication of the Tender in the Newspaper*, they may submit their bid.
+    *   However, such bidders **must produce a valid vendor registration certificate before the opening of the price bid**. Failure to do so will result in the rejection of their bid, and their price bid will not be opened.
+
+**2. Technical Specifications and Requirements**
+
+*   **Item Description:** 3 Core LT AB Cable.
+*   **Specific Configuration:** 3C x 50 mm² + 1C x 25 mm² + 35mm² LT AB Cable.
+*   **General:** The supply must adhere to the detailed specifications, terms, and conditions outlined in the full DGVCL tender document (which is not fully provided in this excerpt).
+
+**3. Financial Requirements (EMD, Bid Amounts, Turnover Thresholds)**
+
+*   **Tender Fee:**
+    *   Rs. 7500.00 + 18% GST (Rs. 1350) = **Rs. 8850.00**.
+*   **Earnest Money Deposit (EMD):**
+    *   **For EMD up to Rs. 3 Lac:** Payment must be made exclusively via **RTGS/NEFT/Online**.
+    *   **For EMD more than Rs. 3 Lac:** Payment can be made via **RTGS/NEFT/Online**, **Demand Draft**, **Banker’s Cheque**, **Pay Order**, or **Bank Guarantee**.
+    *   **Cash Payment (Limited):** Cash payments are accepted only up to **Rs. 10,000/-**. This must be paid at the Cash counter of DGVCL corporate office during working days (10:30 A.M. to 04:00 P.M.) before the due date and time for tender submission, or alternatively, via RTGS/NEFT/Online.
+*   *Note: The document does not specify any bid amounts or turnover thresholds beyond the EMD and tender fee.*
+
+**4. Documentation Requirements**
+
+*   **General:** All documents specified in "Schedule-A" (not provided in this excerpt) must be uploaded.
+*   **Format:** It is mandatory to upload **scanned copies of original documents** in online electronic forms (e-tendering). These copies must be either **Notarized or Self-Attested** as specifically required in the full tender document.
+*   **Specific (for conditional eligibility):** A self-attested photocopy of the **money receipt for payment of vendor registration charges** must be uploaded at the preliminary stage if the bidder has applied for new or renewal of vendor registration.
+*   **Physical Documents:** **Physical submission of documents is explicitly NOT required.**
+
+**5. Submission Deadlines and Procedures**
+
+*   **Tender Type:** The tender process is entirely **"On line Tenders" (e-tendering)**.
+*   **Tender Download & Online Submission Website:** http://tender.nprocure.com
+*   **Tender View & Download Website:** www.dgvcl.com
+*   **Submission Method:** Bidders must upload all required documents in online electronic forms on http://tender.nprocure.com within the stipulated time.
+*   **Last Date of Online Submission:** **20.11.2025, 18:00 Hrs.**
+*   **Opening of Online Bid:** **21.11.2025, 11:00 Hrs.**
+*   **Updates:** Bidders are solely responsible for staying informed about any revisions, corrigendum, or amendments to the tender by regularly checking the specified websites until the due date of online submission and thereafter. No separate notifications will be sent.
+
+**6. Evaluation Criteria**
+
+*   **Two-Stage Evaluation:** The tender process implies a two-stage evaluation:
+    1.  **Technical Bid Opening:** Occurs on 21.11.2025, 11:00 Hrs. Vendor registration status is crucial at this stage.
+    2.  **Price Bid Opening:** Will only proceed for bidders who meet all technical and eligibility criteria, including the submission of a valid vendor registration certificate (if conditionally eligible) before this stage.
+*   **Rejection Criteria:** Bids will be rejected, and price bids will not be opened if a conditionally eligible bidder fails to produce a valid vendor registration certificate before the price bid opening.
+*   *Note: Specific technical or financial scoring criteria are not detailed in this excerpt.*
+
+**7. Any Compliance Requirements or Certifications Needed**
+
+*   **GST Registration:** Mandatory for all bidders.
+*   **Vendor Registration:** Mandatory with GUVNL or its subsidiaries, as detailed in the eligibility criteria.
+*   **Timeliness of Vendor Registration:** The company will not delay the tender process due to a bidder's pending vendor application. Bidders are responsible for ensuring their registration is processed in time.
+*   **Document Authenticity:** All uploaded documents must be scanned copies of originals, either notarized or self-attested as per the full tender document's specifications.
+*   **ISO Certification:** While DGVCL itself is ISO 9001:2015 certified, the document does not explicitly state this as a mandatory certification for the bidders.

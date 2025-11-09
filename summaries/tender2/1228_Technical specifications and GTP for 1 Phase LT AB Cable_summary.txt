@@ -1,0 +1,128 @@
+As an expert tender document analyst, I have thoroughly reviewed the provided "TENDER NOTICE NO:- PGVCL/PROC/LT AB Cable/1228" document, specifically the "1228_Technical specifications and GTP for 1 Phase LT AB Cable.doc". Below is a detailed and comprehensive summary of the tender requirements, focusing on the requested categories.
+
+---
+
+**Comprehensive Tender Requirements Summary: LT Aerial Bunched Cables**
+
+**Tender Notice No.:** PGVCL/PROC/LT AB Cable/1228
+**Issuing Authority:** PASCHIM GUJARAT VIJ COMPANY LTD (PGVCL)
+**Product:** XLPE Insulated Aluminum Aerial Bunched (AB) Cables for LT Lines (1100 Volts)
+
+---
+
+**1. Tender Eligibility Criteria (Mandatory and Desirable)**
+
+*   **Mandatory Experience:** The tenderer must demonstrate prior experience in manufacturing and supplying this specific type of cable to any Electricity Board. Supporting documentation, such as copies of executed orders and performance reports, must be submitted with the offer. (Section 13)
+*   **Mandatory Certifications & Documents:**
+    *   **Type Test Certificates:** Submission of duly attested copies of Type Test Certificates for the exact offered sizes of AB cable, conforming to IS: 14255/1995 (with latest amendment/revision). These certificates must be issued by a **Govt. of India approved Laboratory**. (Section 8 Note, Section 14, Part C Sr. No. 3)
+        *   **Validity:** Type Test Certificates shall **not be more than five years old** from the date of opening of the tender. (Section 14)
+    *   **ISI License:** Submission of a duly attested photocopy of a **valid ISI License** for IS: 14255/1995. This license must remain valid up to the date of delivery for the supply of the AB cables/wires. (Section 15, Part C Sr. No. 1)
+        *   **Renewal Proof:** If the ISI License has been applied for renewal, proof of application must be submitted. (Part C Sr. No. 2)
+    *   **Guaranteed Technical Particulars (GTP):** The tenderer must submit the GTP form, duly filled in, confirming adherence to all specified technical requirements. (Section 15, Section 16, Part A, B, C)
+*   **Consequences of Non-Compliance:** Failure to submit a valid ISI License, duly filled GTP, and/or valid Type Test Certificates from a Govt. approved Laboratory will result in the offer being liable to be ignored/rejected without any further correspondence. (Section 14, Section 15, Section 16)
+
+---
+
+**2. Technical Specifications and Requirements**
+
+*   **Product Description:** XLPE insulated Aluminum cable, twisted over a central bare Aluminum Alloy messenger wire, for L.T. Over-Head lines in Rural Electrification System.
+*   **Rated Voltage:** 1100 Volts.
+*   **Applicable Cable Sizes:**
+    *   1C x 35mm² (Phase) + 1C x 16mm² (Neutral) + 25mm² (Messenger)
+    *   2C x 50mm² (Phase) + 1C x 25mm² (Neutral) + 35mm² (Messenger)
+*   **System Suitability:** Suitable for 1-phase - 2 wire & 2-phase - 3 wire earthed systems up to 1100 V.
+*   **Conductors:**
+    *   **Phase & Neutral Conductors:** XLPE insulated Aluminum, compacted, conforming to IS-8130/1984.
+        *   Tensile Strength of Aluminum Wire: Not less than 90 N/mm².
+        *   Identification: Phase conductors shall have one, two, or three 'ridges'.
+        *   DC Resistance (Max. at 20°C): 16mm² (1.91 Ohm/km), 25mm² (1.20 Ohm/km), 35mm² (0.868 Ohm/km), 50mm² (0.641 Ohm/km).
+    *   **Messenger Wire:** Bare, heat-treated Aluminum Alloy (0.5% magnesium, approx. 0.5% silicon), conforming to IS: 398 (Part-IV):1994 (latest amendment).
+        *   Stranding: 7 strands, compacted for a smooth round surface.
+        *   Joints: No joints in any wire of the stranded messenger conductor, except those made in the base rod or wires before final drawing.
+        *   DC Resistance (Max. at 20°C): 25mm² (1.380 Ohm/KM), 35mm² (0.986 Ohm/KM).
+*   **XLPE Insulation:**
+    *   Applied by extrusion, fits closely, removable without damaging the conductor.
+    *   Thickness: 1.2 mm (for 16mm², 25mm², 35mm² conductors), 1.5 mm (for 50mm² conductors).
+    *   Colour: Black.
+    *   Properties (confirming to IS-7098(Part-II):85):
+        *   Tensile Strength: 12.5 N/mm² Min.
+        *   Elongation at Break: 200 % Min.
+        *   Ageing in air oven (135 ± 3ºC & 7 days): Tensile strength & Elongation variation ± 25% Max.
+        *   Hot Set (200 ± 3ºC, 15 min, 20 N/cm²): Elongation under load 175 % max, Permanent elongation 15 % Max.
+        *   Shrinkage (130 ± 3ºC, 1 hour): 4% Max.
+        *   Water Absorption (Gravimetric) (85 ± 2ºC, 14 days): 1 mg/cm² max.
+        *   Volume Resistivity: 1 x 10^13 Ohm-cm Min at 27ºC, 1 x 10^11 Ohm-cm Min at 70°C.
+*   **Tests:**
+    *   **Type Tests (for submission):** Tensile, Wrapping, Conductor Resistance (for conductors); Breaking load, Elongation, Resistance (for messenger); Physical tests for XLPE insulation (Tensile strength, Elongation at break, Ageing, Hot set, Shrinkage, Water absorption, Carbon black content & dispersion); Thickness of insulation, Insulation Resistance, High Voltage Test. An optional bending test on the completed cable is also specified.
+    *   **Acceptance Tests:** Similar to type tests, including Tensile, Wrapping, Breaking load, Elongation, Conductor Resistance, Thickness of insulation, Tensile strength & elongation at break, Hot set, Insulation Resistance, High voltage test.
+*   **Standard Length:** 500 meters per drum, with a +5% tolerance.
+*   **Non-Standard Lengths:** Accepted up to 10% of the ordered quantity, provided each non-standard length is not less than 50% of the standard length. Each packing shall contain only one length.
+*   **Packing & Marking:**
+    *   Cables shall be wound on non-returnable wooden drums conforming to IS-10418/1982 (latest version), duly painted. Drums must be robust and suitable for wheel mounting.
+    *   **Drum Markings:** Manufacturer’s name, Trade mark, Drum number, Size of Conductor, Size of Messenger, Voltage grade, Number of lengths/pieces, Gross mass, Net mass, ISI mark.
+    *   **Cable Embossing:** Purchaser (DGVCL/MGVCL/PGVCL/UGVCL), 1100 Volts, IS:14255/1995, Year of manufacture, Trade Mark.
+*   **Overall Tolerance:** An overall tolerance of ±2% is permissible on the total ordered quantity.
+
+---
+
+**3. Financial Requirements (EMD, Bid Amounts, Turnover Thresholds)**
+
+*   The provided document, "1228_Technical specifications and GTP for 1 Phase LT AB Cable.doc", is solely focused on technical specifications and guaranteed technical particulars. It **does not contain any information regarding financial requirements** such as Earnest Money Deposit (EMD), specific bid amounts, or turnover thresholds. These details would typically be found in other sections of the complete tender document (e.g., commercial terms, instructions to bidders).
+
+---
+
+**4. Documentation Requirements**
+
+The following documents are explicitly required to be submitted with the tender offer:
+
+*   **Type Test Certificates:** Duly attested copies from a Govt. of India approved Laboratory for the offered cable sizes, not more than five years old. (Section 8 Note, Section 14, Part C Sr. No. 3)
+*   **ISI License:** Duly attested photocopy of a valid ISI License for IS: 14255/1995, valid until the delivery date. (Section 15, Part C Sr. No. 1)
+*   **Proof of ISI License Renewal:** If applicable, proof of application for renewal of the ISI License. (Part C Sr. No. 2)
+*   **Guaranteed Technical Particulars (GTP):** The complete GTP form, duly filled in and confirmed. (Section 15, Section 16, Part A, B, C)
+*   **Experience Proof:** Copies of orders executed and performance reports for similar cable supplies to Electricity Boards. (Section 13)
+*   **List of Plant and Machinery:** Details of manufacturing facilities. (Part C Sr. No. 4)
+*   **List of Testing Facility Available:** Details of in-house testing capabilities. (Part C Sr. No. 5)
+*   **List of Orders Pending/Executed:**
+    *   With GUVNL (formerly GEB)/DGVCL/MGVCL/UGVCL/PGVCL. (Part C Sr. No. 6a)
+    *   With other agencies. (Part C Sr. No. 6b)
+*   **Deviation Statement:** Any deviations from the specification must be clearly mentioned, quoting the relevant clause. (Part D)
+
+---
+
+**5. Submission Deadlines and Procedures**
+
+*   The provided document, "1228_Technical specifications and GTP for 1 Phase LT AB Cable.doc", is a technical specification and GTP. It **does not specify any submission deadlines or procedures** for the tender itself. These details would typically be outlined in the main tender notice or instructions to bidders.
+
+---
+
+**6. Evaluation Criteria**
+
+The evaluation will primarily focus on **technical compliance and fulfillment of mandatory prerequisites**:
+
+*   **Technical Adherence:** Strict adherence to all technical specifications, dimensions, material properties, and performance requirements outlined in the document and the Guaranteed Technical Particulars (GTP).
+*   **Mandatory Document Submission:** The submission of all required documents, including valid and current Type Test Certificates from a Govt. of India approved Laboratory, a valid ISI License, and a duly filled GTP, is critical. Failure to provide these will lead to the rejection of the offer. (Section 14, 15, 16)
+*   **Experience:** The tenderer's demonstrated experience in manufacturing and supplying similar cables to Electricity Boards, supported by relevant documentation, will be a key factor. (Section 13)
+*   **Compliance with Standards:** The material and manufacturing processes must comply with all referenced Indian Standards (IS).
+*   The document **does not detail a broader evaluation matrix** that might include commercial, financial, or other non-technical aspects. The emphasis is on meeting the specified technical and documentary requirements.
+
+---
+
+**7. Any Compliance Requirements or Certifications Needed**
+
+*   **Indian Standard (IS) Compliance:**
+    *   IS – 14255/1995 (with latest amendment/revision) for ABC cables 1100 volts.
+    *   IS – 8130/1984 for conductors for insulated cables.
+    *   IS – 398/Pt.IV/1994 for Aluminum alloy conductor.
+    *   IS – 10418/1982 (latest version) for drums for electric cables.
+    *   IS-7098(Part-II):85 for XLPE insulation properties.
+*   **ISI License:** A valid ISI License for IS: 14255/1995 is mandatory and must be valid until the date of delivery. (Section 15)
+*   **ISI Marking:**
+    *   The material supplied must conform to Indian Standard Specification.
+    *   ISI marking is mandatory on 1Cx35 sqmm+1Cx16 sqmm+25 sqmm LT AB Cable.
+    *   ISI marking is **not applicable** for 2Cx50 sqmm+1Cx25 sqmm+35 sqmm LT AB Cable as per IS: 14255-1995 (Amendment No.1, October 2010). (Section 17)
+    *   Cable drums/labels must bear the ISI Mark. (GTP Part A, Sr. No. 2)
+*   **Type Test Certificates:** Must be obtained from a **Govt. of India approved Laboratory**. (Section 8 Note, Section 14)
+*   **Inspection:** The manufacturer must afford the purchaser's inspector all reasonable facilities, without charge, at the place of manufacture to ensure compliance with the specification. (Section 12)
+*   **Embossing & Marking:** Specific details (Purchaser name, voltage, IS standard, year of manufacture, trade mark) must be embossed on the cable and marked on the drums as per IS: 14255/1995 and PGVCL requirements. (Section 10, GTP Part A Sr. No. 10)
+
+---

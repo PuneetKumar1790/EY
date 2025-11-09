@@ -1,0 +1,155 @@
+As an expert tender document analyst, I have meticulously reviewed the provided "COMMERCIAL TERMS AND CONDITIONS" from Dakshin Gujarat Vij Company Limited (DGVCL). Below is a comprehensive and detailed summary of the tender requirements, focusing on the specified areas.
+
+---
+
+## Tender Requirements Summary: Dakshin Gujarat Vij Company Limited
+
+**1. Tender Eligibility Criteria (Mandatory and Desirable)**
+
+*   **Mandatory Vendor Registration:**
+    *   All suppliers must be registered as a vendor with GUVNL or its subsidiary companies (DGVCL, MGVCL, UGVCL, PGVCL, GETCO, GESCL).
+    *   **New Suppliers:** Must undergo a new vendor registration process.
+        *   **Registration Fees (Non-refundable):**
+            *   Factory within Gujarat State: Rs. 15,000/-
+            *   Within Country but out of Gujarat State: Rs. 50,000/-
+            *   Out of Country: Rs. 2,00,000/-
+            *   For multiple locations, fees are paid for each location.
+        *   **Application Timeline:** The vendor registration application, with all required fees and documents, must be submitted at least **60 days prior** to the date of publication of the tender in the newspaper. No relaxation in this 60-day stipulation.
+        *   **Certificate Submission:** The vendor registration certificate *must* be submitted before the scheduled date of opening of the price bid. Failure to do so will result in bid rejection and the price bid not being opened.
+        *   **Documentation in Tender:** A copy of the receipt for vendor registration fees must be enclosed with the Tender Fees / EMD payment receipt in the EMD Cover documents (physical form).
+        *   **Factory Inspection:** Mandatory for new vendors.
+    *   **Existing Registered Vendors:**
+        *   Registration is valid for five years.
+        *   Must apply for re-registration at least **two months** before the expiry date. Failure to do so will result in not being considered a Registered Vendor in ensuing tenders floated after the re-registration date.
+        *   Factory re-inspection may be conducted every two years or at re-registration.
+    *   **"New Parties" (Supplied to other SEBs/Govt. Orgs but not GUVNL/subsidiaries):** Considered new suppliers and must register as a vendor. They must furnish proof of execution of orders.
+    *   **Change in Vendor Details:** Registered vendors must inform DGVCL in writing within 30 days of any change in name, ownership, or control, confirming no change in infrastructure/products. A processing fee of Rs. 5000/- is required.
+*   **Manufacturer Preference:** As far as possible, only manufacturers will be considered, and traders will not be encouraged.
+*   **Past Performance (for existing suppliers):** Firms that have supplied to GUVNL or its subsidiary companies, or other firms, must furnish a self-certified list of orders executed for similar tendered items, indicating quantity supplied, along with performance certificates. This is a MUST.
+*   **Minimum Tendering Quantity:** Bidders must offer a minimum of **15% / 25%** of the total tender quantity for each of their offered items (as per condition no. 70). Bids for lesser quantity will not be considered for price evaluation.
+
+**2. Technical Specifications and Requirements**
+
+*   **Standards:** All technical specifications must adhere to ISS/ISI/BIS. DGVCL-framed specifications will be explicitly stated in the tender documents.
+*   **Deviation:** No deviation in specifications will be allowed. DGVCL's decision on specifications is final.
+*   **Type Test Reports:** Valid type test reports for the tendered item(s) from a Government-recognized laboratory or a laboratory specified in the tender/technical specification are mandatory. These reports must be duly notarized. (For vendor registration, NABL accredited lab reports older than five years are rejected, implying current, valid reports are required).
+*   **Drawings:** Tender drawings, duly signed and stamped by the bidder, must be submitted as per the technical specification/requirement.
+*   **Samples:**
+    *   Samples, as per the tendered technical specification and requirement, must be submitted.
+    *   **Deadline:** Not later than 15:00 HRs on the date of physical submission of bid/documents.
+    *   **Location:** The Junior Engineer, Divisional Store Office, Dakshin Gujarat Vij Company Ltd., Nana Varachha Road, Kapodara Char Rasta, SURAT-395 006.
+    *   **Consequence of Failure:** Bids will be rejected outright if samples are not submitted on time.
+
+**3. Financial Requirements (EMD, Bid Amounts, Turnover Thresholds)**
+
+*   **Tender Fee (Non-refundable):**
+    *   **Amount:** As notified in the tender notice.
+    *   **Payment Method:**
+        *   Demand Draft (DD) in the name of "Dakshin Gujarat Vij Company Ltd.", payable at Surat.
+        *   Cash payment at DGVCL Corporate Office cash counter (between 11:00 A.M. to 02:00 P.M. on working days, 11:00 A.M. to 12:30 P.M. on working Saturdays) before the due date/time.
+    *   **Not Accepted:** Indian Postal Orders (IPOs) & Cheques.
+    *   **Submission:** The DD or original money receipt must be kept in the EMD cover. Failure to do so will lead to rejection of the offer and the online technical bid will not be opened.
+*   **Earnest Money Deposit (EMD):**
+    *   **Amount:** 1% of the cost of all quoted items.
+    *   **Payment Method:**
+        *   Cash or Demand Draft (DD) in favor of "DAKSHIN Gujarat Vij Company Ltd." on any Scheduled/Nationalized Bank in Surat.
+        *   Irrecoverable Bank Guarantee (BG) from designated banks in DGVCL's standard format.
+    *   **Split Payment (if EMD > Rs. 1 Crore):** 50% in cash or DD, and the balance 50% by Bank Guarantee. Bidders may pay the full amount by cash or DD if desired.
+    *   **BG Validity:** Must be valid for at least **06 months** from the due date of opening of the tender, or extendable as required by DGVCL.
+    *   **Accepted Banks for BG:** All Nationalized Banks (including Public Sector Banks, IDBI Bank Ltd.), and Private Sector Banks authorized by RBI for state government business (Axis Bank, ICICI Bank, HDFC Bank). BGs from other banks will not be accepted.
+    *   **Not Allowed:** Cheques, Corporate Bank Guarantees, Stagewise Bank Guarantees.
+    *   **Exemption Criteria:**
+        *   Small, Cottage & Tiny industrial units registered under small scale industries of Govt. of Gujarat **AND** holding subsequent registration with CSPO/NSIC/DGS&D for the item under tender.
+        *   Requires authenticated notarized certificate copies of these registrations.
+        *   No relaxation for SSI/NSIC certificates from outside Gujarat State.
+        *   No relaxation for bidders with only one registration (e.g., only Govt. of Gujarat SSI without CSPO/NSIC/DGS&D).
+        *   NSIC/CSPO/DGS&D certificates older than 03 years will not be considered; validity must cover at least the tender validity period.
+        *   Certificates must indicate the manufacture of items offered under this tender. Provisional Registration Certificates are NOT allowed.
+        *   Government or Semi-Government Organizations (departmentally run, not limited companies).
+    *   **Forfeiture:** EMD will be forfeited if the tender is withdrawn during the offer validity period or if the Tenderer fails to furnish the Performance Guarantee (Security Deposit).
+*   **Price Quoting:**
+    *   Prices should be Variable and on F.O.R. Destination basis (any DGVCL store in Gujarat).
+    *   **Break-up:** Tenderer must indicate in the online Price Bid (Schedule–“B”) the break-up of Unit F.O.R. Destination Prices: Unit Ex-works price for Excise purpose, Excise duty, VAT/Sales Tax, average freight, and packing charges, and Insurance Charges. Freight and Insurance Charges must be quoted separately.
+    *   Payment of excise duty will be made only on Ex-Work prices.
+    *   Rate of Excise duty must be mentioned. If not, DGVCL may consider prices exclusive of taxes/duties at maximum higher slab rates for evaluation.
+    *   **Total Unit End Cost:** The total unit end cost price, considering all costs/calculations, must be indicated in the Price bid itself. Cost components hidden or furnished elsewhere will be ignored.
+    *   **Traders' Statutory Variation:** Traders quoting all-inclusive rates are eligible for statutory variation only if they indicate the rates of taxes and duties (even if not the amount). If rates of taxes/duties are not indicated, they are not eligible for statutory variation.
+
+**4. Documentation Requirements**
+
+*   **Vendor Registration Application:** Duly filled form with requisite registration fees and relevant documents, including all type test reports as per relevant IS/IEC specifications conducted at NABL accredited laboratory (not older than five years).
+*   **EMD Cover Documents (Mandatory Physical Submission):** This separate sealed cover, superscribed with "E.M.D. Cover Documents" of Tender No., due date, bidder name & address, must contain:
+    1.  Tender fee (Demand Draft or self-certified photocopy of money receipt).
+    2.  Earnest Money Deposit (EMD) (Demand Draft and/or original valid Bank Guarantee, OR copy of money receipt, OR authenticated notarized certificate copies of Govt. of Gujarat SSI AND CSPO/NSIC/DGS&D registration for exemption).
+    3.  Copy of valid vendor registration approval letter for tendered item(s) OR copy of the receipt of fees paid towards vendor registration (as per clause 1.4.7).
+    4.  Copy of valid Bureau of Indian Standard (BIS) license, duly notarized (if applicable as per technical specification/requirement).
+    5.  Valid Type test report of tendered item(s) from a Govt. recognized/tender-specified laboratory, duly notarized.
+    6.  List of Orders executed for the last three (3) years (including supplies made/status of pending orders) to GUVNL/subsidiary companies for the tendered items, duly self-attested.
+    7.  Drawing(s) of tender duly signed & stamped by the bidder (as per technical specification/requirement).
+    8.  Copy of High Quality ISO certificate, duly notarized.
+*   **New Parties:** Proof of execution of orders.
+*   **Existing Suppliers:** Self-certified list of orders executed for similar tender items, indicating quantity supplied, along with performance certificates.
+
+**5. Submission Deadlines and Procedures**
+
+*   **Vendor Registration Application:**
+    *   Must be submitted at least **60 days prior** to the tender publication date for participation.
+    *   Incomplete applications/documents (e.g., type test reports older than 5 years) will be returned within 15 working days.
+    *   The registration process is aimed to be completed within 60 days of receipt of a complete application.
+*   **Re-registration:** Existing vendors must apply for re-registration at least **two months** before their current registration expires.
+*   **Tender Structure:** Tenders must be submitted in a two-bid system:
+    *   a) Techno – Commercial Bid
+    *   b) Price Bid
+*   **EMD Cover Documents (Physical Submission):**
+    *   **Mode:** Must be sent by **R.P.A.D. OR SPEED POST** of P & T Department of Government of India ONLY.
+    *   **Address:** The Additional Chief Engineer (Proc.), Dakshin Gujarat Vij Company Limited, Corporate Office, “Urja Sadan”, Nana Varachha Road, Kapodara Char Rasta, SURAT-395 006.
+    *   **Not Allowed:** Courier service and hand delivery.
+    *   **Deadline:** On or before the due date and time for submission of documents in physical form.
+    *   **Consequence of Non-Submission:** In case of non-submission of E.M.D. Cover Documents in physical form, the online technical bid will not be opened, and the bid will be rejected/ignored outrightly.
+*   **Samples Submission:** Not later than 15:00 HRs on the date of physical submission of bid/documents.
+*   **Price Bid Submission:** Must be submitted in **online mode only**. Price bids submitted in physical mode will not be considered.
+*   **Incomplete Bids/Amendments:** Incomplete bids and any amendments or additions to bids after opening will be ignored outrightly.
+
+**6. Evaluation Criteria**
+
+*   **Preliminary Stage:**
+    1.  The EMD cover (physical documents) will be opened first.
+    2.  Only if the Tender Fee, EMD, and EMD cover documents are found acceptable, the e-tendered (online form) Technical Bid will be opened. Otherwise, the online bid will be rejected.
+*   **Technical Stage:**
+    1.  The technical scrutiny committee of DGVCL will evaluate the techno-commercial view of the tender.
+    2.  DGVCL reserves the right to open or not to open the price bid based on bidders' past performance of supplied materials, as well as additional conditions/deviations in online submission.
+*   **Price Bid Opening:** The price bids of only those bidders who are techno-commercially qualified shall be opened.
+*   **Price Evaluation:**
+    *   No price preference will be given on any account.
+    *   All tenders will be evaluated on a firm price end cost basis (without loading VAT/Sales Tax, unless otherwise mentioned).
+    *   **L-1 Matching:** If more than one party is to be considered for order placement, they will have to match their end cost with the L-1 end cost (who is technically acceptable).
+    *   **DGVCL Discretion:** DGVCL may consider L-2 depending on exigency. If DGVCL perceives a lack of serious competition or for other reasons, it may negotiate with the L-1 party. DGVCL's decision is final and binding.
+    *   **Tie-breaking:** If end cost prices are almost equal, quantity distribution among such bidders will be decided by a draw system at the sole discretion of DGVCL.
+*   **Quantity Distribution (Critical Item):**
+    *   **Gujarat-based Parties:** 50% quantity reserved for Gujarat-based parties who are techno-commercially qualified and match the L-1 end cost (as per Government of Gujarat guidelines).
+    *   **New Suppliers:**
+        *   First order: Restricted to 10% of the quantity, provided their price is lower than regular suppliers.
+        *   Second tender (similar item): Limited to 25%, provided their price is lower than regular suppliers. Upon satisfactory execution, they become regular suppliers.
+        *   New suppliers (New-1 or New-2) will be asked to match the L-1 prices of *new* suppliers only. Regular suppliers match the L-1 price of *regular* suppliers.
+    *   **Relaxation:** Conditions (a) and (b) may be relaxed if there are no regular suppliers or if their rates are very high.
+    *   **Order Placement Limit:** DGVCL will not place orders on more than 50% of the total parties bidding.
+    *   **L-1 Weightage:** L-1 regular party will receive heavy weightage in order placement.
+*   **Quantity Distribution (Non-Critical Item):**
+    *   **Gujarat-based Parties:** 50% quantity reserved for Gujarat-based parties who are techno-commercially qualified and match the L-1 end cost (as per Government of Gujarat guidelines).
+    *   **New Suppliers:**
+        *   First order: Can be enhanced up to 30% of the quantity, provided their price is lower than regular suppliers.
+        *   Second tender (similar item): Can be enhanced up to 40%, provided their price is lower than regular suppliers. Upon satisfactory execution, they become regular suppliers.
+        *   New suppliers (New-1 or New-2) will be asked to match the L-1 prices of *new* suppliers only. Regular suppliers match the L-1 price of *regular* suppliers.
+    *   **Relaxation:** Conditions (a) and (b) may be relaxed if there are no regular suppliers or if their rates are very high.
+    *   **Order Placement Limit:** DGVCL will not place orders on more than 50% of the total parties bidding.
+    *   **L-1 Weightage:** L-1 regular party will receive heavy weightage in order placement.
+
+**7. Any Compliance Requirements or Certifications Needed**
+
+*   **Vendor Registration Compliance:** Adherence to DGVCL's vendor registration guidelines, including factory inspection and video shooting of premises, infrastructure, testing equipment, and machinery (consent required).
+*   **ISO Certification:** DGVCL desires suppliers to possess a high-quality ISO 9001 / ISO 9002 certificate (within 2 years from 1/1/2001). A duly notarized copy of this certificate is required in the EMD cover.
+*   **BIS License:** A copy of a valid Bureau of Indian Standard (BIS) license, duly notarized, is mandatory whenever applicable as per technical specification/requirement.
+*   **SSI/CSPO/NSIC/DGS&D Registration:** For EMD exemption, specific registration with "Small, Cottage & Tiny industrial units of Govt. of Gujarat" AND "CSPO/NSIC/DGS&D" is required. Certificates must be authenticated, notarized, valid, and clearly indicate the manufacture of the tendered items. Provisional certificates are not accepted.
+*   **Jurisdiction:** Only the courts at Surat (Gujarat State) shall have exclusive jurisdiction to adjudicate all disputes relating to or arising out of vendor registration or placement of the order.
+
+---

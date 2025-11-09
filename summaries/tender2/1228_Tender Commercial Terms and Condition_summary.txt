@@ -1,0 +1,169 @@
+As an expert tender document analyst, I have thoroughly reviewed Tender No. PGVCL/PROC/LT AB Cable/1228 and provide the following comprehensive summary of its requirements:
+
+---
+
+### **Tender Document Analysis: PGVCL/PROC/LT AB Cable/1228**
+
+This tender is for the procurement of LT AB Cable and outlines stringent commercial and technical requirements. Bidders must ensure full compliance with all stipulated criteria to be considered for evaluation.
+
+---
+
+### 1. Tender Eligibility Criteria (Mandatory and Desirable)
+
+**1.1 Mandatory Eligibility:**
+
+*   **Vendor Registration:**
+    *   Compulsory for all bidders to participate, except for non-engineering items.
+    *   Bidders must be registered as a Vendor for the *tendered item* with GUVNL or any of its subsidiary companies.
+    *   **New Vendors (Regular Items):** Must have submitted their Vendor Registration application (with fees and all requisite documents) *prior* to the date of tender publication. The Vendor Registration Certificate must be submitted *before* the Price Bid opening.
+    *   **New Vendors (New Products - first time procured):** Must have submitted their Vendor Registration application (with fees and all requisite documents) *within 21 calendar days* from the date of tender publication. The Vendor Registration Certificate must be submitted *before* the Price Bid opening.
+    *   **Existing Vendors:** Must apply for re-registration at least two months before their existing registration expiry. Price bids will only be opened if the firm is a Registered Vendor on the date of Price Bid opening.
+    *   **Exemption from Vendor Registration Fees:** Government, Government Controlled Organizations/Undertakings, State Public Sector Undertakings/Enterprises, or Central Public Sector Undertakings/Enterprises are exempt from fees but must submit an intention letter and list of machinery/testing equipment.
+*   **No Blacklisting/Stop Dealing:** The bidder, its proprietor, partners, or directors must not be on any "Stop dealing," "Banned for business dealing," or "Blacklisting" list by GUVNL or any of its subsidiary companies. A mandatory declaration to this effect is required.
+*   **GFR-2017 Rule 144(xi) Compliance:** Bidders from countries sharing a land border with India (Afghanistan, Bangladesh, Bhutan, China, Myanmar, Nepal, Pakistan), or where the beneficial owner is from such a country, are eligible *only if* registered with the Competent Authority (Registration Committee constituted by DPIIT). A mandatory certificate declaring compliance is required. (Exemptions: Micro and Small Enterprises (MSEs) are exempt; certain procurements from Nepal/Bhutan may also be exempt; procurements with IFI funding are exempt).
+*   **Local Content Declaration (Make in India Policy):** Bidders must provide a certificate (from a statutory auditor/cost auditor/chartered accountant for companies, or practicing cost accountant/chartered accountant for proprietorship/partnership firms) certifying the percentage of local content. For procurements up to Rs. 10 Crores, self-certification is permitted.
+*   **Udyam Registration Certificate:** Mandatory for bidders seeking benefits under the Public Procurement Policy for Micro & Small Enterprises (MSEs).
+*   **Type Test Reports:** Submission of all type test reports from the factory location, as per relevant IS/IEC specifications, conducted at NABL accredited Laboratory or Govt. approved lab, not older than Seven Years.
+*   **ISI/BIS/International Licenses:** If applicable for the tendered item.
+*   **Factory Inspection:** Mandatory for new vendors.
+*   **Undertaking:** Bidders must provide an undertaking that they have read, understood, and agree to abide by all terms and conditions.
+*   **Signature and Seal:** All pages of the tender document must be signed and stamped by the tenderer.
+
+**1.2 Desirable Eligibility:**
+
+*   **ISO 9001 / ISO 9002 Certification:** Suppliers possessing ISO 9001 / ISO 9002 certificate (issued within 2 years from 1/1/2001) will be given preference in quantity distribution after 1/1/2003, all other things being equal.
+*   **Performance Certificate:** For bidders seeking "New-2" or "Regular" supplier status, a performance certificate (as per Annexure–VI) from GUVNL or its subsidiary companies is required, confirming satisfactory performance of similar or higher rating equipment/materials, timely contract execution, and after-sales services.
+
+---
+
+### 2. Technical Specifications and Requirements
+
+*   **Item:** The tender is for the supply of LT AB Cable. (TENDER NO. PGVCL/PROC/LT AB Cable/1228).
+*   **Standards:** All technical specifications must conform to ISS/ISI/BIS. Any PGVCL-framed specifications will be separately detailed in the tender documents.
+*   **No Deviation:** No deviation in specifications shall be allowed. PGVCL's decision on specifications is final.
+*   **Type Tests:** Mandatory type test reports are required as per relevant IS/IEC specifications, conducted at NABL accredited or Government-approved laboratories, and must not be older than seven years.
+*   **Quality:** High quality is expected. ISO 9001 / ISO 9002 certification is desirable.
+*   **Inspection & Testing:**
+    *   **Pre-dispatch Inspection:** Mandatory for all items, conducted by PGVCL or its authorized representative/third party at the supplier's works. Supplier must provide 15 days' notice and bear all testing costs. PGVCL reserves the right to waive inspection. Re-inspection costs are borne by the supplier.
+    *   **Stage Inspection:** PGVCL reserves the right to conduct stage inspections.
+    *   **Final Inspection:** At the destination by the consignee.
+    *   **Rejection:** Material failing tests or found defective will be rejected. Supplier must replace it within 30 days at their own cost.
+*   **Guarantee/Warranty:** A warranty period of 12 months from the date of commissioning or 18 months from the date of supply, whichever is earlier, is required. Defective material must be replaced free of cost within 30 days.
+
+---
+
+### 3. Financial Requirements (EMD, Bid Amounts, Turnover Thresholds)
+
+*   **Tender Fees (Non-refundable):**
+    *   Micro & Small Industries: Rs. 5,000/- + GST.
+    *   All other categories of Industries: Rs. 10,000/- + GST.
+    *   Foreign Firms: $100 USD.
+    *   Exempted: Government/Government Controlled Organizations/Undertakings/PSUs.
+    *   Payment must be made online.
+*   **Vendor Registration Fees (Non-refundable, plus GST):**
+    *   Factory within Gujarat: Micro & Small Industries Rs. 15,000/-, Others Rs. 25,000/-.
+    *   Factory within India (outside Gujarat): Micro & Small Industries Rs. 50,000/-, Others Rs. 75,000/-.
+    *   Out of Country: $5,000 USD.
+    *   Re-registration: 50% of regular fees if a PO was successfully executed in GUVNL/subsidiary within 2 years before expiry; otherwise, regular fees.
+    *   Adding new items: Rs. 5000/- + GST (lower capacity) or 50% of fees + GST (higher capacity).
+    *   Exempted: Government/Government Controlled Organizations/Undertakings/PSUs.
+*   **Earnest Money Deposit (EMD):**
+    *   Amount: 0.50% of the estimated tender value.
+    *   Validity: Must be valid for 180 days from the date of opening of the Technical Bid.
+    *   Payment: Online only.
+    *   Exempted: Micro & Small Industries (registered with MSME/NSIC for tendered items), Government/Government Controlled Organizations/Undertakings/PSUs.
+    *   Forfeiture conditions apply (e.g., withdrawal/modification of offer, failure to furnish SD/PBG, failure to execute/accept order).
+*   **Security Deposit (SD) / Performance Bank Guarantee (PBG):**
+    *   Amount: 10% of the contract value.
+    *   Form: Bank Guarantee from a Nationalized/Scheduled Bank.
+    *   Validity: 12 months from the date of the last consignment supplied, plus a 6-month claim period.
+    *   Exempted: Micro & Small Industries (registered with MSME/NSIC for tendered items), Government/Government Controlled Organizations/Undertakings/PSUs.
+    *   Forfeiture conditions apply (e.g., failure to execute order, perform as per contract, replace defective material, pay liquidated damages).
+*   **Price Basis:** Prices must be quoted on an FOR destination basis, inclusive of freight, insurance, and other charges. A detailed breakup of prices (Ex-works, freight, insurance, GST) must be provided.
+*   **Price Variation Clause (PVC):** Not applicable. Prices must be firm and fixed.
+*   **Payment Terms:**
+    *   **Indigenous Suppliers:** 90% payment within 30 days of receipt of material in good condition at the destination (with inspection report, test certificate, and invoice). The balance 10% will be paid after 12 months from the date of the last consignment supplied or against a PBG of equivalent amount valid for 12 months from the last consignment plus a 6-month claim period.
+    *   **Foreign Suppliers:** 90% payment through an irrevocable Letter of Credit (LC) against dispatch documents. The balance 10% will be paid after 12 months from the date of the last consignment supplied or against a PBG of equivalent amount valid for 12 months from the last consignment plus a 6-month claim period.
+    *   No advance payment. Payments will be made via RTGS/NEFT.
+*   **Turnover Thresholds:** No specific turnover thresholds are mentioned in the provided document text.
+
+---
+
+### 4. Documentation Requirements
+
+*   **General Tender Documents:** Scanned copies of all required documents as per the TENDER NOTICE, including SCHEDULE-“A”, Commercial Terms & conditions, and Technical Specifications. These must be legible PDF files and not password protected.
+*   **Vendor Registration Documents:**
+    *   Duly filled Vendor Registration Application Form.
+    *   Receipt of Vendor Registration Fees (if applicable).
+    *   All Type Test Reports (from NABL accredited or Govt. approved lab, not older than 7 years) as per relevant IS/IEC specifications.
+    *   ISI/BIS/International Licenses (if applicable).
+    *   List of Plant & Machineries (especially for adding higher capacity items).
+    *   List of Testing Equipment (especially for adding higher capacity items).
+    *   Performance Certificate (Annexure–VI) from GUVNL/subsidiary (if applicable for New-2/Regular status).
+    *   Consent for Photography during factory inspection.
+    *   Intention letter and list of machinery/testing equipment (for Government/PSU entities exempt from VR fees).
+*   **Financial Documents:**
+    *   Receipt of Tender Fees (if applicable).
+    *   Receipt of Earnest Money Deposit (EMD) (if applicable).
+    *   Bank details for RTGS/NEFT payments.
+    *   Detailed price breakup (Ex-works, freight, insurance, GST).
+*   **Compliance & Certification Documents:**
+    *   Declaration that the bidder/proprietor/partner/director is not on any Stop dealing/Banned/Blacklisting list.
+    *   GSTIN No.
+    *   Certificate regarding compliance with GFR-2017 Rule 144(xi) (for bidders from countries sharing a land border with India).
+    *   Certificate from statutory auditor/cost auditor/chartered accountant (or self-certification for < Rs. 10 Cr) certifying the percentage of local content (for Make in India policy).
+    *   Valid Udyam Registration Certificate (for MSEs).
+    *   DPIIT Registration Certificate (for Start-ups, if claiming benefits).
+    *   ISO 9001 / ISO 9002 certificate (if available, for preference).
+*   **Undertaking:** A written undertaking confirming agreement to all terms and conditions.
+*   **Signed Pages:** All 77 pages of the tender document must be signed by the tenderer with the company's round seal and dated.
+
+---
+
+### 5. Submission Deadlines and Procedures
+
+*   **Bid Structure:** The tender follows a two-bid system:
+    1.  Techno – Commercial Bid
+    2.  Price Bid
+*   **Vendor Registration Certificate:** Must be submitted *before* the opening of the Price Bid. Failure to do so will result in the rejection of the Technical Bid and non-opening of the Price Bid.
+*   **Offer Validity:** The offer must remain valid for 180 days from the date of opening of the Technical Bid.
+*   **EMD Validity:** The EMD must be valid for 180 days from the date of opening of the Technical Bid.
+*   **Online Payments:** Tender Fees and EMD must be paid online.
+*   **Prohibited Actions:** Incomplete bids, amendments, and additions to bids after submission are strictly not allowed and will lead to rejection.
+
+---
+
+### 6. Evaluation Criteria
+
+*   **Mandatory Compliance:** Bids will first be scrutinized for mandatory eligibility criteria, including valid Vendor Registration, non-blacklisting status, and submission of all required documents. Non-compliance will lead to disqualification.
+*   **Technical Scrutiny:** A technical scrutiny committee of PGVCL will evaluate the techno-commercial aspects of the bids.
+*   **Past Performance:** PGVCL reserves the right to open or not to open the price bid of bidders based on their past performance of supplied materials.
+*   **Specifications Compliance:** Strict adherence to ISS/ISI/BIS and PGVCL-framed specifications is mandatory. No deviations are permitted.
+*   **GFR-2017 Rule 144(xi) Compliance:** Bidders' declarations regarding compliance with this rule will be verified. False declarations will result in EMD forfeiture and blacklisting.
+*   **Make in India Policy (Purchase Preference):**
+    *   Preference will be given to 'Class-I Local Suppliers' (local content >= 50%) and 'Class-II Local Suppliers' (local content >= 20% but < 50%).
+    *   Specific purchase preference rules apply for divisible and non-divisible tenders, involving L1 matching by local suppliers within a 20% price band.
+*   **Public Procurement Policy for MSEs (Purchase Preference):**
+    *   25% of the total tendered quantity is earmarked for procurement from MSEs (with sub-targets for SC/ST and Women MSEs).
+    *   MSEs quoting a price within L1 + 15% will be given the opportunity to match the L1 price and be awarded the quantity.
+*   **ISO Certification (Desirable):** Suppliers possessing ISO 9001 / ISO 9002 certificates may receive preference in quantity distribution if other factors are equal.
+*   **Reverse Auction:** PGVCL reserves the right to conduct a Reverse Auction as part of the evaluation process. Bidders must confirm their participation.
+*   **Right to Accept/Reject/Split:** PGVCL reserves the right to accept or reject any or all tenders without assigning reasons and to split quantities among bidders.
+
+---
+
+### 7. Any Compliance Requirements or Certifications Needed
+
+*   **Vendor Registration:** Mandatory for the specific tendered item.
+*   **Type Test Reports:** From NABL accredited or Govt. approved lab, not older than 7 years, as per relevant IS/IEC.
+*   **ISI/BIS/International Licenses:** Required if applicable to the product.
+*   **ISO 9001 / ISO 9002 Certification:** Desirable for quality assurance and potential quantity preference.
+*   **GFR-2017 Rule 144(xi) Declaration:** Mandatory for specific bidders.
+*   **Make in India Local Content Certificate:** Mandatory, either from an auditor or self-certified (for tenders < Rs. 10 Cr).
+*   **Udyam Registration Certificate:** Mandatory for MSEs claiming benefits.
+*   **DPIIT Registration Certificate:** Mandatory for Start-ups claiming benefits.
+*   **GSTIN:** Mandatory for all suppliers for tax compliance.
+*   **Statutory Compliance:** Bidders must comply with all applicable statutory requirements.
+*   **Warranty:** 12 months from commissioning or 18 months from supply, whichever is earlier.
+*   **Liquidated Damages:** Compliance with delivery schedules is critical; delays will incur liquidated damages up to 10% of the total contract value.
+*   **Jurisdiction:** All disputes are subject to the exclusive jurisdiction of courts in Rajkot, Gujarat State. Arbitration will be conducted in Rajkot.

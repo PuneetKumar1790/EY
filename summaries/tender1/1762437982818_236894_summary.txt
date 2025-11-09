@@ -1,0 +1,136 @@
+As an expert tender document analyst, I have meticulously reviewed the provided tender document (Tender ID-236894) from Dakshin Gujarat Vij Company Ltd. (DGVCL) for the "Supply of 3C LT AB Cable". Below is a comprehensive and detailed summary of the tender requirements:
+
+---
+
+### Comprehensive Tender Requirements Summary
+
+**1. Tender Eligibility Criteria (Mandatory and Desirable)**
+
+**Mandatory Criteria:**
+*   **Vendor Registration:** Submission of a self-certified copy of valid Vendor Registration.
+*   **GSTN Registration:** Submission of a self-certified copy of the GSTN Registration Certificate.
+*   **Tender Fee Payment:** Proof of payment (scan copy of cash receipt/RTGS/NEFT/Online with UTR No) of the Bidding Processing Fee.
+*   **EMD Payment:** Proof of payment (Scan copy of RTGS/NEFT/Online with UTR No.) of the Bid Security/EMD.
+*   **Digital Certificate:** Bidders must possess a legally valid Digital Certificate (Class-III) as per the Information Technology Act-2000 to sign electronic bids.
+*   **Power of Attorney:** A notarized Power of Attorney on Rs. 300/- non-judicial stamp paper, in favour of the person authorized to sign tender documents.
+*   **Authorized Representative Declaration:** A notarized declaration on Rs. 300/- non-judicial stamp paper for the authorized representative, as per the format in TENDER NOTICE SCHEDULE-A.
+*   **Country Boundary Certificate:** A notarized Country Boundary Certificate on Rs. 300/- non-judicial stamp paper, as per the format in TENDER NOTICE SCHEDULE-A.
+*   **Factory License:** A self-certified copy of a valid Factory License.
+*   **Partners/Directors List:** A list of Partners/Directors on the firm's letterhead, duly sealed and signed, along with the Memorandum of Association (MOA) OR a self-declaration about the proprietor.
+*   **Audited Accounts:** Certified copies of the last three years' Audited Accounts.
+*   **BIS License:** A notarized copy of a valid BIS license (with all enclosures) held by the firm, using the IS/BIS mark wherever applicable for the product.
+*   **Type Test Reports:** Notarized copies of all required Type Test Reports.
+
+**Desirable/Conditional Criteria:**
+*   **EMD Exemption:** Submission of duly notarized EMD Exemption Documents, if applicable.
+*   **ISO Certificate:** A self-certified copy of a valid ISO Certificate, if applicable.
+*   **Import/Export Certificate:** A self-certified copy of an Import/Export Certificate, if applicable.
+*   **BEE Certificate:** Submission of a BEE Certificate, if applicable.
+*   **Past Performance:** A self-certified copy of orders executed with GUVNL and its subsidiary companies, if applicable.
+
+**2. Technical Specifications and Requirements**
+
+*   **Project Title:** Supply of 3C LT AB Cable.
+*   **Material Description:** Supply of 3C LT AB Cable.
+*   **Product Category:** Electrical Goods/Equipment.
+*   **Technical Documents:**
+    *   **Technical Specification and GTP:** Duly filled, sealed, and signed. (Refer to "2617_Tech. Specification and GTP 3C LT ABC XLPE Insulation only.pdf" for details).
+    *   **Tender Drawing:** Duly sealed and signed (if applicable).
+    *   **Type Test Reports:** Notarized copies of all required Type Test Reports.
+*   **Manufacturing/Testing Facilities:** A list of Plant and Machinery and Testing Facilities, duly sealed and signed.
+*   **Compliance:** Adherence to BIS standards (where applicable) and other relevant technical specifications detailed in the tender documents.
+
+**3. Financial Requirements (EMD, Bid Amounts, Turnover Thresholds)**
+
+*   **Bidding Processing Fee:** INR 8,850 (Eight thousand Eight hundred Fifty Indian Rupees).
+    *   **Payable to:** Dakshin Gujarat Vij Company Limited (DGVCL), Surat.
+    *   **Payment Mode:** Offline (scan copy of cash receipt/RTGS/NEFT/Online with UTR No to be submitted).
+*   **Bid Security/EMD/Proposal Security:** INR 250,000 (Two lacs Fifty Thousand Indian Rupees).
+    *   **Payable to:** Dakshin Gujarat Vij Company Limited, Surat.
+    *   **Payment Mode:** Offline (Scan copy of RTGS/NEFT/Online with UTR No to be submitted).
+*   **EMD Exemption:** Exempted Fee is applicable if relevant notarized documents are submitted.
+*   **Turnover Thresholds:** While no specific turnover threshold is explicitly stated, the requirement for "Certified copy of Last Three years Audited Account" indicates that financial stability and past performance will be assessed.
+
+**4. Documentation Requirements**
+
+Documents are categorized by the tender stages and must be submitted electronically.
+
+**Preliminary Stage (Mandatory):**
+1.  Self-Certified copy of Vendor Registration.
+2.  EMD Exemption Documents duly notarized (if Applicable).
+3.  Self-certified copy of GSTN Registration Certificate.
+4.  Payment of Tender Fee (scan copy of cash receipt/RTGS/NEFT/Online with UTR No).
+5.  Payment of EMD Fee (Scan copy of RTGS/NEFT/Online with UTR No.).
+
+**Technical Stage (Mandatory):**
+1.  ANNEXURE -1_DGVCL to ANNEXURE -15 DGVCL (excluding ANNEXURE -13, which is revised).
+2.  IMPORTANT INSTRUCTIONS D GVCL.
+3.  CERTIFICATE -A DGVCL.
+4.  Terms as per DGVCL.
+5.  ANNEXURE - 13 DGVCL Revise.
+6.  Cancelled Check.
+7.  Technical Specification and GTP duly filed, Sealed and signed.
+8.  Tender Drawing duly Sealed and signed (if applicable).
+9.  Tender Notice and Schedule-A duly Sealed and signed.
+10. Subject Dn Tender Commercial terms and conditions with all annexures duly Sealed and signed.
+11. Notarized power of Attorney on Rs. 300/- non judicial stamp paper.
+12. Notarized declaration on Rs. 300/- Non judicial stamp paper for Authorized representative.
+13. Country Boundary Certificate on Rs. 300/- non judicial stamp paper duly notarized.
+14. Notarize copy of all required Type test report.
+15. All Amendment in ascending Order with duly signed and sealed (if any).
+16. Important Instruction duly Sealed and signed.
+17. Certificate-A of the Tender duly signed and sealed on Company's letterhead.
+18. Self-certified copy of valid ISO Certificate (if Applicable).
+19. Self-certified Copy of PAN card.
+20. Self-certified copy of valid copy of Factory License.
+21. Self-certified copy of Import /Export Certificate (if Applicable).
+22. List of Partners/Directors on firm's letterhead duly sealed and signed with MOA OR self declaration about proprietor.
+23. List of Plant and Machinery and Testing Facility duly Sealed and signed.
+24. Certified copy of Last Three years Audited Account.
+25. Notarized Copy of Valid BIS License (if applicable).
+26. BEE Certificate (if applicable).
+27. Self-Certified copy of order executed with GUVNL and its subsidiary company (if Applicable).
+28. Any other documents if required as per tender terms and conditions.
+
+**Price Bid Stage (Mandatory):**
+1.  Confirmation For Composition Scheme DGVCL.
+2.  DGVCL Price Bid Form.
+
+**General Document Requirements:**
+*   All documents must be submitted in electronic format only via the nprocure website. Physical offers will not be accepted.
+*   Specific documents require notarization (e.g., EMD Exemption, Power of Attorney, Declaration, Country Boundary Certificate, Type Test Reports, BIS License).
+*   Many documents require to be duly sealed and signed (e.g., Technical Specification, GTP, Tender Drawing, Tender Notice & Schedule-A, Commercial terms, Important Instruction, Certificate-A, List of Plant & Machinery, Audited Accounts, Amendments).
+*   Self-certified copies are required for several documents (e.g., Vendor Registration, GSTN, ISO, PAN, Factory License, Import/Export Certificate, past orders).
+
+**5. Submission Deadlines and Procedures**
+
+*   **Bid Document Download Start Date:** 18-10-2025, 17:30
+*   **Bid Document Download End Date:** 20-11-2025, 18:00
+*   **Bid Submission Start Date:** 18-10-2025, 17:30
+*   **Bid Submission Closing Date:** 20-11-2025, 18:00
+*   **Bid Validity Period:** 120 Days from the bid submission closing date.
+*   **Submission Procedure:**
+    *   Tender documents can be downloaded free of cost from the website.
+    *   Both Technical and Price bids must be submitted exclusively in electronic format on the nprocure website.
+    *   Bidders must have a Class-III Digital Certificate for electronic bid signing.
+    *   Training camps for online tenders are organized every Saturday (4:00 to 5:00 P.M.) at (n)code solutions. Support contact details are provided for clarifications.
+
+**6. Evaluation Criteria**
+
+The evaluation process is structured into three distinct stages:
+
+*   **Preliminary Stage (Evaluation Date: 21-11-2025, 11:00):** This stage will likely involve a preliminary check of mandatory administrative documents, including vendor registration, GSTN certificate, and proof of tender fee and EMD payment.
+*   **Technical Stage (Evaluation Date: 21-11-2025, 12:00):** This stage will involve a detailed assessment of all technical documents, annexures, specifications (GTP), tender drawings, type test reports, factory licenses, ISO certificates (if applicable), PAN card, list of plant & machinery, last three years' audited accounts, BIS license (if applicable), BEE certificate (if applicable), and past performance records. Compliance with all specified technical and eligibility criteria will be crucial.
+*   **Price Bid Stage (Evaluation Date: 08-12-2025, 11:00):** Only the price bids of technically qualified bidders will be opened and evaluated. The DGVCL Price Bid Form and Confirmation for Composition Scheme DGVCL will be assessed.
+
+**7. Compliance Requirements or Certifications Needed**
+
+*   **Digital Signature Compliance:** Mandatory Class-III Digital Certificate as per Information Technology Act-2000 for electronic bid submission.
+*   **BIS Certification:** Mandatory notarized valid BIS license for products where IS/BIS mark is applicable (e.g., 3C LT AB Cable).
+*   **GSTN Compliance:** Mandatory self-certified GSTN Registration Certificate.
+*   **Factory License:** Mandatory self-certified valid Factory License.
+*   **Country of Origin:** Mandatory notarized Country Boundary Certificate, indicating compliance with origin requirements as per TENDER NOTICE SCHEDULE-A.
+*   **ISO Certification:** Self-certified valid ISO Certificate, if applicable to the bidder's quality management systems.
+*   **BEE Certification:** BEE Certificate, if applicable to the product.
+*   **Legal Compliance:** Adherence to all legal requirements for Power of Attorney and declarations, including stamp paper values and notarization.
+*   **Document Authenticity:** Requirement for notarized and self-certified copies for various documents to ensure authenticity and validity.

@@ -1,0 +1,132 @@
+As an expert tender document analyst, I have thoroughly reviewed the provided tender document (Tender ID- 235343) from Paschim Gujarat Vij Company Limited (PGVCL) for the "Purchase of LT AB Cable." Below is a comprehensive and detailed summary of the tender requirements, focusing on the specified areas.
+
+---
+
+**Tender Document Summary: Purchase of LT AB Cable (Tender ID- 235343)**
+
+**1. Tender Eligibility Criteria (Mandatory and Desirable)**
+
+*   **Manufacturer Status:** Bidders claiming to be manufacturers must submit a self-declaration confirming their manufacturer status.
+*   **BIS License:** Tenderers must *invariably* furnish a notarized copy of their valid BIS license (with all enclosures) held by their firm, specifically for products using IS/BIS marks, wherever applicable. This is a critical compliance requirement for the product being procured.
+*   **GSTN Registration:** A self-certified copy of the firm's GSTN Registration Certificate is mandatory.
+*   **Firm Type Documentation:**
+    *   If a partnership, a self-certified copy of the Partnership Deed is required.
+    *   A list of Partners/Directors on the firm's letterhead, duly sealed & signed with MoA, OR a self-declaration about the proprietor (for proprietorships) is mandatory.
+*   **Factory License:** A self-certified copy of a valid Factory License is required.
+*   **ISO Certificate (Desirable/Applicable):** A self-certified copy of a valid ISO Certificate is required if applicable to the bidder's operations.
+*   **Import/Export Certificate (Desirable/Applicable):** A self-certified copy of an Import/Export Certificate is required if applicable.
+*   **BEE Certificate (Desirable/Applicable):** A BEE Certificate is required if applicable to the product or firm.
+*   **Previous Experience (Desirable/Applicable):** A self-certified copy of orders executed with GUVNL & its subsidiary company is required if applicable, indicating prior experience with the procuring entity or its affiliates.
+*   **Financial Standing:** Submission of certified copies of the Last Three years' Audited Accounts is mandatory, indicating a review of the bidder's financial health.
+
+**2. Technical Specifications and Requirements**
+
+*   **Material Description:** The tender is for the purchase of LT AB Cable of the following specific sizes and quantities:
+    *   1C x35mm²+1C x16 + 25mm² - 1000 KM
+    *   3C x35mm²+1C x16 + 25mm² - 345 KM
+    *   3C x50mm²+1C x25 + 35mm² - 1500 KM
+*   **Technical Documentation:**
+    *   **Technical Specification and GTP:** Duly filled, sealed, and signed Technical Specification and Guaranteed Technical Particulars (GTP) are mandatory.
+    *   **Tender Drawing:** Duly sealed and signed Tender Drawing (if applicable) is mandatory.
+*   **Type Test Reports:** Notarized copies of all required Type Test Reports are mandatory.
+*   **Country Boundary Certificate:** A notarized Country Boundary Certificate on Rs. 300/- non-judicial stamp paper, as per the format attached in TENDER NOTICE SCHEDULE-A, is mandatory.
+*   **Manufacturing Capability:** A list of Plant & Machinery and Testing Facility, duly sealed & signed, is mandatory.
+*   **Compliance:** Adherence to the specific technical specifications outlined in the attached documents: "1228 Tech. Spec. 3Cx35 and 3Cx50 LT ABC.pdf" and "1228 Technical specifications and GTP for 1 Phase LT AB Cable.pdf".
+
+**3. Financial Requirements**
+
+*   **Bidding Processing Fee (Offline):**
+    *   **Amount:** INR 11,800 (Eleven Thousand Eight Hundred).
+    *   **Payable To:** Paschim Gujarat Vij Company Limited.
+    *   **Payable At:** Rajkot.
+*   **Bid Security/EMD/Proposal Security (Offline):**
+    *   **Amount:** INR 1,300,000 (Thirteen Lacs).
+    *   **Payable To:** Paschim Gujarat Vij Company Limited.
+    *   **Payable At:** Rajkot.
+    *   **Physical Submission:** For EMD amounts exceeding Rs. 3 Lakhs, physical submission of EMD-related documents (e.g., Bank Guarantee, payment receipt) is mandatory. This must be done via Registered Post AD or SPEED POST only, on or before **17.11.2025 up to 18:00 Hrs.**
+*   **EMD Exemption:** Bidders claiming EMD exemption must submit duly notarized exemption documents (if applicable).
+*   **Turnover Thresholds:** While no specific turnover threshold is explicitly stated, the requirement for "Certified copy of Last Three years Audited Account" implies that the bidder's financial capacity and historical turnover will be assessed during evaluation.
+*   **Bid Validity:** The offer must remain open for **120 days** after the tender closing date.
+
+**4. Documentation Requirements**
+
+All documents, unless specified otherwise, must be duly sealed and signed.
+
+**A. Preliminary Stage Documents (Mandatory):**
+1.  Scan copy of cash receipt/RTGS/NEFT/Online payment with UTR No. for Tender Fee.
+2.  Scan copy of RTGS/NEFT/Online payment with UTR No. for EMD Fee.
+3.  EMD Exemption Documents duly notarized (if Applicable).
+4.  Self-certified copy of GSTN Registration Certificate.
+5.  Self-declaration about manufacturer (if applicable).
+6.  Cancelled Check.
+
+**B. Technical Bid Stage Documents (Mandatory):**
+1.  Technical Specification and GTP duly filled, Sealed & signed.
+2.  Tender Drawing duly Sealed & signed (if applicable).
+3.  Tender Notice and Schedule-A duly Sealed & signed.
+4.  Tender Commercial terms & conditions with all annexures duly Sealed & signed.
+5.  Notarized Power of Attorney on Rs. 300/- non-judicial stamp paper in favour of a person authorized to sign tender documents.
+6.  Notarized copy of all required Type Test Reports.
+7.  Notarized declaration on Rs. 300/- non-judicial stamp paper for Authorized Representative (as per format in TENDER NOTICE SCHEDULE-A).
+8.  Country Boundary Certificate on Rs. 300/- non-judicial stamp paper duly notarized (as per format in TENDER NOTICE SCHEDULE-A).
+9.  All Amendments in ascending Order with duly signed and sealed (if any).
+10. "Important Instruction" duly Sealed & signed.
+11. PAN card of FIRM/COMPANY certified by the Authorized person.
+12. Certificate-A of the Tender duly signed & sealed on Company's letterhead.
+13. Self-certified copy of valid ISO Certificate (if Applicable).
+14. Self-certified copy of valid Factory License.
+15. Self-certified copy of PAN Card of each individual (ALL PARTNERS/ALL DIRECTORS/PROPRIETOR).
+16. Self-certified copy of Import/Export Certificate (if Applicable).
+17. Self-certified copy of Partnership Deed (if applicable).
+18. List of Partners/Directors on firm's letterhead duly sealed & signed with MoA OR self-declaration about proprietor.
+19. List of Plant & Machinery and Testing Facility duly Sealed & signed.
+20. Certified copy of Last Three years Audited Account.
+21. BEE Certificate (if applicable).
+22. Notarized Copy of Valid BIS License (if applicable).
+23. Self-Certified copy of order executed with GUVNL & its subsidiary company (if Applicable).
+24. Any other documents if required as per tender terms and conditions.
+
+**C. Price Bid Stage Documents (Mandatory):**
+1.  Confirmation For Composition Sc (User Defined Template-Standard).
+2.  General Terms & Conditions (User Defined Template-Standard).
+
+**5. Submission Deadlines and Procedures**
+
+*   **Bid Document Download Start Date:** 16-10-2025, 19:00
+*   **Bid Document Download End Date:** 10-11-2025, 18:00
+*   **Bid Submission Start Date:** 16-10-2025, 19:00
+*   **Bid Submission Closing Date:** 10-11-2025, 18:00
+*   **Physical Submission of EMD Documents (for EMD > Rs. 3 Lakhs):** On/or before **17.11.2025 up to 18:00 Hrs.** (via Registered Post AD or SPEED POST only).
+*   **Submission Method:** Technical and Price bids *must* be submitted in **Electronic format only** on the nprocure website. Offers in physical form will *not* be accepted under any circumstances.
+*   **Digital Signature:** Bidders are required to procure/possess a legally valid Class-III Digital Certificate, as per the Information Technology Act-2000, to sign their electronic bids.
+
+**6. Evaluation Criteria**
+
+The tender evaluation will proceed in three distinct stages:
+
+*   **Preliminary Stage:**
+    *   **Evaluation Date:** 11-11-2025, 11:00
+    *   Focus on mandatory preliminary documents, including payment of tender fee and EMD, GSTN certificate, manufacturer declaration, and cancelled check. Failure to submit any mandatory document at this stage will likely lead to disqualification.
+*   **Technical Bid Stage:**
+    *   **Evaluation Date:** 18-11-2025, 11:00
+    *   Comprehensive assessment of technical compliance, including filled GTPs, drawings, type test reports, country boundary certificate, and the list of plant & machinery/testing facilities.
+    *   Verification of all mandatory technical and administrative documents listed in Section 4B, including legal documents (Power of Attorney, declarations), firm details (PAN, ISO, Factory License, Partnership Deed/MoA), and financial history (Audited Accounts).
+    *   Compliance with PGVCL's technical specifications and commercial terms and conditions.
+*   **Price Bid Stage:**
+    *   **Evaluation Date:** 03-12-2025, 11:00
+    *   Evaluation of the submitted financial offers from technically qualified bidders.
+
+**7. Compliance Requirements or Certifications Needed**
+
+*   **BIS License:** Mandatory for products using IS/BIS marks. Notarized copy with all enclosures is required.
+*   **GSTN Registration:** Mandatory self-certified copy.
+*   **ISO Certificate:** Required if applicable to the firm.
+*   **Factory License:** Mandatory self-certified copy.
+*   **BEE Certificate:** Required if applicable to the product.
+*   **Digital Certificate (Class-III):** Mandatory for online bid submission and signing.
+*   **Legal Declarations:** Notarized Power of Attorney, Authorized Representative Declaration, and Country Boundary Certificate on non-judicial stamp paper are mandatory.
+*   **Technical Standards:** Strict adherence to PGVCL's Technical Specifications and GTPs for the LT AB Cable.
+*   **Financial Records:** Submission of audited accounts for the last three years for financial assessment.
+*   **Commercial Terms:** Agreement to the tender's commercial terms and conditions, and a bid validity of 120 days.
+
+---

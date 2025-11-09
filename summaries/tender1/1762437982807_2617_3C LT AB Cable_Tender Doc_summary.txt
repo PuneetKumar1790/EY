@@ -1,0 +1,174 @@
+As an expert tender document analyst, I have thoroughly reviewed the provided tender document (DGVCL/SP/2617/3C LT AB Cable (Critical Item)) and present a comprehensive, detailed summary of its requirements.
+
+---
+
+**TENDER SUMMARY: Supply of 3C LT AB Cable**
+
+**Tender Notice No:** DGVCL/SP/2617/3C LT AB Cable (Critical Item)
+**Subject:** Tender for Supply of 3C LT AB Cable
+**Procuring Entity:** Dakshin Gujarat Vij Company Limited (DGVCL)
+**Submission Mode:** Online Electronic Form (e-tendering) only.
+
+---
+
+**1. Tender Eligibility Criteria (Mandatory and Desirable)**
+
+*   **Mandatory Manufacturer Status:** Bidders must be registered manufacturers.
+*   **GST Registration:** Mandatory to have valid GST registration. GSTIN must be provided at the time of fee payment.
+*   **Vendor Registration (GUVNL/Subsidiaries):**
+    *   Bidders must have valid vendor registration with GUVNL or its subsidiary companies (DGVCL/ MGVCL/ UGVCL/ PGVCL/ GETCO/GSECL) *prior to the date of opening of the technical bid*.
+    *   If not currently registered, the bidder must have *applied for new vendor registration or renewal prior to the date of publication of the Tender in the Newspaper*. In such cases, a self-attested photocopy of the money receipt for vendor registration charges must be uploaded in the preliminary stage.
+    *   Bidders who applied for registration *must produce a valid vendor registration certificate before the opening of the price bid*, failing which their bid will be rejected.
+*   **Bureau of Indian Standard (BIS) License:** Mandatory if applicable as per the technical specification/requirement. Bidders must upload a valid BIS license OR an application for renewal (applied before expiry) along with the expired license and the original money receipt/acknowledgement from BIS.
+*   **MSME Benefits (Gujarat State):**
+    *   **EMD Exemption:** Micro and Small Scale Industrial (manufacturing) Units registered under Small Scale Industries of Gujarat State AND holding subsequent registration with CSPO / NSIC / DGS&D are eligible. Requires uploading original copies of *minimum one certificate from Group A (UDYAM Registration Certificate)* and *one certificate from Group B (CSPO/NSIC/DGS&D)*.
+    *   **Lower EMD:** MSME (manufacturing) Units are eligible for lower EMD on submission of a duly notarized copy of *any one* certificate from Group A or B.
+    *   **Validity:** Only "UDYAM REGISTRATION CERTIFICATE" is valid from July 1, 2022, or as amended. Provisional Registration Certificates are NOT allowed. Certificates must indicate the manufacture of items offered or a related group.
+    *   **Restrictions:** No benefits for MSME units registered outside Gujarat State or those with only one registration number from the Government of Gujarat without subsequent CSPO/NSIC/DGS&D registration. Benefits are not admissible if participating indirectly (e.g., through dealers, agents).
+*   **Declaration CERTIFICATE-M:** Mandatory declaration regarding restrictions on procurement from a bidder of a country sharing a land border with India.
+*   **Conflict of Interest Declaration (Appendix-4):** Mandatory declaration, duly notarized on Rs. 300/- non-judicial stamp paper, regarding the authorized representative being an employee of the firm, as per Clause No: 41 of the tender notice.
+*   **Desirable:**
+    *   High Quality ISO certificate.
+    *   Performance report from clients.
+
+---
+
+**2. Technical Specifications and Requirements**
+
+*   **Item Description:** Supply of 3C LT AB Cable.
+*   **Specific Cable Type:** 3C x 50 mm² + 1C x 25 mm² + 35mm² LT Aerial Bunched Cables.
+*   **Tentative Quantity:** 200 KM. DGVCL reserves the right to reduce the quantity at the time of finalization. No dispute for non-purchase or purchase of very less quantity will be entertained.
+*   **Specifications & Drawings:** Equipment/stores/materials offered must conform to the Company’s specifications/drawings and Guaranteed Technical Particulars.
+*   **Type Test Reports:**
+    *   Valid Type Test reports of the tender item/s are mandatory.
+    *   Reports must not be older than 7 years.
+    *   Must be from any Government approved laboratory or a laboratory as per tender requirement/technical specification.
+    *   Submission of irrelevant Type Test certificates (other than those called for in the technical specification) will lead to outright rejection.
+    *   Submission of type test reports must be completed before commencing supply.
+*   **Drawings:** Drawings of each item of the tender, duly signed & stamped by the bidder, are required as per technical specification/requirement.
+*   **Tender Sample:** **This clause (Cl.no.6 of commercial Terms & condition) is explicitly stated as NOT APPLICABLE to this tender.**
+*   **Guarantee:** The goods, stores, and equipment must be guaranteed for proper performance. If found defective due to bad design or workmanship, they must be repaired or replaced free of charge if reported within 18 months of receipt at site or 12 months from the date of commissioning, whichever is earlier.
+*   **Delivery Period:**
+    *   The delivery period for the material (each tender item) shall be completed in **Seven (7) months on an equal monthly basis.**
+    *   The delivery period will be reckoned **after 45 days** from the date of receipt of the Letter of Acceptance (LOA) by the successful bidder.
+    *   DGVCL may require earlier delivery, which should be accommodated.
+    *   If the procured quantity is reduced, the delivery period will reduce proportionately.
+*   **Pre-Supply Requirements:**
+    *   Submission of drawings and Proto inspection offer 21 days and 10 days respectively prior to the date of completion of the commencement period (wherever applicable).
+    *   Submission of type test reports must be completed before commencing the supply.
+
+---
+
+**3. Financial Requirements (EMD, Bid Amounts, Turnover Thresholds)**
+
+*   **Tender Fee (Non-refundable):**
+    *   **Amount:** Rs. 7500.00 + 18% GST (Rs. 1350) = **Rs. 8850.00**.
+    *   **Payment Methods:** RTGS/NEFT/Online OR Cash (up to Rs. 10,000/- only) at DGVCL corporate office cash counter during working days (10:30 A.M. to 04:00 P.M.) before the due date and time for submission.
+    *   **Exemption:** No exemption from payment of tender fees.
+    *   **Refund:** Refundable (without GST amount) only if DGVCL scraps/cancels the tender due to reasons not attributable to bidders, at DGVCL's sole discretion.
+*   **Earnest Money Deposit (EMD):**
+    *   **Amount for 3C x 50 mm² + 1C x 25 mm² + 35mm² LT Aerial Bunched Cables:**
+        *   **For MSME:** Rs. 1.50 Lacs
+        *   **For Non-MSME:** Rs. 2.50 Lacs
+    *   **Payment Methods:**
+        *   **Up to Rs. 3 Lac:** RTGS/NEFT/Online OR Cash (up to Rs. 10,000/- only) at DGVCL corporate office cash counter during working days (10:30 A.M. to 04:00 P.M.) before the due date and time for submission.
+        *   **More than Rs. 3 Lac:** RTGS/NEFT/Online OR Demand Draft OR Banker’s Cheque OR Pay Order OR Bank Guarantee.
+        *   **Demand Draft (DD):** Must be in favour of DGVCL, drawn on any Scheduled Bank / Nationalized Bank Surat.
+    *   **Bank Guarantee (BG) Requirements:**
+        *   **Validity:** Must be valid for **6 Months from the last date of submission of the bid.**
+        *   **Signing:** BGs of Rs. 50,000/- and above must be signed by Two Bank Officials Jointly.
+        *   **Details:** Designation of officers, place and date of execution, and official round seal of the bank are mandatory.
+        *   **Accepted Banks:**
+            *   All Nationalized banks (accepted on a permanent basis).
+            *   A specific list of 42 other banks (including private, small finance, co-operative, and gramin banks) will be accepted for BGs issued up to March 31, 2026. BGs from any other banks will not be accepted.
+    *   **Forfeiture:** EMD will be forfeited if the tender is withdrawn during the validity of the offer, or if the Tenderer fails to furnish/deposit the Performance Guarantee (Security Deposit).
+    *   **Refund:**
+        *   **Unsuccessful Tenderers (Cash/DD/Banker’s Cheque):** Returned within 15 days from the date of placing the order to the successful Tenderer, via RTGS/NEFT to the bidder's bank account (bidder must provide bank details with a cancelled cheque).
+        *   **Unsuccessful Tenderers (BG):** Returned within 15 days from the date of placing the order to the successful Tenderer.
+        *   **Technically Disqualified Bidders:** EMD/BG will be returned within 15 days from the opening of price bids.
+        *   **Successful Bidders:** EMD will be returned only upon submission of the Performance Guarantee (Security Deposit).
+*   **Financial Turnover:** The full set of Audited Accounts & Financial Turnover for the **last three (03) years** is required.
+*   **Security Deposit (Performance Guarantee):** The successful bidder must pay the security deposit amount within 15 days from the date of receipt of the Letter of Acceptance (LOA).
+
+---
+
+**4. Documentation Requirements**
+
+*   **General:** All required documents must be submitted in online electronic form only. Scanned copies of original documents (Notarized/Self-Attested as specified) are to be uploaded. Physical documents are generally not required, except for EMD in original document if applicable in "EMD Cover Documents".
+*   **Online Preliminary Stage (Mandatory):**
+    *   Original Receipt of Payment of Tender fee/EMD amount (RTGS/NEFT receipt, Demand Draft/Bank Guarantee/Bankers Cheque, or cash receipt).
+    *   GST Registration Certificate (Provisional Certificate is not allowed).
+    *   Valid Vendor registration certificate OR self-attested photocopy of the original money receipt for vendor registration charges (if applied for renewal).
+    *   Declaration CERTIFICATE-M regarding Restrictions on Procurement from a Bidder of a country which shares a land border with India.
+    *   Breakup of quoted item/s and EMD paid for the same on letterhead.
+    *   **Note:** Failure to upload any of these mandatory preliminary stage documents will result in outright rejection.
+*   **Online Technical Stage (Mandatory):**
+    *   Annexure 1 to 15 in chronological order.
+    *   Technical Specifications, Guaranteed Technical Particulars & Drawings duly sealed & signed by the Bidder.
+    *   Notarized/Attested audited balance sheet for the last 3 years.
+    *   Certified copies of relevant & Valid Type Test certificates (not older than 7 years) with a detailed list of Type Tests submitted.
+    *   ISO certificate (if applicable).
+    *   Factory License (if applicable).
+    *   Performance report from clients (if applicable).
+    *   Scanned Copy of Schedule – A; Un priced Schedule-B & NIT, Commercial Terms & conditions duly sealed & signed by the Bidder.
+    *   Valid Bureau of Indian Standard (BIS) license OR application of renewal (applied before expiry) along with the expired license and original money receipt/acknowledgement from BIS (if applicable).
+    *   List of orders of tender item/s, executed/under execution, received in the last five years from GUVNL or its subsidiary companies (MGVCL/DGVCL/UGVCL/PGVCL/GETCO/GSECL). Details must cover Order placing company, Date of order, Name of item/s, Item wise quantity, and status of supplies. Performance reports for these orders should also be uploaded.
+    *   Declaration duly notarized on Rs. 300/- non-judicial stamp paper as per Appendix-4 (Declaration) with complete details regarding the Authorized representative as an Employee of the firm (Conflict of Interest).
+    *   **Revised Annexure-13:** Must be submitted online. Failure to submit Revised Annexure-13 will result in outright rejection, even if the bidder is technically qualified, and the price bid will not be opened.
+*   **Price Bid:**
+    *   Schedule – B must be submitted **On-Line only** (e-tendering form).
+    *   Physical submission of the price bid will not be opened/considered.
+    *   Must be submitted strictly as per Schedule – “B”.
+*   **Cross-Referencing:** Technical and Price Bids must contain adequate cross-references to ensure clear correlation.
+
+---
+
+**5. Submission Deadlines and Procedures**
+
+*   **Online Submission Platform:** All submissions must be made via http://tender.nprocure.com.
+*   **Last Date & Time of Online Submission:** **20.11.2025 (up to 18.00 hrs)**.
+*   **Payment Deadlines:** Tender fee and EMD must be paid before the due date and time for submission of the tender.
+*   **Staged Opening:**
+    *   **Preliminary Stage Opening (online):** 21.11.2025 (up to 11.00 hrs.) (If possible)
+    *   **Technical Stage Opening (online, except Annexure-13):** 21.11.2025 (at 12.00 hrs.) (If possible)
+    *   **Tentative Date of Opening of Annexure-13 & Price Bid (online):** 08.12.2025 (at 11.00 hrs.) (If possible)
+*   **Updates & Corrigendum:** Bidders are solely responsible for staying updated by regularly checking websites https://tender.nprocure.com and www.dgvcl.com for any revisions/corrigendum/amendments until the due date of online submission and thereafter. No separate information will be sent or published in newspapers.
+*   **Agreement Execution:** The successful bidder must execute the agreement within **20 days** from the date of receipt of the Letter of Acceptance (LOA).
+*   **Technical Assistance:** For clarification or training on online tendering, bidders can contact (n) Procure Cell (contact details provided in the document).
+
+---
+
+**6. Evaluation Criteria**
+
+*   **Mandatory Document Compliance:** Strict adherence to uploading all mandatory documents in the preliminary and technical stages is crucial. Failure to upload any mandatory document (e.g., tender fee/EMD receipt, GST certificate, vendor registration, Certificate-M, EMD breakup, Revised Annexure-13) will lead to outright rejection.
+*   **Technical Qualification:**
+    *   Evaluation of submitted Annexures (1-15), Technical Specifications, Guaranteed Technical Particulars, and Drawings.
+    *   Verification of Audited Balance Sheets for the last 3 years.
+    *   Assessment of Type Test certificates for relevance, validity (not older than 7 years), and issuing laboratory (Govt. approved or tender-specified). Irrelevant certificates will cause rejection.
+    *   Verification of ISO certificate, Factory License, and Performance reports.
+    *   Verification of BIS license/renewal status.
+    *   Assessment of the bidder's performance/experience based on the list of orders executed/under execution with GUVNL or its subsidiaries in the last five years.
+    *   Verification of the Appendix-4 declaration regarding Conflict of Interest.
+    *   **Crucial:** Online submission of Revised Annexure-13 is mandatory for technical qualification.
+*   **Vendor Registration Verification:** For bidders who applied for renewal/new registration, the valid vendor registration certificate must be produced before the price bid opening.
+*   **Price Bid Evaluation:** Only the price bids of technically qualified bidders who have submitted all mandatory documents, including Revised Annexure-13, will be opened and considered. Price bids submitted in physical form will not be opened or considered.
+*   **Cartel Formation:** DGVCL reserves the right to reject bids, allot quantities to non-cartel bidders, initiate actions under the Competition Act/other laws, or black-list/stop deal with firms suspected of cartel formation.
+*   **DGVCL's Discretion:** DGVCL reserves the right to reject any or all tenders without assigning any reasons.
+
+---
+
+**7. Any Compliance Requirements or Certifications Needed**
+
+*   **GST Compliance:** Valid GST registration and provision of GSTIN are mandatory.
+*   **Vendor Registration Compliance:** Mandatory registration with GUVNL or its subsidiary companies.
+*   **BIS Compliance:** Valid Bureau of Indian Standard (BIS) license (if applicable) or documented renewal process.
+*   **Type Test Compliance:** Valid Type Test reports (not older than 7 years) from approved laboratories.
+*   **ISO Certification:** High Quality ISO certificate is required.
+*   **Factory License:** Required if applicable.
+*   **MSME Certification:** For availing benefits, bidders must possess a valid UDYAM Registration Certificate (from July 1, 2022) and, for EMD exemption, additional CSPO/NSIC/DGS&D registration (for Gujarat State manufacturing units).
+*   **Government Policy Compliance:** Adherence to Gujarat State Purchase Policy-2016 for MSME benefits.
+*   **Declaration CERTIFICATE-M:** Compliance with restrictions on procurement from countries sharing a land border with India.
+*   **Declaration (Appendix-4):** Compliance with conflict of interest declaration requirements.
+*   **Bank Guarantee Compliance:** BGs must be issued by DGVCL-approved banks and meet specific signing, sealing, and validity requirements.
+*   **Anti-Cartel Compliance:** Bidders must comply with the Competition Act, 2002; cartel formation will lead to severe penalties.
+*   **Agreement Execution:** Successful bidders must execute a purchase agreement within the stipulated timeframe.

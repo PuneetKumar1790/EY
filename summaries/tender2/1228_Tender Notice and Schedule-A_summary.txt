@@ -1,0 +1,154 @@
+As an expert tender document analyst, I have thoroughly reviewed the provided tender document (TENDER NO. PGVCL/PROC/LT AB Cable/ 1228) and present the following comprehensive and detailed summary of its requirements:
+
+---
+
+**TENDER DOCUMENT SUMMARY: PGVCL/PROC/LT AB Cable/ 1228**
+
+**1. Tender Eligibility Criteria (Mandatory and Desirable)**
+
+*   **Mandatory Manufacturer Status:** Bidders must be manufacturers with their works located in India.
+*   **GST Registration:** Mandatory to have valid GST registration. Bidders must provide their GSTIN at the time of fee payment.
+*   **Vendor Registration:** Crucially, all bidders must possess a valid vendor registration with GUVNL or any of its subsidiary companies (GSECL / GETCO / DGVCL / MGVCL / UGVCL / PGVCL) **prior to the date of opening of the technical bid**. Failure to meet this will result in the bid being deemed ineligible for technical scrutiny and the technical bid will not be opened.
+*   **Minimum Quantity Offer:** Bidders must offer a minimum quantity for each item they participate in, as follows:
+    *   **1C x35mm²+1C x16 + 25mm²:** 100.00 KMs (for MSME bidders) / 250.00 KMs (for other bidders)
+    *   **3C x35mm²+1C x16 + 25mm²:** 34.50 KMs (for MSME bidders) / 86.25 KMs (for other bidders)
+    *   **3C x50mm²+1C x25 + 35mm²:** 150.00 KMs (for MSME bidders) / 375.00 KMs (for other bidders)
+*   **Delivery Capability:** The offered quantity must be commensurate with PGVCL’s specified delivery schedule; otherwise, the offer is liable to be rejected.
+*   **No "Stop Deal" Status:** The bidding firm must not be currently "stop dealt" or "banned for business dealing" by GUVNL or its subsidiary companies.
+*   **MSME Benefits (for EMD):**
+    *   **EMD Exemption:** Micro and Small Scale Industrial (manufacturing) Units registered under Small Scale Industries of Gujarat State and holding subsequent registration are eligible for EMD exemption. This requires online submission of a scanned, duly notarized copy of **one certificate from Group A (Udyam Registration Certificate) AND one certificate from Group B (CSPO, NSIC, or DGS&D Registration Certificates)**. The certificates must be valid and indicate the manufacture of the items offered or a related group of items.
+    *   **Lower EMD:** MSME (manufacturing) Units are eligible for a lower EMD amount upon submission of a duly notarized copy of any one certificate from Group A & B.
+
+**2. Technical Specifications and Requirements**
+
+*   **Tender Item:** LT AB Cable (Aerial Bunch Cable)
+*   **Quantities:**
+    *   1C x35mm²+1C x16 + 25mm²: 1000 KM
+    *   3C x35mm²+1C x16 + 25mm²: 345 KM
+    *   3C x50mm²+1C x25 + 35mm²: 1500 KM
+    *   *Note: Quantities are tentative and PGVCL reserves the right to reduce them.*
+*   **Delivery Period:** Within seven (07) months on an equal monthly basis for each item of the total tender quantity. The delivery period commences 45 days from the date of receipt of the Letter of Acceptance (LOA). Early delivery may be requested by PGVCL.
+*   **Guarantee Period:** Goods, stores, and equipment found defective due to bad design or workmanship must be repaired or replaced free of charge if reported within **18 months of their receipt at site or 12 months from the date of commissioning**, whichever is earlier. The bidder is responsible for the proper performance of the equipment/materials for the respective guarantee period.
+*   **Technical Documentation:**
+    *   Technical Specification and GTP (Guaranteed Technical Particulars) – duly filled, sealed & signed.
+    *   Tender Drawing – duly sealed & signed (if applicable).
+    *   Notarized copy of all required Type Test Reports.
+    *   Valid BIS License (if applicable).
+    *   BEE Certificate (if applicable).
+*   **Works Details:** Bidders must specify the details of their works from where the material will be supplied in Annexure-3. This information must strictly align with their vendor registration certificate, and only one works location is permitted for each tender item.
+
+**3. Financial Requirements (EMD, Bid Amounts, Turnover Thresholds)**
+
+*   **Tender Fee:** Rs. 10,000 + 18% GST = **Rs. 11,800/-** (Non-refundable).
+    *   Payment via RTGS/NEFT/Online (UTR number to be uploaded).
+    *   Cash payment (up to Rs. 10,000/-) requires uploading a scanned copy of the cash receipt.
+*   **Earnest Money Deposit (EMD):**
+    *   **For MSME Units:**
+        *   1C x35mm²+1C x16 + 25mm²: Rs. 2,00,000/-
+        *   3C x35mm²+1C x16 + 25mm²: Rs. 2,00,000/-
+        *   3C x50mm²+1C x25 + 35mm²: Rs. 4,00,000/-
+        *   **Total EMD for MSME: Rs. 8,00,000/-**
+    *   **For Non-MSME Units:**
+        *   1C x35mm²+1C x16 + 25mm²: Rs. 3,00,000/-
+        *   3C x35mm²+1C x16 + 25mm²: Rs. 3,00,000/-
+        *   3C x50mm²+1C x25 + 35mm²: Rs. 7,00,000/-
+        *   **Total EMD for Non-MSME: Rs. 13,00,000/-**
+    *   **EMD Payment Methods:**
+        *   Up to Rs. 10,000/-: Cash (upload scanned receipt).
+        *   Up to Rs. 3.00 Lakhs (but more than Rs. 10,000/-): RTGS/NEFT/Online only (upload UTR number).
+        *   More than Rs. 3.00 Lakhs: RTGS/NEFT/Online OR Demand Draft OR Banker’s Cheque OR Pay Order OR Bank Guarantee.
+            *   Scanned copy of the original document must be uploaded in the preliminary stage.
+            *   The **original physical document** must be submitted by Registered Post A.D. or Speed Post only to The Chief Engineer (Material), PGVCL, Rajkot, before the specified due date and time. The sealed cover must clearly mention the Tender number.
+*   **Price Bid:**
+    *   Bidders must mention applicable GST rates in Column no. 6 of the online price bid.
+    *   Bidders opting for a composition scheme should mention "C" in Column no. 6 and "0" (Zero) in Column no. 12 (Unit GST in Rs.).
+    *   **Price Variation Clause (PVC):** The tender is on a Price Variation Basis. The price (`P`) will be adjusted from the quoted price (`Po`) based on the variation in LME Aluminium prices (Al, Alo) and XLPE Compound prices (Cc, Cco), using specified variation factors (Alph, Alm, Aln, CCFAlph, CCFAln).
+*   **Performance Guarantee (PG) / Security Deposit:** Must be submitted within 15 days from the date of issue of the Letter of Acceptance (LOA). (Specific amount not detailed in the provided text).
+*   **Turnover Thresholds:** While certified copies of the last three years' Audited Accounts are required, no specific turnover thresholds are mentioned in the provided document.
+
+**4. Documentation Requirements**
+
+*   **General Submission:** All required documents, except original EMD payment instruments (if EMD > Rs. 3 Lakhs), must be submitted in online mode only.
+*   **Format:** Uploaded scanned documents must be in PDF format, legible, and not password-protected.
+*   **Authenticity:** Scanned copies must be of original documents (notarized/self-attested as specified).
+*   **Signing & Sealing:** "Important Instruction" and all annexures must be duly sealed and signed.
+*   **Online Preliminary Stage Uploads (in sequence):**
+    1.  Payment of Tender Fee (scan copy of cash receipt/RTGS/NEFT/Online with UTR No).
+    2.  Payment of EMD Fee (Scan copy of RTGS/NEFT/Online with UTR No. or DD/BC/PO/BG).
+    3.  EMD Exemption Documents duly notarized (if Applicable).
+    4.  Self-Certified copy of Vendor Registration.
+    5.  Self-certified copy of GSTN Registration Certificate.
+*   **Online Technical Stage Uploads (in sequence):**
+    1.  Technical Specification and GTP duly filled, Sealed & signed.
+    2.  Tender Drawing duly Sealed & signed (if applicable).
+    3.  Tender Notice and Schedule-A duly Sealed & signed.
+    4.  Tender Commercial terms & conditions with all annexures duly Sealed & signed.
+    5.  Notarized Power of Attorney on Rs. 300/- non-judicial stamp paper for the authorized signatory.
+    6.  Notarized Declaration on Rs. 300/- Non-judicial stamp paper for the Authorized Representative (as per attached format), including names, signatures, designation, contact details (office address, Mobile No., E-mail ID) of both Authorized Signatory and Authorized Representative (who must be an employee), and tender number.
+    7.  Country Boundary Certificate on Rs. 300/- non-judicial stamp paper duly notarized.
+    8.  Notarized copy of all required Type Test Reports.
+    9.  All Amendments in ascending Order with duly signed and sealed (if any).
+    10. “Important Instruction” duly Sealed & signed.
+    11. Certificate-A of the Tender duly signed & sealed on Company’s letterhead.
+    12. Self-certified copy of valid ISO Certificate (if Applicable).
+    13. PAN card of FIRM/COMPANY certified by the Authorized person.
+    14. Self-certified copy of PAN Card of each individual (ALL PARTNERS/ALL DIRECTORS/PROPRIETOR).
+    15. Self-certified copy of valid Factory License.
+    16. Self-certified copy of Import / Export Certificate (if Applicable).
+    17. List of Partners/Directors on firm’s letterhead duly sealed & signed with MoA OR self-declaration about proprietor.
+    18. Self-certified copy of Partnership deed (if applicable).
+    19. List of Plant & Machinery and Testing Facility duly Sealed & signed.
+    20. Certified copy of Last Three years Audited Account.
+    21. Notarized Copy of Valid BIS License (if applicable).
+    22. BEE Certificate (if applicable).
+    23. Self-Certified copy of order executed with GUVNL & its subsidiary company (if Applicable).
+    24. Annexure-13 details (mandatory; non-submission leads to outright rejection).
+    25. Annexure-3 details (works from where material will be supplied, must match vendor registration, only one works per item).
+    26. Any other documents if required as per tender terms and conditions.
+*   **Physical Submission (for EMD > Rs. 3 Lakhs):** Original DD/Banker’s Cheque/Pay Order/Bank Guarantee must be submitted in a sealed cover, clearly mentioning the Tender number.
+
+**5. Submission Deadlines and Procedures**
+
+*   **Tender Mode:** Online (e-tendering) via https://tender.nprocure.com.
+*   **Online Submission End Date & Time (Preliminary, Technical & Price bid):** 10.11.2025 up to 18:00 Hrs.
+*   **Physical Submission of EMD Documents Due Date & Time (by Registered Post A.D. or Speed Post only):** 17.11.2025 up to 18:00 Hrs.
+*   **Online Opening of Tender Fee & EMD (Preliminary Stage):** 11.11.2025 up to 11:00 Hrs.
+*   **Online Opening of Technical Bid (Technical Stage):** 18.11.2025 up to 11:00 Hrs.
+*   **Online Opening of Price Bid (Price Bid Stage):** 03.12.2025 up to 11:00 Hrs. (Tentative).
+*   **Agreement Execution:** The successful bidder must execute an Agreement within 20 days from the date of issue of the Letter of Acceptance (LOA). Failure to do so may result in outright cancellation of the LOA and actions against the defaulter.
+*   **Corrigendum/Amendments:** Bidders are solely responsible for checking https://tender.nprocure.com and www.pgvcl.com for any revisions, corrigendum, or amendments until the due date of online submission and thereafter. No separate notification will be sent.
+*   **Contact for Clarifications:** For technical questions, information, or clarifications, contact the CHIEF ENGINEER (MATERIAL), PGVCL, Rajkot. For online tender participation training/clarification, contact (n) Procure Cell.
+
+**6. Evaluation Criteria**
+
+*   **Eligibility Check:** Initial scrutiny for mandatory vendor registration, GST registration, and manufacturer status.
+*   **Document Compliance:** Strict adherence to documentation requirements. Non-attachment of mandatory documents, attachment of wrong documents, or discrepancies between online and scanned documents may lead to bid rejection.
+*   **EMD Compliance:** Proper and timely submission of EMD (both online and physical, if applicable) is critical. Failure to submit physical EMD documents (if required) will result in outright rejection.
+*   **Minimum Quantity Offered:** Bids failing to meet the specified minimum quantity for each item will not be considered for price evaluation.
+*   **Technical Scrutiny:** Evaluation of Technical Specifications, GTP, Type Test Reports, and other technical documents.
+*   **Price Bid Evaluation:** Based on the quoted prices, adjusted by the Price Variation Clause, and applicable GST/Cess.
+*   **Discrepancy Resolution:** In case of any discrepancy between scanned copies of physical uploaded annexures (duly sealed & signed) and online annexures of N-Procure, the data of online annexures will be considered final for tender evaluation.
+*   **Quantity Offered Consistency:** Quantity details in online Annexure-4 of N-Procure and the online Price bid must be identical. Annexure-4 will be considered final in case of discrepancy.
+*   **Mandatory Annexure-13:** Non-submission of Annexure-13 will lead to outright rejection, even if technically qualified.
+*   **PGVCL's Discretion:** PGVCL reserves the right to reject any or all tenders without assigning reasons. PGVCL's decision is final and binding.
+*   **Consequences of Non-Compliance/False Information:** Submission of false information/data, failure to deliver as per schedule, or supply of non-conforming materials may lead to actions such as periodic/permanent stop deal, cancellation of vendor registration, forfeiture of EMD, forfeiture of Performance Guarantee (Security Deposit), or forfeiture of Warranty Performance Guarantee.
+
+**7. Any Compliance Requirements or Certifications Needed**
+
+*   **GST Compliance:** Valid GST registration and correct declaration of GST rates and composition scheme status in the price bid.
+*   **Vendor Registration:** Valid vendor registration with GUVNL or its subsidiaries.
+*   **MSME Certification:** Udyam Registration Certificate, CSPO, NSIC, DGS&D Registration Certificates (as applicable for EMD benefits). Certificates must be valid and indicate relevant manufacturing.
+*   **ISO Certification:** Self-certified copy of valid ISO Certificate (if applicable).
+*   **PAN Card:** Self-certified copies of the firm/company's PAN card and individual PAN cards of all partners/directors/proprietor.
+*   **Factory License:** Self-certified copy of a valid Factory License.
+*   **Import/Export Certificate:** Self-certified copy (if applicable).
+*   **BIS License:** Notarized copy of a valid BIS License (if applicable).
+*   **BEE Certificate:** (if applicable).
+*   **Country Boundary Certificate:** Duly notarized on Rs. 300/- non-judicial stamp paper.
+*   **Declaration for Authorized Representative:** Duly notarized on Rs. 300/- non-judicial stamp paper.
+*   **Power of Attorney:** Duly notarized on Rs. 300/- non-judicial stamp paper for the authorized signatory.
+*   **Audited Accounts:** Certified copy of the last three years' Audited Accounts.
+*   **Legal Compliance:** Adherence to all commercial terms and conditions, including the guarantee period and consequences for non-compliance.
+*   **Audit Inspection:** Compliance with Audit Inspection clause no. 53, particularly regarding cable length discrepancies, which can trigger actions on the entire supplied lot.
+
+---
